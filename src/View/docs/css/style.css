@@ -2,6 +2,27 @@ html {
     height: 100%;
 
 }
+
+.miniatura {
+    height: 130px;
+    border: 1px solid #000;
+    border-radius: 45%;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+#foto {
+    height: 75px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0.8);
+
+}
+#foto:hover {
+    background-color: #4faddb;
+}
+
 body {
     background-image: url(../img/background2.jpg);
     background-repeat: no-repeat;

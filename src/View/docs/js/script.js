@@ -23,55 +23,18 @@ function carregarCEP (){
 $(document).ready(function () {
     let CPF = $("#CPF");
     let CEP = $("#CEP");
+    CEP.mask("99.999-999");
     CPF.mask('999.999.999-99');
     let telefone = $("#Telefone");
     telefone.mask('(00) 0000-0000');
-    CEP.mask("99.999-999");
 
 
     $('#Conteudo').on('click', '#Login', function () {
-        let loginHTML = '\ <div class="card cardFormulario col-md-3">\
-            <div class="card-body" id="card-body">\
-                <h3 class="text-center titulo"> Login  <i class="fas fa-users"></i></h3> \
-                <form id="formulario" class="formulario" data-toggle="validator">\
-                    <div class="form-row">\
-                        <div class="form-group col-md-12">\
-                            <label for="CPF">CPF:</label>\
-                            <div class="input-group">\
-                                <div class="input-group-prepend">\
-                                    <span class="input-group-text arredondar"> <i class="fas fa-id-card-alt"></i></span>\
-                                </div>\
-                                <input type="text" class="form-control arredondar" id="CPF-login" placeholder="123.123.123-00"\
-                                       max="11" data-error="Por favor, informe um CPF correto." required>\
-                            </div>\
-                            <div class="error help-block with-errors"></div>\
-                        </div>\
-                    </div>\
-                    <div class="form-row">\
-                        <div class="form-group col-md-12">\
-                            <label for="Senha">Senha:</label>\
-                            <div class="input-group">\
-                                <div class="input-group-prepend">\
-                                    <span class="input-group-text arredondar"> <i class="fas fa-lock"></i></span>\
-                                </div>\
-                                <input type="password" class="form-control arredondar" id="senha-login" placeholder="Senha"\
-                                         maxlength="20" required>\
-                            </div>\
-                            <div class="error help-block with-errors"></div>\
-                        </div>\
-                    </div>\
-                    </form>\
-            </div>\
-            <button id="Logar" type="button" class="Entrar btn btn btn arredondar">Login</button>\
-            <a href="#!" class="login-card-footer-text">Esqueceu a senha?</a>\
-            <p class="login-card-footer-text">Não possui uma conta? <a href="index.php" class="login-card-footer-text">Cadastrar-se\
-                    aqui</a></p>\
-        </div>';
-        // $('.cardFormulario').remove();
-        $('.geral').html(loginHTML);
+        $("#cardServicos").hide();
+        $("#cardCadastro").hide();
+        $("#cardLogin").show();
         let CPF = $("#CPF-login");
         CPF.mask('999.999.999-99');
-
     });
 
     $('#Conteudo').on('click', '#Logar', function () {
@@ -113,227 +76,17 @@ $(document).ready(function () {
 
     $('#Conteudo').on('click', '#Registrar', function () {
 
-let cadastroHTML ='<div class="card cardFormulario">\n' +
-    '            <!--            inicia aqui-->\n' +
-    '            <div class="card-body">\n' +
-    '                <h3 class="text-center titulo"> Cadastro <i class="fas fa-address-card"></i></h3>\n' +
-    '                <form id="formulario" class="formulario" data-toggle="validator">\n' +
-    '                    <div class="form-row">\n' +
-    '                        <div class="form-group col-md-6">\n' +
-    '                            <label for="Username">Usuario:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-user"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <input type="text" class="form-control arredondar" id="Username" placeholder="Usuario"\n' +
-    '                                       required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                        <div class="form-group col-md-6">\n' +
-    '                            <label for="Senha">Senha:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-lock"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <input type="password" class="form-control arredondar" id="Senha" placeholder="Senha"\n' +
-    '                                       maxlength="20" required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                    </div>\n' +
-    '                    <div class="form-group">\n' +
-    '                        <label for="email">Email:</label>\n' +
-    '                        <div class="input-group">\n' +
-    '                            <div class="input-group-prepend">\n' +
-    '                                <span class="input-group-text arredondar"> <i class="fas fa-envelope"></i></span>\n' +
-    '                            </div>\n' +
-    '                            <label for="Email"></label>\n' +
-    '                            <input type="email" class="form-control arredondar" id="Email"\n' +
-    '                                                              placeholder="nome@exemplo.com" data-error="Por favor, informe um email valido."\n' +
-    '                                                              required>\n' +
-    '                        </div>\n' +
-    '                        <div class="error help-block with-errors"></div>\n' +
-    '                    </div>\n' +
-    '                    <div class="form-row">\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="CPF">CPF:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-id-card-alt"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <input type="text" class="form-control arredondar" id="CPF" placeholder="123.123.123-00"\n' +
-    '                                       data-error="Por favor, informe um CPF correto." required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="dt-nascimento">Data de nascimento:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i\n' +
-    '                                                class="fas fa-calendar-alt"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <input type="date" class="form-control arredondar" id="dt-nascimento"\n' +
-    '                                       placeholder="Nascimento" required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                    </div>\n' +
-    '\n' +
-    '                    <div class="form-row">\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="CPF">CEP:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <label for="CEP"></label>\n' +
-    '                                <input type="text" class="form-control arredondar" onblur="carregarCEP()" id="CEP" placeholder="12.123-123"\n' +
-    '                                                                data-error="Por favor, informe um CEP correto." required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="CPF">Logradouro:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <label for="Logradouro"></label>\n' +
-    '                                <input type="text" class="form-control arredondar" id="Logradouro"\n' +
-    '                                                                       data-error="Por favor, informe um Logradouro correto." required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                    </div>\n' +
-    '                    <div class="form-row">\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="CPF">Complemento:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <label for="Complemento"></label>\n' +
-    '                                <input type="text" class="form-control arredondar" id="Complemento"\n' +
-    '                                                                        data-error="Por favor, informe um Complemento correto." required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="CPF">Bairro:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <label for="Bairro"></label>\n' +
-    '                                <input type="text" class="form-control arredondar" id="Bairro"\n' +
-    '                                                                   data-error="Por favor, informe um Bairro correto." required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '\n' +
-    '                    </div>\n' +
-    '                    <div class="form-row">\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="Cidade">Cidade:</label>\n' +
-    '                            <div class="input-group ">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-city"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <input type="text" class="form-control" id="Cidade"\n' +
-    '                                       placeholder="Brasilia-DF" required>\n' +
-    '                                <div class="input-group-append">\n' +
-    '                                    <label for="UF"></label>\n' +
-    '                                    <select class="form-control " id="UF" required>\n' +
-    '                                        <option value="">UF</option>\n' +
-    '                                        <option value="AC">AC</option>\n' +
-    '                                        <option value="AL">AL</option>\n' +
-    '                                        <option value="AP">AP</option>\n' +
-    '                                        <option value="AM">AM</option>\n' +
-    '                                        <option value="BA">BA</option>\n' +
-    '                                        <option value="CE">CE</option>\n' +
-    '                                        <option value="DF">DF</option>\n' +
-    '                                        <option value="ES">ES</option>\n' +
-    '                                        <option value="GO">GO</option>\n' +
-    '                                        <option value="MA">MA</option>\n' +
-    '                                        <option value="MT">MT</option>\n' +
-    '                                        <option value="MS">MS</option>\n' +
-    '                                        <option value="MG">MG</option>\n' +
-    '                                        <option value="PA">PA</option>\n' +
-    '                                        <option value="PB">PB</option>\n' +
-    '                                        <option value="PR">PR</option>\n' +
-    '                                        <option value="PE">PE</option>\n' +
-    '                                        <option value="PI">PI</option>\n' +
-    '                                        <option value="RJ">RJ</option>\n' +
-    '                                        <option value="RN">RN</option>\n' +
-    '                                        <option value="RS">RS</option>\n' +
-    '                                        <option value="RO">RO</option>\n' +
-    '                                        <option value="RR">RR</option>\n' +
-    '                                        <option value="SC">SC</option>\n' +
-    '                                        <option value="SP">SP</option>\n' +
-    '                                        <option value="SE">SE</option>\n' +
-    '                                        <option value="TO">TO</option>\n' +
-    '                                    </select>\n' +
-    '                                </div>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                        <div class="form-group col-xl-6">\n' +
-    '                            <label for="Telefone">Telefone:</label>\n' +
-    '                            <div class="input-group">\n' +
-    '                                <div class="input-group-prepend">\n' +
-    '                                    <span class="input-group-text arredondar"> <i class="fas fa-phone"></i></span>\n' +
-    '                                </div>\n' +
-    '                                <input type="text" class="form-control arredondar phone-mask" id="Telefone"\n' +
-    '                                       placeholder="(DD) 0000-0000" required>\n' +
-    '                            </div>\n' +
-    '                            <div class="error help-block with-errors"></div>\n' +
-    '                        </div>\n' +
-    '                    </div>\n' +
-    '\n' +
-    '                    <div class="form-group" style="display: flex; justify-content:flex-end;">\n' +
-    '                        <button id="cadastrar" type="button" class="btn btn-success">Cadastrar</button>\n' +
-    '                    </div>\n' +
-    '\n' +
-    '                    <div class="alert alert-danger testando text-center" id="alerta2" role="alert"\n' +
-    '                         style="display: none;">\n' +
-    '                        <strong>Erro! </strong> Seu cadastro <strong>não foi realizado!</strong>\n' +
-    '                    </div>\n' +
-    '                    <div class="alert alert-danger testando text-center" id="alerta3" role="alert"\n' +
-    '                         style="display: none;">\n' +
-    '                        <strong>Erro! </strong> Username <strong>já cadastrado!</strong>\n' +
-    '                    </div>\n' +
-    '                    <div class="alert alert-danger testando text-center" id="alerta4" role="alert"\n' +
-    '                         style="display: none;">\n' +
-    '                        <strong>Erro! </strong> Email <strong>já cadastrado!</strong>\n' +
-    '                    </div>\n' +
-    '                    <div class="alert alert-danger testando text-center" id="alerta5" role="alert"\n' +
-    '                         style="display: none;">\n' +
-    '                        <strong>Erro! </strong> CPF <strong>já cadastrado!</strong>\n' +
-    '                    </div>\n' +
-    '\n' +
-    '                    <div class="alert alert-danger testando text-center" id="alerta6" role="alert"\n' +
-    '                         style="display: none; justify-content: flex-start;">\n' +
-    '                        <strong>Erro! </strong> Preencha <strong> todos os campos! </strong>\n' +
-    '                    </div>\n' +
-    '\n' +
-    '                    <div class="alert alert-danger testando text-center" id="alerta7" role="alert"\n' +
-    '                         style="display: none; justify-content: flex-start;">\n' +
-    '                        <strong>Erro! </strong> CPF <strong> Inválido !</strong>\n' +
-    '                    </div>\n' +
-    '                </form>\n' +
-    '            </div>\n' +
-    '            <!--            termina aqui-->\n' +
-    '        </div>'
         // $('.cardFormulario').remove();
-        $('.geral').html(cadastroHTML);
-        let CPF = $("#CPF");
-        CPF.mask('999.999.999-99');
-        let telefone = $("#Telefone");
-        telefone.mask('(00) 0000-0000');
+        // $('.geral').html(cadastroHTML);
+        // let CPF = $("#CPF");
+        // CPF.mask('999.999.999-99');
+        // let CEP = $("#CEP");
+        // CEP.mask("99.999-999");
+        // let telefone = $("#Telefone");
+        // telefone.mask('(00) 0000-0000');
+        $("#cardLogin").hide();
+        $("#cardServicos").hide();
+        $("#cardCadastro").show();
     });
 
     $('#Conteudo').on('click', '#cadastrar', function () {
@@ -514,6 +267,31 @@ let cadastroHTML ='<div class="card cardFormulario">\n' +
         });
     });
 
-
+    $('#Conteudo').on('click', '#foto', function () {
+        $("#addFotoGaleria").trigger('click')
+    });
 });
 
+$(function() {
+// Pré-visualização de várias imagens no navegador
+    var visualizacaoImagens = function(input, lugarParaInserirVisualizacaoDeImagem) {
+        if (input.files) {
+            var quantImagens = input.files.length;
+
+            for (i = 0; i < quantImagens; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    $($.parseHTML('<img class="miniatura">')).attr('src', event.target.result).appendTo(lugarParaInserirVisualizacaoDeImagem);
+                }
+
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+    $('#addFotoGaleria').on('change', function() {
+        $('#foto').remove();
+        visualizacaoImagens(this, 'div.galeria');
+    });
+});
