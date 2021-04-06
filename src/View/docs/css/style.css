@@ -1,0 +1,105 @@
+html {
+    height: 100%;
+
+}
+body {
+    background-image: url(../img/background2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding-bottom: 100px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.geral {
+    min-height: 84%;
+    color: white;
+    align-items: center;
+    display: flex;
+}
+
+.nasa {
+    color: lightgray;
+    font-size: 60px;
+}
+
+.titulo {
+    font-size: 45px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.caixa {
+    border-radius: 25px;
+    background: #343a40;
+}
+
+.menu a:hover {
+    background-color: #4faddb;
+    color: #000;
+}
+
+.menu a.selected {
+    background-color: #4faddb;
+    color: #000;
+}
+
+.arredondar {
+    border-radius: 10px;
+}
+
+.Registrar {
+    background: #f50a31;
+    color: #fff;
+    border-radius: 15px;
+    margin: 8px;
+}
+
+.loginInput {
+    border-radius: 15px;
+    margin: 8px;
+    color: #fff;
+}
+
+.cardFormulario {
+    background: rgba(0, 0, 0, 0.2);
+    /* margin-bottom: 15%; */
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.login-card-footer-text {
+    font-size: 16px;
+    color: lightgray;
+}
+
+
+.login-card-footer-text:hover {
+    color: #f50a31;
+}
+
+.entrar {
+    background: #f50a31;
+    color: white;
+}
+
+.entrar:hover {
+    background-color: #4faddb;
+    color: #000;
+}
+
+#login, #Registrar, #Deslogar {
+    color: white;
+    cursor: pointer;
+}
