@@ -78,6 +78,7 @@
 
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
+
         <div class="card cardFormulario">
             <div class="container">
                 <div class="row">
