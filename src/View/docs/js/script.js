@@ -1,9 +1,9 @@
-function carregarCEP (){
-    let CEP = $("#CEP").val().replace(/[^\d]+/g,'')
+function carregarCEP() {
+    let CEP = $("#CEP").val().replace(/[^\d]+/g, '')
     $.ajax({
         type: "GET",
         dataType: 'text',
-        url: 'https://viacep.com.br/ws/'+CEP+'/json/',
+        url: 'https://viacep.com.br/ws/' + CEP + '/json/',
         async: true,
         success: function (rs) {
             rs = JSON.parse(rs);
@@ -32,6 +32,7 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#Login', function () {
         $("#cardServicos").hide();
         $("#cardCadastro").hide();
+        $("#sobre").hide();
         $("#cardLogin").show();
         let CPF = $("#CPF-login");
         CPF.mask('999.999.999-99');
@@ -85,6 +86,7 @@ $(document).ready(function () {
         // let telefone = $("#Telefone");
         // telefone.mask('(00) 0000-0000');
         $("#cardLogin").hide();
+        $("#sobre").hide();
         $("#cardServicos").hide();
         $("#cardCadastro").show();
     });
@@ -270,7 +272,10 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#foto', function () {
         $("#addFotoGaleria").trigger('click')
     });
+
 });
+
+
 
 $(function() {
 // Pré-visualização de várias imagens no navegador
@@ -294,4 +299,6 @@ $(function() {
         $('#foto').remove();
         visualizacaoImagens(this, 'div.galeria');
     });
+
+
 });

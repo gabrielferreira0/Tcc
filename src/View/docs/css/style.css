@@ -1,12 +1,10 @@
-html {
-    height: 100%;
 
-}
 
 .miniatura {
-    height: 130px;
+    height: 120px;
+    width : 100px;
     border: 1px solid #000;
-    border-radius: 45%;
+    border-radius: 50%;
     border: 1px solid #000;
     cursor: pointer;
 }
@@ -22,7 +20,10 @@ html {
 #foto:hover {
     background-color: #4faddb;
 }
-
+.sobre{
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
 body {
     background-image: url(../img/background2.jpg);
     background-repeat: no-repeat;
@@ -32,6 +33,10 @@ body {
     position: relative;
     padding-bottom: 100px;
     font-family: 'Oswald', sans-serif;
+}
+
+.icone {
+    font-size: 40px;
 }
 
 .geral {
