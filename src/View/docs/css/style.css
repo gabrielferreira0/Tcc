@@ -9,6 +9,7 @@
     cursor: pointer;
 }
 
+
 #foto {
     height: 75px;
     cursor: pointer;
@@ -121,8 +122,9 @@ footer {
 }
 
 .entrar:hover {
-    background-color: #4faddb;
-    color: #000;
+    /*background-color: #4faddb;*/
+    /*color: #000;*/
+    filter: brightness(90%);
 }
 
 #login, #Registrar, #Deslogar {

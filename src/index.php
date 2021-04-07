@@ -331,9 +331,9 @@
             <p class="login-card-footer-text">Não possui uma conta? <a href="index.php" class="login-card-footer-text">Cadastrar-se
                     aqui</a></p>
         </div>
-        <div class="card cardFormulario" id="cardServicos">
-            <div class="container">
-                <div class="row">
+            <div class="container"  id="cardServicos">
+                <div class="card-deck">
+
                     <div class="card col-md-4 cardFormulario">
                         <img class="card-img-top"
                              src="https://i.pinimg.com/564x/d3/82/f1/d382f1287cfd6bfc7b7c2bd57f04184d.jpg"
@@ -374,7 +374,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
     </div>
 </div>
 
