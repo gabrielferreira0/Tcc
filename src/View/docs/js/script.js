@@ -92,67 +92,70 @@ $(document).ready(function () {
     });
 
     $('#Conteudo').on('click', '#cadastrar', function () {
+        // let nascimento = $("#dt-nascimento").val();
+        //let cidade = $("#Cidade").val();
+        //let UF = $("#UF option:selected").val();
         let username = $("#Username").val();
         let senha = $("#Senha").val();
         let email = $("#Email").val();
+        let formData = new FormData();
+        let foto = $('#addFotoGaleria')[0].files[0];
         let CPF = $("#CPF").val();
-        let nascimento = $("#dt-nascimento").val();
-        let cidade = $("#Cidade").val();
         let telefone = $('#Telefone').val();
-        let UF = $("#UF option:selected").val();
-        let url = '../crud/class/index.php';
+
+        formData.append('username',username);
+        formData.append('senha',senha);
+        formData.append('email',email);
+        formData.append('CPF',CPF);
+        formData.append('foto',foto);
+        formData.append('telefone',telefone);
+        formData.append('rq','cadastrar');
+
+        let url = '../src/Controller/index.php';
         $.ajax({
-            type: "POST",
-            dataType: 'text',
             url: url,
-            async: true,
-            data: {
-                rq: 'cadastrar',
-                Username: username,
-                Senha: senha,
-                Email: email,
-                CPF: CPF,
-                Nascimento: nascimento,
-                Cidade: cidade,
-                Telefone: telefone,
-                UF: UF,
-            },
+            dataType: 'text',
+            type: 'post',
+            contentType: false,
+            processData: false,
+            data: formData,
             success: function (rs) {
-                switch (rs) {
-                    case 'nomeC':
-                        $("#alerta3").show().fadeOut(4000);
-                        break;
-                    case 'emailC':
-                        $("#alerta4").show().fadeOut(4000);
-                        break;
-                        s
-                    case 'cpfC':
-                        $("#alerta5").show().fadeOut(4000);
-                        break;
-                    case 'null':
-                        $("#alerta6").show().fadeOut(4000);
-                        break;
-                    case 'CPFinvalido':
-                        $("#alerta7").show().fadeOut(4000);
-                        break;
-                    case '#alerta':
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Cadastro realizado com sucesso!',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        $("#Email").val("");
-                        $("#Username").val("");
-                        $("#CPF").val("");
-                        $("#Senha").val("");
-                        $("#Cidade").val("");
-                        $("#dt-nascimento").val("");
-                        $("#Telefone").val("");
-                        $("#UF").val("UF");
-                        break;
-                }
+                alert(rs);
+                // switch (rs) {
+                //     case 'nomeC':
+                //         $("#alerta3").show().fadeOut(4000);
+                //         break;
+                //     case 'emailC':
+                //         $("#alerta4").show().fadeOut(4000);
+                //         break;
+                //         s
+                //     case 'cpfC':
+                //         $("#alerta5").show().fadeOut(4000);
+                //         break;
+                //     case 'null':
+                //         $("#alerta6").show().fadeOut(4000);
+                //         break;
+                //     case 'CPFinvalido':
+                //         $("#alerta7").show().fadeOut(4000);
+                //         break;
+                //     case '#alerta':
+                //         Swal.fire({
+                //             position: 'center',
+                //             icon: 'success',
+                //             title: 'Cadastro realizado com sucesso!',
+                //             showConfirmButton: false,
+                //             timer: 1500
+                //         })
+                //         $("#Email").val("");
+                //         $("#Username").val("");
+                //         $("#CPF").val("");
+                //         $("#Senha").val("");
+                //         $("#Cidade").val("");
+                //         $("#dt-nascimento").val("");
+                //         $("#Telefone").val("");
+                //         $("#UF").val("UF");
+                //         break;
+                // }
 
             },
             error: function (e) {
@@ -269,8 +272,9 @@ $(document).ready(function () {
         });
     });
 
-    $('#Conteudo').on('click', '#foto', function () {
+    $('#Conteudo').on('click', '.galeria', function () {
         $("#addFotoGaleria").trigger('click')
+        $( ".miniatura" ).remove();
     });
 
 });
