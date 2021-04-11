@@ -20,8 +20,8 @@
 <body id="Conteudo">
 
 <div class="navbar  navbar-expand-sm  navbar-dark bg-dark mb-4 menu " role="navigation">
-    <i class="fas fa-user-astronaut nasa"></i>
-    <a class="navbar-brand arredondar " href="">Treinando</a>
+    <i class="fas fa-toolbox logo"></i>
+    <a class="navbar-brand arredondar " href=""> Treinando</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,7 @@
             <li class="nav-item">
                 <a class="nav-link arredondar" href="#sobre">Sobre Nós</a>
             </li>
+
             <?php
             session_start();
             if (isset ($_SESSION['CPF'])) {
@@ -45,7 +46,7 @@
             }
             ?>
         </ul>
-        <div class="d-flex align-items-center ">
+        <div class="d-flex justify-content-start ">
 
             <?php
 
@@ -58,11 +59,11 @@
 
             <?php
             if (isset ($_SESSION['CPF'])) {
-                echo '<div class="d-flex justify-content-center">
+                echo '<div class="d-flex justify-content-start">
             <a class="nav-link text-center Registrar" id="Deslogar">Sair</a>
         </div>';
             } else {
-                echo '  <div class="d-flex justify-content-center">
+                echo '  <div class="d-flex justify-content-md-center ">
             <a class="nav-link  text-center loginInput" id="Login">Login</a>
             <a class="nav-link text-center Registrar" id="Registrar">Cadastrar</a>
         </div>';
@@ -73,6 +74,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
@@ -332,6 +334,7 @@
                     aqui</a></p>
         </div>
             <div class="container"  id="cardServicos">
+
                 <div class="card-deck">
 
                     <div class="card col-md-4 cardFormulario">
@@ -339,7 +342,7 @@
                              src="https://i.pinimg.com/564x/d3/82/f1/d382f1287cfd6bfc7b7c2bd57f04184d.jpg"
                              alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Eletricista</h5>
+
                             <div class="form-group" style="display: flex; justify-content:center;">
                                 <button type="button" class="Entrar btn btn btn arredondar">Acessar</button>
                             </div>
@@ -379,35 +382,43 @@
 </div>
 
 
-<section id="sobre" class="geral">
-    <div  id="teste" class="container sobre">
-        <div class="row">
-            <div class="col-md-12 sobre_espaço">
-                <h1 class="text-center"> Sobre nós<i class="fas fa-building"></i> </h1>
-            </div>
-
-            <div class="col-md-4  ">
-                <h2 class="text-center">Missão <i class="fas fa-bullseye icone"></i></h2>
+<section class="page-section geral" id="sobre">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="text-center"> Sobre nós</h1>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-bullseye fa-stack-1x fa-inverse"></i>
+                        </span>
+                <h4 class="my-3">Missão</h4>
                 <p>Proporcionar um ambiente onde as pessoas encontrarão os melhores profissionais de serviços de
                     pequenos reparos com base nas recomendações de seus clientes, permitindo que os melhores
-                    profissionais mantenham a continuidade de seus trabalhos. </p>
+                    profissionais mantenham a continuidade de seus trabalhos.</p>
             </div>
-
             <div class="col-md-4">
-                <h2 class="text-center">Visão <i class="far fa-eye icone"></i></h2>
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-eye fa-stack-1x fa-inverse"></i>
+                        </span>
+                <h4 class="my-3">Visão</h4>
                 <p>Ser referência no mercado de pequenos reparos para quem busca ou presta esse serviço.</p>
             </div>
-
             <div class="col-md-4">
-                <h2 class="text-center">Valores <i class="fas fa-handshake icone"></i></h2>
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
+                        </span>
+                <h4 class="my-3">Valores</h4>
                 <p>Nossos valores são transparência, confiança, responsabilidade nos serviços oferecidos para os
                     clientes e profissionais.</p>
             </div>
         </div>
     </div>
-</section
+</section>
 
-        <!-- Footer -->
 <footer class="bg-dark ">
     <!-- Copyright -->
     <div style="color:aliceblue;" class="footer-copyright text-center py-3">© 2020 desenvolvido por:

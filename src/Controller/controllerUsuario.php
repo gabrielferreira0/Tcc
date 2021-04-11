@@ -27,7 +27,7 @@ class controllerUsuario
 
         $caminho_imagem =  '../imagens/'. $nome_imagem;
         move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
-        
+
         echo 'você parou no upload da foto';
     }
 
