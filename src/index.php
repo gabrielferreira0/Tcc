@@ -337,12 +337,12 @@
 
                 <div class="card-deck">
 
-                    <div class="card col-md-4 cardFormulario">
+                    <div class="card col-md-4 cardFormularioSrv">
                         <img class="card-img-top"
                              src="https://i.pinimg.com/564x/d3/82/f1/d382f1287cfd6bfc7b7c2bd57f04184d.jpg"
                              alt="Card image cap">
                         <div class="card-body">
-
+                            <h5 class="card-title text-center">Eletricista</h5>
                             <div class="form-group" style="display: flex; justify-content:center;">
                                 <button type="button" class="Entrar btn btn btn arredondar">Acessar</button>
                             </div>
@@ -350,7 +350,7 @@
                         </div>
                     </div>
 
-                    <div class="card col-md-4  cardFormulario">
+                    <div class="card col-md-4  cardFormularioSrv">
                         <img class="card-img-top"
                              src="https://i.pinimg.com/564x/49/bc/4b/49bc4ba9caadf877ce63528634371d91.jpg"
                              alt="Card image cap">
@@ -363,7 +363,7 @@
                         </div>
                     </div>
 
-                    <div class="card col-md-4  cardFormulario">
+                    <div class="card col-md-4  cardFormularioSrv">
                         <img class="card-img-top"
                              src="https://i.pinimg.com/564x/3b/75/27/3b75276562539e2fc3b073bc2cc83009.jpg"
                              alt="Card image cap">

@@ -1,15 +1,13 @@
-drop table Users;
+drop table usuarios;
 
-create table Users(
+create table usuarios(
                       id serial primary key not null,
-                      username varchar (50),
-                      senha varchar (50),
-                      email varchar (50),
-                      cpf varchar (50),
-                      nascimento date,
-                      cidade varchar (50),
-                      telefone varchar (50),
-                      UF varchar (50)
+                      usunome varchar (50),
+                      ususenha varchar (50),
+                      usuemail varchar (50),
+                      usucpf varchar (50),
+                      usutelefone varchar (50),
+                      usufoto varchar (100)
 );
 
-select * from users;
+select * from usuarios;

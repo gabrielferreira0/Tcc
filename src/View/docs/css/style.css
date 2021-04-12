@@ -92,6 +92,15 @@ body {
     background: rgba(0, 0, 0, 0.5);
     /* margin-bottom: 15%; */
 }
+.cardFormularioSrv {
+    padding:0;
+    background: rgba(0, 0, 0, 0.5);
+    /* margin-bottom: 15%; */
+}
+.cardFormularioSrv img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 .error {
     color: red;

@@ -120,42 +120,39 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
-                alert(rs);
-                // switch (rs) {
-                //     case 'nomeC':
-                //         $("#alerta3").show().fadeOut(4000);
-                //         break;
-                //     case 'emailC':
-                //         $("#alerta4").show().fadeOut(4000);
-                //         break;
-                //         s
-                //     case 'cpfC':
-                //         $("#alerta5").show().fadeOut(4000);
-                //         break;
-                //     case 'null':
-                //         $("#alerta6").show().fadeOut(4000);
-                //         break;
-                //     case 'CPFinvalido':
-                //         $("#alerta7").show().fadeOut(4000);
-                //         break;
-                //     case '#alerta':
-                //         Swal.fire({
-                //             position: 'center',
-                //             icon: 'success',
-                //             title: 'Cadastro realizado com sucesso!',
-                //             showConfirmButton: false,
-                //             timer: 1500
-                //         })
-                //         $("#Email").val("");
-                //         $("#Username").val("");
-                //         $("#CPF").val("");
-                //         $("#Senha").val("");
-                //         $("#Cidade").val("");
-                //         $("#dt-nascimento").val("");
-                //         $("#Telefone").val("");
-                //         $("#UF").val("UF");
-                //         break;
-                // }
+               console.log(rs);
+                switch (rs) {
+                    case 'nomeC':
+                        $("#alerta3").show().fadeOut(4000);
+                        break;
+                    case 'emailC':
+                        $("#alerta4").show().fadeOut(4000);
+                        break;
+                        s
+                    case 'cpfC':
+                        $("#alerta5").show().fadeOut(4000);
+                        break;
+                    case 'null':
+                        $("#alerta6").show().fadeOut(4000);
+                        break;
+                    case 'CPFinvalido':
+                        $("#alerta7").show().fadeOut(4000);
+                        break;
+                    case 'sucesso':
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Cadastro realizado com sucesso!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $("#Email").val("");
+                        $("#Username").val("");
+                        $("#CPF").val("");
+                        $("#Senha").val("");
+                        $("#Telefone").val("");
+                        break;
+                }
 
             },
             error: function (e) {
