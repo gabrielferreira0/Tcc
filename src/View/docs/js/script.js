@@ -100,16 +100,26 @@ $(document).ready(function () {
         let email = $("#Email").val();
         let formData = new FormData();
         let foto = $('#addFotoGaleria')[0].files[0];
+        let fotoStatus;
         let CPF = $("#CPF").val();
         let telefone = $('#Telefone').val();
 
-        formData.append('username',username);
-        formData.append('senha',senha);
-        formData.append('email',email);
-        formData.append('CPF',CPF);
-        formData.append('foto',foto);
-        formData.append('telefone',telefone);
-        formData.append('rq','cadastrar');
+
+        if (!foto) {
+            fotoStatus = 'false'
+        }
+        else {
+            fotoStatus = 'true'
+        }
+
+        formData.append('username', username);
+        formData.append('senha', senha);
+        formData.append('email', email);
+        formData.append('CPF', CPF);
+        formData.append('foto', foto);
+        formData.append('fotoStatus', fotoStatus);
+        formData.append('telefone', telefone);
+        formData.append('rq', 'cadastrar');
 
         let url = '../src/Controller/index.php';
         $.ajax({
@@ -120,7 +130,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
-               console.log(rs);
+                console.log(rs);
                 switch (rs) {
                     case 'nomeC':
                         $("#alerta3").show().fadeOut(4000);
@@ -271,23 +281,22 @@ $(document).ready(function () {
 
     $('#Conteudo').on('click', '.galeria', function () {
         $("#addFotoGaleria").trigger('click')
-        $( ".miniatura" ).remove();
+        $(".miniatura").remove();
     });
 
 });
 
 
-
-$(function() {
+$(function () {
 // Pré-visualização de várias imagens no navegador
-    var visualizacaoImagens = function(input, lugarParaInserirVisualizacaoDeImagem) {
+    var visualizacaoImagens = function (input, lugarParaInserirVisualizacaoDeImagem) {
         if (input.files) {
             var quantImagens = input.files.length;
 
             for (i = 0; i < quantImagens; i++) {
                 var reader = new FileReader();
 
-                reader.onload = function(event) {
+                reader.onload = function (event) {
                     $($.parseHTML('<img class="miniatura">')).attr('src', event.target.result).appendTo(lugarParaInserirVisualizacaoDeImagem);
                 }
 
@@ -296,7 +305,7 @@ $(function() {
         }
 
     };
-    $('#addFotoGaleria').on('change', function() {
+    $('#addFotoGaleria').on('change', function () {
         $('#foto').remove();
         visualizacaoImagens(this, 'div.galeria');
     });

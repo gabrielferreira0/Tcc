@@ -5,6 +5,13 @@
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/2d4603474c70ba77d78f09f6b9f05db9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/c887073e8d1c8183435103f785ecf93c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/ceec84f652d498e427ca402261ac53ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/d55dc0e34b7eb2ce86ed1970e27f4ef8.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +54,7 @@
       <workItem from="1618002561320" duration="14006000" />
       <workItem from="1618167723353" duration="2748000" />
       <workItem from="1618172806438" duration="306000" />
-      <workItem from="1618261227511" duration="5437000" />
+      <workItem from="1618261227511" duration="10973000" />
     </task>
     <servers />
   </component>

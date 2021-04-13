@@ -18,29 +18,34 @@ class controllerUsuario
         $this->email = $_POST["email"];
         $this->CPF = $_POST["CPF"];
         $this->telefone = $_POST["telefone"];
-        $this->foto = $_FILES['foto'];
 
-        //Gerando um nome unico para a imagem
-        preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
+        if ($_POST["fotoStatus"] == 'false') {
+            $nome_imagem = 'false';
+        } elseif ($_POST["fotoStatus"] == 'true') {
+            $this->foto = $_FILES['foto'];
+            //Gerando um nome unico para a imagem
+            preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
 
-        //URL da pasta para salvar a imagem
-        $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-
-        $caminho_imagem = '../imagens/' . $nome_imagem;
-        move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
-
-//        if ($this->username == '' || $this->senha == '' || $this->email || $this->CPF || $this->telefone == '' || $this->foto == '') {
-//            return false;
-//        }
-
-        $modelUsuario = new modelUsuario($this->username,$this->senha,$this->email,$this->telefone,$nome_imagem,$this->CPF);
-        if ($modelUsuario->verificarUser() && $this->validarCPF($this->CPF)) {
-            $result = $modelUsuario->inserirUser();
-            if ($result) {
-               echo 'sucesso';
-            }
+            //URL da pasta para salvar a imagem
+            $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+            $caminho_imagem = '../imagens/' . $nome_imagem;
         }
 
+        if ($this->username == '' || $this->senha == '' || $this->email == '' || $this->telefone == '') {
+            return 'null';
+        } else {
+            $modelUsuario = new modelUsuario($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF);
+            if ($modelUsuario->verificarUser() && $this->validarCPF($this->CPF)) {
+                $result = $modelUsuario->inserirUser();
+
+                if ($result) {
+                    if ($_POST["fotoStatus"] == 'true'){
+                        move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
+                    }
+                    echo 'sucesso';
+                }
+            }
+        }
     }
 
 
