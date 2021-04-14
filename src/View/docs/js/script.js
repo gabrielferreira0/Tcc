@@ -40,9 +40,9 @@ $(document).ready(function () {
 
     $('#Conteudo').on('click', '#Logar', function () {
 
-        let CPF_login = $('#CPF-login').val();
-        let senha_login = $('#senha-login').val();
-        let url = '../crud/class/index.php';
+        let  CPFlogin =  $('#CPF-login').val().replace(/[^\d]+/g,'')
+        let senhaLogin = $('#senha-login').val();
+        let url = '../src/Controller/index.php';
         $.ajax({
             type: "POST",
             dataType: 'text',
@@ -50,14 +50,14 @@ $(document).ready(function () {
             async: true,
             data: {
                 rq: 'login',
-                CPF_login: CPF_login,
-                senha_login: senha_login,
+                CPFlogin: CPFlogin,
+                senhaLogin: senhaLogin,
             },
             success: function (rs) {
-                //alert(rs);
+               console.log(rs)
                 switch (rs) {
                     case 'true':
-                        window.location.href = "Perfil.php";
+                        window.location.href = "index.php";
                         break;
                     default :
                         Swal.fire({
@@ -101,7 +101,7 @@ $(document).ready(function () {
         let formData = new FormData();
         let foto = $('#addFotoGaleria')[0].files[0];
         let fotoStatus;
-        let CPF = $("#CPF").val();
+        let CPF = $("#CPF").val().replace(/[^\d]+/g,'')
         let telefone = $('#Telefone').val();
 
 

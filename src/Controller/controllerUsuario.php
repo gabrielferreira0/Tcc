@@ -10,6 +10,8 @@ class controllerUsuario
     private $telefone;
     private $foto;
     private $CPF;
+    private $status;
+
 
     public function setUser()
     {
@@ -18,6 +20,7 @@ class controllerUsuario
         $this->email = $_POST["email"];
         $this->CPF = $_POST["CPF"];
         $this->telefone = $_POST["telefone"];
+        $this->status = 'True';
 
         if ($_POST["fotoStatus"] == 'false') {
             $nome_imagem = 'false';
@@ -34,9 +37,11 @@ class controllerUsuario
         if ($this->username == '' || $this->senha == '' || $this->email == '' || $this->telefone == '') {
             return 'null';
         } else {
-            $modelUsuario = new modelUsuario($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF);
+
+            $modelUsuario = new modelUsuario();
+
             if ($modelUsuario->verificarUser() && $this->validarCPF($this->CPF)) {
-                $result = $modelUsuario->inserirUser();
+                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,$this->CPF,$this->status);
 
                 if ($result) {
                     if ($_POST["fotoStatus"] == 'true'){
@@ -74,6 +79,30 @@ class controllerUsuario
             }
         }
         return true;
+    }
+
+    public function logar()
+    {
+        $modelUsuario = new modelUsuario();
+        //session_start();
+        $CPFlogin = $_POST["CPFlogin"];
+        $senhaLogin = $_POST["senhaLogin"];
+
+        $resultado =$modelUsuario->login($CPFlogin,$senhaLogin);
+
+        if (pg_num_rows($resultado[0]) > 0) {
+            $_SESSION['id'] = $resultado[1][0];
+            $_SESSION['User'] = $resultado[1][1];
+            $_SESSION['Password'] = $resultado[1][2];
+            $_SESSION['Email'] = $resultado[1][3];
+            $_SESSION['CPF'] = $resultado[1][4];
+            $_SESSION['Telefone'] = $resultado[1][5];
+            $_SESSION['Foto'] = $resultado[1][6];
+            //header('location:../Perfil.php');
+            echo 'true';
+        } else {
+            echo 'false';
+        }
     }
 
 

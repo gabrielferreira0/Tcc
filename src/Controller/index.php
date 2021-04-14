@@ -9,8 +9,8 @@ if (isset($_POST["rq"])) {
             echo $loadClass->setUser();
             break;
         case 'login':
-            require_once 'Login.php';
-            $loadClass = new Login();
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
             echo $loadClass->logar();
             break;
         case 'update':

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('class/verificar_login.php')
+include ('../Controller/verificarLogin.php')
 ?>
 
 <head>
@@ -24,8 +24,8 @@ include ('class/verificar_login.php')
 
 <body id="Conteudo">
 <div class="navbar  navbar-expand-sm  navbar-dark bg-dark mb-4 menu " role="navigation">
-    <i class="fas fa-user-astronaut nasa"></i>
-    <a class="navbar-brand arredondar " href="index.php">Treinando </a>
+    <i class="fas fa-toolbox logo"></i>
+    <a class="navbar-brand arredondar " href="../index.php"> Treinando</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,13 +37,11 @@ include ('class/verificar_login.php')
                 <a class="nav-link arredondar" href="" >Contato</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link arredondar" href="" target="_blank">Sobre Nós</a>
+                <a class="nav-link arredondar" href="../index.php#sobre">Sobre Nós</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link arredondar selected" href="Perfil.php">Perfil</a>
             </li>
-
         </ul>
 
         <div class="d-flex justify-content-center">
@@ -54,11 +52,6 @@ include ('class/verificar_login.php')
             <!--            <a class="nav-link  text-center loginInput" id='Login'>Login</a>-->
             <a class="nav-link text-center Registrar" id='Deslogar'>Sair</a>
         </div>
-
-        <div class="d-flex align-items-center ">
-            <input class="form-control mr-sm-2 " type="text" placeholder="Pesquisar" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-        </div>
     </div>
 </div>
 <div class="container-fluid ">
@@ -67,7 +60,15 @@ include ('class/verificar_login.php')
             <!--            inicia aqui-->
             <div class="card-body">
                 <h3 class="text-center titulo"> Perfil <i class="fas fa-address-card"></i></h3>
-                <form id="formulario" class="formulario" data-toggle="validator">
+                <form id="formulario" class="formulario" data-toggle="validator"  enctype="multipart/form-data">
+
+                    <div class="d-flex justify-content-center galeria">
+                        <img  class = "miniatura" src="../imagens/<?php echo $_SESSION['Foto']; ?>" >
+                        </div>
+                    <div style="display: none">
+                        <input type="file" multiple id="addFotoGaleria" accept="image/x-png,image/gif,image/jpeg">
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="Username">Usuario:</label>
@@ -116,65 +117,6 @@ include ('class/verificar_login.php')
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
-
-                        <div class="form-group col-xl-6">
-                            <label for="dt-nascimento">Data de nascimento:</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i
-                                                class="fas fa-calendar-alt"></i></span>
-                                </div>
-                                <input  value="<?php echo $_SESSION['Nascimento']; ?>"  type="date" class="form-control arredondar" id="dt-nascimento"
-                                       placeholder="Nascimento" required>
-                            </div>
-                            <div class="error help-block with-errors"></div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-xl-6">
-                            <label for="Cidade">Cidade:</label>
-                            <div class="input-group ">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-city"></i></span>
-                                </div>
-
-                                <input  value="<?php echo $_SESSION['Cidade']; ?>" type="text" class="form-control" id="Cidade"
-                                       placeholder="Brasilia-DF" required>
-                                <div class="input-group-append">
-                                    <select class="form-control " id="UF" required>
-                                        <option id="UF2" value="<?php echo $_SESSION['UF']; ?>"><?php echo $_SESSION['UF']; ?></option>
-                                        <option value="AC">AC</option>
-                                        <option value="AL">AL</option>
-                                        <option value="AP">AP</option>
-                                        <option value="AM">AM</option>
-                                        <option value="BA">BA</option>
-                                        <option value="CE">CE</option>
-                                        <option value="DF">DF</option>
-                                        <option value="ES">ES</option>
-                                        <option value="GO">GO</option>
-                                        <option value="MA">MA</option>
-                                        <option value="MT">MT</option>
-                                        <option value="MS">MS</option>
-                                        <option value="MG">MG</option>
-                                        <option value="PA">PA</option>
-                                        <option value="PB">PB</option>
-                                        <option value="PR">PR</option>
-                                        <option value="PE">PE</option>
-                                        <option value="PI">PI</option>
-                                        <option value="RJ">RJ</option>
-                                        <option value="RN">RN</option>
-                                        <option value="RS">RS</option>
-                                        <option value="RO">RO</option>
-                                        <option value="RR">RR</option>
-                                        <option value="SC">SC</option>
-                                        <option value="SP">SP</option>
-                                        <option value="SE">SE</option>
-                                        <option value="TO">TO</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="error help-block with-errors"></div>
-                        </div>
                         <div class="form-group col-xl-6">
                             <label for="Telefone">Telefone:</label>
                             <div class="input-group">
@@ -182,12 +124,12 @@ include ('class/verificar_login.php')
                                     <span class="input-group-text arredondar"> <i class="fas fa-phone"></i></span>
                                 </div>
                                 <input   value="<?php echo $_SESSION['Telefone']; ?>" type="text" class="form-control arredondar phone-mask" id="Telefone"
-                                       placeholder="(DD) 0000-0000" required>
+                                         placeholder="(DD) 0000-0000" required>
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
                     </div>
-
+            
                     <div class="form-group" style="display: flex; justify-content:flex-end;">
                         <button  style="margin:3px;"  id="Excluir"  type="button" class="btn btn-danger">Excluir</button>
                         <button  style="margin:3px;"  id="Alterar"  type="button" class="btn btn-primary">Alterar</button>

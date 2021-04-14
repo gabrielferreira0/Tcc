@@ -10,28 +10,23 @@ class modelUsuario extends DBconexao
     private $telefone;
     private $foto;
     private $CPF;
+    private $status;
+    private $banco;
 
-    public function __construct($nome,$senha,$email,$telefone,$foto,$CPF)
+    public function __construct()
     {
-        $this->username = $nome;
-        $this->senha = $senha;
-        $this->email = $email;
-        $this->telefone = $telefone;
-        $this->foto = $foto;
-        $this->CPF = $CPF;
-        $banco = new DBconexao();
+        $this->banco = new DBconexao();
     }
 
     public function verificarUser()
     {
-        $banco = new DBconexao();
         $sql = "select usucpf from usuarios where usucpf ='{$this->CPF}';";
-        $rs = pg_query($banco->db, $sql);
+        $rs = pg_query($this->banco->open(), $sql);
         if (pg_num_rows($rs) > 0) {
             echo "cpfC";
         } else {
             $sql = "select usuemail from usuarios where usuemail ='{$this->email}';";
-            $rs = pg_query($banco->db, $sql);
+            $rs = pg_query($this->banco->open(), $sql);
             if (pg_num_rows($rs) > 0) {
                 echo 'emailC';
             } else {
@@ -41,14 +36,29 @@ class modelUsuario extends DBconexao
     }
 
 
-    public function inserirUser(){
-        $banco = new DBconexao();
-        $sql = "insert into usuarios(usunome,ususenha,usuemail,usucpf,usutelefone,usufoto) values ('$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto');";
-        $result = pg_query($banco->db, $sql);
+    public function inserirUser($nome,$senha,$email,$telefone,$foto,$CPF,$status){
+
+        $this->username = $nome;
+        $this->senha = $senha;
+        $this->email = $email;
+        $this->telefone = $telefone;
+        $this->foto = $foto;
+        $this->CPF = $CPF;
+        $this->status = $status;
+        $sql = "insert into usuarios(usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus) values ('$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status);";
+        $result = pg_query($this->banco->open(), $sql);
         return $result;
 
     }
 
+    public function login($CPFlogin,$senhaLogin){
 
+        $sql = "select * from usuarios where usucpf = '{$CPFlogin}'and ususenha ='{$senhaLogin}';";
+        $rs = pg_query($this->banco->open(), $sql);
+        $dados = pg_fetch_array($rs, 0, PGSQL_NUM);
+        $resultado[] = $rs;
+        $resultado[] = $dados;
+        return $resultado;
+    }
 
 }

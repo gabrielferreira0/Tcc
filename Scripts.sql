@@ -7,7 +7,8 @@ create table usuarios(
                       usuemail varchar (50),
                       usucpf varchar (50),
                       usutelefone varchar (50),
-                      usufoto varchar (100)
+                      usufoto varchar (100),
+                      usustatus varchar (20)
 );
 
 select * from usuarios;

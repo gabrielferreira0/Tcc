@@ -7,11 +7,12 @@
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DBconexao.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DBconexao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Perfil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/2d4603474c70ba77d78f09f6b9f05db9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/c887073e8d1c8183435103f785ecf93c.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/ceec84f652d498e427ca402261ac53ab.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/d55dc0e34b7eb2ce86ed1970e27f4ef8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,8 @@
       <workItem from="1618167723353" duration="2748000" />
       <workItem from="1618172806438" duration="306000" />
       <workItem from="1618261227511" duration="10973000" />
+      <workItem from="1618347761681" duration="57000" />
+      <workItem from="1618434723162" duration="7578000" />
     </task>
     <servers />
   </component>
@@ -89,7 +92,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../CRUD-PHP/Crud/docs/js/teste.js</url>
           <line>7</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
