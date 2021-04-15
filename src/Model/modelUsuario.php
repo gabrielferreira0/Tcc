@@ -18,14 +18,14 @@ class modelUsuario extends DBconexao
         $this->banco = new DBconexao();
     }
 
-    public function verificarUser()
+    public function verificarUser($CPF)
     {
-        $sql = "select usucpf from usuarios where usucpf ='{$this->CPF}';";
+        $sql = "select usucpf from usuarios where usucpf ='{$CPF}';";
         $rs = pg_query($this->banco->open(), $sql);
         if (pg_num_rows($rs) > 0) {
             echo "cpfC";
         } else {
-            $sql = "select usuemail from usuarios where usuemail ='{$this->email}';";
+            $sql = "select usuemail from usuarios where usuemail ='{$CPF}';";
             $rs = pg_query($this->banco->open(), $sql);
             if (pg_num_rows($rs) > 0) {
                 echo 'emailC';

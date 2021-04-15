@@ -91,6 +91,15 @@ $(document).ready(function () {
         $("#cardCadastro").show();
     });
 
+    $('#Conteudo').on('click', '#sobreteste', function () {
+        $("#cardCadastro").hide();
+        $("#cardLogin").hide();
+        $("#cardServicos").show();
+        $("#sobre").show();
+        window.location.href = "index.php#sobre"
+    });
+
+
     $('#Conteudo').on('click', '#cadastrar', function () {
         // let nascimento = $("#dt-nascimento").val();
         //let cidade = $("#Cidade").val();
@@ -257,7 +266,7 @@ $(document).ready(function () {
     });
 
     $('#Conteudo').on('click', '#Deslogar', function () {
-        let url = '../crud/class/index.php';
+        let url = '../src/Controller/index.php';
         $.ajax({
             type: "POST",
             dataType: 'text',
@@ -267,9 +276,34 @@ $(document).ready(function () {
                 rq: 'deslogar',
             },
             success: function (rs) {
+                console.log(rs);
                 switch (rs) {
-                    case 'true':
+                    case 'true' :
                         window.location.href = "index.php";
+                        break;
+                }
+            },
+            error: function (e) {
+                bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+            }
+        });
+    });
+
+    $('#Conteudo').on('click', '#Deslogar2', function () {
+        let url = '../../src/Controller/index.php';
+        $.ajax({
+            type: "POST",
+            dataType: 'text',
+            url: url,
+            async: true,
+            data: {
+                rq: 'deslogar',
+            },
+            success: function (rs) {
+                console.log(rs);
+                switch (rs) {
+                    case 'true' :
+                        window.location.href = "../index.php";
                         break;
                 }
             },

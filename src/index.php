@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro teste</title>
+    <title>Serviços</title>
     <link href="View/docs/fonts/fontawesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="View/docs/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="View/docs/plugins/jquery/jquery-3.4.1.min.js"></script>
@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <script src="View/docs/plugins/bootstrap-4.1.3-dist/js/validator.min.js"></script>
 </head>
-
 <body id="Conteudo">
 
 <div class="navbar  navbar-expand-sm  navbar-dark bg-dark mb-4 menu " role="navigation">
@@ -34,7 +33,7 @@
                 <a class="nav-link arredondar" href="" target="_blank">Trabalhe Conosco</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link arredondar" href="#sobre">Sobre Nós</a>
+                <a class="nav-link arredondar" id ="sobreteste" >Sobre Nós</a>
             </li>
 
             <?php
@@ -47,36 +46,32 @@
             ?>
         </ul>
 
-        <?php
-
-        if (isset ($_SESSION['CPF'])) {
-            echo '<div class="d-flex justify-content-center">
-                    <span style="color: lightgray" class="nav-link arredondar" href="Perfil.php">Bem vindo,  ' . $_SESSION['User'] . '</span>
-                   </div>';
-        }
-        ?>
-        <div class="d-flex justify-content-start ">
-
-
-
+        <div class="d-flex justify-content-center">
             <?php
-            if (isset ($_SESSION['CPF'])) {
-                echo '<div class="d-flex justify-content-start">
-            <a class="nav-link text-center Registrar" id="Deslogar">Sair</a>
-        </div>';
-            } else {
-                echo '  <div class="d-flex justify-content-md-center ">
-            <a class="nav-link  text-center loginInput" id="Login">Login</a>
-            <a class="nav-link text-center Registrar" id="Registrar">Cadastrar</a>
-        </div>';
+
+            if (isset ($_SESSION['CPF'])  && $_SESSION['Foto'] != 'false') {
+                echo '<span style="color: lightgray" class="nav-link arredondar" href="Perfil.php">'.$_SESSION['User'] . '</span>';
+                echo '<img  class = "avatar" src="imagens/'.$_SESSION['Foto'].'" >';
+            }
+            elseif (isset ($_SESSION['CPF']) && $_SESSION['Foto'] == 'false') {
+                echo '<span style="color: lightgray" class="nav-link arredondar" href="Perfil.php">'.$_SESSION['User'] . '</span>';
+                echo  '<span class="fa fa-user-circle aff text-center"></span>';
             }
             ?>
 
-
+        </div>
+            <?php
+            if (isset ($_SESSION['CPF'])) {
+                echo '
+            <a class="nav-link text-center Deslogar" id="Deslogar">Sair</a>';
+            } else {
+                echo '<a class="nav-link  text-center loginInput" id="Login">Login</a>
+            <a class="nav-link text-center Registrar" id="Registrar">Cadastrar</a>';
+            }
+            ?>
         </div>
     </div>
 </div>
-
 
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
@@ -379,54 +374,18 @@
                     </div>
                 </div>
             </div>
-
     </div>
 </div>
 
 
 <section class="page-section geral" id="sobre">
-    <div class="container">
-        <div class="text-center">
-            <h1 class="text-center"> Sobre nós</h1>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-bullseye fa-stack-1x fa-inverse"></i>
-                        </span>
-                <h4 class="my-3">Missão</h4>
-                <p>Proporcionar um ambiente onde as pessoas encontrarão os melhores profissionais de serviços de
-                    pequenos reparos com base nas recomendações de seus clientes, permitindo que os melhores
-                    profissionais mantenham a continuidade de seus trabalhos.</p>
-            </div>
-            <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-eye fa-stack-1x fa-inverse"></i>
-                        </span>
-                <h4 class="my-3">Visão</h4>
-                <p>Ser referência no mercado de pequenos reparos para quem busca ou presta esse serviço.</p>
-            </div>
-            <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
-                        </span>
-                <h4 class="my-3">Valores</h4>
-                <p>Nossos valores são transparência, confiança, responsabilidade nos serviços oferecidos para os
-                    clientes e profissionais.</p>
-            </div>
-        </div>
-    </div>
+    <?php
+    include ('View/Sobre.php');
+    ?>
 </section>
 
-<footer class="bg-dark ">
-    <!-- Copyright -->
-    <div style="color:aliceblue;" class="footer-copyright text-center py-3">© 2020 desenvolvido por:
-        <a> @Gabrovsski </a>
-    </div>
-    <!-- Copyright -->
-</footer>
+<?php
+include ('View/Footer.php');
+?>
 <!-- Footer -->
 </body>

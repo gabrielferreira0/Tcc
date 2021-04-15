@@ -24,8 +24,8 @@ if (isset($_POST["rq"])) {
             echo $loadClass->delete();
             break;
         case 'deslogar':
-            require_once 'Deslogar.php';
-            $loadClass = new Deslogar();
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
             echo $loadClass->deslogar();
             break;
     }

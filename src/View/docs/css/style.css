@@ -9,6 +9,20 @@
 }
 
 
+.aff {
+    font-size: 50px;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.avatar {
+    height: 50px;
+    width : 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
 #foto {
     height: 75px;
     cursor: pointer;
@@ -19,10 +33,6 @@
 }
 #foto:hover {
     background-color: #4faddb;
-}
-.sobre{
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
 }
 body {
     background-image: url(../img/background3.jpg);
@@ -75,7 +85,7 @@ body {
     border-radius: 10px;
 }
 
-.Registrar {
+.Registrar , .Deslogar{
     background: #f50a31;
     color: #fff;
     border-radius: 15px;
@@ -134,7 +144,15 @@ footer {
     filter: brightness(90%);
 }
 
-#login, #Registrar, #Deslogar {
+#login, #Registrar,#Deslogar {
     color: white;
     cursor: pointer;
 }
+
+#Deslogar2 {
+    color: white;
+    cursor: pointer;
+}
+
+
+

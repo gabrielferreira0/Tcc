@@ -40,7 +40,7 @@ class controllerUsuario
 
             $modelUsuario = new modelUsuario();
 
-            if ($modelUsuario->verificarUser() && $this->validarCPF($this->CPF)) {
+            if ($modelUsuario->verificarUser($this->CPF) && $this->validarCPF($this->CPF)) {
                 $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,$this->CPF,$this->status);
 
                 if ($result) {
@@ -103,6 +103,11 @@ class controllerUsuario
         } else {
             echo 'false';
         }
+    }
+
+    public function deslogar(){
+        session_destroy();
+        return 'true';
     }
 
 
