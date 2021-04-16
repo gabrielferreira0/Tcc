@@ -11,6 +11,7 @@ class controllerUsuario
     private $foto;
     private $CPF;
     private $status;
+    private $tipo;
 
 
     public function setUser()
@@ -20,6 +21,7 @@ class controllerUsuario
         $this->email = $_POST["email"];
         $this->CPF = $_POST["CPF"];
         $this->telefone = $_POST["telefone"];
+        $this->tipo = 2;
         $this->status = 'True';
 
         if ($_POST["fotoStatus"] == 'false') {
@@ -41,7 +43,7 @@ class controllerUsuario
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF) && $this->validarCPF($this->CPF)) {
-                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,$this->CPF,$this->status);
+                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,$this->CPF,$this->status,$this->tipo);
 
                 if ($result) {
                     if ($_POST["fotoStatus"] == 'true'){
@@ -90,6 +92,7 @@ class controllerUsuario
 
         $resultado =$modelUsuario->login($CPFlogin,$senhaLogin);
 
+
         if (pg_num_rows($resultado[0]) > 0) {
             $_SESSION['id'] = $resultado[1][0];
             $_SESSION['User'] = $resultado[1][1];
@@ -98,6 +101,7 @@ class controllerUsuario
             $_SESSION['CPF'] = $resultado[1][4];
             $_SESSION['Telefone'] = $resultado[1][5];
             $_SESSION['Foto'] = $resultado[1][6];
+            $_SESSION['Tipo'] = $resultado[1][8];
             //header('location:../Perfil.php');
             echo 'true';
         } else {

@@ -15,11 +15,14 @@ create table usuarios(
                       usutelefone varchar (50),
                       usufoto varchar (100),
                       usustatus varchar (20),
-                      usutipo int REFERENCES tipoUsuario (id)
+                      usutipo integer REFERENCES tipoUsuario (id)
 );
 
 INSERT INTO tipoUsuario (perfil) VALUES ('Admin');
 INSERT INTO tipoUsuario (perfil) VALUES ('Cliente');
 INSERT INTO tipoUsuario (perfil) VALUES ('Profissional');
+
 select * from usuarios;
 select * from tipoUsuario;
+UPDATE usuarios SET usutipo = 1 WHERE usucpf = '';
+

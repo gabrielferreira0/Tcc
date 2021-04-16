@@ -17,9 +17,15 @@
             <li class="nav-item">
                 <a class="nav-link arredondar" href="Perfil.php">Perfil</a>
             </li>
+
+            <?php
+            if (isset ($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
+                echo '<li class="nav-item">
+                        <a class="nav-link arredondar" href="Perfil.php">Painel</a>
+                       </li>';
+            }
+            ?>
         </ul>
-
-
         <div class="d-flex justify-content-center">
             <?php
             if ($_SESSION['Foto'] != 'false') {

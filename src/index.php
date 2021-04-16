@@ -43,6 +43,11 @@
                         <a class="nav-link arredondar" href="View/Perfil.php">Perfil</a>
                        </li>';
             }
+            if (isset ($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
+                echo '<li class="nav-item">
+                        <a class="nav-link arredondar" href="View/Perfil.php">Painel</a>
+                       </li>';
+            }
             ?>
         </ul>
 
