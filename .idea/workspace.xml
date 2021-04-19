@@ -7,9 +7,16 @@
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/modelUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Sobre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Sobre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/0cb3b21eeecae16fc1d2221c1fadfc5d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/0fbcfb6d906882be0a688ae4270de785.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/8640b4fde6f98f8f1307226691dff654.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/c3de7abda1161fb72fbfb60e2e5a2df8.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +63,8 @@
       <workItem from="1618347761681" duration="57000" />
       <workItem from="1618434723162" duration="7756000" />
       <workItem from="1618519795243" duration="11097000" />
-      <workItem from="1618611135572" duration="1351000" />
+      <workItem from="1618611135572" duration="1514000" />
+      <workItem from="1618867350101" duration="7538000" />
     </task>
     <servers />
   </component>
@@ -80,18 +88,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>31</line>
+          <line>30</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>79</line>
+          <line>78</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../CRUD-PHP/Crud/docs/js/teste.js</url>
           <line>7</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
+          <line>332</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/../CRUD-PHP/Crud/class/Deletar.php</url>
+          <line>5</line>
+          <properties>
+            <option name="className" value="\deletar" />
+            <option name="methodName" value="delete" />
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

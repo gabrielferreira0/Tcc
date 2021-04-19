@@ -14,14 +14,14 @@ if (isset($_POST["rq"])) {
             echo $loadClass->logar();
             break;
         case 'update':
-            require_once 'Atualizar.php';
-            $loadClass = new Atualizar();
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
             echo $loadClass->update();
             break;
         case 'delete':
-            require_once 'Deletar.php';
-            $loadClass = new Deletar();
-            echo $loadClass->delete();
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
+            $loadClass->delete();
             break;
         case 'deslogar':
             require_once 'controllerUsuario.php';

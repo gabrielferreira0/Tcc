@@ -31,8 +31,22 @@
     background: rgba(0, 0, 0, 0.8);
 
 }
+
+
+.sobreNos {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 0;
+}
+
+.bordar {
+    border-bottom:1px solid white ;
+
+}
+
 #foto:hover {
     background-color: #4faddb;
+
 }
 body {
     background-image: url(../img/background3.jpg);

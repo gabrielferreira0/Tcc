@@ -22,7 +22,7 @@ include ('Navbar.php');
             <!--            inicia aqui-->
             <div class="card-body">
                 <h3 class="text-center titulo"> Perfil <i class="fas fa-address-card"></i></h3>
-                <form id="formulario" class="formulario" data-toggle="validator"  enctype="multipart/form-data">
+                <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
 
                     <div class="d-flex justify-content-center galeria">
 
@@ -57,12 +57,12 @@ include ('Navbar.php');
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="Senha">Senha:</label>
+                            <label for="Senha">Nova senha:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-lock"></i></span>
                                 </div>
-                                <input value="<?php echo $_SESSION['Password']; ?>" type="text" class="form-control arredondar" id="Senha" placeholder="Senha"
+                                <input  type="text" class="form-control arredondar" id="Senha" placeholder="Senha"
                                        maxlength="20" required>
                             </div>
                             <div class="error help-block with-errors"></div>

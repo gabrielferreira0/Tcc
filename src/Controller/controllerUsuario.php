@@ -43,16 +43,67 @@ class controllerUsuario
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF) && $this->validarCPF($this->CPF)) {
-                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,$this->CPF,$this->status,$this->tipo);
+                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo);
 
                 if ($result) {
-                    if ($_POST["fotoStatus"] == 'true'){
+                    if ($_POST["fotoStatus"] == 'true') {
                         move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
                     }
                     echo 'sucesso';
                 }
             }
         }
+    }
+
+    public function update()
+    {
+        $id = $_SESSION['id'];
+        $this->username = $_POST["username"];
+        $this->telefone = $_POST["telefone"];
+
+
+        if ($_POST["senhaStatus"] == 'true') {
+            $this->senha = $_POST["senha"];
+        }
+
+        if ($_POST["fotoStatusupd"] == 'false') {
+            $nome_imagem = 'false';
+        } elseif ($_POST["fotoStatusupd"] == 'true') {
+            $this->foto = $_FILES['foto'];
+            //Gerando um nome unico para a imagem
+            preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
+
+            //URL da pasta para salvar a imagem
+            $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+            $caminho_imagem = '../imagens/' . $nome_imagem;
+        }
+
+        if ($this->username == '' || $this->telefone == '') {
+            return 'null';
+        } else {
+            $modelUsuario = new modelUsuario();
+            if ($_POST["senhaStatus"] == 'true') {
+                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone,$nome_imagem);
+            } elseif ($_POST["senhaStatus"] == 'false') {
+                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone,$nome_imagem);
+            }
+
+            if ($result) {
+                $_SESSION['User'] = $this->username;
+                $_SESSION['Password'] = $this->senha;
+                $_SESSION['Telefone'] = $this->telefone;
+                $_SESSION['Foto'] = $nome_imagem;
+
+                if ($_POST["fotoStatusupd"] == 'true') {
+                    move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
+                }
+
+                return 'sucesso';
+            } else {
+                return 'false';
+            }
+        }
+
     }
 
 
@@ -90,7 +141,7 @@ class controllerUsuario
         $CPFlogin = $_POST["CPFlogin"];
         $senhaLogin = $_POST["senhaLogin"];
 
-        $resultado =$modelUsuario->login($CPFlogin,$senhaLogin);
+        $resultado = $modelUsuario->login($CPFlogin, $senhaLogin);
 
 
         if (pg_num_rows($resultado[0]) > 0) {
@@ -109,10 +160,18 @@ class controllerUsuario
         }
     }
 
-    public function deslogar(){
+    public function deslogar()
+    {
         session_destroy();
         return 'true';
     }
+    public function delete()
+    {
+        $id = $_SESSION['id'];
+        $modelUsuario = new modelUsuario();
+        $resultado = $modelUsuario->deletar($id);
+        session_destroy();
 
+    }
 
 }

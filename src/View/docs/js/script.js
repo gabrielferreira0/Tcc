@@ -28,7 +28,6 @@ $(document).ready(function () {
     let telefone = $("#Telefone");
     telefone.mask('(00) 0000-0000');
 
-
     $('#Conteudo').on('click', '#Login', function () {
         $("#cardServicos").hide();
         $("#cardCadastro").hide();
@@ -40,7 +39,7 @@ $(document).ready(function () {
 
     $('#Conteudo').on('click', '#Logar', function () {
 
-        let  CPFlogin =  $('#CPF-login').val().replace(/[^\d]+/g,'')
+        let CPFlogin = $('#CPF-login').val().replace(/[^\d]+/g, '')
         let senhaLogin = $('#senha-login').val();
         let url = '../src/Controller/index.php';
         $.ajax({
@@ -54,7 +53,7 @@ $(document).ready(function () {
                 senhaLogin: senhaLogin,
             },
             success: function (rs) {
-               console.log(rs)
+                console.log(rs)
                 switch (rs) {
                     case 'true':
                         window.location.href = "index.php";
@@ -110,14 +109,12 @@ $(document).ready(function () {
         let formData = new FormData();
         let foto = $('#addFotoGaleria')[0].files[0];
         let fotoStatus;
-        let CPF = $("#CPF").val().replace(/[^\d]+/g,'')
+        let CPF = $("#CPF").val().replace(/[^\d]+/g, '')
         let telefone = $('#Telefone').val();
-
 
         if (!foto) {
             fotoStatus = 'false'
-        }
-        else {
+        } else {
             fotoStatus = 'true'
         }
 
@@ -184,28 +181,41 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#Alterar', function () {
         let username = $("#Username").val();
         let senha = $("#Senha").val();
-        let nascimento = $("#dt-nascimento").val();
-        let cidade = $("#Cidade").val();
         let telefone = $('#Telefone').val();
-        let UF = $("#UF option:selected").val();
-        let url = '../crud/class/index.php';
-        $.ajax({
-            type: "POST",
-            dataType: 'text',
-            url: url,
-            async: true,
-            data: {
-                rq: 'update',
-                Username: username,
-                Senha: senha,
-                Nascimento: nascimento,
-                Cidade: cidade,
-                Telefone: telefone,
-                UF: UF,
-            },
-            success: function (rs) {
+        let foto = $('#addFotoGaleria')[0].files[0];
+        let fotoStatus;
+        let senhaStatus;
+        let url = '../../src/Controller/index.php';
 
-                console.log(rs);
+        if (!foto) {
+            fotoStatus = 'false'
+        } else {
+            fotoStatus = 'true'
+        }
+
+        if (!senha) {
+            senhaStatus = 'false'
+        } else {
+            senhaStatus = 'true'
+        }
+
+        let formData = new FormData();
+        formData.append('username', username);
+        formData.append('senha', senha);
+        formData.append('foto', foto);
+        formData.append('fotoStatusupd', fotoStatus);
+        formData.append('senhaStatus', senhaStatus);
+        formData.append('telefone', telefone);
+        formData.append('rq', 'update');
+
+        $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'post',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (rs) {
                 switch (rs) {
                     case 'false':
                         bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
@@ -214,7 +224,6 @@ $(document).ready(function () {
                         $("#alerta6").show().fadeOut(4000);
                         break;
                     default:
-                        rs = rs.split(",")
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
@@ -222,12 +231,7 @@ $(document).ready(function () {
                             showConfirmButton: false,
                             timer: 1500,
                         })
-                        $('#Welcome').html("Bem vindo, " + rs[0]);
-                        // $('#Senha').html(rs[1]);
-                        // $('#dt-nascimento').html(rs[2]);
-                        // $('#Cidade').html(rs[3]);
-                        // $('#Telefone').html(rs[4]);
-                        // $('#UF2').html(rs[5]);
+                        $('#Welcome').html(username);
                         break;
                 }
             },
@@ -238,7 +242,7 @@ $(document).ready(function () {
     });
 
     $('#Conteudo').on('click', '#Excluir', function () {
-        let url = '../crud/class/index.php';
+        let url = '../../src/Controller/index.php';
         $.ajax({
             type: "POST",
             dataType: 'text',
@@ -318,6 +322,9 @@ $(document).ready(function () {
         $(".miniatura").remove();
     });
 
+
+
+
 });
 
 
@@ -339,6 +346,7 @@ $(function () {
         }
 
     };
+
     $('#addFotoGaleria').on('change', function () {
         $('#foto').remove();
         visualizacaoImagens(this, 'div.galeria');
