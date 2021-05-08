@@ -20,7 +20,7 @@
 
 <div class="navbar  navbar-expand-sm  navbar-dark bg-dark mb-4 menu " role="navigation">
     <i class="fas fa-toolbox logo"></i>
-    <a class="navbar-brand arredondar " href=""> Treinando</a>
+    <a class="navbar-brand arredondar " href=""> WeDo</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
             }
             if (isset ($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
-                        <a class="nav-link arredondar" href="View/Perfil.php">Painel</a>
+                        <a class="nav-link arredondar" href="View/Painel.php">Painel</a>
                        </li>';
             }
             ?>
@@ -345,6 +345,7 @@
                              alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title text-center">Eletricista</h5>
+
                             <div class="form-group" style="display: flex; justify-content:center;">
                                 <button type="button" class="Entrar btn btn btn arredondar">Acessar</button>
                             </div>

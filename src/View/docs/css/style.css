@@ -3,7 +3,7 @@
 .miniatura {
     height: 120px;
     width : 100px;
-    border: 1px solid #000;
+    border: 1px solid transparent;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -27,9 +27,14 @@
     height: 75px;
     cursor: pointer;
     border-radius: 50%;
-    border: 1px solid #000;
+    border: 1px solid transparent;
     background: rgba(0, 0, 0, 0.8);
 
+}
+#imgCategoria{
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
 }
 
 
@@ -168,5 +173,19 @@ footer {
     cursor: pointer;
 }
 
+.painel {
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.painel:hover {
+    /*background-color: #4faddb;*/
+    /*color: #000;*/
+    filter: brightness(90%);
+}
+
+.teste {
+
+}
 
 
