@@ -1,11 +1,20 @@
 
 
+
+
 .miniatura {
     height: 120px;
     width : 100px;
     border: 1px solid transparent;
     border-radius: 50%;
     cursor: pointer;
+}
+.miniaturaCat {
+    height: 13rem;
+    width : 13rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 

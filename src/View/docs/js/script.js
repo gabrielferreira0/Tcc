@@ -323,6 +323,11 @@ $(document).ready(function () {
     });
 
 
+    $('#Conteudo').on('click', '#imgCategoria', function () {
+        $("#addFotoCat").trigger('click')
+        $(".miniatura").remove();
+    });
+
 
 
 });
@@ -347,10 +352,33 @@ $(function () {
 
     };
 
+    var visualizacaoImagensCat = function (input, lugarParaInserirVisualizacaoDeImagem) {
+        if (input.files) {
+            var quantImagens = input.files.length;
+
+            for (i = 0; i < quantImagens; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function (event) {
+                    $($.parseHTML('<img class="miniaturaCat">')).attr('src', event.target.result).appendTo(lugarParaInserirVisualizacaoDeImagem);
+                }
+
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+
+
+
     $('#addFotoGaleria').on('change', function () {
         $('#foto').remove();
         visualizacaoImagens(this, 'div.galeria');
     });
 
+    $('#addFotoCat').on('change', function () {
+        $('#imgCategoria').children().remove();
+        visualizacaoImagensCat(this, 'div#imgCategoria');
+    });
 
 });

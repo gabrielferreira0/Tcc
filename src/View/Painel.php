@@ -50,18 +50,15 @@ include('Navbar.php');
                     <div class="d-flex justify-content-center">
                         <label  class="text-center" for="addFotoGaleria"> Imagem da categoria:</label>
                     </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="d-flex align-items-center d-flex justify-content-center col-8 col-md-8"
-                             id="imgCategoria"
+                    <div  id = "dmo" class="d-flex justify-content-center">
+                        <div class="d-flex align-items-center d-flex justify-content-center col-8 col-md-8" id="imgCategoria"
                              title="Foto da categoria">
                             <span style="font-size: 6rem" class="far fa-image"></span>
                         </div>
                     </div>
 
-
                     <div style="display: none">
-                        <input type="file" multiple id="addFotoGaleria" accept="image/x-png,image/gif,image/jpeg">
+                        <input type="file" multiple id="addFotoCat" accept="image/x-png,image/gif,image/jpeg">
                     </div>
 
                 </form>
