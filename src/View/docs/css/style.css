@@ -1,17 +1,15 @@
 
-
-
-
 .miniatura {
     height: 120px;
-    width : 100px;
+    width: 100px;
     border: 1px solid transparent;
     border-radius: 50%;
     cursor: pointer;
 }
+
 .miniaturaCat {
     height: 13rem;
-    width : 13rem;
+    width: 13rem;
     border: 1px solid transparent;
     cursor: pointer;
     border-radius: 5px;
@@ -26,7 +24,7 @@
 
 .avatar {
     height: 50px;
-    width : 50px;
+    width: 50px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -40,7 +38,8 @@
     background: rgba(0, 0, 0, 0.8);
 
 }
-#imgCategoria{
+
+#imgCategoria {
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -54,7 +53,7 @@
 }
 
 .bordar {
-    border-bottom:1px solid white ;
+    border-bottom: 1px solid white;
 
 }
 
@@ -62,6 +61,7 @@
     background-color: #4faddb;
 
 }
+
 body {
     background-image: url(../img/background3.jpg);
     background-repeat: no-repeat;
@@ -70,7 +70,8 @@ body {
     background-attachment: fixed;
     position: relative;
     padding-bottom: 100px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .icone {
@@ -85,8 +86,8 @@ body {
 }
 
 .logo {
-    color: lightgray;
-    font-size: 60px;
+    width: 145px;
+    height: 39px;
 }
 
 .titulo {
@@ -113,7 +114,7 @@ body {
     border-radius: 10px;
 }
 
-.Registrar , .Deslogar{
+.Registrar, .Deslogar {
     background: #f50a31;
     color: #fff;
     border-radius: 15px;
@@ -130,11 +131,13 @@ body {
     background: rgba(0, 0, 0, 0.5);
     /* margin-bottom: 15%; */
 }
+
 .cardFormularioSrv {
-    padding:0;
+    padding: 0;
     background: rgba(0, 0, 0, 0.5);
     /* margin-bottom: 15%; */
 }
+
 .cardFormularioSrv img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -149,6 +152,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    background: #202020 ;
 }
 
 
@@ -166,13 +170,14 @@ footer {
     background: #f50a31;
     color: white;
 }
+
 .entrar:hover {
     /*background-color: #4faddb;*/
     /*color: #000;*/
     filter: brightness(90%);
 }
 
-#login, #Registrar,#Deslogar {
+#login, #Registrar, #Deslogar {
     color: white;
     cursor: pointer;
 }

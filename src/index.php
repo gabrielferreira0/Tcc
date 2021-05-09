@@ -13,14 +13,15 @@
     <script src="View/docs/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="View/docs/js/script.js"></script>
     <link rel="stylesheet" href="View/docs/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="View/docs/plugins/bootstrap-4.1.3-dist/js/validator.min.js"></script>
 </head>
 <body id="Conteudo">
 
-<div class="navbar  navbar-expand-sm  navbar-dark bg-dark mb-4 menu " role="navigation">
-    <i class="fas fa-toolbox logo"></i>
-    <a class="navbar-brand arredondar " href=""> WeDo</a>
+<div class="navbar  navbar-expand-sm  navbar-dark  mb-4 menu " role="navigation" style="background: #202020" >
+
+    <img class="logo" src="imagens/logo.png" alt="logo">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -353,10 +354,10 @@
                 </div>
                 <div class="card  col-md-10 cardFormularioSrv">
                     <img class="card-img-top"
-                         src="https://i.pinimg.com/564x/d3/82/f1/d382f1287cfd6bfc7b7c2bd57f04184d.jpg"
+                         src="imagens/encanador.jpg"
                          alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Eletricista</h5>
+                        <h5 class="card-title text-center">Encanador</h5>
 
                         <div class="form-group" style="display: flex; justify-content:center;">
                             <button type="button" class="Entrar btn btn btn arredondar">Acessar</button>

@@ -1,6 +1,6 @@
-<footer class="bg-dark  ">
+<footer  class="dark " >
     <!-- Copyright -->
-    <div style="color:aliceblue;" class="footer-copyright text-center py-3">© 2020 desenvolvido por:
+    <div style="color:white;" class="footer-copyright text-center py-3">© 2020 desenvolvido por:
         <a> @Gabrovsski </a>
     </div>
     <!-- Copyright -->
