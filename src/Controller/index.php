@@ -28,6 +28,10 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerUsuario();
             echo $loadClass->deslogar();
             break;
+        case 'salvarCat':
+            require_once 'controllerCategoria.php';
+            $loadClass = new controllerCategoria();
+            return $loadClass->setCategoria();
+            break;
     }
 }
-?>

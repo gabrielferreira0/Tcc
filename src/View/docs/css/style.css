@@ -16,7 +16,7 @@
 }
 
 
-.aff {
+.photo {
     font-size: 50px;
     cursor: pointer;
     color: lightgray;
@@ -101,9 +101,7 @@ body {
     background: #343a40;
 }
 
-
-
-.menu:not(:first-child) :hover{
+.menu  a:hover{
     background-color: #4faddb;
     color: #000;
   }

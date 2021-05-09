@@ -58,7 +58,7 @@ $(document).ready(function () {
                     case 'true':
                         window.location.href = "index.php";
                         break;
-                    default :
+                    default:
                         Swal.fire({
                             position: 'center',
                             icon: 'error',
@@ -97,6 +97,8 @@ $(document).ready(function () {
         $("#sobre").show();
         window.location.href = "index.php#sobre"
     });
+
+
 
 
     $('#Conteudo').on('click', '#cadastrar', function () {
@@ -241,6 +243,35 @@ $(document).ready(function () {
         });
     });
 
+
+    $('#Conteudo').on('click', '#salvarCat', function () {
+        let categoria = $("#Categoria").val();
+        let fotoCategoria = $('#addFotoCat')[0].files[0];
+        let formData = new FormData();
+        formData.append('categoria', categoria)
+        formData.append('fotoCategoria', fotoCategoria)
+        formData.append('rq', 'salvarCat');
+        let url = '../../src/Controller/index.php';
+
+        $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'post',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (rs) {
+                console.log(rs)
+                // $("#catSucesso").show().fadeOut(4000);
+            },
+            error: function (e) {
+                bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+            }
+        });
+
+    });
+
+
     $('#Conteudo').on('click', '#Excluir', function () {
         let url = '../../src/Controller/index.php';
         $.ajax({
@@ -282,7 +313,7 @@ $(document).ready(function () {
             success: function (rs) {
                 console.log(rs);
                 switch (rs) {
-                    case 'true' :
+                    case 'true':
                         window.location.href = "index.php";
                         break;
                 }
@@ -306,7 +337,7 @@ $(document).ready(function () {
             success: function (rs) {
                 console.log(rs);
                 switch (rs) {
-                    case 'true' :
+                    case 'true':
                         window.location.href = "../index.php";
                         break;
                 }
@@ -334,7 +365,7 @@ $(document).ready(function () {
 
 
 $(function () {
-// Pré-visualização de várias imagens no navegador
+    // Pré-visualização de várias imagens no navegador
     var visualizacaoImagens = function (input, lugarParaInserirVisualizacaoDeImagem) {
         if (input.files) {
             var quantImagens = input.files.length;
