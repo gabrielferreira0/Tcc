@@ -1,6 +1,9 @@
-<div class="navbar  navbar-expand-sm  navbar-dark bg-dark mb-4 menu " role="navigation">
-    <i class="fas fa-toolbox logo"></i>
-    <a class="navbar-brand arredondar " href="../index.php"> WeDo</a>
+<div class="navbar  navbar-expand-sm  navbar-dark mb-4 menu " role="navigation"  style="background: #202020" >
+
+
+  <a style="text-decoration:none;" href=" ../index.php"> 
+  <img   class="logo" src="../imagens/logo.png" alt="logo">
+   </a> 
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

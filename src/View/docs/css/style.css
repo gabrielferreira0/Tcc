@@ -88,6 +88,7 @@ body {
 .logo {
     width: 145px;
     height: 39px;
+    cursor: pointer;
 }
 
 .titulo {
@@ -100,15 +101,14 @@ body {
     background: #343a40;
 }
 
-.menu a:hover {
-    background-color: #4faddb;
-    color: #000;
-}
 
-.menu a.selected {
+
+.menu:not(:first-child) :hover{
     background-color: #4faddb;
     color: #000;
-}
+  }
+  
+
 
 .arredondar {
     border-radius: 10px;

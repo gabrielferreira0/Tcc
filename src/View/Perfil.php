@@ -45,11 +45,11 @@ include ('Navbar.php');
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
                             <label for="Username">Usuario:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-miniaturatext arredondar"> <i class="fas fa-user"></i></span>
+                                <span class="input-group-text arredondar"> <i class="fas fa-user"></i></span>
                                 </div>
                                 <input  value="<?php echo $_SESSION['User']; ?>"  type="text" class="form-control arredondar" id="Username" placeholder="Usuario"
                                        required>

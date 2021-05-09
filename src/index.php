@@ -20,8 +20,9 @@
 <body id="Conteudo">
 
 <div class="navbar  navbar-expand-sm  navbar-dark  mb-4 menu " role="navigation" style="background: #202020" >
-
-    <img class="logo" src="imagens/logo.png" alt="logo">
+    <div  href="../index.php">
+        <img  href="../index.php"  class="logo" src="imagens/logo.png" alt="logo">
+    </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
