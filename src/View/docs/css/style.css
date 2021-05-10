@@ -101,11 +101,10 @@ body {
     background: #343a40;
 }
 
-.menu  a:hover{
+.menu a:hover {
     background-color: #4faddb;
     color: #000;
-  }
-  
+}
 
 
 .arredondar {
@@ -130,10 +129,19 @@ body {
     /* margin-bottom: 15%; */
 }
 
+.card-columns {
+
+
+}
+
 .cardFormularioSrv {
     padding: 0;
     background: rgba(0, 0, 0, 0.5);
+
     /* margin-bottom: 15%; */
+}
+.cardFormularioSrv  img {
+
 }
 
 .cardFormularioSrv img {
@@ -150,7 +158,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: #202020 ;
+    background: #202020;
 }
 
 

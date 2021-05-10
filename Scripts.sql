@@ -18,11 +18,28 @@ create table usuarios(
                       usutipo integer REFERENCES tipoUsuario (id)
 );
 
+create table categorias (
+                           id serial primary key not null,
+                           catnome varchar (50),
+                           catfoto varchar (100),
+                           catstatus varchar (50)
+);
+
+
 INSERT INTO tipoUsuario (perfil) VALUES ('Admin');
 INSERT INTO tipoUsuario (perfil) VALUES ('Cliente');
 INSERT INTO tipoUsuario (perfil) VALUES ('Profissional');
 
+INSERT INTO categorias (catnome, catfoto, catstatus) VALUES ('Pintor','557323cec98f20f214aec07fd68dfae8.jpg','True');
+INSERT INTO categorias (catnome, catfoto, catstatus) VALUES ('Eletricista','eb2ea093fcf09f20e90936235ab2189a.jpg','True');
+INSERT INTO categorias (catnome, catfoto, catstatus) VALUES ('Construção','d54b6c93135fce1fc04fa71831c34c15.jpg','True');
+INSERT INTO categorias (catnome, catfoto, catstatus) VALUES ('Soldador','f44981a97028f8ab44f60ae1b7c64bec.jpg','True');
+INSERT INTO categorias (catnome, catfoto, catstatus) VALUES ('Encanador','99938dfb1d709d80fe93830afc7c44a4.jpg','True');
+
+
 select * from usuarios;
 select * from tipoUsuario;
+select * from categorias order by id;
+
 UPDATE usuarios SET usutipo = 1 WHERE usucpf = '';
 

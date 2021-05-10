@@ -6,11 +6,31 @@ class modelCategoria extends DBconexao
     private $categoria;
     private $fotoCategoria;
     private $status;
+    private $banco;
+
+    public function __construct()
+    {
+        $this->banco = new DBconexao();
+    }
+
 
     public function setCategoria($categoria, $fotoCategoria, $status)
     {
         $this->categoria = $categoria;
         $this->fotoCategoria = $fotoCategoria;
         $this->status = $status;
+
+        $sql = "insert into categorias(catnome,catfoto,catstatus) values ('$this->categoria','$this->fotoCategoria','$this->status');";
+        $result = pg_query($this->banco->open(), $sql);
+        return $result;
+
+    }
+
+    public function getAllCategoria (){
+        $sql = 'select * from categorias  order by id;';
+        $result = pg_query($this->banco->open(), $sql);
+        $dados =  pg_fetch_all($result);
+
+        return $dados;
     }
 }

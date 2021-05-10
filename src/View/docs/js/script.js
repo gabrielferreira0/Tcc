@@ -261,8 +261,15 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
-                console.log(rs)
-                // $("#catSucesso").show().fadeOut(4000);
+                if (rs=='sucesso'){
+                    $("#catSucesso").show().fadeOut(4000);
+                    $("#Categoria").val('');
+                    $("#addFotoCat").val('');
+                    $("#imgCategoria").html("<span style=\"font-size: 6rem\" class=\"far fa-image\"></span>");
+                }
+                else {
+                    $("#catFalha").show().fadeOut(4000);
+                }
             },
             error: function (e) {
                 bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");

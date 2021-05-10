@@ -5,6 +5,15 @@
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +70,7 @@
       <workItem from="1620490021356" duration="5583000" />
       <workItem from="1620525746353" duration="1124000" />
       <workItem from="1620528622719" duration="1094000" />
+      <workItem from="1620668732386" duration="18300000" />
     </task>
     <servers />
   </component>
@@ -99,7 +109,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>337</line>
+          <line>375</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">

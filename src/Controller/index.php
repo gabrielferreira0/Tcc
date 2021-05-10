@@ -31,7 +31,7 @@ if (isset($_POST["rq"])) {
         case 'salvarCat':
             require_once 'controllerCategoria.php';
             $loadClass = new controllerCategoria();
-            return $loadClass->setCategoria();
+            echo $loadClass->setCategoria();
             break;
     }
 }
