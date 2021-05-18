@@ -2,17 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/app/Http/Controllers/CartaCobranca/CartaCobrancaController.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/app/Http/Controllers/CartaCobranca/CartaCobrancaController.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/veicular.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/veicular.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/modular/corpo.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/modular/corpo.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbaseestadual/corpoveicularbaseestadual.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbaseestadual/corpoveicularbaseestadual.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbinhistoricoroubo/resumoveicularbinhistoricoroubo.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbinhistoricoroubo/resumoveicularbinhistoricoroubo.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocompleta/corpoveicularleilaocompleta.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocompleta/corpoveicularleilaocompleta.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/corpoveiculartotal.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/corpoveiculartotal.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/resumoveiculartotal.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/resumoveiculartotal.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/0E3NLqEFkWRwVVt6x8B0P6R89BpdHHhyY4Zyoytp" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/4zrLXT0p0v3FBz66LBn8VEHB7Cs6XdOIhzkFsmPb" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/9npg6MxmoRk9IRQl9cJOYGLgo9Gi4XfJcukkIENe" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/AgEEQG3VvakJmfGnHfp0sIN7qTqMjLWfusLitLKt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/EIxE03yLFBcye85cq875AeH8tMNFtLvb8HrStLaJ" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/Fjt9I27Wzzc2UPKJsJxQY7k7eiZWow730ol0hy5k" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/GtE6ZtQNwN3Tn4AuDWwOyHgfqoeWXikyYMU4lqBq" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/HNOk6XTv0X4mwfh2fCfbDGnBkngGzI0li8PXtHU4" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/IDTJ02jVquAcWAmmJOq4dMg1LDi1PpKTOxa7sRrh" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/M3HwbO15EcfG14BFjoYi4sJ4TXQdqrT0fcUEfthA" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/MU88so8jBKqPmyXhxdeixnQjVRENtzUcilQpVGL4" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/OjdIxcM2n27gLbirpoE9UuNrYryWhdPIEnK404i7" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/PwDgtepRhN7bmOYPQ1jI7ZYp1cbeF0MFRzanrw1H" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/RPFewpPXump2hXjAzbNZA1JdAgvoRFJpENRz6Xkx" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/Rr2roHVvFF4BP3Difs361b1fXFqJX1lNXxTbburr" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/RuwCoHnt0WPLu8rafxCxrEa83r6ZTgKkxdCOY4n5" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/Sph2uiGWqMkV40XQwQki7ODoryQ6Nzahfj6BIQqK" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/UF4RxH5rhRmHdUdIAxwbuEzrbqt853piI4f0R8ow" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/X1SkJEKpWTZJg2bI2m37L1tjRFjtL5nnokuSySG4" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/XR4rgwZjmYfjsYtOKvDF2g3bn6ILO0WE85ReG0oV" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/YIHLIRtueh2Afz57t9nsm4XXXJFxVuI4eZlBiL6i" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/apJUE5gZb7Fr4PYevmUZhTANXUTFiqJ5joEWpcLx" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/b3nPJCVhxI3euDYCI3lJffwoombzVPZ6RUQikLD4" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/bFZCLE4z9mcusrm3ab1e45xA7MJz0TxpEsynndzO" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/cOweyP2KS67bJlrVwN97Kxx2XeqhTgKEMHKNFHPn" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/cXNLhZvTxdA5phgGiKJdgNEYkpFctziXx9HKsZid" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/calmBn9MbJ0iIADEONx7EAYbzdpjhy2jBj01vizJ" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/faNpy0forWL4ZfjfFa5vVoz8qHSp2RoiT87xbqmm" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/jI3FjGoeRU64vPpPuhKrxm6qKmHrxQqXklkwi5DU" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/jXrdnJZ1cA7GT6A8jbfKYRU0K0drEgReZ388VoGn" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/orWJNy4WYo5PLAR60L2iq6l8cXJF8KF8cix4UTjU" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/pRntxphuq5fUZahmlSdUQxlHcXvq9KGPAO1Cz82Z" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/rF4PIZQC3PUQ0skOkdruX7GyoODpscAxt3dUGE9m" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/seP99Mmh6GRbBCOdtWOVG777U0qqgirvHVn6zu0C" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/tJGl1XObblodAvJIThEvmmjRnkl7sDUnXw1YBzuw" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/tZ2g4nXwgYMemrmbL71qHaxgmt1mEno8RODgN7rR" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/uAFm8VmNq2NJaYUnG8mrcJHt2m4ebZf1qfSA80x7" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/wCF9Cr2GnULlQLQR5J2QJAeOwiNxo4t3kLfdoycj" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/wSheLmulTdNtxRAkZHHyEV0e68RpBzGXWaYkbC6R" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/wqIzzoZCZlpnDrlxL72nO8loYSV1pk9kvC36Q2YO" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/zqBapn8H0EEAw1nNF0vDQr42ErL27shoQHihAgmC" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/26e1ae2650efe2be8cb8589d205733e3a863c017.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/26e1ae2650efe2be8cb8589d205733e3a863c017.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/72848fcf29833a8472d370cb9f1d637362895b68.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/72848fcf29833a8472d370cb9f1d637362895b68.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Sobre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Sobre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagens/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +91,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CRUD-PHP" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/app.noso/app.nosso" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -70,7 +124,21 @@
       <workItem from="1620490021356" duration="5583000" />
       <workItem from="1620525746353" duration="1124000" />
       <workItem from="1620528622719" duration="1094000" />
-      <workItem from="1620668732386" duration="18300000" />
+      <workItem from="1620668732386" duration="19053000" />
+      <workItem from="1620861604022" duration="1273000" />
+      <workItem from="1620908127416" duration="3431000" />
+      <workItem from="1620912232518" duration="34804000" />
+      <workItem from="1620997674431" duration="3730000" />
+      <workItem from="1621028691414" duration="9544000" />
+      <workItem from="1621254340735" duration="1765000" />
+      <workItem from="1621281749361" duration="6488000" />
+      <workItem from="1621291535980" duration="1684000" />
+      <workItem from="1621293589937" duration="119000" />
+      <workItem from="1621303016364" duration="356000" />
+      <workItem from="1621358198796" duration="2952000" />
+      <workItem from="1621361974829" duration="2563000" />
+      <workItem from="1621371436841" duration="3144000" />
+      <workItem from="1621377553058" duration="1123000" />
     </task>
     <servers />
   </component>
@@ -99,7 +167,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>78</line>
+          <line>80</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -109,7 +177,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>375</line>
+          <line>384</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
@@ -120,6 +188,11 @@
             <option name="methodName" value="delete" />
           </properties>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/index.php</url>
+          <line>383</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

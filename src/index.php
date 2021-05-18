@@ -24,7 +24,7 @@
 
 
     <a style="text-decoration:none;" href=" ./index.php">
-        <img class="logo" src="imagens/logo2.png" alt="logo">
+        <img class="logo" src="imagens/logo.png" alt="logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -81,9 +81,48 @@
         ?>
     </div>
 </div>
+
+<div  id ="carousel" class="container col-md-10">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="..." alt="Como funciona?">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2> Como funciona ?</h2>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Seja um parceiro!">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2> Seja um parceiro! </h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Avaliações">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Avaliações! </h2>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </div>
 
-<div class="container-fluid ">
+<div class="container-fluid">
     <div class="d-flex justify-content-center geral">
         <div class="card cardFormulario" id="cardCadastro" style="display: none;">
             <!--            inicia aqui-->
@@ -339,7 +378,6 @@
             <p class="login-card-footer-text">Não possui uma conta? <a href="index.php" class="login-card-footer-text">Cadastrar-se
                     aqui</a></p>
         </div>
-
         <div class="container" id="cardServicos">
 
             <div class="card-columns">
@@ -356,9 +394,7 @@
                              alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title text-center"> <?php echo $value["catnome"] ?> </h5>
-                            <div class="form-group" style="display: flex; justify-content:center;">
-                                <button type="button" class="Entrar btn btn btn arredondar">Acessar</button>
-                            </div>
+
                         </div>
                     </div>
                     <?php
@@ -366,7 +402,6 @@
                 ?>
             </div>
         </div>
-
     </div>
 </div>
 

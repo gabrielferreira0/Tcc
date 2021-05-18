@@ -23,11 +23,11 @@ include('../Controller/verificarLoginADM.php')
                     <h3 class="text-center titulo"> Painel <i class="fas fa-cogs"></i></h3>
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
-                            <span class="nav-link painel" href="#" tabindex="-1">Adicionar categoria</span>
+                            <span class="nav-link painel" href="#"  id="Categoria" tabindex="-1">Adicionar categoria</span>
                         </li>
 
                         <li class="nav-item">
-                            <span class="nav-link painel" href="#" tabindex="-1"> Listar categorias</span>
+                            <span class="nav-link painel" href="#" id="listarCat" tabindex="-1"> Listar categorias</span>
                         </li>
 
                         <li class="nav-item">
@@ -37,7 +37,7 @@ include('../Controller/verificarLoginADM.php')
                 </div>
 
                 <!--            inicia aqui-->
-                <div class="card-body ">
+                <div  id ="formCategoria" class="card-body">
                     <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
 
                         <div  class="d-flex justify-content-center">
@@ -78,6 +78,46 @@ include('../Controller/verificarLoginADM.php')
                     <div class="alert alert-danger testando text-center" id="catFalha" role="alert" style="display: none;">
                         <strong>Erro! </strong> Categoria não foi <strong>adicionada!</strong>
                     </div>
+                </div>
+
+
+                <div class="container" id="listaCat" style="display: none">
+
+
+
+
+                    <table class="table table" style="color: white">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Excluir</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php
+                        require_once '../Model/modelCategoria.php';
+                        $categoria = new modelCategoria();
+                        $categorias = $categoria->getAllCategoria();
+
+                        foreach ($categorias as $key => $value) {
+
+                        ?>
+                            <tr>
+                                <th scope="row"><?php echo $value['id']?></th>
+                                <td><?php echo $value['catnome'] ?></td>
+                                <td><?php echo $value['catstatus'] ?></td>
+                                <td><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>
+                                <td><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </tbody>
+                    </table>
 
                 </div>
 

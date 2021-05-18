@@ -31,11 +31,13 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#Login', function () {
         $("#cardServicos").hide();
         $("#cardCadastro").hide();
+        $("#carousel").hide();
         $("#sobre").hide();
         $("#cardLogin").show();
         let CPF = $("#CPF-login");
         CPF.mask('999.999.999-99');
     });
+
 
     $('#Conteudo').on('click', '#Logar', function () {
 
@@ -87,6 +89,7 @@ $(document).ready(function () {
         $("#cardLogin").hide();
         $("#sobre").hide();
         $("#cardServicos").hide();
+        $("#carousel").hide();
         $("#cardCadastro").show();
     });
 
@@ -97,8 +100,6 @@ $(document).ready(function () {
         $("#sobre").show();
         window.location.href = "index.php#sobre"
     });
-
-
 
 
     $('#Conteudo').on('click', '#cadastrar', function () {
@@ -261,13 +262,12 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
-                if (rs=='sucesso'){
+                if (rs == 'sucesso') {
                     $("#catSucesso").show().fadeOut(4000);
                     $("#Categoria").val('');
                     $("#addFotoCat").val('');
                     $("#imgCategoria").html("<span style=\"font-size: 6rem\" class=\"far fa-image\"></span>");
-                }
-                else {
+                } else {
                     $("#catFalha").show().fadeOut(4000);
                 }
             },
@@ -276,6 +276,16 @@ $(document).ready(function () {
             }
         });
 
+    });
+
+    $('#Conteudo').on('click', '#listarCat', function () {
+        $("#listaCat").show();
+        $("#formCategoria").hide();
+    });
+
+    $('#Conteudo').on('click', '#Categoria', function () {
+        $("#formCategoria").show();
+        $("#listaCat").hide();
     });
 
 
@@ -367,7 +377,6 @@ $(document).ready(function () {
     });
 
 
-
 });
 
 
@@ -406,7 +415,6 @@ $(function () {
         }
 
     };
-
 
 
     $('#addFotoGaleria').on('change', function () {
