@@ -376,6 +376,36 @@ $(document).ready(function () {
         $(".miniatura").remove();
     });
 
+    $('#Conteudo').on('click', '.setStatusCat', function () {
+        let idCat = $(this).prev().val();
+        let status = $(this).val();
+        let url = '../../src/Controller/index.php';
+        $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'post',
+            data: {
+                rq: 'setStatusCat',
+                status: status,
+                idCat: idCat,
+            },
+            success: function (rs) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Categoria alterada com sucesso!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
+                setTimeout(function () {
+                    location.reload();
+                }, 1700);
+            },
+            error: function (e) {
+                bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+            }
+        });
+    });
 
 });
 
@@ -428,3 +458,4 @@ $(function () {
     });
 
 });
+

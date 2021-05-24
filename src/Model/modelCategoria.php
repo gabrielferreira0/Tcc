@@ -1,6 +1,7 @@
 <?php
 
 require_once 'DBconexao.php';
+
 class modelCategoria extends DBconexao
 {
     private $categoria;
@@ -26,11 +27,28 @@ class modelCategoria extends DBconexao
 
     }
 
-    public function getAllCategoria (){
+    public function getCategoria()
+    {
+        $sql = "select * from categorias where catstatus = 'True'order by id;";
+        $result = pg_query($this->banco->open(), $sql);
+        $dados = pg_fetch_all($result);
+
+        return $dados;
+    }
+
+    public function setStatusCat($idCat,$status)
+    {
+        $sql = "UPDATE categorias SET catstatus = '{$status}' WHERE id = {$idCat};";
+        $result = pg_query($this->banco->open(), $sql);
+        return  $result;
+    }
+
+
+    public function getAllCategoria()
+    {
         $sql = 'select * from categorias  order by id;';
         $result = pg_query($this->banco->open(), $sql);
-        $dados =  pg_fetch_all($result);
-
+        $dados = pg_fetch_all($result);
         return $dados;
     }
 }

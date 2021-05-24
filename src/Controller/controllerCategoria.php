@@ -17,7 +17,7 @@ class controllerCategoria
         $modelCategoria = new modelCategoria();
 
         if ($this->categoria == '' || $this->fotoCategoria == '') {
-            return  'erro';
+            return 'erro';
         } else {
             preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->fotoCategoria['name'], $ext);
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
@@ -25,13 +25,20 @@ class controllerCategoria
 
             $result = $modelCategoria->setCategoria($this->categoria, $nome_imagem, $this->status);
 
-            if ($result){
+            if ($result) {
                 move_uploaded_file($this->fotoCategoria['tmp_name'], $caminho_imagem);
                 return 'sucesso';
-            }
-            else {
+            } else {
                 return 'erro';
             }
         }
+    }
+
+    public function setStatusCat()
+    {
+        $idCat = $_POST["idCat"];
+        $status = $_POST["status"];
+        $modelCategoria = new modelCategoria();
+        $result = $modelCategoria->setStatusCat($idCat, $status);
     }
 }

@@ -82,8 +82,8 @@
     </div>
 </div>
 
-<div  id ="carousel" class="container col-md-10">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div   style="background: rgba(0, 0, 0, 0.8);" id ="carousel" class="container col-md-10 col-12 arredondar">
+    <div    id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -92,7 +92,7 @@
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="Como funciona?">
+                <img class="d-block w-100" src="imagens/Carrossel/comoFunciona.png" alt="Como funciona?">
                 <div class="carousel-caption d-none d-md-block">
                     <h2> Como funciona ?</h2>
                 </div>
@@ -122,7 +122,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
         <div class="card cardFormulario" id="cardCadastro" style="display: none;">
             <!--            inicia aqui-->
@@ -380,11 +380,11 @@
         </div>
         <div class="container" id="cardServicos">
 
-            <div class="card-columns">
+            <div class="card-columns ">
                 <?php
                 require_once 'Model/modelCategoria.php';
                 $categoria = new modelCategoria();
-                $categorias = $categoria->getAllCategoria();
+                $categorias = $categoria->getCategoria();
 
                 foreach ($categorias as $key => $value) {
                     ?>

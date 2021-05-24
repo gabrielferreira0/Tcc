@@ -3,12 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/app/Http/Controllers/CartaCobranca/CartaCobrancaController.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/app/Http/Controllers/CartaCobranca/CartaCobrancaController.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/geral.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/geral.css" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/veicular.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/veicular.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/zn_dynamic.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/zn_dynamic.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/home.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/localizadorveiculo/formlocalizadorveiculo.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/localizadorveiculo/formlocalizadorveiculo.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/modular/corpo.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/modular/corpo.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/modular/formmodular.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/modular/formmodular.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbaseestadual/corpoveicularbaseestadual.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbaseestadual/corpoveicularbaseestadual.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbinhistoricoroubo/resumoveicularbinhistoricoroubo.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularbinhistoricoroubo/resumoveicularbinhistoricoroubo.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocompleta/corpoveicularleilaocompleta.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocompleta/corpoveicularleilaocompleta.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocompleta/formveicularleilaocompleta.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocompleta/formveicularleilaocompleta.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocorporativo/formveicularleilaocorporativo.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularleilaocorporativo/formveicularleilaocorporativo.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularlocalizadormotor/formveicularlocalizadormotor.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veicularlocalizadormotor/formveicularlocalizadormotor.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/corpoveiculartotal.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/corpoveiculartotal.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/formveiculartotal.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/formveiculartotal.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/resumoveiculartotal.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/veicularmoises/veiculartotal/resumoveiculartotal.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/0E3NLqEFkWRwVVt6x8B0P6R89BpdHHhyY4Zyoytp" beforeDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/4zrLXT0p0v3FBz66LBn8VEHB7Cs6XdOIhzkFsmPb" beforeDir="false" />
@@ -53,19 +62,20 @@
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/sessions/zqBapn8H0EEAw1nNF0vDQr42ErL27shoQHihAgmC" beforeDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/26e1ae2650efe2be8cb8589d205733e3a863c017.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/26e1ae2650efe2be8cb8589d205733e3a863c017.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/72848fcf29833a8472d370cb9f1d637362895b68.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/72848fcf29833a8472d370cb9f1d637362895b68.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/755a7e2366654b2eba76133b3b1622a564fe7db9.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/755a7e2366654b2eba76133b3b1622a564fe7db9.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/90adad836cdb1e593c1a05068ca8f3495bfc0fda.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/90adad836cdb1e593c1a05068ca8f3495bfc0fda.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/b6e3c90003a611afae689b7f037d52cdea8f0814.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/framework/views/b6e3c90003a611afae689b7f037d52cdea8f0814.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Sobre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Sobre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagens/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/Carrossel/comoFunciona.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagens/Carrossel/comoFunciona.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +148,14 @@
       <workItem from="1621358198796" duration="2952000" />
       <workItem from="1621361974829" duration="2563000" />
       <workItem from="1621371436841" duration="3144000" />
-      <workItem from="1621377553058" duration="1123000" />
+      <workItem from="1621377553058" duration="1286000" />
+      <workItem from="1621519242033" duration="493000" />
+      <workItem from="1621539274163" duration="4735000" />
+      <workItem from="1621548413927" duration="543000" />
+      <workItem from="1621604679290" duration="1660000" />
+      <workItem from="1621606873575" duration="5000" />
+      <workItem from="1621612853310" duration="1093000" />
+      <workItem from="1621873893404" duration="10082000" />
     </task>
     <servers />
   </component>
@@ -177,8 +194,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>384</line>
+          <line>414</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
+          <line>361</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/../CRUD-PHP/Crud/class/Deletar.php</url>
