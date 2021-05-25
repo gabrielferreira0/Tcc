@@ -376,6 +376,15 @@ $(document).ready(function () {
         $(".miniatura").remove();
     });
 
+
+    $('#modalInfo').on('show.bs.modal', function (event) {
+        let button = $(event.relatedTarget)
+        let nomeCat = button.attr('data-nomeC')
+        let modal = $(this)
+        modal.find('#categoriaUPD').val(nomeCat)
+    })
+
+
     $('#Conteudo').on('click', '.setStatusCat', function () {
         let idCat = $(this).prev().val();
         let status = $(this).val();
@@ -459,3 +468,7 @@ $(function () {
 
 });
 
+function showCard() {
+    $("#cardLogin").hide();
+    $("#cardCadastro").show();
+}

@@ -375,7 +375,7 @@
             </div>
             <button id="Logar" type="button" class="Entrar btn btn btn arredondar">Login</button>
             <a href="#!" class="login-card-footer-text">Esqueceu a senha?</a>
-            <p class="login-card-footer-text">Não possui uma conta? <a href="index.php" class="login-card-footer-text">Cadastrar-se
+            <p class="login-card-footer-text">Não possui uma conta? <a  onclick="showCard()" href="#cardCadastro"  class="login-card-footer-text">Cadastrar-se
                     aqui</a></p>
         </div>
         <div class="container" id="cardServicos">
