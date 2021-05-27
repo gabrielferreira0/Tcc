@@ -85,98 +85,76 @@ include('Navbar.php');
             </div>
 
 
-            <div class="container" id="listaCat" style="display: none">
-
-
-                <table class="table table" style="color: white">
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Excluir</th>
-                        <th scope="col">Editar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <?php
-                    require_once '../Model/modelCategoria.php';
-                    $categoria = new modelCategoria();
-                    $categorias = $categoria->getAllCategoria();
-
-                    foreach ($categorias as $key => $value) {
-
-                        ?>
+            <div class="table-responsive" id="listaCat" style="display: none">
+                    <table class="table table" style=" border:1px solid white; color: white">
+                        <thead style="background: #f50a31;">
                         <tr>
-                            <th scope="row"><?php echo $value['id'] ?></th>
-                            <td><?php echo $value['catnome'] ?></td>
-                            <td><?php echo $value['catstatus'] ?></td>
+                            <th scope="col-6">ID</th>
+                            <th scope="col-6">Nome</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Excluir</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                            <?php
-                            if ($value['catstatus'] == 'True') {
-                                echo '<td>
+                        <?php
+                        require_once '../Model/modelCategoria.php';
+                        $categoria = new modelCategoria();
+                        $categorias = $categoria->getAllCategoria();
+
+                        foreach ($categorias as $key => $value) {
+
+                            ?>
+                            <tr>
+                                <th scope="row"><?php echo $value['id'] ?></th>
+                                <td><?php echo $value['catnome'] ?></td>
+                                <td><?php echo $value['catstatus'] ?></td>
+
+                                <?php
+                                if ($value['catstatus'] == 'True') {
+                                    echo '<td>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="False" title="Desativar" type="button" class="btn btn-danger setStatusCat"><i class="far fa-trash-alt"></i></button>
                                        </td>';
 
-                            } else {
-                                echo ' <td>
+                                } else {
+                                    echo ' <td>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="True" title="Ativar" type="button" class="btn btn-success setStatusCat"><i class="fas fa-check"></i></button>
                                         </td>';
-                            }
-                            ?>
-                            <td>
-                                <button data-toggle="modal" data-nomeC="<?php echo $value['catnome'] ?>"
-                                        data-target="#modalInfo" type="button"
-                                        class="btn btn-primary"><i class="far fa-edit"></i></button>
-                            </td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                    </tbody>
-                </table>
-                <!-- MODAL-->
-                <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div style="background: #202020" class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Informações da Categoria</h5>
-                                <button style="color: white" type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                }
+                                ?>
+                                <td>
+                                    <button data-toggle="modal"   data-image="<?php echo $value['catfoto'] ?>" data-nomeC="<?php echo $value['catnome'] ?>"
+                                            data-target="#modalInfo" type="button"
+                                            class="btn btn-primary"><i class="far fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </tbody>
+                    </table>
 
-                            </div>
-                            <div class="modal-body">
-                                <div class=" d-flex justify-content-center input-group ">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text arredondar"> <i class="fas fa-tools"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control arredondar" id="categoriaUPD"
-                                           value="" maxlength="20" required="">
-                                </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <button type="button" class="btn btn-primary">Salvar</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <!-- MODAL-->
             </div>
 
             <!--            termina aqui-->
+
         </div>
+
     </div>
+
 </div>
 
 <?php
 include('Footer.php');
 ?>
+
 </body>
+<!-- MODAL-->
+<?php
+include('modalPainel.php');
+?>
+<!-- MODAL-->

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/View/modalPainel.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/app/Http/Controllers/CartaCobranca/CartaCobrancaController.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/app/Http/Controllers/CartaCobranca/CartaCobrancaController.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/geral.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/geral.css" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/veicular.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app.noso/app.nosso/public/css/veicular.css" afterDir="false" />
@@ -70,10 +71,9 @@
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +155,7 @@
       <workItem from="1621873893404" duration="10082000" />
       <workItem from="1621964964090" duration="991000" />
       <workItem from="1621980696234" duration="5883000" />
+      <workItem from="1622071725222" duration="4986000" />
     </task>
     <servers />
   </component>
@@ -193,7 +194,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>423</line>
+          <line>428</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

@@ -5,7 +5,8 @@
         <img class="logo" src="../imagens/logo2.png" alt="logo">
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse menu" id="navbarCollapse">
@@ -36,7 +37,7 @@
                 echo '<img  class = "avatar" src="../imagens/' . $_SESSION['Foto'] . '"';
             } else
                 echo '<span  id ="Welcome" style="color: lightgray" class="nav-link text-center  arredondar" href="Perfil.php">' . $_SESSION['User'] . '</span>';
-            echo '<span class="fa fa-user-circle photo text-center"></span>';
+                echo '<span class="fa fa-user-circle photo text-center"></span>';
             ?>
         </div>
         <a class="nav-link text-center Deslogar" id="Deslogar2">Sair</a>

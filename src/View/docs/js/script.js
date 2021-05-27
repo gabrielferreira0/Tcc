@@ -375,13 +375,18 @@ $(document).ready(function () {
         $("#addFotoCat").trigger('click')
         $(".miniatura").remove();
     });
+    $('#Conteudo').on('click', '.avatar', function () {
+        window.location.href = "./Perfil.php";
+    });
 
 
     $('#modalInfo').on('show.bs.modal', function (event) {
         let button = $(event.relatedTarget)
         let nomeCat = button.attr('data-nomeC')
+        let image = button.attr('data-image')
         let modal = $(this)
         modal.find('#categoriaUPD').val(nomeCat)
+        modal.find('#imageCatUPD').attr('src' , "../imagens/categoria/"+image);
     })
 
 
