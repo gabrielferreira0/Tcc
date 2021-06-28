@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TCC.iml" filepath="$PROJECT_DIR$/.idea/TCC.iml" />
       <module fileurl="file://$PROJECT_DIR$/../CRUD-PHP/.idea/Treinando.iml" filepath="$PROJECT_DIR$/../CRUD-PHP/.idea/Treinando.iml" />
-      <module fileurl="file://$USER_HOME$/Desktop/app.noso/app.nosso/.idea/app.nosso.iml" filepath="$USER_HOME$/Desktop/app.noso/app.nosso/.idea/app.nosso.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/app.noso/.idea/app.noso.iml" filepath="$USER_HOME$/Desktop/app.noso/.idea/app.noso.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/nosso master/.idea/nosso master.iml" filepath="$USER_HOME$/Desktop/nosso master/.idea/nosso master.iml" />
     </modules>
   </component>
 </project>

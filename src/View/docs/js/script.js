@@ -187,14 +187,22 @@ $(document).ready(function () {
         let telefone = $('#Telefone').val();
         let foto = $('#addFotoGaleria')[0].files[0];
         let fotoStatus;
+        let fotoAtual = $('#fotoAtual').val();
         let senhaStatus;
         let url = '../../src/Controller/index.php';
 
-        if (!foto) {
+
+
+        if (!foto && !fotoAtual) {
             fotoStatus = 'false'
-        } else {
+        } else if (!foto && fotoAtual) {
+            fotoStatus = 'jaTem'
+            foto = fotoAtual;
+        }
+        else if (foto) {
             fotoStatus = 'true'
         }
+
 
         if (!senha) {
             senhaStatus = 'false'
@@ -207,6 +215,7 @@ $(document).ready(function () {
         formData.append('senha', senha);
         formData.append('foto', foto);
         formData.append('fotoStatusupd', fotoStatus);
+        formData.append('fotoAtual', fotoAtual);
         formData.append('senhaStatus', senhaStatus);
         formData.append('telefone', telefone);
         formData.append('rq', 'update');
@@ -219,6 +228,8 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
+
+                console.log(rs);
                 switch (rs) {
                     case 'false':
                         bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");

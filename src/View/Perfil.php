@@ -42,6 +42,7 @@ include ('Navbar.php');
                         </div>
                     <div style="display: none">
                         <input type="file" multiple id="addFotoGaleria" accept="image/x-png,image/gif,image/jpeg">
+                        <input value="<?php echo $_SESSION['Foto']; ?>" type="text" multiple id="fotoAtual">
                     </div>
 
                     <div class="form-row">

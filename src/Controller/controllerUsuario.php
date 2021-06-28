@@ -70,12 +70,18 @@ class controllerUsuario
             $nome_imagem = 'false';
         } elseif ($_POST["fotoStatusupd"] == 'true') {
             $this->foto = $_FILES['foto'];
+
             //Gerando um nome unico para a imagem
             preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
 
             //URL da pasta para salvar a imagem
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
             $caminho_imagem = '../imagens/' . $nome_imagem;
+        } elseif ($_POST["fotoStatusupd"] == 'jaTem') {
+            $this->foto = $_POST['fotoAtual'];
+
+            $nome_imagem = $this->foto;
+
         }
 
         if ($this->username == '' || $this->telefone == '') {
@@ -83,9 +89,9 @@ class controllerUsuario
         } else {
             $modelUsuario = new modelUsuario();
             if ($_POST["senhaStatus"] == 'true') {
-                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone,$nome_imagem);
+                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone, $nome_imagem);
             } elseif ($_POST["senhaStatus"] == 'false') {
-                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone,$nome_imagem);
+                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone, $nome_imagem);
             }
 
             if ($result) {
@@ -165,6 +171,7 @@ class controllerUsuario
         session_destroy();
         return 'true';
     }
+
     public function delete()
     {
         $id = $_SESSION['id'];
