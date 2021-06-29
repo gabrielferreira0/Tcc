@@ -5,17 +5,12 @@
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/4ce3c610054fdbfcfeac7b5485e1a0f3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/708428772811d3315e35696607d2b9bb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/81d56eb7a981db3ba4052990703f1df6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/eu.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/modalPainel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/modalPainel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +113,11 @@
       <workItem from="1623271563453" duration="7370000" />
       <workItem from="1623281547701" duration="393000" />
       <workItem from="1624833028365" duration="5956000" />
+      <workItem from="1624885286529" duration="1491000" />
+      <workItem from="1624908995414" duration="1063000" />
+      <workItem from="1624915312033" duration="581000" />
+      <workItem from="1624916218885" duration="2183000" />
+      <workItem from="1624925595454" duration="3317000" />
     </task>
     <servers />
   </component>
@@ -141,12 +141,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>80</line>
+          <line>81</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -156,12 +156,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>439</line>
+          <line>455</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>372</line>
+          <line>381</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
@@ -197,6 +197,16 @@
           <url>file://$USER_HOME$/Desktop/nosso master/app.nosso/resources/views/home.blade.php</url>
           <line>287</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/cliente/notificacao/notificacao.blade.php</url>
+          <line>50</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/cliente/notificacao/notificacao.blade.php</url>
+          <line>62</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

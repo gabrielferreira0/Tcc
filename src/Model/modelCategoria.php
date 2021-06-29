@@ -36,17 +36,22 @@ class modelCategoria extends DBconexao
         return $dados;
     }
 
-    public function setStatusCat($idCat,$status)
+    public function setStatusCat($idCat, $status)
     {
         $sql = "UPDATE categorias SET catstatus = '{$status}' WHERE id = {$idCat};";
         $result = pg_query($this->banco->open(), $sql);
-        return  $result;
+        return $result;
     }
 
 
     public function getAllCategoria()
     {
-        $sql = 'select * from categorias  order by id;';
+        $sql = "select *,
+       (case
+        when catstatus = 'True' then 'Ativo'
+        when catstatus = 'False' then 'Desativado'
+        end) as catstatus2
+        from categorias  order by id;";
         $result = pg_query($this->banco->open(), $sql);
         $dados = pg_fetch_all($result);
         return $dados;

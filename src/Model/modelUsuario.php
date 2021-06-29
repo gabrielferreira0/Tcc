@@ -1,6 +1,7 @@
 <?php
 
 require_once 'DBconexao.php';
+
 class modelUsuario extends DBconexao
 {
 
@@ -19,7 +20,23 @@ class modelUsuario extends DBconexao
         $this->banco = new DBconexao();
     }
 
-    public function deletar($id){
+
+    public function getAllUsers()
+    {
+        $sql = "select *,
+       (case
+        when usustatus = 'true' then 'Ativo'
+        when usustatus = 'false' then 'Desativado'
+        end ) as usustatus2
+        from usuarios ORDER BY usunome;";
+        $result = pg_query($this->banco->open(), $sql);
+        $dados = pg_fetch_all($result);
+        return $dados;
+
+    }
+
+    public function deletar($id)
+    {
         $sql = "UPDATE usuarios SET usustatus  = 'false' WHERE id = {$id}; ";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
@@ -43,7 +60,8 @@ class modelUsuario extends DBconexao
         }
     }
 
-    public function updatecomSenha($id,$nome,$senha,$telefone,$foto){
+    public function updatecomSenha($id, $nome, $senha, $telefone, $foto)
+    {
 
         $sql = "UPDATE usuarios SET usunome = '{$nome}',ususenha = '{$senha}',usutelefone = '{$telefone}',usufoto = '{$foto}' WHERE id = {$id}; ";
         $result = pg_query($this->banco->open(), $sql);
@@ -51,14 +69,16 @@ class modelUsuario extends DBconexao
     }
 
 
-    public function updateSemSenha($id,$nome,$telefone,$foto){
+    public function updateSemSenha($id, $nome, $telefone, $foto)
+    {
         $sql = "UPDATE usuarios SET usunome = '{$nome}',usutelefone = '{$telefone}',usufoto = '{$foto}' WHERE id = {$id}; ";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
     }
 
 
-    public function inserirUser($nome,$senha,$email,$telefone,$foto,$CPF,$status,$tipo){
+    public function inserirUser($nome, $senha, $email, $telefone, $foto, $CPF, $status, $tipo)
+    {
 
         $this->username = $nome;
         $this->senha = $senha;
@@ -74,7 +94,8 @@ class modelUsuario extends DBconexao
 
     }
 
-    public function login($CPFlogin,$senhaLogin){
+    public function login($CPFlogin, $senhaLogin)
+    {
 
         $sql = "select * from usuarios where usucpf = '{$CPFlogin}'and ususenha ='{$senhaLogin}' and usustatus = 'true';";
         $rs = pg_query($this->banco->open(), $sql);

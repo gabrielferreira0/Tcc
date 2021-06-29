@@ -1,4 +1,4 @@
-<div  style="color: white" class="modal fade" id="modalInfo" tabindex="-1" role="dialog"
+<div style="color: white" class="modal fade" id="modalInfo" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div style="background: #202020" class="modal-content">
@@ -18,11 +18,21 @@
                         </div>
                         <input type="text" class="form-control arredondar" id="categoriaUPD"
                                value="" maxlength="20" required="">
+
                     </div>
+
                 </div>
-                <div style="margin-top: 1rem" class="container-fluid col-md-8">
-                    <img id ="imageCatUPD" class="card-img-top" src="../imagens/categoria/557323cec98f20f214aec07fd68dfae8.jpg"
+
+                <div style="display: none">
+                    <input type="file" multiple id="updImagemCat" accept="image/x-png,image/gif,image/jpeg">
+                    <input value="" type="text" multiple id="fotoAtual">
                 </div>
+
+                <div id="galeraUPDCat" onclick="updImagemCat()" style=" cursor:pointer;margin-top: 1rem;"
+                     class="d-flex align-items-center justify-content-center col-md-8 offset-md-2 galeria">
+                    <img  title="Clique para alterar" id="imageCatUPD" class="card-img-top" src=""
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

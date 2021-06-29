@@ -20,6 +20,7 @@ function carregarCEP() {
     });
 }
 
+
 $(document).ready(function () {
     let CPF = $("#CPF");
     let CEP = $("#CEP");
@@ -292,11 +293,19 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#listarCat', function () {
         $("#listaCat").show();
         $("#formCategoria").hide();
+        $("#listaUsers").hide();
+    });
+
+    $('#Conteudo').on('click', '#listarUsers', function () {
+        $("#listaCat").hide();
+        $("#formCategoria").hide();
+        $("#listaUsers").show();
     });
 
     $('#Conteudo').on('click', '#Categoria', function () {
         $("#formCategoria").show();
         $("#listaCat").hide();
+        $("#listaUsers").hide();
     });
 
 
@@ -391,13 +400,20 @@ $(document).ready(function () {
     });
 
 
+
+
     $('#modalInfo').on('show.bs.modal', function (event) {
+        //função para mostrar os dados na modal
         let button = $(event.relatedTarget)
         let nomeCat = button.attr('data-nomeC')
         let image = button.attr('data-image')
         let modal = $(this)
         modal.find('#categoriaUPD').val(nomeCat)
+
         modal.find('#imageCatUPD').attr('src' , "../imagens/categoria/"+image);
+        modal.find('.miniaturaCat').attr('src' , "../imagens/categoria/"+image);
+        // retira a classe miniatura PARA ajustar o tamanho da imagem com a class do boostrap
+        $(".miniaturaCat").removeClass("miniaturaCat").addClass('card-img-top');
     })
 
 
@@ -472,6 +488,14 @@ $(function () {
     };
 
 
+
+    $('#updImagemCat').on('change', function () {
+        //$('#galeraUPDCat').children().css("display",'none');
+        $('#galeraUPDCat').children().remove();
+        visualizacaoImagensCat(this, 'div.galeria');
+    });
+
+
     $('#addFotoGaleria').on('change', function () {
         $('#foto').remove();
         visualizacaoImagens(this, 'div.galeria');
@@ -488,3 +512,10 @@ function showCard() {
     $("#cardLogin").hide();
     $("#cardCadastro").show();
 }
+
+
+function updImagemCat() {
+    $("#updImagemCat").trigger('click')
+}
+
+

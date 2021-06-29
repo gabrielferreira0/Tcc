@@ -21,7 +21,7 @@ include('Navbar.php');
         <div class="card cardFormulario">
             <div class="card-header">
                 <h3 class="text-center titulo"> Painel <i class="fas fa-cogs"></i></h3>
-                <ul class="nav nav-tabs card-header-tabs">
+                <ul class="nav nav-tabs card-header-tabs d-flex justify-content-center">
                     <li class="nav-item">
                         <span class="nav-link painel" href="#" id="Categoria" tabindex="-1">Adicionar categoria</span>
                     </li>
@@ -31,12 +31,11 @@ include('Navbar.php');
                     </li>
 
                     <li class="nav-item">
-                        <span class="nav-link painel" href="#" tabindex="-1"> Listar usuários</span>
+                        <span class="nav-link painel" href="#" id="listarUsers" tabindex="-1"> Listar usuários</span>
                     </li>
                 </ul>
             </div>
 
-            <!--            inicia aqui-->
             <div id="formCategoria" class="card-body">
                 <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
 
@@ -84,13 +83,12 @@ include('Navbar.php');
                 </div>
             </div>
 
-
             <div class="table-responsive" id="listaCat" style="display: none">
                     <table class="table table" style=" border:1px solid white; color: white">
                         <thead style="background: #f50a31;">
                         <tr>
-                            <th scope="col-6">ID</th>
-                            <th scope="col-6">Nome</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
                             <th scope="col">Status</th>
                             <th scope="col">Excluir</th>
                             <th scope="col">Editar</th>
@@ -109,7 +107,7 @@ include('Navbar.php');
                             <tr>
                                 <th scope="row"><?php echo $value['id'] ?></th>
                                 <td><?php echo $value['catnome'] ?></td>
-                                <td><?php echo $value['catstatus'] ?></td>
+                                <td><?php echo $value['catstatus2'] ?></td>
 
                                 <?php
                                 if ($value['catstatus'] == 'True') {
@@ -136,17 +134,80 @@ include('Navbar.php');
                         ?>
                         </tbody>
                     </table>
-
                 </div>
+
+            <div class="table-responsive" id="listaUsers" style="display: none">
+                <table class="table table" style=" border:1px solid white; color: white">
+                    <thead style="background: #f50a31;">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Desativar</th>
+                        <th scope="col">Visualizar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php
+                    require_once '../Model/modelUsuario.php';
+                    $usuarios = new modelUsuario();
+                    $usuarios = $usuarios->getAllUsers();
+
+
+                    foreach ($usuarios as $key => $value) {
+                        ?>
+                        <tr>
+                            <th scope="row"><?php echo $value['id'] ?></th>
+                            <th scope="row"><?php echo $value['usunome'] ?></th>
+                            <th scope="row"><?php echo $value['usuemail'] ?></th>
+                            <th scope="row"><?php echo $value['usucpf'] ?></th>
+                            <th scope="row"><?php echo $value['usutelefone'] ?></th>
+                            <th scope="row"><?php echo $value['usutipo'] ?></th>
+                            <th scope="row"><?php echo $value['usustatus2'] ?></th>
+
+
+                            <?php
+                            if ($value['usustatus'] == 'true') {
+                                echo '<td>
+                                        <input type="hidden" value="' . $value["id"] . '">
+                                        <button  value="False" title="Desativar" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                       </td>';
+
+                            } else {
+                                echo ' <td>
+                                        <input type="hidden" value="' . $value["id"] . '">
+                                        <button  value="True" title="Ativar" type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                                        </td>';
+                            }
+                            ?>
+
+                            <td>
+                                <button data-toggle="modal"
+                                        data-target="#modalInfo" type="button"
+                                        class="btn btn-primary"><i class="far fa-edit"></i></button>
+                            </td>
+
+                        </tr>
+
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                    </tbody>
+                </table>
             </div>
 
-            <!--            termina aqui-->
+
+            </div>
 
         </div>
 
     </div>
-
-</div>
 
 <?php
 include('Footer.php');
