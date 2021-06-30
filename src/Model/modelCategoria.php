@@ -27,6 +27,15 @@ class modelCategoria extends DBconexao
 
     }
 
+
+    public function updateCategoria($idCategoria,$categoria,$fotoCategoria){
+
+        $sql = "UPDATE categorias SET catnome = '{$categoria}',catfoto = '{$fotoCategoria}' WHERE id = {$idCategoria};";
+        $result = pg_query($this->banco->open(), $sql);
+        return $result;
+
+    }
+
     public function getCategoria()
     {
         $sql = "select * from categorias where catstatus = 'True'order by id;";

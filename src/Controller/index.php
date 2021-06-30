@@ -38,5 +38,10 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerCategoria();
             echo $loadClass->setCategoria();
             break;
+        case 'updateCat':
+            require_once 'controllerCategoria.php';
+            $loadClass = new controllerCategoria();
+            echo $loadClass->updateCat();
+            break;
     }
 }

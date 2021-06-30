@@ -46,7 +46,7 @@ include('Navbar.php');
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-tools"></i></span>
                                 </div>
-                                <input type="text" class="form-control arredondar" id="Categoria"
+                                <input  type="text" class="form-control arredondar" id="nomeCategoria"
                                        placeholder="Categoria" maxlength="20" required="">
                             </div>
                             <div class="error help-block with-errors"></div>
@@ -124,7 +124,7 @@ include('Navbar.php');
                                 }
                                 ?>
                                 <td>
-                                    <button data-toggle="modal"   data-image="<?php echo $value['catfoto'] ?>" data-nomeC="<?php echo $value['catnome'] ?>"
+                                    <button data-toggle="modal"  data-idCat ="<?php echo $value['id']?>"  data-image="<?php echo $value['catfoto'] ?>" data-nomeC="<?php echo $value['catnome'] ?>"
                                             data-target="#modalInfo" type="button"
                                             class="btn btn-primary"><i class="far fa-edit"></i></button>
                                 </td>

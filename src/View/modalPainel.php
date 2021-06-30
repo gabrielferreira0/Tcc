@@ -18,14 +18,14 @@
                         </div>
                         <input type="text" class="form-control arredondar" id="categoriaUPD"
                                value="" maxlength="20" required="">
-
+                        <input type="hidden" id="idCategoria">
                     </div>
 
                 </div>
 
                 <div style="display: none">
                     <input type="file" multiple id="updImagemCat" accept="image/x-png,image/gif,image/jpeg">
-                    <input value="" type="text" multiple id="fotoAtual">
+                    <input  type="text" multiple id="imagemCatAtual">
                 </div>
 
                 <div id="galeraUPDCat" onclick="updImagemCat()" style=" cursor:pointer;margin-top: 1rem;"
@@ -36,7 +36,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Alterar</button>
+                <button type="button" onclick="updateCat()" class="btn btn-primary">Alterar</button>
             </div>
         </div>
     </div>

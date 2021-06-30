@@ -9,7 +9,7 @@
 
 .miniaturaCat {
     height: 13rem;
-    width: 13rem;
+    /*width: 13rem;*/
     border: 1px solid transparent;
     cursor: pointer;
     border-radius: 5px;

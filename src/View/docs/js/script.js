@@ -193,14 +193,12 @@ $(document).ready(function () {
         let url = '../../src/Controller/index.php';
 
 
-
         if (!foto && !fotoAtual) {
             fotoStatus = 'false'
         } else if (!foto && fotoAtual) {
             fotoStatus = 'jaTem'
             foto = fotoAtual;
-        }
-        else if (foto) {
+        } else if (foto) {
             fotoStatus = 'true'
         }
 
@@ -258,13 +256,14 @@ $(document).ready(function () {
 
 
     $('#Conteudo').on('click', '#salvarCat', function () {
-        let categoria = $("#Categoria").val();
+        let categoria = $("#nomeCategoria").val();
         let fotoCategoria = $('#addFotoCat')[0].files[0];
         let formData = new FormData();
         formData.append('categoria', categoria)
         formData.append('fotoCategoria', fotoCategoria)
         formData.append('rq', 'salvarCat');
         let url = '../../src/Controller/index.php';
+
 
         $.ajax({
             url: url,
@@ -274,6 +273,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
+                console.log(rs);
                 if (rs == 'sucesso') {
                     $("#catSucesso").show().fadeOut(4000);
                     $("#Categoria").val('');
@@ -400,20 +400,20 @@ $(document).ready(function () {
     });
 
 
-
-
     $('#modalInfo').on('show.bs.modal', function (event) {
         //função para mostrar os dados na modal
         let button = $(event.relatedTarget)
         let nomeCat = button.attr('data-nomeC')
         let image = button.attr('data-image')
+        let idCategoria = button.attr('data-idCat');
         let modal = $(this)
         modal.find('#categoriaUPD').val(nomeCat)
-
-        modal.find('#imageCatUPD').attr('src' , "../imagens/categoria/"+image);
-        modal.find('.miniaturaCat').attr('src' , "../imagens/categoria/"+image);
+        modal.find('#imagemCatAtual').val(image);
+        modal.find('#idCategoria').val(idCategoria);
+        modal.find('#imageCatUPD').attr('src', "../imagens/categoria/" + image);
+        modal.find('#miniaturaCat').attr('src', "../imagens/categoria/" + image);
         // retira a classe miniatura PARA ajustar o tamanho da imagem com a class do boostrap
-        $(".miniaturaCat").removeClass("miniaturaCat").addClass('card-img-top');
+        $("#miniaturaCat").removeClass('miniaturaCat').addClass('card-img-top');
     })
 
 
@@ -478,7 +478,7 @@ $(function () {
                 var reader = new FileReader();
 
                 reader.onload = function (event) {
-                    $($.parseHTML('<img class="miniaturaCat">')).attr('src', event.target.result).appendTo(lugarParaInserirVisualizacaoDeImagem);
+                    $($.parseHTML('<img  id ="miniaturaCat" class="miniaturaCat">')).attr('src', event.target.result).appendTo(lugarParaInserirVisualizacaoDeImagem);
                 }
 
                 reader.readAsDataURL(input.files[i]);
@@ -486,7 +486,6 @@ $(function () {
         }
 
     };
-
 
 
     $('#updImagemCat').on('change', function () {
@@ -518,4 +517,52 @@ function updImagemCat() {
     $("#updImagemCat").trigger('click')
 }
 
+function updateCat() {
+
+    let idCategoria = $('#idCategoria').val();
+    let categoriaUPD = $('#categoriaUPD').val();
+    let imagemCatAtual = $('#imagemCatAtual').val();
+    let novaImagemCat = $('#updImagemCat')[0].files[0];
+    let imagemUpdCat;
+    let url = '../../src/Controller/index.php';
+
+
+    if (novaImagemCat) {
+        imagemUpdCat = true;
+    } else {
+        imagemUpdCat = false;
+    }
+
+
+    let formData = new FormData();
+    formData.append('idCategoria', idCategoria)
+    formData.append('categoriaUPD', categoriaUPD)
+    formData.append('imagemCatAtual', imagemCatAtual)
+    formData.append('novaImagemCat', novaImagemCat)
+    formData.append('imagemUpdCat', imagemUpdCat)
+    formData.append('rq', 'updateCat');
+
+
+    $.ajax({
+        url: url,
+        dataType: 'text',
+        type: 'post',
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function (rs) {
+            alert(rs);
+            if (rs == 'sucesso') {
+                $("#catSucesso").show().fadeOut(4000);
+            } else {
+                $("#catFalha").show().fadeOut(4000);
+            }
+        },
+        error: function (e) {
+            bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+        }
+    });
+
+
+}
 

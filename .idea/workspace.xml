@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD-PHP/Crud/class/Cadastrar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CRUD-PHP/Crud/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/modelUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelUsuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/modalPainel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/modalPainel.php" afterDir="false" />
     </list>
@@ -118,6 +120,12 @@
       <workItem from="1624915312033" duration="581000" />
       <workItem from="1624916218885" duration="2183000" />
       <workItem from="1624925595454" duration="3317000" />
+      <workItem from="1624931365594" duration="292000" />
+      <workItem from="1624931820196" duration="127000" />
+      <workItem from="1624987773988" duration="56000" />
+      <workItem from="1624993748988" duration="676000" />
+      <workItem from="1625060391838" duration="3013000" />
+      <workItem from="1625071585421" duration="15095000" />
     </task>
     <servers />
   </component>
@@ -173,6 +181,15 @@
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/src/Controller/controllerCategoria.php</url>
+          <line>11</line>
+          <properties>
+            <option name="className" value="\controllerCategoria" />
+            <option name="methodName" value="setCategoria" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/index.php</url>
           <line>383</line>
@@ -180,12 +197,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/layouts/app.blade.php</url>
-          <line>139</line>
+          <line>145</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/layouts/app.blade.php</url>
-          <line>105</line>
+          <line>115</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -207,6 +224,11 @@
           <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/cliente/notificacao/notificacao.blade.php</url>
           <line>62</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/layouts/app.blade.php</url>
+          <line>113</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
