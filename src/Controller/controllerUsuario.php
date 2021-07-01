@@ -33,7 +33,7 @@ class controllerUsuario
 
             //URL da pasta para salvar a imagem
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-            $caminho_imagem = '../imagens/' . $nome_imagem;
+            $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
         }
 
         if ($this->username == '' || $this->senha == '' || $this->email == '' || $this->telefone == '') {
@@ -76,7 +76,7 @@ class controllerUsuario
 
             //URL da pasta para salvar a imagem
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-            $caminho_imagem = '../imagens/' . $nome_imagem;
+            $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
         } elseif ($_POST["fotoStatusupd"] == 'jaTem') {
             $this->foto = $_POST['fotoAtual'];
 

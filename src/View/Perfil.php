@@ -28,7 +28,7 @@ include ('Navbar.php');
 
                         <?php
                         if ($_SESSION['Foto'] != 'false'){
-                            echo '<img  class = "miniatura" src="../imagens/'.$_SESSION['Foto'].'">';
+                            echo '<img  class = "miniatura" src="../imagens/usuarios/'.$_SESSION['Foto'].'">';
                         }
                         else {
                             echo '<div class="d-flex align-items-center d-flex justify-content-center col-4 col-md-4" id="foto"

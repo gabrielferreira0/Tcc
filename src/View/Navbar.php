@@ -34,7 +34,7 @@
             <?php
             if ($_SESSION['Foto'] != 'false') {
                 echo '<span  id ="Welcome" style="color: lightgray" class="nav-link text-center  arredondar" href="Perfil.php">' . $_SESSION['User'] . '</span>';
-                echo '<img  class = "avatar" src="../imagens/' . $_SESSION['Foto'] . '"';
+                echo '<img  class = "avatar" src="../imagens/usuarios/' . $_SESSION['Foto'] . '"';
             } else
                 echo '<span  id ="Welcome" style="color: lightgray" class="nav-link text-center  arredondar" href="Perfil.php">' . $_SESSION['User'] . '</span>';
                 echo '<span class="fa fa-user-circle photo text-center"></span>';
