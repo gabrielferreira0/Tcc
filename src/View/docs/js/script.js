@@ -401,12 +401,15 @@ $(document).ready(function () {
 
 
     $('#modalInfo').on('show.bs.modal', function (event) {
+
         //função para mostrar os dados na modal
         let button = $(event.relatedTarget)
         let nomeCat = button.attr('data-nomeC')
         let image = button.attr('data-image')
         let idCategoria = button.attr('data-idCat');
         let modal = $(this)
+
+
         modal.find('#categoriaUPD').val(nomeCat)
         modal.find('#imagemCatAtual').val(image);
         modal.find('#idCategoria').val(idCategoria);
@@ -414,6 +417,43 @@ $(document).ready(function () {
         modal.find('#miniaturaCat').attr('src', "../imagens/categoria/" + image);
         // retira a classe miniatura PARA ajustar o tamanho da imagem com a class do boostrap
         $("#miniaturaCat").removeClass('miniaturaCat').addClass('card-img-top');
+    })
+
+
+    $('#modalInfoUsers').on('show.bs.modal', function (event) {
+        let modal = $(this)
+        let button = $(event.relatedTarget)
+        let usuID = button.attr('data-idUser')
+        let usuNome = button.attr('data-nameUser')
+        let usuTelefone = button.attr('data-telefoneUser')
+        let usuEmail = button.attr('data-emailUser')
+        let usuCPF = button.attr('data-cpfUser')
+        let usuFoto = button.attr('data-fotoUser')
+        let HTMLfoto;
+
+
+        if (usuFoto != 'false') {
+            let HTMLfoto = '<img  class ="miniatura" src="../imagens/usuarios/' + usuFoto + '">'
+            modal.find('.fotoUser').html(HTMLfoto);
+        } else {
+
+            let HTMLfoto =
+                '\<div class="d-flex align-items-center d-flex justify-content-center col-4 col-md-4" id="usuFoto"\
+                   title="Foto de perfil">\
+                <h1 class="fas fa-user"></h1> \
+        </div>';
+
+            modal.find('.fotoUser').html(HTMLfoto);
+        }
+
+
+        modal.find('#Username').val(usuNome);
+        modal.find('#Telefone').val(usuTelefone);
+        modal.find('#Email').val(usuEmail);
+        modal.find('#CPF').val(usuCPF);
+        modal.find('.fotoUser').html(HTMLfoto);
+
+
     })
 
 
@@ -551,9 +591,10 @@ function updateCat() {
         processData: false,
         data: formData,
         success: function (rs) {
-            alert(rs);
+
+            console.log(rs);
             if (rs == 'sucesso') {
-                $("#catSucesso").show().fadeOut(4000);
+                $("#catSucesso2").show().fadeOut(4000);
             } else {
                 $("#catFalha").show().fadeOut(4000);
             }

@@ -39,7 +39,7 @@
                 <a class="nav-link arredondar" href="" target="_blank">Trabalhe Conosco</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link arredondar" id="sobreteste">Sobre Nós</a>
+                <a  style="cursor:pointer" class="nav-link arredondar"  id="sobreteste">Sobre Nós</a>
             </li>
 
             <?php

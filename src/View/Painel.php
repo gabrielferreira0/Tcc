@@ -158,7 +158,6 @@ include('Navbar.php');
                     $usuarios = new modelUsuario();
                     $usuarios = $usuarios->getAllUsers();
 
-
                     foreach ($usuarios as $key => $value) {
                         ?>
                         <tr>
@@ -187,9 +186,15 @@ include('Navbar.php');
                             ?>
 
                             <td>
-                                <button data-toggle="modal"
-                                        data-target="#modalInfo" type="button"
-                                        class="btn btn-primary"><i class="far fa-edit"></i></button>
+                                <button data-toggle="modal" data-idUser="<?php echo $value['id']?>"
+                                        data-idUser="<?php echo $value['id']?>"
+                                        data-nameUser="<?php echo $value['usunome']?>"
+                                        data-telefoneUser="<?php echo $value['usutelefone']?>"
+                                        data-emailUser="<?php echo $value['usuemail']?>"
+                                        data-cpfUser="<?php echo $value['usucpf']?>"
+                                        data-fotoUser="<?php echo $value['usufoto']?>"
+                                        data-target="#modalInfoUsers" type="button"
+                                        class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </td>
 
                         </tr>
@@ -216,6 +221,8 @@ include('Footer.php');
 </body>
 <!-- MODAL-->
 <?php
+include('modalUsers.php');
 include('modalPainel.php');
 ?>
+
 <!-- MODAL-->

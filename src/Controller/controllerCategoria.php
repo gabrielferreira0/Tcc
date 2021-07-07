@@ -60,7 +60,7 @@ class controllerCategoria
             move_uploaded_file($this->fotoCategoria['tmp_name'], $caminho_imagem);
 
         } else {
-            $this->fotoCategoria = $_POST['imagemCatAtual'];
+            $nome_imagem = $_POST['imagemCatAtual'];
         }
 
         $result = $modelCategoria->updateCategoria($idCategoria, $this->categoria, $nome_imagem);

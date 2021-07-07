@@ -2,6 +2,7 @@
      aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div style="background: #202020" class="modal-content">
+
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="exampleModalLabel">Informações da Categoria</h5>
                 <button style="color: white" type="button" class="close" data-dismiss="modal"
@@ -11,6 +12,15 @@
 
             </div>
             <div class="modal-body">
+
+                <div class="alert alert-success testando text-center" id="catSucesso2" role="alert"
+                     style="display: none;">
+                    <strong>Aviso! </strong> Categoria adicionada com <strong>sucesso!</strong>
+                </div>
+
+                <div class="alert alert-danger testando text-center" id="catFalha" role="alert" style="display: none;">
+                    <strong>Erro! </strong> Categoria não foi <strong>alterada!</strong>
+                </div>
                 <div class="container col-md-8">
                     <div class=" d-flex justify-content-center input-group ">
                         <div class="input-group-prepend">
