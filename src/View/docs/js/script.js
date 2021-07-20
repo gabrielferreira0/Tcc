@@ -32,6 +32,7 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#Login', function () {
         $("#cardServicos").hide();
         $("#cardCadastro").hide();
+        $("#cardCardRecuperar").hide();
         $("#carousel").hide();
         $("#sobre").hide();
         $("#cardLogin").show();
@@ -91,6 +92,7 @@ $(document).ready(function () {
         $("#sobre").hide();
         $("#cardServicos").hide();
         $("#carousel").hide();
+        $("#cardCardRecuperar").hide();
         $("#cardCadastro").show();
     });
 
@@ -294,18 +296,22 @@ $(document).ready(function () {
         $("#listaCat").show();
         $("#formCategoria").hide();
         $("#listaUsers").hide();
+        $("#cardCardRecuperar").hide();
     });
 
     $('#Conteudo').on('click', '#listarUsers', function () {
         $("#listaCat").hide();
         $("#formCategoria").hide();
         $("#listaUsers").show();
+        $("#cardCardRecuperar").hide();
     });
 
     $('#Conteudo').on('click', '#Categoria', function () {
         $("#formCategoria").show();
         $("#listaCat").hide();
         $("#listaUsers").hide();
+        $("#cardCardRecuperar").hide();
+
     });
 
 
@@ -547,9 +553,13 @@ $(function () {
 
 });
 
-function showCard() {
+function showCardCadastro() {
     $("#cardLogin").hide();
     $("#cardCadastro").show();
+}
+function showCardRecuperar() {
+    $("#cardLogin").hide();
+    $("#cardCardRecuperar").show();
 }
 
 

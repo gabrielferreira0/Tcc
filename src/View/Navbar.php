@@ -2,7 +2,7 @@
 
 
     <a style="text-decoration:none;" href=" ../index.php">
-        <img class="logo" src="../imagens/logo2.png" alt="logo">
+        <img class="logo" src="../imagens/logo.png" alt="logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -12,19 +12,20 @@
     <div class="collapse navbar-collapse menu" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link arredondar" href="">Trabalhe Conosco</a>
+                <a class="nav-link arredondar" href=""><i class="fas fa-handshake"></i> Trabalhe Conosco</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link arredondar" href="../index.php#sobre">Sobre Nós</a>
+                <a class="nav-link arredondar" href="../index.php#sobre"><i class="fas fa-building"></i> Sobre Nós</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link arredondar" href="Perfil.php">Perfil</a>
+                <a class="nav-link arredondar" href="Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
             </li>
 
             <?php
+            session_start();
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
-                        <a class="nav-link arredondar" href="Painel.php">Painel</a>
+                        <a class="nav-link arredondar" href="Painel.php"><i class="fas fa-cogs"></i> Painel</a>
                        </li>';
             }
             ?>

@@ -20,6 +20,9 @@
 
 <body id="Conteudo">
 
+
+<!-- navbar-->
+
 <div class="navbar  navbar-expand-sm  navbar-dark  mb-4 " role="navigation" style="background: #202020">
 
 
@@ -36,22 +39,22 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link arredondar" href="" target="_blank">Trabalhe Conosco</a>
+                <a class="nav-link arredondar" href="" target="_blank"><i class="fas fa-handshake"></i> Trabalhe Conosco</a>
             </li>
             <li class="nav-item">
-                <a  style="cursor:pointer" class="nav-link arredondar"  id="sobreteste">Sobre Nós</a>
+                <a  style="cursor:pointer" class="nav-link arredondar"  id="sobreteste"><i class="fas fa-building"></i> Sobre Nós</a>
             </li>
 
             <?php
             session_start();
             if (isset($_SESSION['CPF'])) {
                 echo '<li class="nav-item">
-                        <a class="nav-link arredondar" href="View/Perfil.php">Perfil</a>
+                        <a class="nav-link arredondar" href="View/Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
                        </li>';
             }
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
-                        <a class="nav-link arredondar" href="View/Painel.php">Painel</a>
+                        <a class="nav-link arredondar" href="View/Painel.php"><i class="fas fa-cogs"></i> Painel</a>
                        </li>';
             }
             ?>
@@ -82,6 +85,9 @@
     </div>
 </div>
 
+<!-- FIM navbar-->
+
+<!-- carousel-->
 <div   style="background: rgba(0, 0, 0, 0.8);" id ="carousel" class="container col-md-10 col-12 arredondar">
     <div    id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -121,9 +127,12 @@
         </a>
     </div>
 </div>
+<!--  FIM carousel-->
 
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
+
+        <!-- FORM Cadastro-->
         <div class="card cardFormulario" id="cardCadastro" style="display: none;">
             <!--            inicia aqui-->
             <div class="card-body">
@@ -340,6 +349,9 @@
             </div>
             <!--            termina aqui-->
         </div>
+        <!-- FIM FORM Cadastro-->
+
+        <!-- FORM Login-->
         <div class="card cardFormulario col-md-3" id="cardLogin" style="display: none">
             <div class="card-body" id="card-body">
                 <h3 class="text-center titulo"> Login <i class="fas fa-users"></i></h3>
@@ -374,10 +386,42 @@
                 </form>
             </div>
             <button id="Logar" type="button" class="Entrar btn btn btn arredondar">Login</button>
-            <a href="#!" class="login-card-footer-text">Esqueceu a senha?</a>
-            <p class="login-card-footer-text">Não possui uma conta? <a  onclick="showCard()" href="#cardCadastro"  class="login-card-footer-text">Cadastrar-se
+            <span class="login-card-footer-text">Esqueceu a senha? <a  style="cursor: pointer" onclick="showCardRecuperar()"   class="login-card-footer-text">Clique aqui
+                    aqui</a></span>
+            <p class="login-card-footer-text">Não possui uma conta? <a  style="cursor: pointer" onclick="showCardCadastro()"   class="login-card-footer-text">Cadastrar-se
                     aqui</a></p>
         </div>
+        <!--  FIM FORM Login-->
+
+        <!-- FORM Recuperar-->
+        <div class="card cardFormulario col-md-3" id="cardCardRecuperar" style="display: none">
+            <div class="card-body" id="card-body">
+                <h4 class="text-center bordar">Encontre sua conta<i class="fas fa-search"></i></h4>
+
+                <form id="formularioLogin" class="formulario" data-toggle="validator">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="CPF">CPF:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"> <i class="fas fa-id-card-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control arredondar" id="CPF-login"
+                                       placeholder="123.123.123-00" max="11"
+                                       data-error="Por favor, informe um CPF correto." required>
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <button id="Logar" type="button" class="Entrar btn btn btn arredondar">Enviar </button>
+            <p class="text-center">  Digite seu CPF e enviaremos um email com seus dados e sua nova senha!</p>
+        </div>
+        <!--  FIM FORM Recuperar-->
+        
+        <!-- Serviços-->
+
         <div class="container" id="cardServicos">
 
             <div class="card-columns ">
@@ -402,15 +446,18 @@
                 ?>
             </div>
         </div>
+        <!--  FIM Serviços-->
     </div>
 </div>
 
 
+<!-- SOBRE NOS-->
 <section class="page-section geral" id="sobre">
     <?php
     include('View/Sobre.php');
     ?>
 </section>
+<!-- FIM SOBRE NOS-->
 
 <?php
 include('View/Footer.php');
