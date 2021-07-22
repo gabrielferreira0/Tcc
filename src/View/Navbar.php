@@ -1,10 +1,7 @@
 <div class="navbar  navbar-expand-sm  navbar-dark mb-4 " role="navigation" style="background: #202020">
-
-
     <a style="text-decoration:none;" href=" ../index.php">
         <img class="logo" src="../imagens/logo.png" alt="logo">
     </a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,7 +19,6 @@
             </li>
 
             <?php
-            session_start();
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="Painel.php"><i class="fas fa-cogs"></i> Painel</a>
@@ -30,7 +26,6 @@
             }
             ?>
         </ul>
-
         <div class="d-flex justify-content-center align-items-center">
             <?php
             if ($_SESSION['Foto'] != 'false') {

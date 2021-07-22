@@ -181,4 +181,18 @@ class controllerUsuario
 
     }
 
+    public function recuperar()
+    {
+        $CPFrecuperar = $_POST["CPFrecuperar"];
+        $modelUsuario = new modelUsuario();
+        $resultado = $modelUsuario->recuperar($CPFrecuperar);
+
+        if ($resultado[0]) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }

@@ -105,13 +105,13 @@
             </div>
 
             <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Seja um parceiro!">
+                <img class="d-block w-100" src="imagens/Carrossel/comoFunciona.png" alt="Parceiro!">
                 <div class="carousel-caption d-none d-md-block">
                     <h2> Seja um parceiro! </h2>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Avaliações">
+                <img class="d-block w-100" src="imagens/Carrossel/comoFunciona.png" alt="Avaliações">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>Avaliações! </h2>
                 </div>
@@ -398,7 +398,7 @@
             <div class="card-body" id="card-body">
                 <h4 class="text-center bordar">Encontre sua conta<i class="fas fa-search"></i></h4>
 
-                <form id="formularioLogin" class="formulario" data-toggle="validator">
+                <form id="formularioRecuperar" class="formulario" data-toggle="validator">
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="CPF">CPF:</label>
@@ -406,7 +406,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-id-card-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control arredondar" id="CPF-login"
+                                <input type="text" class="form-control arredondar" id="CPF-recuperar"
                                        placeholder="123.123.123-00" max="11"
                                        data-error="Por favor, informe um CPF correto." required>
                             </div>
@@ -415,11 +415,20 @@
                     </div>
                 </form>
             </div>
-            <button id="Logar" type="button" class="Entrar btn btn btn arredondar">Enviar </button>
+            <button id="Recuperar" type="button" class="Entrar btn btn btn arredondar">Enviar </button>
             <p class="text-center">  Digite seu CPF e enviaremos um email com seus dados e sua nova senha!</p>
+
+            <div class="alert alert-danger testando text-center" id="alertaRecuperar" role="alert"
+                 style="display: none; justify-content: flex-start;">
+                <strong>Erro! </strong> Preencha <strong> todos os campos! </strong>
+            </div>
+            <div class="alert alert-danger testando text-center" id="alertaRecuperar2" role="alert"
+                 style="display: none; justify-content: flex-start;">
+                <strong>Erro! </strong> CPF não foi <strong>encontrado!</strong>
+            </div>
         </div>
         <!--  FIM FORM Recuperar-->
-        
+
         <!-- Serviços-->
 
         <div class="container" id="cardServicos">

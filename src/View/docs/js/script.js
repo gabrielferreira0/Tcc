@@ -40,6 +40,40 @@ $(document).ready(function () {
         CPF.mask('999.999.999-99');
     });
 
+    $('#Conteudo').on('click', '#Recuperar', function () {
+        let CPFrecuperar = $('#CPF-recuperar').val().replace(/[^\d]+/g, '')
+        let url = '../src/Controller/index.php';
+
+
+        if (CPFrecuperar == "") {
+            $("#alertaRecuperar").show().fadeOut(4000);
+            return;
+        }
+
+        $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'post',
+            data: {
+                rq: 'recuperar',
+                CPFrecuperar: CPFrecuperar
+            },
+            success: function (rs) {
+                if (rs==true) {
+                    alert('você parou aqui')
+                }
+                else{
+                    $("#alertaRecuperar2").show().fadeOut(4000);
+                }
+
+            },
+            error: function (e) {
+                bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+            }
+        });
+
+    });
+
 
     $('#Conteudo').on('click', '#Logar', function () {
 
@@ -57,7 +91,6 @@ $(document).ready(function () {
                 senhaLogin: senhaLogin,
             },
             success: function (rs) {
-                console.log(rs)
                 switch (rs) {
                     case 'true':
                         window.location.href = "index.php";
@@ -354,7 +387,6 @@ $(document).ready(function () {
                 rq: 'deslogar',
             },
             success: function (rs) {
-                console.log(rs);
                 switch (rs) {
                     case 'true':
                         window.location.href = "index.php";
@@ -557,7 +589,10 @@ function showCardCadastro() {
     $("#cardLogin").hide();
     $("#cardCadastro").show();
 }
+
 function showCardRecuperar() {
+    let CPF = $("#CPF-recuperar");
+    CPF.mask('999.999.999-99');
     $("#cardLogin").hide();
     $("#cardCardRecuperar").show();
 }

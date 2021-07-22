@@ -105,4 +105,20 @@ class modelUsuario extends DBconexao
         return $resultado;
     }
 
+
+    public function recuperar($CPFrecuperar)
+    {
+
+        try {
+            $sql = "select * from usuarios where usucpf = '{$CPFrecuperar}' and usustatus = 'true';";
+            $rs = pg_query($this->banco->open(), $sql);
+            $dados [] = pg_fetch_array($rs, 0, PGSQL_NUM);
+            return $dados;
+        } catch (Exception $e) {
+            echo 'Exceção capturada22: ', $e->getMessage(), "\n";
+        }
+
+
+    }
+
 }

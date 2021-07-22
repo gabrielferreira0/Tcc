@@ -43,5 +43,10 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerCategoria();
             echo $loadClass->updateCat();
             break;
+        case 'recuperar':
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
+            echo $loadClass->recuperar();
+            break;
     }
 }
