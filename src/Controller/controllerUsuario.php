@@ -1,6 +1,7 @@
 <?php
 
 require_once '../Model/modelUsuario.php';
+require_once 'controllerEmail.php';
 
 class controllerUsuario
 {
@@ -18,6 +19,7 @@ class controllerUsuario
     {
         $this->username = $_POST["username"];
         $this->senha = $_POST["senha"];
+        $this->senha = md5($this->senha);;
         $this->email = $_POST["email"];
         $this->CPF = $_POST["CPF"];
         $this->telefone = $_POST["telefone"];
@@ -64,6 +66,7 @@ class controllerUsuario
 
         if ($_POST["senhaStatus"] == 'true') {
             $this->senha = $_POST["senha"];
+            $this->senha = md5($this->senha);;
         }
 
         if ($_POST["fotoStatusupd"] == 'false') {
@@ -146,9 +149,8 @@ class controllerUsuario
         //session_start();
         $CPFlogin = $_POST["CPFlogin"];
         $senhaLogin = $_POST["senhaLogin"];
-
+        $senhaLogin = md5($senhaLogin);
         $resultado = $modelUsuario->login($CPFlogin, $senhaLogin);
-
 
         if (pg_num_rows($resultado[0]) > 0) {
             $_SESSION['id'] = $resultado[1][0];
@@ -187,10 +189,21 @@ class controllerUsuario
         $modelUsuario = new modelUsuario();
         $resultado = $modelUsuario->recuperar($CPFrecuperar);
 
+
         if ($resultado[0]) {
-            return true;
-        }
-        else{
+            $assunto = 'Recuperação Conta';
+            $nome = $resultado[0][1];
+            $novaSenha = $resultado[0][2];
+            $email = $resultado[0][3];
+            $CPF = $resultado[0][4];
+            $telefone = $resultado[0][5];
+
+            $conteudo = "Sua nova senha é <strong>{$novaSenha}</strong>";
+
+            $mail = new controllerEmail();
+            return $resultadoEnvio = $mail->enviarEmail($email,$assunto,$conteudo);
+
+        } else {
             return false;
         }
     }

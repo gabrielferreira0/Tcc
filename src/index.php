@@ -378,7 +378,7 @@
                                     <span class="input-group-text arredondar"> <i class="fas fa-lock"></i></span>
                                 </div>
                                 <input type="password" class="form-control arredondar" id="senha-login"
-                                       placeholder="Senha" maxlength="20" required>
+                                       placeholder="Senha" maxlength="35" required>
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
@@ -425,6 +425,10 @@
             <div class="alert alert-danger testando text-center" id="alertaRecuperar2" role="alert"
                  style="display: none; justify-content: flex-start;">
                 <strong>Erro! </strong> CPF não foi <strong>encontrado!</strong>
+            </div>
+            <div class="alert alert-success testando text-center" id="alertaRecuperar3" role="alert"
+                 style="display: none; justify-content: flex-start;">
+                <strong>Sucesso! </strong> o email foi <strong>encaminhado!</strong>
             </div>
         </div>
         <!--  FIM FORM Recuperar-->

@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/controllerEmail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/modelUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/005f0cf3baeccbdaac64452ca0dffea5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/031b02ddccbf4a051f82700b81989641.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/54f3db39194ef66b261036822052543f.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/6c25ee94aaffcc82e5de2beae4f706a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/78fe9f7b52f292f01e02001370db723d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/8d09ed57c00bf5bc36b8bec4e37c3e4b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/d77aee5ab687aa30fdd17e8d8e2fa3ff.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/d8b999dafd50f75cc1b90a06752349a7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/e8dae85bc2ea886931ad3ca95c88e17f.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/fbe07b989fc39fbe473dc25b394fb651.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,6 +162,8 @@
       <workItem from="1626879032544" duration="3626000" />
       <workItem from="1626901053877" duration="1974000" />
       <workItem from="1626991725917" duration="5500000" />
+      <workItem from="1627046612765" duration="4536000" />
+      <workItem from="1627059300399" duration="4417000" />
     </task>
     <servers />
   </component>
@@ -180,7 +192,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>115</line>
+          <line>113</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -190,17 +202,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>533</line>
+          <line>531</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>419</line>
+          <line>417</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>82</line>
+          <line>80</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
@@ -223,7 +235,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/index.php</url>
-          <line>436</line>
+          <line>440</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

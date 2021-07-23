@@ -113,6 +113,15 @@ class modelUsuario extends DBconexao
             $sql = "select * from usuarios where usucpf = '{$CPFrecuperar}' and usustatus = 'true';";
             $rs = pg_query($this->banco->open(), $sql);
             $dados [] = pg_fetch_array($rs, 0, PGSQL_NUM);
+
+
+            // Gera uma novo Hash para senha do usuário
+            $dados[0][2] = md5(uniqid(time()));
+            $novaSenha = md5($dados[0][2]);
+
+            $sql2 = "UPDATE usuarios SET ususenha ='$novaSenha' WHERE id = {$dados[0][0]};";
+            $rs2 = pg_query($this->banco->open(), $sql2);
+
             return $dados;
         } catch (Exception $e) {
             echo 'Exceção capturada22: ', $e->getMessage(), "\n";

@@ -59,13 +59,11 @@ $(document).ready(function () {
                 CPFrecuperar: CPFrecuperar
             },
             success: function (rs) {
-                if (rs==true) {
-                    alert('você parou aqui')
-                }
-                else{
+                if (rs == true) {
+                    $("#alertaRecuperar3").show().fadeOut(4000);
+                } else {
                     $("#alertaRecuperar2").show().fadeOut(4000);
                 }
-
             },
             error: function (e) {
                 bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
