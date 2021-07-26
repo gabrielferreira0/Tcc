@@ -198,7 +198,9 @@ class controllerUsuario
             $CPF = $resultado[0][4];
             $telefone = $resultado[0][5];
 
-            $conteudo = "Sua nova senha é <strong>{$novaSenha}</strong>";
+
+            require_once '../View/Layouts/recuperarSenha.php';
+
 
             $mail = new controllerEmail();
             return $resultadoEnvio = $mail->enviarEmail($email,$assunto,$conteudo);

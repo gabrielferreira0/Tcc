@@ -34,6 +34,7 @@ class controllerEmail
         try {
             $this->mail->addAddress($para);
             $this->mail->Subject = $assunto;
+            $this->mail->addEmbeddedImage('../imagens/logo.png' , 'logo_ref');
             $this->mail->Body = $conteudo;
 
             if ($this->mail->send()) {
