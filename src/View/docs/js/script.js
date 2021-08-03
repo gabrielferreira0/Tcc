@@ -40,6 +40,9 @@ $(document).ready(function () {
         CPF.mask('999.999.999-99');
     });
 
+
+
+
     $('#Conteudo').on('click', '#Recuperar', function () {
         let CPFrecuperar = $('#CPF-recuperar').val().replace(/[^\d]+/g, '')
         let url = '../src/Controller/index.php';
@@ -147,7 +150,7 @@ $(document).ready(function () {
         let foto = $('#addFotoGaleria')[0].files[0];
         let fotoStatus;
         let CPF = $("#CPF").val().replace(/[^\d]+/g, '')
-        let telefone = $('#Telefone').val();
+        let telefone = $("#Telefone").val().replace('-', '')
 
         if (!foto) {
             fotoStatus = 'false'
@@ -488,7 +491,6 @@ $(document).ready(function () {
         modal.find('#Email').val(usuEmail);
         modal.find('#CPF').val(usuCPF);
         modal.find('.fotoUser').html(HTMLfoto);
-
 
     })
 

@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse menu" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link arredondar" href=""><i class="fas fa-handshake"></i> Trabalhe Conosco</a>
+                <a class="nav-link arredondar" href="./parceiroForm.php"><i class="fas fa-handshake"></i> Seja um parceiro!</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link arredondar" href="../index.php#sobre"><i class="fas fa-building"></i> Sobre Nós</a>

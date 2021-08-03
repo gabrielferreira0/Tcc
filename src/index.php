@@ -9,14 +9,20 @@
     <script src="View/docs/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
     <script src="View/docs/plugins/bootstrap-4.1.3-dist/js/popper.min.js"></script>
     <script src="View/docs/plugins/jquery/jquery.mask.js"></script>
+    <script src="View/docs/plugins/jquery/jquery.dataTables.min.js"></script>
     <script src="View/docs/plugins/bootbox/bootbox.all.min.js"></script>
     <script src="View/docs/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="View/docs/js/script.js"></script>
     <link rel="stylesheet" href="View/docs/css/style.css">
+    <link rel="stylesheet" href="View/docs/plugins/jquery/jquery.dataTables.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="View/docs/plugins/bootstrap-4.1.3-dist/js/validator.min.js"></script>
 </head>
+
+
+
+
 
 <body id="Conteudo">
 
@@ -39,10 +45,10 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link arredondar" href="" target="_blank"><i class="fas fa-handshake"></i> Trabalhe Conosco</a>
+                <a class="nav-link arredondar" href="View/parceiroForm.php"><i class="fas fa-handshake"></i> Seja um parceiro!</a>
             </li>
             <li class="nav-item">
-                <a  style="cursor:pointer" class="nav-link arredondar"  id="sobreteste"><i class="fas fa-building"></i> Sobre Nós</a>
+                <a  style="cursor:pointer" class="nav-link arredondar" id="sobreteste"><i class="fas fa-building"></i> Sobre Nós</a>
             </li>
 
             <?php

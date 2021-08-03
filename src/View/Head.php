@@ -7,9 +7,11 @@
 <script src="docs/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
 <script src="docs/plugins/bootstrap-4.1.3-dist/js/popper.min.js"></script>
 <script src="docs/plugins/jquery/jquery.mask.js"></script>
+<script src="docs/plugins/jquery/jquery.dataTables.min.js"></script>
 <script src="docs/plugins/bootbox/bootbox.all.min.js"></script>
 <script src="docs/plugins/sweetalert/sweetalert2.all.min.js"></script>
 <script src="docs/js/script.js"></script>
 <link rel="stylesheet" href="docs/css/style.css">
+<link rel="stylesheet" href="docs/plugins/jquery/jquery.dataTables.min.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <script src="docs/plugins/bootstrap-4.1.3-dist/js/validator.min.js"></script>

@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View/Layouts/recuperarSenha.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/parceiroForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controllerEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Head.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Layouts/recuperarSenha.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layouts/recuperarSenha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Nosso Master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -152,6 +158,18 @@
       <workItem from="1627046612765" duration="4536000" />
       <workItem from="1627059300399" duration="4653000" />
       <workItem from="1627314144503" duration="5986000" />
+      <workItem from="1627399088210" duration="358000" />
+      <workItem from="1627410781255" duration="2780000" />
+      <workItem from="1627413738525" duration="2896000" />
+      <workItem from="1627430463599" duration="292000" />
+      <workItem from="1627432083074" duration="845000" />
+      <workItem from="1627433185465" duration="2020000" />
+      <workItem from="1627435481819" duration="601000" />
+      <workItem from="1627910899949" duration="2952000" />
+      <workItem from="1627927682276" duration="308000" />
+      <workItem from="1628001332369" duration="3150000" />
+      <workItem from="1628018665102" duration="2823000" />
+      <workItem from="1628024256015" duration="3927000" />
     </task>
     <servers />
   </component>
@@ -180,7 +198,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>113</line>
+          <line>116</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -190,17 +208,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>531</line>
+          <line>533</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>417</line>
+          <line>420</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>80</line>
+          <line>83</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
@@ -223,7 +241,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/index.php</url>
-          <line>440</line>
+          <line>446</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -237,8 +255,8 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$USER_HOME$/Desktop/nosso master/app.nosso/resources/views/home.blade.php</url>
-          <line>287</line>
+          <url>file://$USER_HOME$/Desktop/Nosso Master/app.nosso/resources/views/home.blade.php</url>
+          <line>261</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

@@ -16,6 +16,9 @@ include('../Controller/verificarLoginADM.php')
 include('Navbar.php');
 ?>
 
+
+
+
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
         <div class="card cardFormulario">
@@ -137,7 +140,7 @@ include('Navbar.php');
                 </div>
 
             <div class="table-responsive" id="listaUsers" style="display: none">
-                <table class="table table" style=" border:1px solid white; color: white">
+                <table id="table-Users" class="table table" style=" border:1px solid white; color: white">
                     <thead style="background: #f50a31;">
                     <tr>
                         <th scope="col">ID</th>
@@ -224,5 +227,16 @@ include('Footer.php');
 include('modalUsers.php');
 include('modalPainel.php');
 ?>
+
+
+<script>
+    $(document).ready(function() {
+        $("#table-Users").dataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
+    } );
+</script>
 
 <!-- MODAL-->

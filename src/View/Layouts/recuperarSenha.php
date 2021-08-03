@@ -6,7 +6,7 @@ $conteudo = "<table style='background:black;color: white' width='100%' cellspaci
             <table  align='center' cellspacing='0' cellpadding='0' border='0' style='margin:0 auto'>
                 <tbody bgcolor='#fcfcfc' style='background:black;color: white'>
                 <tr>
-                    <th style='background:black;color: white'  width='80%'>
+                    <th style='background:black;color: white'  width='100%'>
                         <img  src='cid:logo_ref' alt='Logo'>
                     </th>
                 </tr>
