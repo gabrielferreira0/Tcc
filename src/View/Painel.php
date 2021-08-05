@@ -150,8 +150,8 @@ include('Navbar.php');
                         <th scope="col">Telefone</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Desativar</th>
-                        <th scope="col">Visualizar</th>
+                        <th scope="col">Lixo</th>
+                        <th scope="col">Ver</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -175,16 +175,16 @@ include('Navbar.php');
 
                             <?php
                             if ($value['usustatus'] == 'true') {
-                                echo '<td>
+                                echo '<th>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="False" title="Desativar" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                                       </td>';
+                                       </th>';
 
                             } else {
-                                echo ' <td>
+                                echo ' <th>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="True" title="Ativar" type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                                        </td>';
+                                        </th>';
                             }
                             ?>
 

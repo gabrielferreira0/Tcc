@@ -1,4 +1,4 @@
-<div class="container sobreNos col-md-10 col-12">
+<div class="container sobreNos col-md-10 col-11">
     <div class="text-center">
         <h1 class="text-center"> Sobre nós</h1>
     </div>

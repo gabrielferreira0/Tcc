@@ -75,5 +75,8 @@
 
 <h1 class="text-center"> FORMULÁRIO PARA CADASTRO DE PARCEIROS</h1>
 
+<?php
+include('Footer.php');
+?>
 
 </body>
