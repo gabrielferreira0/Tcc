@@ -14,4 +14,4 @@ jobs push :
           servidor : rush.granddns.info
           nome de usuário : aqbarhch
           senha : sjY[5Yf5h(E67V
-          server-dir: /home6/aqbarhch/public_html/
+          server-dir: public_html/
