@@ -17,4 +17,3 @@ jobs push :
           servidor : ftp.wedosvc.com.br
           nome de usuário : ${{ secrets.ftp_user }}
           senha : ${{ secrets.ftp_password }}
-          server-dir: /home6/aqbarhch/public_html
