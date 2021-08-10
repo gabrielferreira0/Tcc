@@ -8,7 +8,7 @@ function carregarCEP() {
         success: function (rs) {
             rs = JSON.parse(rs);
             console.log(rs);
-            $("#Logradouro").val(rs['logradouro']);
+            $("#Logradouro").val(rs['logradoRecuperaruro']);
             $("#Complemento").val(rs['complemento']);
             $("#Bairro").val(rs['bairro']);
             $("#Cidade").val(rs['localidade']);
