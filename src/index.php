@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -49,7 +53,6 @@
             </li>
 
             <?php
-            session_start();
             if (isset($_SESSION['CPF'])) {
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="View/Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
