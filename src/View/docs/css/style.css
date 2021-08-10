@@ -1,7 +1,7 @@
 
 .miniatura {
-    height: 120px;
-    /*width: 100px;*/
+    height: 7rem;
+    width: 7rem;
     border: 1px solid transparent;
     border-radius: 50%;
     cursor: pointer;
@@ -23,8 +23,8 @@
 }
 
 .avatar {
-    height: 50px;
-    /*width: 50px;*/
+    height: 3.5rem;
+    width: 3.5rem;
     border-radius: 50%;
     cursor: pointer;
 }
