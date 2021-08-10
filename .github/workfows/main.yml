@@ -11,6 +11,7 @@ jobs push :
       - nome : 📂 Os arquivos de sincronização
         usam : SamKirkland/FTP-Deploy-Action@4.1.0
         com :
-          servidor : ftp.wedosvc.com.br
-          nome de usuário : $ {{secrets.ftp_user}}
-          senha : $ {{secrets.ftp_password}}
+          servidor : rush.granddns.info
+          nome de usuário : aqbarhch
+          senha : sjY[5Yf5h(E67V
+          server-dir: /home6/aqbarhch/public_html/
