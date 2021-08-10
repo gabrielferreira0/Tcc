@@ -24,8 +24,7 @@
 <body id="Conteudo">
 
 
-<!-- navbar aqui-->
-
+<!-- navbar-->
 
 <div class="navbar  navbar-expand-sm  navbar-dark  mb-4 " role="navigation" style="background: #202020">
 
@@ -46,7 +45,7 @@
                 <a class="nav-link arredondar" href="View/parceiroForm.php"><i class="fas fa-handshake"></i> Seja um parceiro!</a>
             </li>
             <li class="nav-item">
-                <a  style="cursor:pointer" class="nav-link arredondar" id="sobreteste"><i class="fas fa-building"></i> Sobre Nós</a>
+                <a  style="cursor:pointer" class="nav-link arredondar" id="sobreteste"><i class="fas fa-building"></i> Sobre Nós 123</a>
             </li>
 
             <?php
