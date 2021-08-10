@@ -20,9 +20,9 @@ class controllerEmail
         $this->mail->Host = 'smtp.gmail.com';
         $this->mail->Port = 587;
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = 'gabrielferreirasilvati@gmail.com';
+        $this->mail->Username = 'suporteWedosvc@gmail.com';
         $this->mail->Password = 'bielferreira58';
-        $this->mail->setFrom('gabrielferreirasilvati@gmail.com', 'Wedo Serviços');
+        $this->mail->setFrom('suporteWedosvc@gmail.com', 'Wedo Serviços');
         $this->mail->isHTML(true);
         $this->mail->CharSet = "UTF-8";
 

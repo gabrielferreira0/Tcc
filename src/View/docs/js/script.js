@@ -62,6 +62,8 @@ $(document).ready(function () {
                 CPFrecuperar: CPFrecuperar
             },
             success: function (rs) {
+                console.log(rs);
+
                 if (rs == true) {
                     $("#alertaRecuperar3").show().fadeOut(4000);
                 } else {
