@@ -1,6 +1,6 @@
 drop table usuarios;
 drop table tipoUsuario;
-
+teste
 create table tipoUsuario(
     id serial primary key not null ,
     perfil varchar (50)
