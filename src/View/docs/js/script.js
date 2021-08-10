@@ -92,6 +92,8 @@ $(document).ready(function () {
                 senhaLogin: senhaLogin,
             },
             success: function (rs) {
+                console.log(rs);
+
                 switch (rs) {
                     case 'true':
                         window.location.href = "index.php";

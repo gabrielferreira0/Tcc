@@ -45,7 +45,7 @@
                 <a class="nav-link arredondar" href="View/parceiroForm.php"><i class="fas fa-handshake"></i> Seja um parceiro!</a>
             </li>
             <li class="nav-item">
-                <a  style="cursor:pointer" class="nav-link arredondar" id="sobreteste"><i class="fas fa-building"></i> Sobre Nós 123</a>
+                <a  style="cursor:pointer" class="nav-link arredondar" id="sobreteste"><i class="fas fa-building"></i> Sobre Nós</a>
             </li>
 
             <?php
