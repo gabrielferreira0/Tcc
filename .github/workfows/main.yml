@@ -1,7 +1,4 @@
-on :
-  push:
-    branches:
-        - master
+on : push
 name : 🚀 Implantar website em
 jobs push :
   web-deploy :
@@ -15,5 +12,5 @@ jobs push :
         usam : SamKirkland/FTP-Deploy-Action@4.1.0
         com :
           servidor : ftp.wedosvc.com.br
-          nome de usuário : ${{ secrets.ftp_user }}
-          senha : ${{ secrets.ftp_password }}
+          nome de usuário : $ {{secrets.ftp_user}}
+          senha : $ {{secrets.ftp_password}}
