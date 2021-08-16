@@ -44,7 +44,7 @@ class controllerUsuario
 
             $modelUsuario = new modelUsuario();
 
-            if ($modelUsuario->verificarUser($this->CPF) && $this->validarCPF($this->CPF)) {
+            if ($modelUsuario->verificarUser($this->CPF,$this->email) && $this->validarCPF($this->CPF)) {
                 $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo);
 
                 if ($result) {

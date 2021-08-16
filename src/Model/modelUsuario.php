@@ -43,14 +43,14 @@ class modelUsuario extends DBconexao
 
     }
 
-    public function verificarUser($CPF)
+    public function verificarUser($CPF,$email)
     {
         $sql = "select usucpf from usuarios where usucpf ='{$CPF}'  and usustatus ='true' ;";
         $rs = pg_query($this->banco->open(), $sql);
         if (pg_num_rows($rs) > 0) {
             echo "cpfC";
         } else {
-            $sql = "select usuemail from usuarios where usuemail ='{$CPF}' and usustatus ='true';";
+            $sql = "select usuemail from usuarios where usuemail ='{$email}' and usustatus ='true';";
             $rs = pg_query($this->banco->open(), $sql);
             if (pg_num_rows($rs) > 0) {
                 echo 'emailC';
