@@ -34,11 +34,11 @@ class controllerEmail
         try {
             $this->mail->addAddress($para);
             $this->mail->Subject = $assunto;
-            $this->mail->addEmbeddedImage('../imagens/logo.png' , 'logo_ref');
+            $this->mail->addEmbeddedImage('../imagens/logo.png', 'logo_ref');
             $this->mail->Body = $conteudo;
 
             if ($this->mail->send()) {
-                return true;
+                return false;
             } else {
                 return false;
             }
@@ -49,4 +49,20 @@ class controllerEmail
 
     }
 
+
+    public function suporte()
+    {
+
+
+        $nome = $_POST["nomeCompleto"];
+        $email = $_POST["email"];
+        $telefone = $_POST["telefone"];
+        $mensagem = $_POST["mensagem"];
+        $para = 'suporteWedosvc@gmail.com';
+        $assunto = 'SUPORTE WEDO';
+
+        require_once '../View/Layouts/suporteEmail.php';
+
+         return $this->enviarEmail($para, $assunto, $conteudo);
+    }
 }

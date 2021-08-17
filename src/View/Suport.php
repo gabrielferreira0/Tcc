@@ -7,12 +7,19 @@
 
         let nomeCompleto = $("#Suporte-nomeCompleto").val();
         let telefone = $('#Suporte-telefone').val();
-        let Email = $('#Suporte-Email').val();
+        let email = $('#Suporte-Email').val();
         let mensagem = $('#Suporte-mensagem').val();
+
+
+        if (mensagem == '' || nomeCompleto == "" || telefone == '' || email == '') {
+            $("#erroSuporte").show().fadeOut(4000);
+        }
+
         let formData = new FormData();
         formData.append('nomeCompleto', nomeCompleto)
         formData.append('telefone', telefone)
         formData.append('mensagem', mensagem)
+        formData.append('email', email)
         formData.append('rq', 'suporte');
         let url = '../src/Controller/index.php';
 
@@ -25,12 +32,11 @@
             processData: false,
             data: formData,
             success: function (rs) {
-                console.log(rs);
-                if (rs == 'sucesso') {
-                    $("#catSucesso").show().fadeOut(4000);
+                if (rs==true) {
+                    $("#sucessoSuporte").show().fadeOut(4000);
 
                 } else {
-                    $("#catFalha").show().fadeOut(4000);
+                    $("#erroSuporte").show().fadeOut(4000);
                 }
             },
             error: function (e) {
@@ -57,7 +63,7 @@
         <h1 style="font-family: 'Oswald', sans-serif;" class="text-center ">Procurando ajuda?</h1>
     </div>
     <div style="margin-top: 2rem" class="row text-center col-12">
-        <div class="col-md-4 offset-md-2">
+        <div class="col-md-4 offset-md-1">
 
             <form id="formSuporte" method="POST" action="">
                 <div class="form-group">
@@ -74,15 +80,24 @@
                            id="Suporte-Email"
                            placeholder="Email" name="email"
                            required>
-                    <textarea id="Suporte-mensagem" placeholder="Mensagem" name="mensagem" style="border-radius: 10px;resize: none;"
+                    <textarea id="Suporte-mensagem" placeholder="Mensagem" name="mensagem"
+                              style="border-radius: 10px;resize: none;"
                               class="form-control"
                               rows="6" id="comment"></textarea>
                 </div>
                 <div class="form-group" style="display: flex;justify-content:flex-end;">
-                    <button id="enviarSuporte" type="button" style="background: #007bff" class="btn btn-info">Enviar</button>
+                    <button id="enviarSuporte" type="button" style="background: #007bff" class="btn btn-info">Enviar
+                    </button>
                 </div>
             </form>
+            <div class="alert alert-danger text-center" id="erroSuporte" role="alert" style="display: none;">
+                <strong>Erro! </strong> sua mensagem <strong>não foi enviada!</strong>
+            </div>
+            <div class="alert alert-success text-center"  id="sucessoSuporte" role="alert" style="display: none;">
+                <strong>Sucesso! </strong> sua mensagem <strong>foi enviada!</strong>
+            </div>
         </div>
+
         <div class="col-md-5 offset-md-1">
             <h2 style="border-bottom: 1px solid white">Siga-nos nas redes sociais</h2>
 

@@ -49,7 +49,9 @@ if (isset($_POST["rq"])) {
             echo $loadClass->recuperar();
             break;
         case 'suporte':
-         echo 'chegou ate aqui';
+            require_once 'controllerEmail.php';
+            $loadClass = new controllerEmail();
+            echo $loadClass->suporte();
             break;
     }
 }
