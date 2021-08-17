@@ -51,6 +51,11 @@ session_start();
                     <a style="cursor:pointer" class="nav-link arredondar" id="sobreteste"><i class="fas fa-building"></i> Sobre Nós</a>
                 </li>
 
+                <li class="nav-item">
+                    <a style="cursor:pointer" class="nav-link arredondar" id="suporte-navbar">
+                        <img  style="height: 1.7rem" src="imagens/svg/icone-suporte-azul.svg" alt="">Suporte</a>
+                </li>
+
                 <?php
                 if (isset($_SESSION['CPF'])) {
                     echo '<li class="nav-item">
@@ -456,6 +461,17 @@ session_start();
         ?>
     </section>
     <!-- FIM SOBRE NOS-->
+
+
+    <!-- Suporte-->
+    <section class="page-section geral" id="suporte">
+        <?php
+        include('View/Suport.php');
+        ?>
+    </section>
+    <!-- FIM Suporte-->
+
+
 
     <?php
     include('View/Footer.php');

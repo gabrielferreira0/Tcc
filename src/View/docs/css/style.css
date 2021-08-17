@@ -51,6 +51,15 @@
     padding: 10px;
 }
 
+.suporte {
+    margin-top: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 1.3rem;
+    font-family: 'Oswald', sans-serif;
+
+}
+
 .bordar {
     border-bottom: 1px solid white;
 
@@ -106,7 +115,6 @@ body {
 }
 
 
-
 .arredondar {
     border-radius: 10px;
 }
@@ -142,13 +150,14 @@ body {
     cursor: pointer;
     transition: all ease 0.2s;
 }
+
 .cardFormularioSrv:hover {
     background: #f50a31;
 }
 
 .carousel-item .img-fluid {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
 
 

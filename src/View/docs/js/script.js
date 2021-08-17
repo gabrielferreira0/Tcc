@@ -35,6 +35,7 @@ $(document).ready(function () {
         $("#cardCardRecuperar").hide();
         $("#carousel").hide();
         $("#sobre").hide();
+        $("#suporte").hide();
         $("#cardLogin").show();
         let CPF = $("#CPF-login");
         CPF.mask('999.999.999-99');
@@ -125,6 +126,7 @@ $(document).ready(function () {
         // telefone.mask('(00) 0000-0000');
         $("#cardLogin").hide();
         $("#sobre").hide();
+        $("#suporte").hide();
         $("#cardServicos").hide();
         $("#carousel").hide();
         $("#cardCardRecuperar").hide();
@@ -138,6 +140,16 @@ $(document).ready(function () {
         $("#sobre").show();
         window.location.href = "index.php#sobre"
     });
+
+    $('#Conteudo').on('click', '#suporte-navbar', function () {
+        $("#cardCadastro").hide();
+        $("#cardLogin").hide();
+        $("#cardServicos").show();
+        $("#sobre").show();
+        $("#suporte").show();
+        window.location.href = "index.php#suporte"
+    });
+
 
 
     $('#Conteudo').on('click', '#cadastrar', function () {

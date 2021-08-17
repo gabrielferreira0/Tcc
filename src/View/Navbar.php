@@ -15,6 +15,10 @@
                 <a class="nav-link arredondar" href="../index.php#sobre"><i class="fas fa-building"></i> Sobre Nós</a>
             </li>
             <li class="nav-item">
+                <a style="cursor:pointer" class="nav-link arredondar" href="../index.php#suporte">
+                    <img  style="height: 1.7rem" src="../imagens/svg/icone-suporte-azul.svg" alt="">Suporte</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link arredondar" href="Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
             </li>
 
