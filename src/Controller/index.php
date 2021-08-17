@@ -48,5 +48,8 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerUsuario();
             echo $loadClass->recuperar();
             break;
+        case 'suporte':
+         echo 'chegou ate aqui';
+            break;
     }
 }

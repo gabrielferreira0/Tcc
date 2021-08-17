@@ -138,6 +138,7 @@ $(document).ready(function () {
         $("#cardLogin").hide();
         $("#cardServicos").show();
         $("#sobre").show();
+        $("#suporte").show();
         window.location.href = "index.php#sobre"
     });
 

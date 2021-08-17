@@ -115,13 +115,13 @@ session_start();
                 </div>
 
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagens/Carrossel/comoFunciona.png" alt="Parceiro!">
+                    <img class="d-block w-100" src="imagens/Carrossel/parceiro.png" alt="Parceiro!">
                     <div class="carousel-caption d-none d-md-block">
                         <h2> Seja um parceiro! </h2>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagens/Carrossel/comoFunciona.png" alt="Avaliações">
+                    <img class="d-block w-100" src="imagens/Carrossel/avaliacoes.png" alt="Avaliações">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Avaliações! </h2>
                     </div>
