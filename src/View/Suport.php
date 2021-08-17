@@ -56,7 +56,7 @@
     <div class="text-center">
         <h1 style="font-family: 'Oswald', sans-serif;" class="text-center ">Procurando ajuda?</h1>
     </div>
-    <div style="margin-top: 2rem" class="row text-center col-11">
+    <div style="margin-top: 2rem" class="row text-center col-12">
         <div class="col-md-4 offset-md-2">
 
             <form id="formSuporte" method="POST" action="">
