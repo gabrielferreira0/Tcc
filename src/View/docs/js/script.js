@@ -42,8 +42,6 @@ $(document).ready(function () {
     });
 
 
-
-
     $('#Conteudo').on('click', '#Recuperar', function () {
         let CPFrecuperar = $('#CPF-recuperar').val().replace(/[^\d]+/g, '')
         let url = '../src/Controller/index.php';
@@ -150,7 +148,6 @@ $(document).ready(function () {
         $("#suporte").show();
         window.location.href = "index.php#suporte"
     });
-
 
 
     $('#Conteudo').on('click', '#cadastrar', function () {
@@ -308,11 +305,21 @@ $(document).ready(function () {
     $('#Conteudo').on('click', '#salvarCat', function () {
         let categoria = $("#nomeCategoria").val();
         let fotoCategoria = $('#addFotoCat')[0].files[0];
+
+        //pegando os tipos de serviços de cada categoria
+        let servicos = $(".services").find('input');
+
+        for (let i = 0; i < servicos.length; i++) {
+            let servico =($(servicos[i]).val());
+            console.log(servico);
+        };
+
         let formData = new FormData();
         formData.append('categoria', categoria)
         formData.append('fotoCategoria', fotoCategoria)
         formData.append('rq', 'salvarCat');
         let url = '../../src/Controller/index.php';
+
 
 
         $.ajax({

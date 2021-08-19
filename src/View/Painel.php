@@ -17,7 +17,24 @@ include('Navbar.php');
 ?>
 
 
-
+<script>
+    $('#Conteudo').on('click', '#adicionarservicos', function () {
+        let inputServices = '\<div class="services d-flex justify-content-center ">\
+            <div class="d-flex align-items-center d-flex justify-content-center  col-8 col-md-8"\
+                 title="Categoria">\
+                <div class=" d-flex justify-content-center input-group ">\
+                    <div class="input-group-prepend">\
+                        <span class="input-group-text arredondar"> <i class="fas fa-briefcase"></i></span>\
+                    </div>\
+                    <input type="text" class="form-control arredondar" name="nomeservicos" placeholder="Serviços"\
+                           maxlength="20" required="">\
+                </div>\
+                <div class="error help-block with-errors"></div>\
+            </div>\
+    </div>';
+        $("#container-services").append(inputServices);
+    });
+</script>
 
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
@@ -50,11 +67,12 @@ include('Navbar.php');
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-tools"></i></span>
                                 </div>
-                                <input  type="text" class="form-control arredondar" id="nomeCategoria"
+                                <input type="text" class="form-control arredondar" id="nomeCategoria"
                                        placeholder="Categoria" maxlength="20" required="">
 
                                 <div class="input-group-append">
-                                    <button  title="Clique para adicionar serviços" id="adicionarservicos" type="button" class="btn btn-success"><i class="fas fa-plus-circle"></i> </button>
+                                    <button title="Clique para adicionar serviços" id="adicionarservicos" type="button"
+                                            class="btn btn-success"><i class="fas fa-plus-circle"></i></button>
                                 </div>
                             </div>
 
@@ -70,10 +88,11 @@ include('Navbar.php');
                                  title="Categoria">
                                 <div class=" d-flex justify-content-center input-group ">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text arredondar"> <i class="fas fa-briefcase"></i></span>
+                                        <span class="input-group-text arredondar"> <i
+                                                    class="fas fa-briefcase"></i></span>
                                     </div>
-                                    <input  type="text" class="form-control arredondar" id="nomeservicos"
-                                            placeholder="Serviços" maxlength="20" required="">
+                                    <input type="text" class="form-control arredondar" name="nomeservicos"
+                                           placeholder="Serviços" maxlength="20" required="">
                                 </div>
 
 
@@ -116,57 +135,59 @@ include('Navbar.php');
             </div>
 
             <div class="table-responsive" id="listaCat" style="display: none">
-                    <table class="table table" style=" border:1px solid white; color: white">
-                        <thead style="background: #f50a31;">
+                <table class="table table" style=" border:1px solid white; color: white">
+                    <thead style="background: #f50a31;">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Excluir</th>
+                        <th scope="col">Editar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php
+                    require_once '../Model/modelCategoria.php';
+                    $categoria = new modelCategoria();
+                    $categorias = $categoria->getAllCategoria();
+
+                    foreach ($categorias as $key => $value) {
+
+                        ?>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Excluir</th>
-                            <th scope="col">Editar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                            <th scope="row"><?php echo $value['id'] ?></th>
+                            <td><?php echo $value['catnome'] ?></td>
+                            <td><?php echo $value['catstatus2'] ?></td>
 
-                        <?php
-                        require_once '../Model/modelCategoria.php';
-                        $categoria = new modelCategoria();
-                        $categorias = $categoria->getAllCategoria();
-
-                        foreach ($categorias as $key => $value) {
-
-                            ?>
-                            <tr>
-                                <th scope="row"><?php echo $value['id'] ?></th>
-                                <td><?php echo $value['catnome'] ?></td>
-                                <td><?php echo $value['catstatus2'] ?></td>
-
-                                <?php
-                                if ($value['catstatus'] == 'True') {
-                                    echo '<td>
+                            <?php
+                            if ($value['catstatus'] == 'True') {
+                                echo '<td>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="False" title="Desativar" type="button" class="btn btn-danger setStatusCat"><i class="far fa-trash-alt"></i></button>
                                        </td>';
 
-                                } else {
-                                    echo ' <td>
+                            } else {
+                                echo ' <td>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="True" title="Ativar" type="button" class="btn btn-success setStatusCat"><i class="fas fa-check"></i></button>
                                         </td>';
-                                }
-                                ?>
-                                <td>
-                                    <button data-toggle="modal"  data-idCat ="<?php echo $value['id']?>"  data-image="<?php echo $value['catfoto'] ?>" data-nomeC="<?php echo $value['catnome'] ?>"
-                                            data-target="#modalInfo" type="button"
-                                            class="btn btn-primary"><i class="far fa-edit"></i></button>
-                                </td>
-                            </tr>
-                            <?php
-                        }
-                        ?>
-                        </tbody>
-                    </table>
-                </div>
+                            }
+                            ?>
+                            <td>
+                                <button data-toggle="modal" data-idCat="<?php echo $value['id'] ?>"
+                                        data-image="<?php echo $value['catfoto'] ?>"
+                                        data-nomeC="<?php echo $value['catnome'] ?>"
+                                        data-target="#modalInfo" type="button"
+                                        class="btn btn-primary"><i class="far fa-edit"></i></button>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="table-responsive" id="listaUsers" style="display: none">
                 <table id="table-Users" class="table table" style=" border:1px solid white; color: white">
@@ -218,13 +239,13 @@ include('Navbar.php');
                             ?>
 
                             <td>
-                                <button data-toggle="modal" data-idUser="<?php echo $value['id']?>"
-                                        data-idUser="<?php echo $value['id']?>"
-                                        data-nameUser="<?php echo $value['usunome']?>"
-                                        data-telefoneUser="<?php echo $value['usutelefone']?>"
-                                        data-emailUser="<?php echo $value['usuemail']?>"
-                                        data-cpfUser="<?php echo $value['usucpf']?>"
-                                        data-fotoUser="<?php echo $value['usufoto']?>"
+                                <button data-toggle="modal" data-idUser="<?php echo $value['id'] ?>"
+                                        data-idUser="<?php echo $value['id'] ?>"
+                                        data-nameUser="<?php echo $value['usunome'] ?>"
+                                        data-telefoneUser="<?php echo $value['usutelefone'] ?>"
+                                        data-emailUser="<?php echo $value['usuemail'] ?>"
+                                        data-cpfUser="<?php echo $value['usucpf'] ?>"
+                                        data-fotoUser="<?php echo $value['usufoto'] ?>"
                                         data-target="#modalInfoUsers" type="button"
                                         class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </td>
@@ -240,11 +261,11 @@ include('Navbar.php');
             </div>
 
 
-            </div>
-
         </div>
 
     </div>
+
+</div>
 
 <?php
 include('Footer.php');
@@ -259,13 +280,13 @@ include('modalPainel.php');
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#table-Users").dataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
             }
         });
-    } );
+    });
 </script>
 
 <!-- MODAL-->
