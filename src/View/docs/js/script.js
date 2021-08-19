@@ -308,10 +308,9 @@ $(document).ready(function () {
 
         //pegando os tipos de serviços de cada categoria
         let servicos = $(".services").find('input');
-
+        let servico = [];
         for (let i = 0; i < servicos.length; i++) {
-            let servico =($(servicos[i]).val());
-            console.log(servico);
+            servico[i] = ($(servicos[i]).val());
         };
 
         let formData = new FormData();
@@ -319,7 +318,6 @@ $(document).ready(function () {
         formData.append('fotoCategoria', fotoCategoria)
         formData.append('rq', 'salvarCat');
         let url = '../../src/Controller/index.php';
-
 
 
         $.ajax({

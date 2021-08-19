@@ -58,12 +58,12 @@
     }
 </style>
 
-<div class="container suporte col-11">
-    <div class="text-center">
+<div class="container suporte col-12 col-md-11">
+    <div class="text-center" style="margin-bottom: 2rem">
         <h1 style="font-family: 'Oswald', sans-serif;" class="text-center ">Procurando ajuda?</h1>
     </div>
-    <div style="margin-top: 2rem" class="row text-center col-12">
-        <div class="col-md-4 offset-md-1">
+    <div style="margin:0" class="row text-center col-12">
+        <div class="col-md-4 col-12 offset-md-1 ">
 
             <form id="formSuporte" method="POST" action="">
                 <div class="form-group">
@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <div class="col-md-5 offset-md-1">
+        <div class="col-md-5 col-12 offset-md-1">
             <h2 style="border-bottom: 1px solid white">Siga-nos nas redes sociais</h2>
 
             <div id="redes-sociais">

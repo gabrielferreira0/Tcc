@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Suport.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Suport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +174,7 @@
       <workItem from="1628258838049" duration="3521000" />
       <workItem from="1629386968712" duration="2952000" />
       <workItem from="1629399922304" duration="2276000" />
+      <workItem from="1629403684076" duration="722000" />
     </task>
     <servers />
   </component>
@@ -211,12 +213,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>540</line>
+          <line>538</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>427</line>
+          <line>425</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

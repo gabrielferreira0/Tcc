@@ -400,7 +400,7 @@ SERVIÇOS DE PEQUENOS REPAROS">
             <button id="Logar" type="button" class="Entrar btn btn btn arredondar">Login</button>
             <span class="login-card-footer-text">Esqueceu a senha? <a style="cursor: pointer"
                                                                       onclick="showCardRecuperar()"
-                                                                      class="login-card-footer-text">Clique aqui
+                                                                      class="login-card-footer-text">Clique
                         aqui</a></span>
             <p class="login-card-footer-text">Não possui uma conta? <a style="cursor: pointer"
                                                                        onclick="showCardCadastro()"
