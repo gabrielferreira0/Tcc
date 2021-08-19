@@ -26,6 +26,14 @@ create table categorias (
 );
 
 
+create table servicos (
+                          id serial primary key not null,
+                          usucat integer REFERENCES categorias(id),
+                          sernome varchar (50),
+                          serstatus bool
+);
+
+
 INSERT INTO tipoUsuario (perfil) VALUES ('Admin');
 INSERT INTO tipoUsuario (perfil) VALUES ('Cliente');
 INSERT INTO tipoUsuario (perfil) VALUES ('Profissional');

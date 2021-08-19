@@ -42,6 +42,7 @@ include('Navbar.php');
             <div id="formCategoria" class="card-body">
                 <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
 
+
                     <div class="d-flex justify-content-center">
                         <div class="d-flex align-items-center d-flex justify-content-center col-8 col-md-8"
                              title="Categoria">
@@ -51,10 +52,38 @@ include('Navbar.php');
                                 </div>
                                 <input  type="text" class="form-control arredondar" id="nomeCategoria"
                                        placeholder="Categoria" maxlength="20" required="">
+
+                                <div class="input-group-append">
+                                    <button  title="Clique para adicionar serviços" id="adicionarservicos" type="button" class="btn btn-success"><i class="fas fa-plus-circle"></i> </button>
+                                </div>
                             </div>
+
+
                             <div class="error help-block with-errors"></div>
                         </div>
+
                     </div>
+
+                    <div id="container-services">
+                        <div class="services d-flex justify-content-center ">
+                            <div class="d-flex align-items-center d-flex justify-content-center  col-8 col-md-8"
+                                 title="Categoria">
+                                <div class=" d-flex justify-content-center input-group ">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text arredondar"> <i class="fas fa-briefcase"></i></span>
+                                    </div>
+                                    <input  type="text" class="form-control arredondar" id="nomeservicos"
+                                            placeholder="Serviços" maxlength="20" required="">
+                                </div>
+
+
+                                <div class="error help-block with-errors"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
                     <div class="d-flex justify-content-center">
                         <label class="text-center" for="addFotoGaleria"> Imagem da categoria:</label>

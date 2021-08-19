@@ -51,6 +51,19 @@
     padding: 10px;
 }
 
+
+.services {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+#adicionarServicos {
+    background: #28a745;
+    cursor: pointer;
+    color: white;
+
+}
+
 .suporte {
     margin-top: 2rem;
     background: rgba(0, 0, 0, 0.8);
