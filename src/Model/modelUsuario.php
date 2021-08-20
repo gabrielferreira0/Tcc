@@ -13,6 +13,7 @@ class modelUsuario extends DBconexao
     private $CPF;
     private $status;
     private $tipo;
+    private $dataCadastro;
     private $banco;
 
     public function __construct()
@@ -40,17 +41,24 @@ class modelUsuario extends DBconexao
         $sql = "UPDATE usuarios SET usustatus  = 'false' WHERE id = {$id}; ";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
-
     }
 
-    public function verificarUser($CPF,$email)
+    public function block($id)
     {
-        $sql = "select usucpf from usuarios where usucpf ='{$CPF}'  and usustatus ='true' ;";
+        $sql = "UPDATE usuarios SET usublock =true , usustatus='false' WHERE id = {$id}; ";
+        $result = pg_query($this->banco->open(), $sql);
+        return $result;
+    }
+
+    public function verificarUser($CPF, $email)
+    {
+        $sql = "select usucpf from usuarios where usucpf ='{$CPF}'  and usustatus ='true' or usucpf ='{$CPF}' and  usublock = true;";
+
         $rs = pg_query($this->banco->open(), $sql);
         if (pg_num_rows($rs) > 0) {
             echo "cpfC";
         } else {
-            $sql = "select usuemail from usuarios where usuemail ='{$email}' and usustatus ='true';";
+            $sql = "select usuemail from usuarios where usuemail ='{$email}' and usustatus ='true' or usuemail ='{$email}' and usublock = true;";
             $rs = pg_query($this->banco->open(), $sql);
             if (pg_num_rows($rs) > 0) {
                 echo 'emailC';
@@ -77,7 +85,7 @@ class modelUsuario extends DBconexao
     }
 
 
-    public function inserirUser($nome, $senha, $email, $telefone, $foto, $CPF, $status, $tipo)
+    public function inserirUser($nome, $senha, $email, $telefone, $foto, $CPF, $status, $tipo, $dataCadastro)
     {
 
         $this->username = $nome;
@@ -88,7 +96,8 @@ class modelUsuario extends DBconexao
         $this->CPF = $CPF;
         $this->status = $status;
         $this->tipo = $tipo;
-        $sql = "insert into usuarios(usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus,usutipo) values ('$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status,$this->tipo);";
+        $this->dataCadastro = $dataCadastro;
+        $sql = "insert into usuarios(usudatacadastro,usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus,usutipo) values ('$this->dataCadastro','$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status,$this->tipo);";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
 
@@ -97,12 +106,18 @@ class modelUsuario extends DBconexao
     public function login($CPFlogin, $senhaLogin)
     {
 
-        $sql = "select * from usuarios where usucpf = '{$CPFlogin}'and ususenha ='{$senhaLogin}' and usustatus = 'true';";
-        $rs = pg_query($this->banco->open(), $sql);
-        $dados = pg_fetch_array($rs, 0, PGSQL_NUM);
-        $resultado[] = $rs;
-        $resultado[] = $dados;
-        return $resultado;
+        try {
+            $sql = "select * from usuarios where usucpf = '{$CPFlogin}'and ususenha ='{$senhaLogin}' and usustatus = 'true' and usublock = false ;";
+
+            $rs = pg_query($this->banco->open(), $sql);
+            $dados = pg_fetch_array($rs, 0, PGSQL_NUM);
+            $resultado[] = $rs;
+            $resultado[] = $dados;
+            return $resultado;
+        } catch (Exception $e) {
+            echo 'Exceção capturada teste: ', $e->getMessage(), "\n";
+        }
+
     }
 
 

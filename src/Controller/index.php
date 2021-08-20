@@ -23,6 +23,11 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerUsuario();
             $loadClass->delete();
             break;
+        case 'block':
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
+            $loadClass->block($_POST["idUser"]);
+            break;
         case 'deslogar':
             require_once 'controllerUsuario.php';
             $loadClass = new controllerUsuario();

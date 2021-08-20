@@ -151,9 +151,14 @@ SERVIÇOS DE PEQUENOS REPAROS">
                 <h3 class="text-center titulo"> Cadastro <i class="fas fa-address-card"></i></h3>
                 <form id="formularioCadastro" class="formulario" data-toggle="validator" enctype="multipart/form-data">
 
+                    <div class="d-flex justify-content-center">
+                        <h3>Foto perfil:</h3>
+                    </div>
                     <div class="d-flex justify-content-center galeria">
+
                         <div class="d-flex align-items-center d-flex justify-content-center col-4 col-md-4" id="foto"
                              title="Foto de perfil">
+
                             <h1 class="fas fa-user"></h1>
                         </div>
                     </div>

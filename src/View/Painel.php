@@ -34,6 +34,36 @@ include('Navbar.php');
     </div>';
         $("#container-services").append(inputServices);
     });
+
+    function block(id) {
+        let url = '../../src/Controller/index.php';
+        $.ajax({
+            type: "POST",
+            dataType: 'text',
+            url: url,
+            async: true,
+            data: {
+                rq: 'block',
+                idUser:id,
+            },
+            success: function (rs) {
+                console.log(rs);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Cadastro bloqueado com sucesso!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
+                setTimeout(function () {
+                    location.reload();
+                }, 1700);
+            },
+            error: function (e) {
+                bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+            }
+        });
+    }
 </script>
 
 <div class="container-fluid ">
@@ -216,7 +246,7 @@ include('Navbar.php');
                         <tr>
                             <th scope="row"><?php echo $value['id'] ?></th>
                             <th scope="row"><?php echo $value['usunome'] ?></th>
-                            <th scope="row"><?php echo $value['usuemail'] ?></th>
+                            <th scope="row"><?php echo $value['usublock'] ?></th>
                             <th scope="row"><?php echo $value['usucpf'] ?></th>
                             <th scope="row"><?php echo $value['usutelefone'] ?></th>
                             <th scope="row"><?php echo $value['usutipo'] ?></th>
@@ -224,13 +254,13 @@ include('Navbar.php');
 
 
                             <?php
-                            if ($value['usustatus'] == 'true') {
+                            if ($value['usustatus'] == 'true'|| $value['usublock'] == 'f' ) {
                                 echo '<th>
                                         <input type="hidden" value="' . $value["id"] . '">
-                                        <button  value="False" title="Desativar" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                        <button  onclick="block('.$value["id"].')" value="False" title="Desativar" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                        </th>';
 
-                            } else {
+                            } elseif ($value['usustatus'] == 'false'|| $value['usublock'] == 't' ) {
                                 echo ' <th>
                                         <input type="hidden" value="' . $value["id"] . '">
                                         <button  value="True" title="Ativar" type="button" class="btn btn-success"><i class="fas fa-check"></i></button>

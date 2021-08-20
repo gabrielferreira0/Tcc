@@ -13,9 +13,10 @@ class controllerUsuario
     private $CPF;
     private $status;
     private $tipo;
+    private $dataCadastro;
 
 
-    public function setUser()
+    public function setUser($tipo = 2)
     {
         $this->username = $_POST["username"];
         $this->senha = $_POST["senha"];
@@ -23,8 +24,10 @@ class controllerUsuario
         $this->email = $_POST["email"];
         $this->CPF = $_POST["CPF"];
         $this->telefone = $_POST["telefone"];
-        $this->tipo = 2;
+        $this->tipo = $tipo;
         $this->status = 'True';
+        $this->dataCadastro = date('Ymd');
+
 
         if ($_POST["fotoStatus"] == 'false') {
             $nome_imagem = 'false';
@@ -44,8 +47,8 @@ class controllerUsuario
 
             $modelUsuario = new modelUsuario();
 
-            if ($modelUsuario->verificarUser($this->CPF,$this->email) && $this->validarCPF($this->CPF)) {
-                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo);
+            if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
+                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
 
                 if ($result) {
                     if ($_POST["fotoStatus"] == 'true') {
@@ -180,8 +183,15 @@ class controllerUsuario
         $modelUsuario = new modelUsuario();
         $resultado = $modelUsuario->deletar($id);
         session_destroy();
-
     }
+
+
+    public function block($id)
+    {
+        $modelUsuario = new modelUsuario();
+         return $resultado = $modelUsuario->block($id);
+    }
+
 
     public function recuperar()
     {
@@ -203,7 +213,7 @@ class controllerUsuario
 
 
             $mail = new controllerEmail();
-            return $resultadoEnvio = $mail->enviarEmail($email,$assunto,$conteudo);
+            return $resultadoEnvio = $mail->enviarEmail($email, $assunto, $conteudo);
 
         } else {
             return false;

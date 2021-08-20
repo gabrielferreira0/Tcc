@@ -51,3 +51,8 @@ select * from categorias order by id;
 
 UPDATE usuarios SET usutipo = 1 WHERE usucpf = '';
 
+alter table usuarios add column usublock boolean default false;
+alter table usuarios add column usudatacadastro date;
+alter table usuarios alter column usuemail  type varchar(100);
+
+UPDATE usuarios SET usudatacadastro = '20210820'  where 1=1;

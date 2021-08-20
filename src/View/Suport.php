@@ -13,6 +13,7 @@
 
         if (mensagem == '' || nomeCompleto == "" || telefone == '' || email == '') {
             $("#erroSuporte").show().fadeOut(4000);
+            return;
         }
 
         let formData = new FormData();
