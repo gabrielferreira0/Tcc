@@ -303,17 +303,21 @@ $(document).ready(function () {
 
 
     $('#Conteudo').on('click', '#salvarCat', function () {
-        let categoria = $("#nomeCategoria").val();
-        let fotoCategoria = $('#addFotoCat')[0].files[0];
+        let formData = new FormData();
 
-        //pegando os tipos de serviços de cada categoria
         let servicos = $(".services").find('input');
         let servico = [];
         for (let i = 0; i < servicos.length; i++) {
             servico[i] = ($(servicos[i]).val());
         };
 
-        let formData = new FormData();
+        servicos = JSON.stringify(servico);
+        let categoria = $("#nomeCategoria").val();
+        let fotoCategoria = $('#addFotoCat')[0].files[0];
+
+        //pegando os tipos de serviços de cada categoria
+
+        formData.append('servicos', servicos)
         formData.append('categoria', categoria)
         formData.append('fotoCategoria', fotoCategoria)
         formData.append('rq', 'salvarCat');

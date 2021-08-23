@@ -27,7 +27,7 @@ include('Navbar.php');
                         <span class="input-group-text arredondar"> <i class="fas fa-briefcase"></i></span>\
                     </div>\
                     <input type="text" class="form-control arredondar" name="nomeservicos" placeholder="Serviços"\
-                           maxlength="20" required="">\
+                            required="">\
                 </div>\
                 <div class="error help-block with-errors"></div>\
             </div>\
@@ -122,7 +122,7 @@ include('Navbar.php');
                                                     class="fas fa-briefcase"></i></span>
                                     </div>
                                     <input type="text" class="form-control arredondar" name="nomeservicos"
-                                           placeholder="Serviços" maxlength="20" required="">
+                                           placeholder="Serviços" required="">
                                 </div>
 
 
@@ -246,7 +246,7 @@ include('Navbar.php');
                         <tr>
                             <th scope="row"><?php echo $value['id'] ?></th>
                             <th scope="row"><?php echo $value['usunome'] ?></th>
-                            <th scope="row"><?php echo $value['usublock'] ?></th>
+                            <th scope="row"><?php echo $value['usuemail'] ?></th>
                             <th scope="row"><?php echo $value['usucpf'] ?></th>
                             <th scope="row"><?php echo $value['usutelefone'] ?></th>
                             <th scope="row"><?php echo $value['usutipo'] ?></th>

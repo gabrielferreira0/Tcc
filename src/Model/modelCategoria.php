@@ -21,12 +21,21 @@ class modelCategoria extends DBconexao
         $this->fotoCategoria = $fotoCategoria;
         $this->status = $status;
 
-        $sql = "insert into categorias(catnome,catfoto,catstatus) values ('$this->categoria','$this->fotoCategoria','$this->status');";
+        $sql = "insert into categorias(catnome,catfoto,catstatus) values ('$this->categoria','$this->fotoCategoria','$this->status')  RETURNING id;";
+
         $result = pg_query($this->banco->open(), $sql);
-        return $result;
+        $id[0] = pg_fetch_row($result);
+
+
+        return $id[0];
 
     }
 
+    public function  setServicos($id,$nome){
+        $sql = "insert into servicos (catid,sernome,serstatus) values ($id,'$nome',true);";
+        $result = pg_query($this->banco->open(), $sql);
+        return $id;
+    }
 
     public function updateCategoria($idCategoria,$categoria,$fotoCategoria){
 

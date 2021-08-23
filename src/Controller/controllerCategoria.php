@@ -7,27 +7,39 @@ class controllerCategoria
     private $categoria;
     private $fotoCategoria;
     private $status;
+    private $servicos = [];
 
 
     public function setCategoria()
     {
+
+
         $this->categoria = $_POST["categoria"];
         $this->fotoCategoria = $_FILES['fotoCategoria'];
         $this->status = "True";
+        $this->servicos = json_decode($_POST['servicos']);
+
+
         $modelCategoria = new modelCategoria();
 
-
-        if ($this->categoria == '' || $this->fotoCategoria == '') {
+        if ($this->categoria == '' || $this->fotoCategoria == '' || $this->servicos == '') {
             return 'erro';
         } else {
             preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->fotoCategoria['name'], $ext);
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
             $caminho_imagem = '../imagens/categoria/' . $nome_imagem;
 
-            $result = $modelCategoria->setCategoria($this->categoria, $nome_imagem, $this->status);
+            $id = $modelCategoria->setCategoria($this->categoria, $nome_imagem, $this->status);
+            $id = intval($id[0]);
 
-            if ($result) {
+
+            if ($id) {
                 move_uploaded_file($this->fotoCategoria['tmp_name'], $caminho_imagem);
+
+                foreach ($this->servicos as $key => $value) {
+                    $modelCategoria->setServicos($id, $value);
+                }
+
                 return 'sucesso';
             } else {
                 return 'erro';
