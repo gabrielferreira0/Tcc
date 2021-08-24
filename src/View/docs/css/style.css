@@ -64,18 +64,22 @@
 
 }
 
+.parceiro {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+}
 .suporte {
     margin-top: 2rem;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     padding: 1.3rem;
     font-family: 'Oswald', sans-serif;
-
 }
 
 .bordar {
     border-bottom: 1px solid white;
-
 }
 
 #foto:hover {

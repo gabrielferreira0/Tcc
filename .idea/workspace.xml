@@ -3,47 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/1ac8abb157892d9417b44c10aecfa740.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/557323cec98f20f214aec07fd68dfae8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/6acb55f8135ac6f167c1ce4bf8d321b9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/94540b63a80cceb1c6e998b0799a5d06.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/99938dfb1d709d80fe93830afc7c44a4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/Construcao.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/a58194a6a71015c9239f876321778ad0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/af49c3431de34c7760d577b782c3c8b3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/c0c159d2cd7581524aa74e18fdf4f295.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/c5e8a95ad11a096bf42a53e0222fa28a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/d54b6c93135fce1fc04fa71831c34c15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/d8247b992b76ff2e81c7a081c65a654e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/eb2ea093fcf09f20e90936235ab2189a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/eletrecista.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/encanador.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/f2e89e5cccbd8579c08063cf9cfedf02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/f44981a97028f8ab44f60ae1b7c64bec.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/pintor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/categoria/soldador.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/0f03187dc4f142160dca3c8a737fa31a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/1579f4a85f86cb36078edea5f9205e01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/1b14d515dbdac2bbbef8361a90643e73.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/1f06730ee39894b913bdce61cb3d3ad5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/28aa942220c03bd34d9844f65b0f5387.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/2a85ee765dfe029525737ab61c324828.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/51e85158aa0fbbec1f015ee53105370d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/63bb9e32c7c7e547dfdf3ad045436e22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/74e4e31bd0a76a1d0edd7ebb9c9fb980.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/85ea60d70874b88c5b008dff6e93e583.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/8f5a9393458a49e01a3de4687ae06830.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/a3cbec35ca46a558f169bb3d48ba9bdb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/b2b53b26603462ec0021a925e156ca16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/d4f02946223139ab9aeaafa34d46bf42.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/dc8c81e955b6b63017a681c31a4a7061.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/f4e9e312d9b28edca19e09a2e186733d.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/usuarios/f60e5226db5215f8239be8e116d242f8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/parceiroForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/parceiroForm.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +177,7 @@
       <workItem from="1629410136910" duration="554000" />
       <workItem from="1629482992002" duration="7439000" />
       <workItem from="1629724121749" duration="7592000" />
+      <workItem from="1629814073380" duration="8604000" />
     </task>
     <servers />
   </component>
@@ -284,6 +246,15 @@
             <option name="methodName" value="setCategoria" />
           </properties>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$USER_HOME$/Desktop/nossoMaster/app.nosso/app/Http/Controllers/NotificacaoController.php</url>
+          <line>101</line>
+          <properties>
+            <option name="className" value="\DistribuidorCP\Http\Controllers\NotificacaoController" />
+            <option name="methodName" value="marcaLida" />
+          </properties>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/index.php</url>
