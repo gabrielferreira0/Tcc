@@ -97,9 +97,11 @@ class modelUsuario extends DBconexao
         $this->status = $status;
         $this->tipo = $tipo;
         $this->dataCadastro = $dataCadastro;
-        $sql = "insert into usuarios(usudatacadastro,usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus,usutipo) values ('$this->dataCadastro','$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status,$this->tipo);";
+        $sql = "insert into usuarios(usudatacadastro,usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus,usutipo) values ('$this->dataCadastro','$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status,$this->tipo) RETURNING id;";
         $result = pg_query($this->banco->open(), $sql);
-        return $result;
+        $id[0] = pg_fetch_row($result);
+
+        return $id[0];
 
     }
 

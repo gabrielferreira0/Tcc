@@ -58,5 +58,10 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerEmail();
             echo $loadClass->suporte();
             break;
+        case 'cadastrarParceiro':
+            require_once 'controllerUsuario.php';
+            $loadClass = new controllerUsuario();
+            echo $loadClass->setParceiro();
+            break;
     }
 }

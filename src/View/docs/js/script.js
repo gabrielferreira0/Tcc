@@ -7,8 +7,7 @@ function carregarCEP() {
         async: true,
         success: function (rs) {
             rs = JSON.parse(rs);
-            console.log(rs);
-            $("#Logradouro").val(rs['logradoRecuperaruro']);
+            $("#Logradouro").val(rs['logradouro']);
             $("#Complemento").val(rs['complemento']);
             $("#Bairro").val(rs['bairro']);
             $("#Cidade").val(rs['localidade']);
@@ -187,7 +186,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
-                console.log(rs);
+                console.log(rs)
                 switch (rs) {
                     case 'nomeC':
                         $("#alerta3").show().fadeOut(4000);
@@ -309,7 +308,8 @@ $(document).ready(function () {
         let servico = [];
         for (let i = 0; i < servicos.length; i++) {
             servico[i] = ($(servicos[i]).val());
-        };
+        }
+        ;
 
         servicos = JSON.stringify(servico);
         let categoria = $("#nomeCategoria").val();

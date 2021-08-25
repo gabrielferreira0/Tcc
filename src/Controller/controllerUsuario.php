@@ -16,8 +16,55 @@ class controllerUsuario
     private $dataCadastro;
 
 
+
+    public function setParceiro($tipo=3)
+    {
+
+        $this->username = $_POST["username"];
+        $this->senha = $_POST["senha"];
+        $this->senha = md5($this->senha);;
+        $this->email = $_POST["email"];
+        $this->CPF = $_POST["CPF"];
+        $this->telefone = $_POST["telefone"];
+        $this->tipo = $tipo;
+        $this->status = 'True';
+        $this->dataCadastro = date('Ymd');
+
+
+        if ($_POST["fotoStatus"] == 'false') {
+            $nome_imagem = 'false';
+        } elseif ($_POST["fotoStatus"] == 'true') {
+            $this->foto = $_FILES['foto'];
+            //Gerando um nome unico para a imagem
+            preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
+
+            //URL da pasta para salvar a imagem
+            $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+            $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
+        }
+
+            $modelUsuario = new modelUsuario();
+
+            if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
+                $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
+                $id = intval($id[0]);
+                if ($id) {
+                    if ($_POST["fotoStatus"] == 'true') {
+                        move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
+                    }
+                    echo 'sucesso';
+                }
+            }
+
+    }
+
+
+
+
+
     public function setUser($tipo = 2)
     {
+
         $this->username = $_POST["username"];
         $this->senha = $_POST["senha"];
         $this->senha = md5($this->senha);;
@@ -44,12 +91,10 @@ class controllerUsuario
         if ($this->username == '' || $this->senha == '' || $this->email == '' || $this->telefone == '') {
             return 'null';
         } else {
-
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
                 $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
-
                 if ($result) {
                     if ($_POST["fotoStatus"] == 'true') {
                         move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
@@ -59,6 +104,7 @@ class controllerUsuario
             }
         }
     }
+
 
     public function update()
     {
