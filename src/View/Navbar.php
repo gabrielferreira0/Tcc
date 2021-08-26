@@ -38,10 +38,10 @@
             <?php
             if ($_SESSION['Foto'] != 'false') {
                 echo '<span  id ="Welcome" style="color: lightgray" class="nav-link text-center  arredondar" href="Perfil.php">' . $_SESSION['User'] . '</span>';
-                echo '<img  class = "avatar" src="../imagens/usuarios/' . $_SESSION['Foto'] . '"';
+                echo '<img  class = "avatar iconeNavBar" src="../imagens/usuarios/' . $_SESSION['Foto'] . '"';
             } else
                 echo '<span  id ="Welcome" style="color: lightgray" class="nav-link text-center  arredondar" href="Perfil.php">' . $_SESSION['User'] . '</span>';
-                echo '<span class="fa fa-user-circle photo text-center"></span>';
+                echo '<span class="fa fa-user-circle photo text-center iconeNavBar"></span>';
             ?>
         </div>
         <a class="nav-link text-center Deslogar" id="Deslogar2">Sair</a>

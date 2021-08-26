@@ -328,7 +328,7 @@ $bancos = array(
                        </li>';
 
                 echo '<li class="nav-item">
-                        <a class="nav-link arredondar" href="View/Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
+                        <a class="nav-link arredondar" href="Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
                        </li>';
 
             }
@@ -350,7 +350,7 @@ $bancos = array(
                 echo '<a href="View/Perfil.php"> <img  class = "avatar" src="../imagens/usuarios/' . $_SESSION['Foto'] . '" > </a>';
             } elseif (isset($_SESSION['CPF']) && $_SESSION['Foto'] == 'false') {
                 echo '<span style="color: lightgray" class="nav-link arredondar" href="View/Perfil.php">' . $_SESSION['User'] . '</span>';
-                echo '<span class="fa fa-user-circle photo text-center"></span>';
+                echo '<span class="fa fa-user-circle photo text-center iconeNavBar"></span>';
             }
             ?>
 

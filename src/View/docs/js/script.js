@@ -456,7 +456,8 @@ $(document).ready(function () {
         $("#addFotoCat").trigger('click')
         $(".miniatura").remove();
     });
-    $('#Conteudo').on('click', '.avatar', function () {
+
+    $('#Conteudo').on('click', '.iconeNavBar', function () {
         window.location.href = "./Perfil.php";
     });
 

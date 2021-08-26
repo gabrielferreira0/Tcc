@@ -89,7 +89,7 @@ SERVIÇOS DE PEQUENOS REPAROS">
                 echo '<a href="View/Perfil.php"> <img  class = "avatar" src="imagens/usuarios/' . $_SESSION['Foto'] . '" > </a>';
             } elseif (isset($_SESSION['CPF']) && $_SESSION['Foto'] == 'false') {
                 echo '<span style="color: lightgray" class="nav-link arredondar" href="View/Perfil.php">' . $_SESSION['User'] . '</span>';
-                echo '<span class="fa fa-user-circle photo text-center"></span>';
+                echo '<a  class="noHover" href="View/Perfil.php"><span class="fa fa-user-circle photo text-center"></span></a>';
             }
             ?>
 
