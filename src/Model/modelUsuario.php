@@ -105,6 +105,19 @@ class modelUsuario extends DBconexao
 
     }
 
+
+    public function setEndereco($id,$CEP,$cidade,$UF,$logradouro,$complemento,$bairro){
+        $sql = "insert into endereco_profissional(usuid,cep,cidade,uf,logradouro,complemento,bairro) values ($id,'$CEP','$cidade','$UF','$logradouro','$complemento','$bairro');";
+        $result = pg_query($this->banco->open(), $sql);
+        return $result;
+    }
+
+    public function setDadosBancarios($id,$banco,$agencia,$conta){
+        $sql = "insert into conta_profissional(usuid,banco,agencia,conta) values ($id,'$banco','$agencia','$conta');";
+        $result = pg_query($this->banco->open(), $sql);
+        return $result;
+    }
+
     public function login($CPFlogin, $senhaLogin)
     {
 

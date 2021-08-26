@@ -16,8 +16,7 @@ class controllerUsuario
     private $dataCadastro;
 
 
-
-    public function setParceiro($tipo=3)
+    public function setParceiro($tipo = 3)
     {
 
         $this->username = $_POST["username"];
@@ -29,6 +28,17 @@ class controllerUsuario
         $this->tipo = $tipo;
         $this->status = 'True';
         $this->dataCadastro = date('Ymd');
+
+        $CEP = $_POST["CEP"];
+        $UF = $_POST["UF"];
+        $cidade = $_POST["cidade"];
+        $logradouro = $_POST["logradouro"];
+        $complemento = $_POST["complemento"];
+        $bairro = $_POST["bairro"];
+
+        $banco = $_POST["banco"];
+        $agencia = $_POST["agencia"];
+        $conta = $_POST["conta"];
 
 
         if ($_POST["fotoStatus"] == 'false') {
@@ -43,23 +53,22 @@ class controllerUsuario
             $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
         }
 
-            $modelUsuario = new modelUsuario();
+        $modelUsuario = new modelUsuario();
 
-            if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
-                $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
-                $id = intval($id[0]);
-                if ($id) {
-                    if ($_POST["fotoStatus"] == 'true') {
-                        move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
-                    }
-                    echo 'sucesso';
+        if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
+            $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
+            $id = intval($id[0]);
+            if ($id) {
+                if ($_POST["fotoStatus"] == 'true') {
+                    move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
                 }
+                $modelUsuario->setEndereco($id,$CEP,$cidade,$UF,$logradouro,$complemento,$bairro);
+                $modelUsuario->setDadosBancarios($id,$banco,$agencia,$conta);
+                echo 'sucesso';
             }
+        }
 
     }
-
-
-
 
 
     public function setUser($tipo = 2)
@@ -235,7 +244,7 @@ class controllerUsuario
     public function block($id)
     {
         $modelUsuario = new modelUsuario();
-         return $resultado = $modelUsuario->block($id);
+        return $resultado = $modelUsuario->block($id);
     }
 
 

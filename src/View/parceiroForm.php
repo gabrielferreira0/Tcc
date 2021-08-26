@@ -1,6 +1,7 @@
 <head>
     <title>Cadastro parceiro</title>
     <?php
+    session_start();
     include('Head.php');
     ?>
 </head>
@@ -44,7 +45,7 @@
     }
 
     function etapa2() {
-        CEP = $("#CEP").val();
+        CEP = $("#CEP").val().replace(/[^\d]+/g, '');
         logradouro = $("#Logradouro").val();
         complemento = $("#Complemento").val();
         bairro = $("#Bairro").val();
@@ -112,7 +113,6 @@
                 processData: false,
                 data: formData,
                 success: function (rs) {
-                    console.log(rs);
                     switch (rs) {
                         case 'nomeC':
                             $("#alerta3").show().fadeOut(4000);
@@ -326,7 +326,14 @@ $bancos = array(
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="../View/Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
                        </li>';
+
+                echo '<li class="nav-item">
+                        <a class="nav-link arredondar" href="View/Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
+                       </li>';
+
             }
+
+
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="../View/Painel.php"><i class="fas fa-cogs"></i> Painel</a>

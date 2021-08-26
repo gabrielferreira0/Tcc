@@ -66,7 +66,13 @@ SERVIÇOS DE PEQUENOS REPAROS">
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="View/Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
                        </li>';
+
+                echo '<li class="nav-item">
+                        <a class="nav-link arredondar" href="View/Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
+                       </li>';
+
             }
+
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="View/Painel.php"><i class="fas fa-cogs"></i> Painel</a>

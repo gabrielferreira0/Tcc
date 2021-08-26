@@ -22,6 +22,10 @@
                 <a class="nav-link arredondar" href="Perfil.php"><i class="fas fa-user-circle"></i> Perfil</a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link arredondar" href="Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
+            </li>
+
             <?php
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">

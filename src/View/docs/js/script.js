@@ -186,7 +186,6 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (rs) {
-                console.log(rs)
                 switch (rs) {
                     case 'nomeC':
                         $("#alerta3").show().fadeOut(4000);
