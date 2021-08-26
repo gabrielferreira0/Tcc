@@ -13,7 +13,6 @@ class controllerCategoria
     public function setCategoria()
     {
 
-
         $this->categoria = $_POST["categoria"];
         $this->fotoCategoria = $_FILES['fotoCategoria'];
         $this->status = "True";

@@ -4,7 +4,7 @@ include('../Controller/verificarLoginADM.php')
 ?>
 
 <head>
-    <title>Perfil</title>
+    <title>Painel ADM</title>
     <?php
     include('Head.php');
     ?>
@@ -18,9 +18,19 @@ include('Navbar.php');
 
 
 <script>
+
+    $(document).ready(function () {
+        $("#table-Users").dataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
+    });
+
+
     $('#Conteudo').on('click', '#adicionarservicos', function () {
         let inputServices = '\<div class="services d-flex justify-content-center ">\
-            <div class="d-flex align-items-center d-flex justify-content-center  col-8 col-md-8"\
+            <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-8"\
                  title="Categoria">\
                 <div class=" d-flex justify-content-center input-group ">\
                     <div class="input-group-prepend">\
@@ -91,7 +101,7 @@ include('Navbar.php');
 
 
                     <div class="d-flex justify-content-center">
-                        <div class="d-flex align-items-center d-flex justify-content-center col-8 col-md-8"
+                        <div class="d-flex align-items-center d-flex justify-content-center col-12 col-md-8"
                              title="Categoria">
                             <div class=" d-flex justify-content-center input-group ">
                                 <div class="input-group-prepend">
@@ -114,7 +124,7 @@ include('Navbar.php');
 
                     <div id="container-services">
                         <div class="services d-flex justify-content-center ">
-                            <div class="d-flex align-items-center d-flex justify-content-center  col-8 col-md-8"
+                            <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-8"
                                  title="Categoria">
                                 <div class=" d-flex justify-content-center input-group ">
                                     <div class="input-group-prepend">
@@ -303,20 +313,11 @@ include('Footer.php');
 
 </body>
 <!-- MODAL-->
+
 <?php
 include('modalUsers.php');
 include('modalPainel.php');
 ?>
+<!-- FIM MODAL-->
 
 
-<script>
-    $(document).ready(function () {
-        $("#table-Users").dataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
-            }
-        });
-    });
-</script>
-
-<!-- MODAL-->
