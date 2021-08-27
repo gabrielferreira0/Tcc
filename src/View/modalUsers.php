@@ -25,12 +25,7 @@
 
             </div>
             <div class="modal-body">
-
-
                 <div class="d-flex justify-content-center fotoUser">
-
-
-
                 </div>
                 <div style="display: none">
                     <input type="file" multiple id="addFotoGaleria" accept="image/x-png,image/gif,image/jpeg">

@@ -68,7 +68,7 @@ SERVIÇOS DE PEQUENOS REPAROS">
                        </li>';
 
                 echo '<li class="nav-item">
-                        <a class="nav-link arredondar" href="View/Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
+                        <a class="nav-link arredondar" href="View/MeusServicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
                        </li>';
 
             }
@@ -234,110 +234,6 @@ SERVIÇOS DE PEQUENOS REPAROS">
                             <div class="error help-block with-errors"></div>
                         </div>
                     </div>
-
-                    <!--                    <div class="form-row">-->
-                    <!--                        <div class="form-group col-xl-6">-->
-                    <!--                            <label for="CPF">CEP:</label>-->
-                    <!--                            <div class="input-group">-->
-                    <!--                                <div class="input-group-prepend">-->
-                    <!--                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>-->
-                    <!--                                </div>-->
-                    <!--                                <label for="CEP"></label>-->
-                    <!--                                <input type="text" class="form-control arredondar" onblur="carregarCEP()" id="CEP"-->
-                    <!--                                       placeholder="12.123-123" data-error="Por favor, informe um CEP correto."-->
-                    <!--                                       required="">-->
-                    <!--                            </div>-->
-                    <!--                            <div class="error help-block with-errors"></div>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                        <div class="form-group col-xl-6">-->
-                    <!--                            <label for="CPF">Logradouro:</label>-->
-                    <!--                            <div class="input-group">-->
-                    <!--                                <div class="input-group-prepend">-->
-                    <!--                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>-->
-                    <!--                                </div>-->
-                    <!--                                <label for="Logradouro"></label>-->
-                    <!--                                <input type="text" class="form-control arredondar" id="Logradouro"-->
-                    <!--                                       data-error="Por favor, informe um Logradouro correto." required="">-->
-                    <!--                            </div>-->
-                    <!--                            <div class="error help-block with-errors"></div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="form-row">-->
-                    <!--                        <div class="form-group col-xl-6">-->
-                    <!--                            <label for="CPF">Complemento:</label>-->
-                    <!--                            <div class="input-group">-->
-                    <!--                                <div class="input-group-prepend">-->
-                    <!--                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>-->
-                    <!--                                </div>-->
-                    <!--                                <label for="Complemento"></label>-->
-                    <!--                                <input type="text" class="form-control arredondar" id="Complemento"-->
-                    <!--                                       data-error="Por favor, informe um Complemento correto." required="">-->
-                    <!--                            </div>-->
-                    <!--                            <div class="error help-block with-errors"></div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="form-group col-xl-6">-->
-                    <!--                            <label for="CPF">Bairro:</label>-->
-                    <!--                            <div class="input-group">-->
-                    <!--                                <div class="input-group-prepend">-->
-                    <!--                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>-->
-                    <!--                                </div>-->
-                    <!--                                <label for="Bairro"></label>-->
-                    <!--                                <input type="text" class="form-control arredondar" id="Bairro"-->
-                    <!--                                       data-error="Por favor, informe um Bairro correto." required="">-->
-                    <!--                            </div>-->
-                    <!--                            <div class="error help-block with-errors"></div>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                    </div>-->
-                    <!--                    <div class="form-row">-->
-                    <!--                        <div class="form-group col-xl-8">-->
-                    <!--                            <label for="Cidade">Cidade:</label>-->
-                    <!--                            <div class="input-group ">-->
-                    <!--                                <div class="input-group-prepend">-->
-                    <!--                                    <span class="input-group-text arredondar"> <i class="fas fa-city"></i></span>-->
-                    <!--                                </div>-->
-                    <!--                                <input type="text" class="form-control" id="Cidade" placeholder="Brasilia-DF"-->
-                    <!--                                       required="">-->
-                    <!--                                <div class="input-group-append">-->
-                    <!--                                    <label for="UF"></label>-->
-                    <!--                                    <select class="form-control " id="UF" required="">-->
-                    <!--                                        <option value="">UF</option>-->
-                    <!--                                        <option value="AC">AC</option>-->
-                    <!--                                        <option value="AL">AL</option>-->
-                    <!--                                        <option value="AP">AP</option>-->
-                    <!--                                        <option value="AM">AM</option>-->
-                    <!--                                        <option value="BA">BA</option>-->
-                    <!--                                        <option value="CE">CE</option>-->
-                    <!--                                        <option value="DF">DF</option>-->
-                    <!--                                        <option value="ES">ES</option>-->
-                    <!--                                        <option value="GO">GO</option>-->
-                    <!--                                        <option value="MA">MA</option>-->
-                    <!--                                        <option value="MT">MT</option>-->
-                    <!--                                        <option value="MS">MS</option>-->
-                    <!--                                        <option value="MG">MG</option>-->
-                    <!--                                        <option value="PA">PA</option>-->
-                    <!--                                        <option value="PB">PB</option>-->
-                    <!--                                        <option value="PR">PR</option>-->
-                    <!--                                        <option value="PE">PE</option>-->
-                    <!--                                        <option value="PI">PI</option>-->
-                    <!--                                        <option value="RJ">RJ</option>-->
-                    <!--                                        <option value="RN">RN</option>-->
-                    <!--                                        <option value="RS">RS</option>-->
-                    <!--                                        <option value="RO">RO</option>-->
-                    <!--                                        <option value="RR">RR</option>-->
-                    <!--                                        <option value="SC">SC</option>-->
-                    <!--                                        <option value="SP">SP</option>-->
-                    <!--                                        <option value="SE">SE</option>-->
-                    <!--                                        <option value="TO">TO</option>-->
-                    <!--                                    </select>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="error help-block with-errors"></div>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                    </div>-->
-
                     <div class="form-group" style="display: flex; justify-content:flex-end;">
                         <button id="cadastrar" type="button" class="btn btn-success">Cadastrar</button>
                     </div>
@@ -472,15 +368,16 @@ SERVIÇOS DE PEQUENOS REPAROS">
 
                 foreach ($categorias as $key => $value) {
                     ?>
-                    <div class="card col-md-10  cardFormularioSrv">
-                        <input type="hidden" value=" <?php echo $value["id"] ?>">
-                        <img class="card-img-top" src="imagens/categoria/<?php echo $value['catfoto'] ?>"
-                             alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"> <?php echo $value["catnome"] ?> </h5>
-
+                    <a href="./View/Servicos.php?categoria= <?php echo $value["catnome"] ?>">
+                        <div class="card col-md-10   cardFormularioSrv" data-catID="<?php echo $value["id"] ?>"
+                             data-toggle="modal" data-target="#modalServicos">
+                            <img class="card-img-top" src="imagens/categoria/<?php echo $value['catfoto'] ?>"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"> <?php echo $value["catnome"] ?> </h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <?php
                 }
                 ?>
@@ -489,7 +386,6 @@ SERVIÇOS DE PEQUENOS REPAROS">
         <!--  FIM Serviços-->
     </div>
 </div>
-
 
 <!-- SOBRE NOS-->
 <section class="page-section geral" id="sobre">
@@ -513,4 +409,6 @@ SERVIÇOS DE PEQUENOS REPAROS">
 include('View/Footer.php');
 ?>
 <!-- Footer -->
+
+
 </body>

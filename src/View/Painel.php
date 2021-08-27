@@ -20,16 +20,9 @@ include('Navbar.php');
 <script>
 
     $(document).ready(function () {
-        $("#table-Users").dataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
-            }
-        });
-    });
 
-
-    $('#Conteudo').on('click', '#adicionarservicos', function () {
-        let inputServices = '\<div class="services d-flex justify-content-center ">\
+        $('#Conteudo').on('click', '#adicionarservicos', function () {
+            let inputServices = '\<div class="services d-flex justify-content-center ">\
             <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-8"\
                  title="Categoria">\
                 <div class=" d-flex justify-content-center input-group ">\
@@ -42,8 +35,18 @@ include('Navbar.php');
                 <div class="error help-block with-errors"></div>\
             </div>\
     </div>';
-        $("#container-services").append(inputServices);
+            $("#container-services").append(inputServices);
+        });
+
+
+        $("#table-Users").dataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
     });
+
+
 
     function block(id) {
         let url = '../../src/Controller/index.php';

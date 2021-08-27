@@ -23,7 +23,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link arredondar" href="Servicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
+                <a class="nav-link arredondar" href="MeusServicos.php"><i class="fas fa-briefcase"></i> Meus serviços</a>
             </li>
 
             <?php
