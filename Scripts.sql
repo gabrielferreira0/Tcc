@@ -64,6 +64,7 @@ create table servico_profissional (
                                       serid integer REFERENCES servicos(id),
                                       status boolean
 );
+alter table  servico_profissional add column preco double precision;
 
 
 INSERT INTO tipoUsuario (perfil) VALUES ('Admin');

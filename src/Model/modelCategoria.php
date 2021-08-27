@@ -31,13 +31,15 @@ class modelCategoria extends DBconexao
 
     }
 
-    public function  setServicos($id,$nome){
+    public function setServicos($id, $nome)
+    {
         $sql = "insert into servicos (catid,sernome,serstatus) values ($id,'$nome',true);";
         $result = pg_query($this->banco->open(), $sql);
         return $id;
     }
 
-    public function updateCategoria($idCategoria,$categoria,$fotoCategoria){
+    public function updateCategoria($idCategoria, $categoria, $fotoCategoria)
+    {
 
         $sql = "UPDATE categorias SET catnome = '{$categoria}',catfoto = '{$fotoCategoria}' WHERE id = {$idCategoria};";
         $result = pg_query($this->banco->open(), $sql);
@@ -73,5 +75,36 @@ class modelCategoria extends DBconexao
         $result = pg_query($this->banco->open(), $sql);
         $dados = pg_fetch_all($result);
         return $dados;
+    }
+
+
+    public function getServicos($idCategoria)
+    {
+
+        $usuid = intval($_SESSION['id']);
+        $sql = "select ser.*
+                from servicos ser
+                inner join categorias cat on ser.catid = cat.id
+                where catid = {$idCategoria} and serstatus = true and ser.id
+                not in (select serid from servico_profissional where usuid = {$usuid});";
+
+
+        $result = pg_query($this->banco->open(), $sql);
+
+        if ($result) {
+            $dados = pg_fetch_all($result);
+            return $dados;
+        } else {
+            return 'Não foi possivel realizar a consulta';
+        }
+
+    }
+
+
+    public function servico_profissional($usuid, $idServico, $preco)
+    {
+        $sql = "insert into servico_profissional (usuid,serid,status,preco) values ($usuid,$idServico,true,$preco);";
+        $result = pg_query($this->banco->open(), $sql);
+        return $result;
     }
 }

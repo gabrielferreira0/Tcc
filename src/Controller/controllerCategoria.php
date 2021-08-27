@@ -82,4 +82,23 @@ class controllerCategoria
         }
 
     }
+
+
+    public function carregarServicos()
+    {
+        $idCategoria = $_POST["idCategoria"];
+        $modelCategoria = new modelCategoria();
+         return  json_encode($modelCategoria->getServicos($idCategoria));
+    }
+    public function servico_profissional()
+    {
+         $usuid =  intval($_SESSION['id']);
+        $idServico =  intval($_POST["idServico"]);
+        $precoServico =  floatval($_POST["precoServico"]);
+
+
+        $modelCategoria = new modelCategoria();
+        return  json_encode($modelCategoria->servico_profissional($usuid,$idServico,$precoServico));
+    }
+
 }

@@ -38,7 +38,7 @@ class controllerEmail
             $this->mail->Body = $conteudo;
 
             if ($this->mail->send()) {
-                return false;
+                return true;
             } else {
                 return false;
             }

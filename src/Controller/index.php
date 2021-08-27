@@ -63,5 +63,16 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerUsuario();
             echo $loadClass->setParceiro();
             break;
+        case 'carregarServicos':
+            require_once 'controllerCategoria.php';
+            $loadClass = new controllerCategoria();
+            echo $loadClass->carregarServicos();
+            break;
+            case 'salvarServico':
+            require_once 'controllerCategoria.php';
+            $loadClass = new controllerCategoria();
+            echo $loadClass->servico_profissional();
+            break;
+
     }
 }
