@@ -283,7 +283,6 @@ include('Navbar.php');
 
                             <td>
                                 <button data-toggle="modal" data-idUser="<?php echo $value['id'] ?>"
-                                        data-idUser="<?php echo $value['id'] ?>"
                                         data-nameUser="<?php echo $value['usunome'] ?>"
                                         data-telefoneUser="<?php echo $value['usutelefone'] ?>"
                                         data-emailUser="<?php echo $value['usuemail'] ?>"
@@ -298,7 +297,6 @@ include('Navbar.php');
                         <?php
                     }
                     ?>
-                    </tbody>
                     </tbody>
                 </table>
             </div>

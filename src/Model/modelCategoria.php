@@ -56,6 +56,7 @@ class modelCategoria extends DBconexao
         return $dados;
     }
 
+
     public function setStatusCat($idCat, $status)
     {
         $sql = "UPDATE categorias SET catstatus = '{$status}' WHERE id = {$idCat};";
@@ -99,6 +100,29 @@ class modelCategoria extends DBconexao
         }
 
     }
+
+
+    public function getAllServicos($nomeServico)
+    {
+
+
+        $sql = "select ser.*,catfoto
+                from servicos ser 
+                inner join categorias cat on cat.id = ser.catid 
+                where  cat.catnome ilike '%$nomeServico%';";
+
+
+        $result = pg_query($this->banco->open(), $sql);
+
+        if ($result) {
+            $dados = pg_fetch_all($result);
+            return $dados;
+        } else {
+            return 'Não foi possivel realizar a consulta';
+        }
+    }
+
+
 
 
     public function servico_profissional($usuid, $idServico, $preco)

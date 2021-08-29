@@ -368,7 +368,7 @@ SERVIÇOS DE PEQUENOS REPAROS">
 
                 foreach ($categorias as $key => $value) {
                     ?>
-                    <a href="./View/Servicos.php?categoria= <?php echo $value["catnome"] ?>">
+                    <a href="./View/Servicos.php?categoria=<?php echo $value["catnome"] ?>">
                         <div class="card col-md-10   cardFormularioSrv" data-catID="<?php echo $value["id"] ?>"
                              data-toggle="modal" data-target="#modalServicos">
                             <img class="card-img-top" src="imagens/categoria/<?php echo $value['catfoto'] ?>"

@@ -3,12 +3,23 @@
     <?php
     session_start();
     include('Head.php');
+
     ?>
 </head>
 
 
-<body id="Conteudo">
+<script>
+    $(document).ready(function () {
+        $("#table-Services").dataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
+    });
+</script>
 
+
+<body id="Conteudo">
 
 <!-- navbar-->
 <div class="navbar  navbar-expand-sm  navbar-dark  mb-4 " role="navigation" style="background: #202020;">
@@ -85,7 +96,102 @@
 </div>
 <!-- FIM navbar-->
 
-<div class="container  col-12 col-md-11">
+<div class="container row text-center col-md-12 pesquisar_servico">
+
+    <div class="col-md-3 arredondar">
+        <?php
+        require_once '../Model/modelCategoria.php';
+        $categoria = new modelCategoria();
+        $servicos = $categoria->getAllServicos($_GET['categoria']);
+        ?>
+
+        <h1 class="text-center"><?php echo $_GET['categoria']; ?></h1>
+
+        <div style="margin: 1rem 0 2rem 0; border-radius: 10px; padding: 0" class="col-md-12">
+            <img title="Clique para alterar" id="imageCatUPD" class="card-img-top"
+                 src="../imagens/categoria/<?php echo $servicos[0]['catfoto'] ?>">
+        </div>
+
+        <form action="" data-toggle="validator">
+
+            <div class="form-group">
+                <div class=" d-flex justify-content-center input-group ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text arredondar"> <i class="fas fa-tools"></i></span>
+                    </div>
+
+                    <select class="form-control arredondar" id="servicos" data-error="Por favor, selecione um serviço."
+                            required>
+                        <?php
+                        foreach ($servicos as $key => $value) {
+                            echo "<option value='{$value['id']}'>{$value['sernome']}</option>";
+                        }
+                        ?>
+
+                    </select>
+                </div>
+                <div class="error help-block with-errors"></div>
+            </div>
+
+
+        </form>
+    </div>
+
+    <div style="display: flex; align-items: center" class="col-md-9 arredondar">
+        <div class="table-responsive" style="display:block">
+            <table id="table-Services" class="table table" style=" border:1px solid white; color: white">
+                <thead style="background: #f50a31;">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th>
+                        <button type="button" class="btn btn-success"><i class="fas fa-handshake"></i></button>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th>
+                        <button type="button" class="btn btn-success"><i class="fas fa-handshake"></i></button>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th scope="row">TESTE</th>
+                    <th>
+                        <button type="button" class="btn btn-success"><i class="fas fa-handshake"></i></button>
+                    </th>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </div>
 

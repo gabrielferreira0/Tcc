@@ -57,10 +57,20 @@
     margin-bottom: 0.5rem;
 
 }
+
 #adicionarServicos {
     background: #28a745;
     cursor: pointer;
     color: white;
+
+}
+
+
+.pesquisar_servico {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
 
 }
 
@@ -71,8 +81,8 @@
     font-family: 'Oswald', sans-serif;
 }
 
-.noHover:hover{
-    background-color: transparent!important;
+.noHover:hover {
+    background-color: transparent !important;
 }
 
 .suporte {
@@ -182,7 +192,6 @@ body {
     width: 100%;
     height: 100%;
 }
-
 
 
 .error {
