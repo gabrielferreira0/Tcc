@@ -111,17 +111,21 @@
             <img title="Clique para alterar" id="imageCatUPD" class="card-img-top"
                  src="../imagens/categoria/<?php echo $servicos[0]['catfoto'] ?>">
         </div>
+        <label for="servicos">Selecione o serviço:*</label>
 
         <form action="" data-toggle="validator">
 
             <div class="form-group">
                 <div class=" d-flex justify-content-center input-group ">
+
                     <div class="input-group-prepend">
                         <span class="input-group-text arredondar"> <i class="fas fa-tools"></i></span>
                     </div>
 
                     <select class="form-control arredondar" id="servicos" data-error="Por favor, selecione um serviço."
                             required>
+
+                        <option value="">--Selecione--</option>
                         <?php
                         foreach ($servicos as $key => $value) {
                             echo "<option value='{$value['id']}'>{$value['sernome']}</option>";
@@ -142,13 +146,11 @@
             <table id="table-Services" class="table table" style=" border:1px solid white; color: white">
                 <thead style="background: #f50a31;">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Profissional</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Nota:</th>
+                    <th scope="col">Status:</th>
+                    <th scope="col">Selecionar:</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -157,8 +159,6 @@
                     <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
-                    <th scope="row">TESTE</th>
-                    <th scope="row">TESTE</th>
                     <th>
                         <button type="button" class="btn btn-success"><i class="fas fa-handshake"></i></button>
                     </th>
@@ -169,16 +169,12 @@
                     <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
-                    <th scope="row">TESTE</th>
-                    <th scope="row">TESTE</th>
                     <th>
                         <button type="button" class="btn btn-success"><i class="fas fa-handshake"></i></button>
                     </th>
 
                 </tr>
                 <tr>
-                    <th scope="row">TESTE</th>
-                    <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
                     <th scope="row">TESTE</th>
