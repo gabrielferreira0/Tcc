@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Servicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Servicos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/plugins/jquery/jquery.dataTables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/plugins/jquery/jquery.dataTables.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/NovoLayout" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -191,6 +195,18 @@
       <workItem from="1630270610829" duration="2526000" />
       <workItem from="1630278207325" duration="119000" />
       <workItem from="1630335350665" duration="1815000" />
+      <workItem from="1630413961236" duration="22921000" />
+      <workItem from="1630458103747" duration="1798000" />
+      <workItem from="1630499486176" duration="4184000" />
+      <workItem from="1630505110273" duration="7876000" />
+      <workItem from="1630520976394" duration="4308000" />
+      <workItem from="1630588434851" duration="13058000" />
+      <workItem from="1630670940187" duration="12729000" />
+      <workItem from="1630856338209" duration="89000" />
+      <workItem from="1630856550744" duration="728000" />
+      <workItem from="1630858432030" duration="154000" />
+      <workItem from="1630945103099" duration="7249000" />
+      <workItem from="1630968728372" duration="105000" />
     </task>
     <servers />
   </component>
@@ -278,6 +294,24 @@
           </properties>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$USER_HOME$/Desktop/nossoMaster/app.nosso/app/Http/Controllers/Comven/ComvenController.php</url>
+          <line>750</line>
+          <properties>
+            <option name="className" value="\DistribuidorCP\Http\Controllers\Comven\ComvenController" />
+            <option name="methodName" value="cancelarComven" />
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$USER_HOME$/Desktop/nossoMaster/app.nosso/app/Http/Controllers/Comven/ComvenController.php</url>
+          <line>962</line>
+          <properties>
+            <option name="className" value="\DistribuidorCP\Http\Controllers\Comven\ComvenController" />
+            <option name="methodName" value="show" />
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/index.php</url>
           <line>451</line>
@@ -352,6 +386,11 @@
           <url>file://$PROJECT_DIR$/src/View/Painel.php</url>
           <line>14</line>
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/nossoMaster/app.nosso/resources/views/home.blade.php</url>
+          <line>201</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

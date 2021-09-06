@@ -16,6 +16,8 @@
 }
 
 
+
+
 .photo {
     font-size: 50px;
     cursor: pointer;
@@ -142,7 +144,7 @@ body {
 }
 
 .menu a:hover {
-    background-color: #4faddb;
+    background-color: #007bff;
     color: #000;
 }
 
@@ -151,12 +153,19 @@ body {
     border-radius: 10px;
 }
 
-.Registrar, .Deslogar {
+.Registrar, .Deslogar,.pesquisarTable{
     background: #f50a31;
     color: #fff;
     border-radius: 15px;
     margin: 8px;
+    transition: all ease 0.2s;
 }
+
+.pesquisarTable:hover {
+    background-color: #007bff;
+    color: #000;
+}
+
 
 .loginInput {
     border-radius: 15px;

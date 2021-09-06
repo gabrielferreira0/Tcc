@@ -68,7 +68,7 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerCategoria();
             echo $loadClass->carregarServicos();
             break;
-            case 'salvarServico':
+        case 'salvarServico':
             require_once 'controllerCategoria.php';
             $loadClass = new controllerCategoria();
             echo $loadClass->servico_profissional();

@@ -122,7 +122,36 @@ class modelCategoria extends DBconexao
         }
     }
 
+    public function tableServicos($categoria, $servico = null)
+    {
 
+        $sql = "select usu.usunome as nome_Profissional,usuid as id_Profissional,
+       catid as id_Categoria,sp.serid as id_Servico ,
+       sp.id as servico_profissional_ID,
+       sp.preco,'4.0' as nota,ser.sernome,
+        (case
+        when sp.status = 'True' then 'Ativo'
+        when sp.status = 'False' then 'Desativado'
+        end) as status
+    from servico_profissional sp
+    inner join  usuarios usu on sp.usuid = usu.id
+    inner join  servicos ser on sp.serid = ser.id
+    inner join categorias cat on cat.id = ser.catid
+    where cat.catnome ilike '%$categoria%' and sp.status = true;";
+
+        $result = pg_query($this->banco->open(), $sql);
+
+        $result = pg_query($this->banco->open(), $sql);
+        $dados = pg_fetch_all($result);
+
+
+        if ($dados) {
+            return $dados;
+        } else {
+            return false;
+        }
+
+    }
 
 
     public function servico_profissional($usuid, $idServico, $preco)

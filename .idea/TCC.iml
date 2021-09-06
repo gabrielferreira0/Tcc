@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Nosso Master" />
     <orderEntry type="module" module-name="nossoMaster" />
+    <orderEntry type="module" module-name="TESTE" />
   </component>
 </module>
