@@ -152,11 +152,7 @@
                         ?>
 
                     </select>
-
-
-
                 </div>
-
                 <div class="error help-block with-errors"></div>
             </div>
 
