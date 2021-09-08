@@ -100,7 +100,7 @@
         </div>
 
         <div class="col-md-5 col-12 offset-md-1">
-            <h2 style="border-bottom: 1px solid white">Siga-nos nas redes sociais. teste</h2>
+            <h2 style="border-bottom: 1px solid white">Siga-nos nas redes sociais</h2>
 
             <div id="redes-sociais">
                 <a href="https://www.instagram.com/"><i style="font-size: 2.5rem" class="fab fa-instagram"></i></a>
