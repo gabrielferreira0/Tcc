@@ -18,7 +18,8 @@ class controllerUsuario
 
     public function setParceiro($tipo = 3)
     {
-
+        $pagarme = new PagarMe\Client('ak_test_qzaATUM7qtiv49tJNvmZuOLY2tDvAS');
+        
         $this->username = $_POST["username"];
         $this->senha = $_POST["senha"];
         $this->senha = md5($this->senha);;
@@ -40,32 +41,59 @@ class controllerUsuario
         $agencia = $_POST["agencia"];
         $conta = $_POST["conta"];
 
+        $auxiliar = explode ("-",$conta);
+        $conta_dv = $auxiliar[1];
+        $contaAPI = $auxiliar[0];
 
-        if ($_POST["fotoStatus"] == 'false') {
-            $nome_imagem = 'false';
-        } elseif ($_POST["fotoStatus"] == 'true') {
-            $this->foto = $_FILES['foto'];
-            //Gerando um nome unico para a imagem
-            preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
+        try {
+            $recipient = $pagarme->recipients()->create([
+                'anticipatable_volume_percentage' => '100',
+                'automatic_anticipation_enabled' => 'true',
+                'bank_account' => [
+                    'bank_code' => $banco,
+                    'agencia' => $agencia,
+                    'conta' => $contaAPI,
+                    'type' => 'conta_corrente',
+                    'conta_dv' => '5',
+                    'document_number' => $this->CPF,
+                    'legal_name' => $this->username
+                ],
+                'transfer_day' => '5',
+                'transfer_enabled' => 'true',
+                'transfer_interval' => 'weekly'
+            ]);
 
-            //URL da pasta para salvar a imagem
-            $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-            $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
-        }
+            $recipientID = $recipient->id;
+            $bank_account_id = $recipient->bank_account->id;
 
-        $modelUsuario = new modelUsuario();
+            if ($_POST["fotoStatus"] == 'false') {
+                $nome_imagem = 'false';
+            } elseif ($_POST["fotoStatus"] == 'true') {
+                $this->foto = $_FILES['foto'];
+                //Gerando um nome unico para a imagem
+                preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $this->foto['name'], $ext);
 
-        if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
-            $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
-            $id = intval($id[0]);
-            if ($id) {
-                if ($_POST["fotoStatus"] == 'true') {
-                    move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
-                }
-                $modelUsuario->setEndereco($id,$CEP,$cidade,$UF,$logradouro,$complemento,$bairro);
-                $modelUsuario->setDadosBancarios($id,$banco,$agencia,$conta);
-                echo 'sucesso';
+                //URL da pasta para salvar a imagem
+                $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+                $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
             }
+
+            $modelUsuario = new modelUsuario();
+
+            if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
+                $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
+                $id = intval($id[0]);
+                if ($id) {
+                    if ($_POST["fotoStatus"] == 'true') {
+                        move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
+                    }
+                    $modelUsuario->setEndereco($id,$CEP,$cidade,$UF,$logradouro,$complemento,$bairro);
+                    $modelUsuario->setDadosBancarios($id,$banco,$agencia,$conta,$recipientID,$bank_account_id);
+                    echo 'sucesso';
+                }
+            }
+        } catch (Exception $e) {
+            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         }
 
     }

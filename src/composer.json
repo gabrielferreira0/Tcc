@@ -1,0 +1,20 @@
+{
+  "name": "gabrielferreira0/wedo_tcc",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "gabriel Ferreira Silva",
+      "email": "gabrielferreira2008@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "" : "autoLoad/Config.php"
+    }
+  },
+  "require": {
+    "pagarme/pagarme-php": "^4.1"
+  }
+}

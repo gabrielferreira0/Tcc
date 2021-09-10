@@ -24,15 +24,19 @@ class modelUsuario extends DBconexao
 
     public function getAllUsers()
     {
+
+
         $sql = "select *,
        (case
         when usustatus = 'true' then 'Ativo'
         when usustatus = 'false' then 'Desativado'
         end ) as usustatus2
         from usuarios ORDER BY usunome;";
-        $result = pg_query($this->banco->open(), $sql);
+//        $result = pg_query($this->banco->open(), $sql);
+        $result = pg_query( $this->open(),$sql);
         $dados = pg_fetch_all($result);
         return $dados;
+
 
     }
 
@@ -112,8 +116,8 @@ class modelUsuario extends DBconexao
         return $result;
     }
 
-    public function setDadosBancarios($id,$banco,$agencia,$conta){
-        $sql = "insert into conta_profissional(usuid,banco,agencia,conta) values ($id,'$banco','$agencia','$conta');";
+    public function setDadosBancarios($id,$banco,$agencia,$conta,$recipientID,$bank_account_id){
+        $sql = "insert into conta_profissional(usuid,banco,agencia,conta,recipient_id,bank_account_id) values ($id,'$banco','$agencia','$conta','$recipientID',$bank_account_id);";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
     }

@@ -1,4 +1,7 @@
 <?php
+
+require __DIR__. "../../vendor/autoload.php";
+
 if (isset($_POST["rq"])) {
     session_start();
     $request = $_POST["rq"];
