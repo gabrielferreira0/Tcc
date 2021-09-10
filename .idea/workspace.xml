@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/autoLoad/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/modelUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelUsuario.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,6 +327,7 @@
       <workItem from="1631232338577" duration="189000" />
       <workItem from="1631305663549" duration="18000" />
       <workItem from="1631305747167" duration="3688000" />
+      <workItem from="1631310093227" duration="62000" />
     </task>
     <servers />
   </component>

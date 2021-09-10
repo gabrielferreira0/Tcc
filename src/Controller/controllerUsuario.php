@@ -54,7 +54,7 @@ class controllerUsuario
                     'agencia' => $agencia,
                     'conta' => $contaAPI,
                     'type' => 'conta_corrente',
-                    'conta_dv' => '5',
+                    'conta_dv' => $conta_dv,
                     'document_number' => $this->CPF,
                     'legal_name' => $this->username
                 ],
