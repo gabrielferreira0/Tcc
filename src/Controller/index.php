@@ -76,6 +76,14 @@ if (isset($_POST["rq"])) {
             $loadClass = new controllerCategoria();
             echo $loadClass->servico_profissional();
             break;
+        case 'servicos_ID':
+            require_once 'controllerCategoria.php';
+             $servicoID = $_POST["servicoID"];
+             $categoriaNome = $_POST["categoriaNome"];
+
+            $loadClass = new controllerCategoria();
+            echo $loadClass->tableServicos($categoriaNome,$servicoID);
+            break;
 
     }
 }

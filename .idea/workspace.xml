@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Servicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Servicos.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +149,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -328,6 +331,14 @@
       <workItem from="1631305663549" duration="18000" />
       <workItem from="1631305747167" duration="3688000" />
       <workItem from="1631310093227" duration="62000" />
+      <workItem from="1631536865904" duration="17579000" />
+      <workItem from="1631559787759" duration="621000" />
+      <workItem from="1631560442002" duration="1605000" />
+      <workItem from="1631562127765" duration="1932000" />
+      <workItem from="1631564134500" duration="1783000" />
+      <workItem from="1631565956168" duration="667000" />
+      <workItem from="1631570763902" duration="393000" />
+      <workItem from="1631621191908" duration="7233000" />
     </task>
     <servers />
   </component>
@@ -529,8 +540,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/credAuto/app.nosso/resources/views/veicularmoises/veiculartotal/resumoveiculartotal.blade.php</url>
-          <line>50</line>
+          <line>56</line>
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/credAuto/app.nosso/resources/views/veicularmoises/veiculartotal/formveiculartotal.blade.php</url>
+          <line>297</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/credAuto/app.nosso/resources/views/veicularmoises/veiculartotal/formveiculartotal.blade.php</url>
+          <line>289</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

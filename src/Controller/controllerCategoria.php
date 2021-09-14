@@ -83,22 +83,75 @@ class controllerCategoria
 
     }
 
+    public function tableServicos($categoriaNome , $servicoID=null)
+    {
+
+        $modelCategoria = new modelCategoria();
+        $result = $modelCategoria->tableServicos($categoriaNome, $servicoID);
+
+        $table = "<table id='table-Services' class='table table' style=' border:1px solid white; color: white'>
+                    <thead style='background: #f50a31;'>
+                        <tr>
+                            <th scope='col'>Profissional</th>
+                            <th scope='col'>Preço</th>
+                            <th scope='col'>Nota:</th>
+                            <th scope='col'>Serviço:</th>
+                            <th scope='col'>Status:</th>
+                            <th scope='col'>Selecionar:</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+";
+
+        if ($result) {
+
+            foreach ($result as $value) {
+                $table .= " <tr>
+                                <th scope='row'>{$value['nome_profissional']}</th>
+                                <th scope='row'>R$ {$value['preco']}</th>
+                                <th scope='row'>{$value['nota']}<i style='color: #fac303' class='fas fa-star'></i></th>
+                                <th scope='row'>{$value['sernome']}</th >
+                                <th scope='row'>{$value['status']}</th >
+                            <th >
+                                <button  
+                                    data-idProfissional ='{$value['id_profissional']}'  data-idCategoria ='{$value['id_categoria']}'  
+                                    data-idServico ='{$value['id_servico']}'   data-idServico-Profissinal ='{$value['servico_profissional_id']}'
+                                    type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
+                                </button>
+                            </th >
+                        </tr > ";
+            }
+
+        } else {
+            $table .= "<tr>
+                    <tr><td  class='text-center' colspan='6'>Nenhum serviço disponível no momento</td></tr>
+                </tr>";
+        }
+
+        $table.= "</tbody>";
+        $table.= "</table>";
+
+        return $table;
+
+    }
+
 
     public function carregarServicos()
     {
         $idCategoria = $_POST["idCategoria"];
         $modelCategoria = new modelCategoria();
-         return  json_encode($modelCategoria->getServicos($idCategoria));
+        return json_encode($modelCategoria->getServicos($idCategoria));
     }
+
     public function servico_profissional()
     {
-         $usuid =  intval($_SESSION['id']);
-        $idServico =  intval($_POST["idServico"]);
-        $precoServico =  floatval($_POST["precoServico"]);
+        $usuid = intval($_SESSION['id']);
+        $idServico = intval($_POST["idServico"]);
+        $precoServico = floatval($_POST["precoServico"]);
 
 
         $modelCategoria = new modelCategoria();
-        return  json_encode($modelCategoria->servico_profissional($usuid,$idServico,$precoServico));
+        return json_encode($modelCategoria->servico_profissional($usuid, $idServico, $precoServico));
     }
 
 }

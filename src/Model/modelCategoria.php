@@ -102,14 +102,14 @@ class modelCategoria extends DBconexao
     }
 
 
-    public function getAllServicos($nomeServico)
+    public function getAllServicos($nomeCategoria)
     {
 
 
         $sql = "select ser.*,catfoto
                 from servicos ser 
                 inner join categorias cat on cat.id = ser.catid 
-                where  cat.catnome ilike '%$nomeServico%';";
+                where  cat.catnome ilike '%$nomeCategoria%';";
 
 
         $result = pg_query($this->banco->open(), $sql);
@@ -122,8 +122,12 @@ class modelCategoria extends DBconexao
         }
     }
 
-    public function tableServicos($categoria, $servico = null)
+    public function tableServicos($categoria, $servicoID = null)
     {
+
+if ($servicoID) {
+    $servicoID = " and ser.id = $servicoID";
+}
 
         $sql = "select usu.usunome as nome_Profissional,usuid as id_Profissional,
        catid as id_Categoria,sp.serid as id_Servico ,
@@ -137,7 +141,9 @@ class modelCategoria extends DBconexao
     inner join  usuarios usu on sp.usuid = usu.id
     inner join  servicos ser on sp.serid = ser.id
     inner join categorias cat on cat.id = ser.catid
-    where cat.catnome ilike '%$categoria%' and sp.status = true;";
+    where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID .";";
+
+
 
         $result = pg_query($this->banco->open(), $sql);
 

@@ -9,26 +9,48 @@
 
 
 <script>
+
+    function  pesquisarServicos(){
+        let servicoID = $('#servicos').val();
+        let categoriaNome = $('#pesquisarTable').attr('data-nomecategoria');
+
+        let url = '../Controller/index.php';
+
+
+
+         if (!servicoID || !categoriaNome){
+             $("#erro").show().fadeOut(4000);
+             return
+         }
+
+        let formData = new FormData();
+        formData.append('rq', 'servicos_ID');
+        formData.append('servicoID', servicoID);
+        formData.append('categoriaNome', categoriaNome);
+
+        $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'post',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (rs) {
+                $('#table-services').html(rs);
+                $("#table-Services").dataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                    }
+                });
+            },
+            error: function (e) {
+                bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+            }
+        });
+
+    }
+
     $(document).ready(function () {
-        // let url = '../Controller/index.php';
-        //
-        // let formData = new FormData();
-        // formData.append('rq', 'carregarTable');
-        //
-        // $.ajax({
-        //     url: url,
-        //     dataType: 'text',
-        //     type: 'post',
-        //     contentType: false,
-        //     processData: false,
-        //     data: formData,
-        //     success: function (rs) {
-        //         console.log(rs);
-        //     },
-        //     error: function (e) {
-        //         bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
-        //     }
-        // });
         $("#table-Services").dataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
@@ -153,13 +175,19 @@
 
                     </select>
                 </div>
+
                 <div class="error help-block with-errors"></div>
             </div>
-
+            <div class="alert alert-danger text-center" id="erro" role="alert" style="display: none;">
+                <strong>Erro! </strong>Não foi possivel realizar essa operação!
+            </div>
             <div class="form-group" style="display: flex;justify-content:flex-end;">
-                <button id="" type="button" class="btn pesquisarTable arredondar">Pesquisar
+                <button  id="pesquisarTable" data-nomeCategoria="<?php echo $_GET['categoria']; ?>" onclick="pesquisarServicos()"
+                         type="button" class="btn pesquisarTable arredondar">Pesquisar
                     <i class="fas fa-search"></i>
                 </button>
+
+
             </div>
 
         </form>
@@ -167,54 +195,14 @@
 
     <div style="display: flex; align-items: center" class="col-md-9 arredondar">
 
-        <div class="table-responsive" style="display:block">
-            <table id="table-Services" class="table table" style=" border:1px solid white; color: white">
-                <thead style="background: #f50a31;">
-                <tr>
-                    <th scope="col">Profissional</th>
-                    <th scope="col">Preço</th>
-                    <th scope="col">Nota:</th>
-                    <th scope="col">Serviço:</th>
-                    <th scope="col">Status:</th>
-                    <th scope="col">Selecionar:</th>
-                </tr>
-                </thead>
-                <tbody>
+        <div  id ="table-services" class="table-responsive" style="display:block">
+            <?php
+            require_once '../Controller/controllerCategoria.php';
+            $categoria = new controllerCategoria();
+            echo  $tableServicos = $categoria->tableServicos($_GET['categoria']);
+            ?>
 
-                <?php
-                require_once '../Model/modelCategoria.php';
-                $categoria = new modelCategoria();
-                $tableServicos = $categoria->tableServicos($_GET['categoria']);
 
-                if ($tableServicos) {
-                    foreach ($tableServicos as $key => $value) {
-                        echo "<tr>
-                    <th scope='row'>{$value['nome_profissional']}</th>
-                    <th scope='row'>R$ {$value['preco']}</th>
-                    <th scope='row'>{$value['nota']}</th>
-                    <th scope='row'>{$value['sernome']}</th>
-                    <th scope='row'>{$value['status']}</th>
-                    <th>
-                        <button  
-                         data-idProfissional ='{$value['id_profissional']}'  data-idCategoria ='{$value['id_categoria']}'  
-                         data-idServico ='{$value['id_servico']}'   data-idServico-Profissinal ='{$value['servico_profissional_id']}'
-                        type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
-                        </button>
-                    </th>
-
-                </tr>";
-                    }
-                }
-                else {
-                    echo
-                  "<tr>
-                    <tr><td  class='text-center' colspan='6'>Nenhum serviço disponível no momento</td></tr>
-                </tr>";
-                }
-
-                ?>
-                </tbody>
-            </table>
         </div>
     </div>
 
