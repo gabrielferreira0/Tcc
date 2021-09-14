@@ -112,14 +112,26 @@ class controllerCategoria
                                 <th scope='row'>{$value['nota']}<i style='color: #fac303' class='fas fa-star'></i></th>
                                 <th scope='row'>{$value['sernome']}</th >
                                 <th scope='row'>{$value['status']}</th >
-                            <th >
+                            ";
+                 if (isset($_SESSION['CPF'])) {
+                      $table.="<th >
                                 <button  
                                     data-idProfissional ='{$value['id_profissional']}'  data-idCategoria ='{$value['id_categoria']}'  
                                     data-idServico ='{$value['id_servico']}'   data-idServico-Profissinal ='{$value['servico_profissional_id']}'
                                     type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
-                                </button>
+                                </button>                        
                             </th >
                         </tr > ";
+                 }
+
+                 else {
+                     $table.="<th >
+                                <button  onclick='teste();' type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
+                                </button>                        
+                            </th >
+                        </tr > ";
+                 }
+
             }
 
         } else {

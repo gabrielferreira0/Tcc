@@ -50,6 +50,9 @@
 
     }
 
+    function  teste(){
+        Swal.fire('Você deve estar logado para contratar algum serviço')
+    }
     $(document).ready(function () {
         $("#table-Services").dataTable({
             "language": {
