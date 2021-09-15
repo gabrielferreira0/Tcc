@@ -6,7 +6,7 @@ function carregarCEP() {
         url: 'https://viacep.com.br/ws/' + CEP + '/json/',
         async: true,
         success: function (rs) {
-            rs = JSON.parse(rs);
+            rs = JSON.parseRegistrar(rs);
             $("#Logradouro").val(rs['logradouro']);
             $("#Complemento").val(rs['complemento']);
             $("#Bairro").val(rs['bairro']);
@@ -19,6 +19,10 @@ function carregarCEP() {
     });
 }
 
+
+function redirecionadarParceiro(){
+    window.location.href = "View/parceiroForm.php";
+}
 
 $(document).ready(function () {
     let CPF = $("#CPF");
@@ -36,6 +40,7 @@ $(document).ready(function () {
         $("#sobre").hide();
         $("#suporte").hide();
         $("#cardLogin").show();
+        $("#cardEscolha").hide();
         let CPF = $("#CPF-login");
         CPF.mask('999.999.999-99');
     });
@@ -112,23 +117,30 @@ $(document).ready(function () {
     });
 
     $('#Conteudo').on('click', '#Registrar', function () {
-
-        // $('.cardFormulario').remove();
-        // $('.geral').html(cadastroHTML);
-        // let CPF = $("#CPF");
-        // CPF.mask('999.999.999-99');
-        // let CEP = $("#CEP");
-        // CEP.mask("99.999-999");
-        // let telefone = $("#Telefone");
-        // telefone.mask('(00) 0000-0000');
         $("#cardLogin").hide();
         $("#sobre").hide();
         $("#suporte").hide();
         $("#cardServicos").hide();
         $("#carousel").hide();
         $("#cardCardRecuperar").hide();
-        $("#cardCadastro").show();
+         $("#cardCadastro").hide();
+         $("#cardEscolha").show();
     });
+
+    $('#Conteudo').on('click', '#registrarCliente', function () {
+
+        console.log('entrou');
+        $("#cardLogin").hide();
+        $("#sobre").hide();
+        $("#suporte").hide();
+        $("#cardServicos").hide();
+        $("#carousel").hide();
+        $("#cardCardRecuperar").hide();
+        $("#cardEscolha").hide();
+         $("#cardCadastro").show();
+    });
+
+
 
     $('#Conteudo').on('click', '#sobreteste', function () {
         $("#cardCadastro").hide();
