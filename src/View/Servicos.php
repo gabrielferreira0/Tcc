@@ -141,7 +141,7 @@
 </div>
 <!-- FIM navbar-->
 
-<div class="container row text-center col-md-12 pesquisar_servico">
+<div  style="margin:0" class=" row container text-center col-md-12 pesquisar_servico">
 
     <div class="col-md-3 arredondar">
         <?php

@@ -148,7 +148,7 @@ SERVIÇOS DE PEQUENOS REPAROS">
 <!--  FIM carousel-->
 
 <div class="container-fluid ">
-    <div class="d-flex justify-content-center geral">
+    <div class="d-flex justify-content-center  geral">
 
         <!-- Escolha tipo cadastro-->
         <div class="card cardFormulario col-md-3" id="cardEscolha" style="display: none">

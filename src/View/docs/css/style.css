@@ -261,8 +261,12 @@ footer {
     filter: brightness(90%);
 }
 
-.teste {
-
+.container-pedido {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    /*padding: 1rem;*/
 }
 
-
+.infoProfissional   span{
+    margin-left: 10px;
+}
