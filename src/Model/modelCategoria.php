@@ -122,27 +122,26 @@ class modelCategoria extends DBconexao
         }
     }
 
-    public function tableServicos($categoria, $servicoID = null)
+    public function tableServicos($categoria, $servicoID = null, $UF = null)
     {
 
-if ($servicoID) {
-    $servicoID = " and ser.id = $servicoID";
-}
+        if ($servicoID) {
+            $servicoID = " and ser.id = $servicoID";
+        }
+        if ($UF) {
+            $UF = " and ep.uf = '$UF'";
+        }
 
-        $sql = "select usu.usunome as nome_Profissional,usuid as id_Profissional,
-       catid as id_Categoria,sp.serid as id_Servico ,
-       sp.id as servico_profissional_ID,
+        $sql = "select usu.usunome as nome_Profissional,usu.id as id_Profissional,
+       catid as id_Categoria,sp.serid as id_Servico , sp.id as servico_profissional_ID,
        sp.preco,'4.0' as nota,ser.sernome,
-        (case
-        when sp.status = 'True' then 'Ativo'
-        when sp.status = 'False' then 'Desativado'
-        end) as status
-    from servico_profissional sp
-    inner join  usuarios usu on sp.usuid = usu.id
-    inner join  servicos ser on sp.serid = ser.id
+        ep.cidade as cidade, ep.uf as UF
+from servico_profissional sp
+    inner join usuarios usu on sp.usuid = usu.id
+    inner join servicos ser on sp.serid = ser.id
     inner join categorias cat on cat.id = ser.catid
-    where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID .";";
-
+    inner join endereco_profissional ep on usu.id = ep.usuid
+where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID . $UF . ";";
 
 
         $result = pg_query($this->banco->open(), $sql);

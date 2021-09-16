@@ -83,11 +83,12 @@ class controllerCategoria
 
     }
 
-    public function tableServicos($categoriaNome , $servicoID=null)
+    public function tableServicos($categoriaNome , $servicoID=null, $UF=null)
     {
 
+
         $modelCategoria = new modelCategoria();
-        $result = $modelCategoria->tableServicos($categoriaNome, $servicoID);
+        $result = $modelCategoria->tableServicos($categoriaNome, $servicoID, $UF);
 
         $table = "<table id='table-Services' class='table table' style=' border:1px solid white; color: white'>
                     <thead style='background: #f50a31;'>
@@ -96,7 +97,7 @@ class controllerCategoria
                             <th scope='col'>Preço</th>
                             <th scope='col'>Nota:</th>
                             <th scope='col'>Serviço:</th>
-                            <th scope='col'>Status:</th>
+                            <th scope='col'>Cidade:</th>
                             <th scope='col'>Selecionar:</th>
                         </tr>
                      </thead>
@@ -111,7 +112,7 @@ class controllerCategoria
                                 <th scope='row'>R$ {$value['preco']}</th>
                                 <th scope='row'>{$value['nota']}<i style='color: #fac303' class='fas fa-star'></i></th>
                                 <th scope='row'>{$value['sernome']}</th >
-                                <th scope='row'>{$value['status']}</th >
+                                <th scope='row'>{$value['cidade']}</th >
                             ";
                  if (isset($_SESSION['CPF'])) {
                       $table.="<th >

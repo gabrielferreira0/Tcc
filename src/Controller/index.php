@@ -79,10 +79,11 @@ if (isset($_POST["rq"])) {
         case 'servicos_ID':
             require_once 'controllerCategoria.php';
              $servicoID = $_POST["servicoID"];
+             $UF = $_POST["UF"];
              $categoriaNome = $_POST["categoriaNome"];
 
             $loadClass = new controllerCategoria();
-            echo $loadClass->tableServicos($categoriaNome,$servicoID);
+            echo $loadClass->tableServicos($categoriaNome,$servicoID,$UF);
             break;
 
     }

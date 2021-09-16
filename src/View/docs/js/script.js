@@ -6,7 +6,7 @@ function carregarCEP() {
         url: 'https://viacep.com.br/ws/' + CEP + '/json/',
         async: true,
         success: function (rs) {
-            rs = JSON.parseRegistrar(rs);
+            rs = JSON.parse(rs);
             $("#Logradouro").val(rs['logradouro']);
             $("#Complemento").val(rs['complemento']);
             $("#Bairro").val(rs['bairro']);

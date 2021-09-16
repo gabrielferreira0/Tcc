@@ -10,22 +10,22 @@
 
 <script>
 
-    function  pesquisarServicos(){
+    function pesquisarServicos() {
         let servicoID = $('#servicos').val();
+        let UF = $('#UF').val();
         let categoriaNome = $('#pesquisarTable').attr('data-nomecategoria');
 
         let url = '../Controller/index.php';
 
-
-
-         if (!servicoID || !categoriaNome){
-             $("#erro").show().fadeOut(4000);
-             return
-         }
+        if (!servicoID || !categoriaNome) {
+            $("#erro").show().fadeOut(4000);
+            return
+        }
 
         let formData = new FormData();
         formData.append('rq', 'servicos_ID');
         formData.append('servicoID', servicoID);
+        formData.append('UF', UF);
         formData.append('categoriaNome', categoriaNome);
 
         $.ajax({
@@ -50,9 +50,10 @@
 
     }
 
-    function  teste(){
+    function teste() {
         Swal.fire('Você deve estar logado para contratar algum serviço')
     }
+
     $(document).ready(function () {
         $("#table-Services").dataTable({
             "language": {
@@ -181,12 +182,57 @@
 
                 <div class="error help-block with-errors"></div>
             </div>
+
+            <div class="form-group">
+                <div class=" d-flex justify-content-center input-group ">
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text arredondar"> <i class="fas fa-map-marked-alt"></i></span>
+                    </div>
+
+                    <select class="form-control arredondar" id="UF">
+                        <option value="">--Selecione UF</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+
+                    </select>
+                </div>
+
+                <div class="error help-block with-errors"></div>
+            </div>
+
             <div class="alert alert-danger text-center" id="erro" role="alert" style="display: none;">
                 <strong>Erro! </strong>Não foi possivel realizar essa operação!
             </div>
             <div class="form-group" style="display: flex;justify-content:flex-end;">
-                <button  id="pesquisarTable" data-nomeCategoria="<?php echo $_GET['categoria']; ?>" onclick="pesquisarServicos()"
-                         type="button" class="btn pesquisarTable arredondar">Pesquisar
+                <button id="pesquisarTable" data-nomeCategoria="<?php echo $_GET['categoria']; ?>"
+                        onclick="pesquisarServicos()"
+                        type="button" class="btn pesquisarTable arredondar">Pesquisar
                     <i class="fas fa-search"></i>
                 </button>
 
@@ -198,11 +244,11 @@
 
     <div style="display: flex; align-items: center" class="col-md-9 arredondar">
 
-        <div  id ="table-services" class="table-responsive" style="display:block">
+        <div id="table-services" class="table-responsive" style="display:block">
             <?php
             require_once '../Controller/controllerCategoria.php';
             $categoria = new controllerCategoria();
-            echo  $tableServicos = $categoria->tableServicos($_GET['categoria']);
+            echo $tableServicos = $categoria->tableServicos($_GET['categoria']);
             ?>
 
 

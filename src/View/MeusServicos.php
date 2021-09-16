@@ -72,7 +72,6 @@ include('../Controller/verificarLogin.php')
                 processData: false,
                 data: formData,
                 success: function (rs) {
-                console.log(rs);
                     $("#Sucesso").show().fadeOut(4000);
                 },
                 error: function (e) {
