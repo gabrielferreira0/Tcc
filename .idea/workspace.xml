@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Head.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/pedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pedidoServico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +149,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/crlv_digital" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ajuste" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -344,6 +348,11 @@
       <workItem from="1631796599644" duration="9885000" />
       <workItem from="1631810824463" duration="10066000" />
       <workItem from="1631837104980" duration="4644000" />
+      <workItem from="1631890237382" duration="398000" />
+      <workItem from="1631892742703" duration="5050000" />
+      <workItem from="1631904718210" duration="1021000" />
+      <workItem from="1631906060187" duration="2069000" />
+      <workItem from="1631908611321" duration="2419000" />
     </task>
     <servers />
   </component>
@@ -555,7 +564,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/pedidoServico.php</url>
-          <line>37</line>
+          <line>56</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>

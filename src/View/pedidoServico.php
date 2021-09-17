@@ -19,7 +19,28 @@ include('Navbar.php');
 ?>
 
 
-<div class="container-fluid ">
+<script>
+
+    $(document).ready(function () {
+        $('#cartaoNumero').mask('0000.0000.0000.0000')
+        $('#expiracao').mask('0000')
+
+
+        $('#Conteudo').on('click', '.expandir', function () {
+             let classe = $(this).children().attr('class');
+             if (classe=='fas fa-caret-square-down'){
+                 $(this).children().removeClass().addClass('fas fa-caret-square-up')
+             }
+             else {
+                 $(this).children().removeClass().addClass('fas fa-caret-square-down')
+             }
+        });
+
+    });
+</script>
+
+
+<div class="container-fluid col-md-10 ">
     <div class="container-pedido arredondar">
 
         <h1 style="border-bottom: 1px solid white" class="text-center">
@@ -27,14 +48,12 @@ include('Navbar.php');
         </h1>
 
         <div class="container row">
-            <div class="col-md-10  col-12 pl-5 pr-5 infoProfissional">
+            <div class="col-md-8 col-12 pl-5 pr-5 infoProfissional">
                 <h3>Pintor / Casa ou apartamento</h3>
                 <span>Nome: Lucca Edson Calebe </span> <br>
                 <span>Telefone: (69)29153813</span> <br>
                 <span>Email: luccaedsoncale-80@viavaleseguros.com.br</span>
             </div>
-
-
             <?php
             if ($_SESSION['Foto'] != 'false') {
                 echo '
@@ -65,62 +84,88 @@ include('Navbar.php');
             </div>';
             }
             ?>
-
         </div>
 
         <div class="container col-md-12 col-12 pl-5">
-            <h1>Pagamento</h1>
+
             <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="Username">numero do cartão de crédito:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text arredondar"><i class="far fa-credit-card"></i></span>
+                <h1>Pagamento
+
+                    <a title="expandir" class="btn btn-secondary expandir" data-toggle="collapse" href="#pagamento" role="button" aria-expanded="false">
+                        <i style="cursor: pointer" class="fas fa-caret-square-down"></i>
+                    </a>
+                </h1>
+
+
+                <div id="pagamento"  class="collapse">
+                    <div class="form-row texto-cinza">
+                        <div class="form-group col-md-3">
+                            <label for="Username">numero do cartão de crédito:</label>
+
+                            <div class="input-group input-group-sm ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"><i class="far fa-credit-card"></i></span>
+
+                                </div>
+                                <input id="cartaoNumero" type="text" class="form-control"
+                                       placeholder="Numero" required>
                             </div>
-                            <input value="" type="text" class="form-control arredondar"
-                                   placeholder="Numero"
-                                   required>
+
+
+                            <div class="error help-block with-errors"></div>
                         </div>
-                        <div class="error help-block with-errors"></div>
+                        <div class="form-group col-md-3">
+                            <label for="Username">Nome impresso no cartão:</label>
+                            <div class="input-group input-group-sm ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"><i class="far fa-credit-card"></i></span>
+                                </div>
+                                <input value="" type="text" class="form-control arredondar" id="" placeholder="Nome"
+                                       required>
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
                     </div>
-                    <div class="form-group col-md-3">
-                        <label for="Username">Nome impresso no cartão:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text arredondar"><i class="far fa-credit-card"></i></span>
+
+                    <div class="form-row texto-cinza">
+                        <div class="form-group col-md-2">
+                            <label for="Username">Expiração:</label>
+                            <div class="input-group input-group-sm ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"><i class="fas fa-calendar-alt"></i></span>
+                                </div>
+                                <input id="expiracao" type="text" class="form-control arredondar"
+                                       placeholder="data"
+                                       required>
                             </div>
-                            <input value="" type="text" class="form-control arredondar" id="Username" placeholder="Nome"
-                                   required>
+                            <div class="error help-block with-errors"></div>
                         </div>
-                        <div class="error help-block with-errors"></div>
+                        <div class="form-group col-md-2">
+                            <label for="Username">CVV:</label>
+                            <div class="input-group input-group-sm ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input maxlength="3" type="password" class="form-control arredondar" placeholder="Código"
+                                       required>
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label for="Username">Expiração:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text arredondar"><i class="fas fa-calendar-alt"></i></span>
-                            </div>
-                            <input value="" type="text" class="form-control arredondar"
-                                   placeholder="data"
-                                   required>
-                        </div>
-                        <div class="error help-block with-errors"></div>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="Username">CVV:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text arredondar"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input  maxlength="3" type="password" class="form-control arredondar"  placeholder="Código"
-                                   required>
-                        </div>
-                        <div class="error help-block with-errors"></div>
-                    </div>
+
+                <h1>Endereço
+                    <a class="btn btn-secondary expandir" data-toggle="collapse" href="#endereco" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i style="cursor: pointer" class="fas fa-caret-square-down"></i>
+                    </a>
+                </h1>
+                <label class="small texto-cinza">Forneça o endereço para a realização do serviço</label>
+
+                <div id="endereco"  class="collapse">
+                <h1>Dados do endereço aqui</h1>
                 </div>
+
+
             </form>
         </div>
 
