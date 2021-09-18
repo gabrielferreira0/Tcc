@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Head.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/pedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pedidoServico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,6 +348,7 @@
       <workItem from="1631904718210" duration="1021000" />
       <workItem from="1631906060187" duration="2069000" />
       <workItem from="1631908611321" duration="2419000" />
+      <workItem from="1631931875219" duration="4307000" />
     </task>
     <servers />
   </component>
@@ -564,7 +560,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/pedidoServico.php</url>
-          <line>56</line>
+          <line>55</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
