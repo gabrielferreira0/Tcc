@@ -83,12 +83,13 @@ class controllerCategoria
 
     }
 
-    public function tableServicos($categoriaNome , $servicoID=null, $UF=null)
+    public function tableServicos($categoriaNome, $servicoID = null, $UF = null)
     {
 
 
         $modelCategoria = new modelCategoria();
         $result = $modelCategoria->tableServicos($categoriaNome, $servicoID, $UF);
+
 
         $table = "<table id='table-Services' class='table table' style=' border:1px solid white; color: white'>
                     <thead style='background: #f50a31;'>
@@ -114,24 +115,22 @@ class controllerCategoria
                                 <th scope='row'>{$value['sernome']}</th >
                                 <th scope='row'>{$value['cidade']}</th >
                             ";
-                 if (isset($_SESSION['CPF'])) {
-                      $table.="<th >
-                                <button  
-                                    data-idProfissional ='{$value['id_profissional']}'  data-idCategoria ='{$value['id_categoria']}'  
-                                    data-idServico ='{$value['id_servico']}'   data-idServico-Profissinal ='{$value['servico_profissional_id']}'
-                                    type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
+                if (isset($_SESSION['CPF'])) {
+                    $table .= "<th >
+                            <a href='../View/pedidoServico.php?servico={$value['servico_profissional_id']}'>
+                                <button    
+                                  type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
+                                </button>   
+                            </a>                     
+                            </th >
+                        </tr > ";
+                } else {
+                    $table .= "<th >
+                                <button  onclick='loginOFF();' type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
                                 </button>                        
                             </th >
                         </tr > ";
-                 }
-
-                 else {
-                     $table.="<th >
-                                <button  onclick='teste();' type='button' class='btn btn-success'><i class='fas fa-handshake'></i>
-                                </button>                        
-                            </th >
-                        </tr > ";
-                 }
+                }
 
             }
 
@@ -141,8 +140,8 @@ class controllerCategoria
                 </tr>";
         }
 
-        $table.= "</tbody>";
-        $table.= "</table>";
+        $table .= "</tbody>";
+        $table .= "</table>";
 
         return $table;
 

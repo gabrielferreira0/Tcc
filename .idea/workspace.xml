@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Servicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Servicos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/pedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pedidoServico.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ajuste" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/app nosso" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -349,6 +355,11 @@
       <workItem from="1631906060187" duration="2069000" />
       <workItem from="1631908611321" duration="2419000" />
       <workItem from="1631931875219" duration="4307000" />
+      <workItem from="1632140327442" duration="736000" />
+      <workItem from="1632141151185" duration="286000" />
+      <workItem from="1632141685003" duration="7525000" />
+      <workItem from="1632155523002" duration="3662000" />
+      <workItem from="1632182443261" duration="3533000" />
     </task>
     <servers />
   </component>
@@ -372,7 +383,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -382,17 +393,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>550</line>
+          <line>551</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>437</line>
+          <line>438</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>86</line>
+          <line>87</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
@@ -451,7 +462,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$USER_HOME$/Desktop/credAuto/app.nosso/app/Helpers/Helper.php</url>
-          <line>105</line>
+          <line>174</line>
           <properties>
             <option name="className" value="\DistribuidorCP\Helpers\Helper" />
             <option name="methodName" value="qualNavegador" />
@@ -540,7 +551,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/credAuto/app.nosso/resources/views/veicularmoises/veiculartotal/resumoveiculartotal.blade.php</url>
-          <line>56</line>
+          <line>34</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -560,7 +571,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/pedidoServico.php</url>
-          <line>55</line>
+          <line>68</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>

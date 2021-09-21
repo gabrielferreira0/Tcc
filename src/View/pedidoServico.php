@@ -46,17 +46,29 @@ include('Navbar.php');
             Finalizar Pedido <i class="fas fa-money-check"></i>
         </h1>
 
-         <div style="margin: 0" class="container row">
+
+        <?php
+        require_once '../Model/modelCategoria.php';
+        $categoria = new modelCategoria();
+        $servicos = $categoria->getServico_profissional($_GET['servico']);
+        ?>
+
+        <div style="margin: 0" class="container row">
             <div class="col-md-8 col-12 pl-5 pr-5 infoProfissional">
-                <h3>Pintor / Casa ou apartamento</h3>
-                <span>Nome: Lucca Edson Calebe </span> <br>
-                <span>Telefone: (69)29153813</span> <br>
-                <span>Email: luccaedsoncale-80@viavaleseguros.com.br</span>
+
+                <?php
+                echo "
+            <h3>{$servicos[0]['catnome']} / {$servicos[0]['sernome']}</h3>
+            <h4>Preço:<span style='color: #28a745'>R$ {$servicos[0]['preco']} <i class='fas fa-money-bill-wave'></i></h4></span>
+            <span>Nome: {$servicos[0]['usunome']} </span> <br>
+            <span>Telefone: {$servicos[0]['usutelefone']}</span> <br>
+            <span>Email: {$servicos[0]['usuemail']}</span>
+            "; ?>
+
             </div>
             <?php
-            if ($_SESSION['Foto'] != 'false') {
+            if ($servicos[0]['usufoto'] != 'false') {
                 echo '
-
                 <div class="col-12 col-md-2 ">
                 
                 <div class="col-md-12 d-flex justify-content-center mb-2">
@@ -64,7 +76,7 @@ include('Navbar.php');
                 </div>
 
                 <div class="col-md-12 d-flex justify-content-center">
-                    <img alt ="avatar-profissional" style="cursor:default;" class ="miniatura" src="../imagens/usuarios/' . $_SESSION['Foto'] . '">
+                    <img alt ="avatar-profissional" style="cursor:default;" class ="miniatura" src="../imagens/usuarios/' . $servicos[0]['usufoto'] . '">
                 </div>
                  </div>';
             } else {
@@ -155,13 +167,13 @@ include('Navbar.php');
                     </div>
                 </div>
 
-                <h1>Endereço
+                <h1>Endereço / Data
                     <a class="btn btn-secondary expandir" data-toggle="collapse" href="#endereco" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
                         <i style="cursor: pointer" class="fas fa-caret-square-down"></i>
                     </a>
                 </h1>
-                <p class="small texto-cinza">Forneça o endereço para a realização do serviço</p>
+                <p class="small texto-cinza">Forneça o endereço e o dia para a realização do serviço</p>
 
                 <div id="endereco" class="collapse">
                     <div class="form-row texto-cinza">
@@ -173,7 +185,7 @@ include('Navbar.php');
                                     <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
                                 </div>
                                 <label for="CEP"></label>
-                                <input type="text" class="form-control arredondar"  id="CEP"
+                                <input onblur="carregarCEP()" type="text" class="form-control arredondar" id="CEP"
                                        placeholder="12.123-123" data-error="Por favor, informe um CEP correto."
                                        required="">
                             </div>
@@ -181,26 +193,26 @@ include('Navbar.php');
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="bairro">Bairro:</label>
+                            <label for="Bairro">Bairro:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
                                 </div>
-                                <input type="text" class="form-control arredondar" id=bairro"
+                                <input type="text" class="form-control arredondar" id="Bairro"
                                        data-error="Por favor, informe um bairro correto." required="">
                             </div>
 
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="logradouro">Logradouro:</label>
+                            <label for="Logradouro">Logradouro:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
                                 </div>
-                                <input type="text" class="form-control arredondar" id="logradouro"
+                                <input type="text" class="form-control arredondar" id="Logradouro"
                                        data-error="Por favor, informe um Logradouro correto." required="">
                             </div>
 
@@ -210,14 +222,14 @@ include('Navbar.php');
 
                     <div class="form-row texto-cinza">
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="complemento">Complemento:</label>
+                            <label for="Complemento">Complemento:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
                                 </div>
                                 <label for="CEP"></label>
-                                <input type="text" class="form-control arredondar" id="complemento"
+                                <input type="text" class="form-control arredondar" id="Complemento"
                                        data-error="Por favor, informe um Logradouro correto." required="">
                             </div>
 
@@ -245,16 +257,39 @@ include('Navbar.php');
                                     <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
                                 </div>
                                 <label for="numero"></label>
-                                <input value="Brasilia" type="text" class="form-control arredondar" id="cidade"
-                                       required disabled>
 
-                                <div class="input-group-append arredondar">
-                                    <span class="input-group-text">DF</span>
-                                </div>
+
+                                <?php
+                                echo "
+                    <input value='{$servicos[0]['cidade']}' 
+                    type='text' class='form-control arredondar' id='cidade' required disabled>
+                    <div class='input-group-append arredondar'>
+                        <span class='input-group-text'>{$servicos[0]['uf']}</span>
+                    </div>
+            
+            
+            "; ?>
+
+
+
 
                             </div>
 
 
+                        </div>
+                        <div class="form-group col-md-3 texto-cinza">
+                            <label for="data">Data:</label>
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"><i class="fas fa-calendar-alt"></i></span>
+                                </div>
+                                <label for="data"></label>
+                                <input type="date" class="form-control arredondar" id="data"
+                                       data-error="Por favor, informe uma data correta." required="">
+                            </div>
+
+                            <div class="error help-block with-errors"></div>
                         </div>
                     </div>
                 </div>
@@ -264,8 +299,8 @@ include('Navbar.php');
         </div>
 
         <div class="form-group" style="display:flex;  justify-content: center;">
-            <button id="" type="button" class="btn btn-danger ml-2 mr-2">Voltar</button>
-            <button id="" type="button" class="btn btn-success ml-2 mr-2">Finalizar Pedido</button>
+            <button id="" type="button" class="btn btn-danger ml-2  mb-3 mr-2">Voltar</button>
+            <button id="" type="button" class="btn btn-success ml-2 mb-3 mr-2">Finalizar Pedido</button>
         </div>
 
     </div>

@@ -122,6 +122,9 @@ class modelCategoria extends DBconexao
         }
     }
 
+
+
+
     public function tableServicos($categoria, $servicoID = null, $UF = null)
     {
 
@@ -135,7 +138,7 @@ class modelCategoria extends DBconexao
         $sql = "select usu.usunome as nome_Profissional,usu.id as id_Profissional,
        catid as id_Categoria,sp.serid as id_Servico , sp.id as servico_profissional_ID,
        sp.preco,'4.0' as nota,ser.sernome,
-        ep.cidade as cidade, ep.uf as UF
+        ep.cidade as cidade, ep.uf as UFs
 from servico_profissional sp
     inner join usuarios usu on sp.usuid = usu.id
     inner join servicos ser on sp.serid = ser.id
@@ -165,4 +168,27 @@ where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID . $UF 
         $result = pg_query($this->banco->open(), $sql);
         return $result;
     }
+
+    public function getServico_profissional($id) {
+
+        $sql = "select catnome,sernome,usunome,usutelefone,usuemail,sp.preco,usu.usufoto,ende.cidade,ende.UF
+        from servico_profissional  sp
+        inner join usuarios usu on usu.id = sp.usuid
+        inner join endereco_profissional ende on usu.id = ende.usuid
+        inner join servicos ser on ser.id = sp.serid
+        inner join categorias cat on cat.id = ser.catid
+    where sp.id = {$id};";
+        $result = pg_query($this->open(),$sql);
+
+        $dados = pg_fetch_all($result);
+
+        if ($dados) {
+            return $dados;
+        } else {
+            return false;
+        }
+
+    }
+
+
 }

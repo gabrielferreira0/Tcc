@@ -50,7 +50,7 @@
 
     }
 
-    function teste() {
+    function loginOFF() {
         Swal.fire('Você deve estar logado para contratar algum serviço')
     }
 
@@ -250,8 +250,6 @@
             $categoria = new controllerCategoria();
             echo $tableServicos = $categoria->tableServicos($_GET['categoria']);
             ?>
-
-
         </div>
     </div>
 
