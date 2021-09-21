@@ -79,14 +79,17 @@ include('Navbar.php');
             } else {
                 echo '<div class="col-md-2 col-sm-offset-1">
                 <div class="col-md-12 mb-3">
-                    <i style="color: #fac303" class="fas fa-star">4.0</i>
+                
+                <div style="cursor: default;"
+                         class="d-flex align-items-center d-flex justify-content-center">
+                       <i style="color: #fac303" class="fas fa-star">4.0</i>
+                    </div>
                 </div>
 
                 <div class="col-md-12">
                     <div style="cursor: default;"
-                         class="d-flex align-items-center d-flex justify-content-center  col-md-2">
-
-                        <h1 class="fas fa-user"></h1>
+                         class=" d-flex justify-content-center ">
+                        <h1  style="font-size: 4rem" class="fas fa-user"></h1>
                     </div>
                 </div>
             </div>';
