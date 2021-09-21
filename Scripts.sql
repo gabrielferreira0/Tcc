@@ -64,7 +64,32 @@ create table servico_profissional (
                                       serid integer REFERENCES servicos(id),
                                       status boolean
 );
-alter table  servico_profissional add column preco double precision;
+
+create table cliente_servico_profissional (
+                                              id serial primary key not null,
+                                              id_cliente integer REFERENCES usuarios(id),
+                                              servico_profissionalID integer REFERENCES servico_profissional(id),
+                                              cep_servico varchar,
+                                              bairro_servico varchar,
+                                              logradouro_servico varchar,
+                                              complemento_servico varchar,
+                                              cidade_servico varchar,
+                                              UF_servico  varchar(2),
+                                              data_servico date,
+                                              avaliacao_servico integer default 0,
+                                              id_pagamento integer references pagamento_servico(id),
+                                              status varchar
+);
+
+create  table pagamento_servico (
+                                    id integer primary key not null,
+                                    status varchar,
+                                    valor double precision,
+                                    card_ultimos_digitos int,
+                                    card_bandeira varchar
+);
+
+ALTER TABLE  servico_profissional add column preco double precision;
 
 ALTER TABLE conta_profissional ADD COLUMN recipient_ID varchar;
 ALTER TABLE conta_profissional ADD COLUMN bank_account_id int;

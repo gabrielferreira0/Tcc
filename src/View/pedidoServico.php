@@ -57,14 +57,11 @@ include('Navbar.php');
             <div class="col-md-8 col-12 pl-5 pr-5 infoProfissional">
 
                 <?php
-                echo "
-            <h3>{$servicos[0]['catnome']} / {$servicos[0]['sernome']}</h3>
-            <h4>Preço:<span style='color: #28a745'>R$ {$servicos[0]['preco']} <i class='fas fa-money-bill-wave'></i></h4></span>
-            <span>Nome: {$servicos[0]['usunome']} </span> <br>
-            <span>Telefone: {$servicos[0]['usutelefone']}</span> <br>
-            <span>Email: {$servicos[0]['usuemail']}</span>
-            "; ?>
-
+                echo "<h3>{$servicos[0]['catnome']} / {$servicos[0]['sernome']}</h3>
+                        <h4>Preço:<span style='font-weight:600;color: #28a745'>R$ {$servicos[0]['preco']} <i class='fas fa-money-bill-wave'></i></h4></span>
+                        <span>Nome: {$servicos[0]['usunome']} </span> <br>
+                        <span>Telefone: {$servicos[0]['usutelefone']}</span> <br>
+                        <span>Email: {$servicos[0]['usuemail']}</span>"; ?>
             </div>
             <?php
             if ($servicos[0]['usufoto'] != 'false') {
@@ -230,7 +227,7 @@ include('Navbar.php');
                                 </div>
                                 <label for="CEP"></label>
                                 <input type="text" class="form-control arredondar" id="Complemento"
-                                       data-error="Por favor, informe um Logradouro correto." required="">
+                                       data-error="Por favor, informe um Complemento correto." required="">
                             </div>
 
                             <div class="error help-block with-errors"></div>
@@ -258,7 +255,6 @@ include('Navbar.php');
                                 </div>
                                 <label for="numero"></label>
 
-
                                 <?php
                                 echo "
                     <input value='{$servicos[0]['cidade']}' 
@@ -266,16 +262,8 @@ include('Navbar.php');
                     <div class='input-group-append arredondar'>
                         <span class='input-group-text'>{$servicos[0]['uf']}</span>
                     </div>
-            
-            
             "; ?>
-
-
-
-
                             </div>
-
-
                         </div>
                         <div class="form-group col-md-3 texto-cinza">
                             <label for="data">Data:</label>
@@ -293,7 +281,6 @@ include('Navbar.php');
                         </div>
                     </div>
                 </div>
-
 
             </form>
         </div>
