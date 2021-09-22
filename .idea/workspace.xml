@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons2.png" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/common3.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/common3.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.png" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.png" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-iconsOLD.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/parceiroForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/parceiroForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagens/svg/Business deal-pana.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagens/svg/Business deal-pana.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MeusServicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MeusServicos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Servicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Servicos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -360,7 +366,10 @@
       <workItem from="1632155523002" duration="3662000" />
       <workItem from="1632182443261" duration="3533000" />
       <workItem from="1632227470862" duration="15316000" />
-      <workItem from="1632313604290" duration="2265000" />
+      <workItem from="1632313604290" duration="9545000" />
+      <workItem from="1632326630439" duration="421000" />
+      <workItem from="1632330902313" duration="7658000" />
+      <workItem from="1632339218965" duration="1484000" />
     </task>
     <servers />
   </component>
@@ -584,6 +593,16 @@
           <url>file://$PROJECT_DIR$/src/View/parceiroForm.php</url>
           <line>618</line>
           <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php</url>
+          <line>120</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php</url>
+          <line>126</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

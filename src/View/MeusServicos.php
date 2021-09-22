@@ -103,7 +103,7 @@ include('Navbar.php');
                     </li>
 
                     <?php
-                    if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '3') {
+                    if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] != '2') {
                         echo '<li class="nav-item">
                         <span class="nav-link painel" href="#" id="teste" tabindex="-1">Adicionar serviço</span>
                     </li>';
