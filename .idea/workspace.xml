@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/pedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pedidoServico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/parceiroForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/parceiroForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagens/svg/Business deal-pana.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagens/svg/Business deal-pana.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,9 +149,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/NovoLayout" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/app nosso/app.nosso" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -354,7 +359,8 @@
       <workItem from="1632141685003" duration="7525000" />
       <workItem from="1632155523002" duration="3662000" />
       <workItem from="1632182443261" duration="3533000" />
-      <workItem from="1632227470862" duration="8754000" />
+      <workItem from="1632227470862" duration="15316000" />
+      <workItem from="1632313604290" duration="2265000" />
     </task>
     <servers />
   </component>
@@ -569,7 +575,21 @@
           <line>65</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/controllerCategoria.php</url>
+          <line>25</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/View/parceiroForm.php</url>
+          <line>618</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

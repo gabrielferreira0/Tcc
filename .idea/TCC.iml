@@ -10,7 +10,6 @@
     <orderEntry type="module" module-name="Pagamento teste" />
     <orderEntry type="module" module-name="crlv_digital" />
     <orderEntry type="module" module-name="ajuste" />
-    <orderEntry type="module" module-name="app nosso" />
-    <orderEntry type="module" module-name="app.noso" />
+    <orderEntry type="module" module-name="app.nosso" />
   </component>
 </module>

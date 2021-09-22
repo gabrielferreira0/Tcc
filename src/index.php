@@ -152,14 +152,15 @@ session_start();
 
         <!-- Escolha tipo cadastro-->
         <div class="card cardFormulario col-md-3" id="cardEscolha" style="display: none">
-            <h3 style="font-size: 2.7rem;font-family: 'Oswald', sans-serif;" class="text-center">Escolha seu tipo de cadastro
-                <i class="fas fa-address-card"></i></h3>
+            <h3 style="padding:1rem;font-size: 2.7rem;font-family: 'Oswald', sans-serif;"
+                class="text-center">Escolha seu tipo de cadastro
+                <i class="fas fa-hand-point-down"></i></h3>
 
-            <button  id="registrarCliente" style="margin: 1rem" type="button" class="Entrar btn btn btn arredondar">Cliente
+            <button  id="registrarCliente" style="margin-bottom: 1rem" type="button" class="Entrar btn btn btn arredondar">Cliente
                 <i class="fas fa-user"></i>
             </button>
 
-            <button onclick="redirecionadarParceiro()" style=" background:#007bff;margin: 1rem" type="button" class="Entrar btn btn btn arredondar">Parceiro
+            <button onclick="redirecionadarParceiro()" style="background:#007bff;margin-bottom: 1rem" type="button" class="Entrar btn btn btn arredondar">Parceiro
                 <i class="fas fa-handshake"></i>
             </button>
 

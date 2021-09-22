@@ -378,7 +378,7 @@ $bancos = array(
             <img src="../imagens/svg/Business%20deal-pana.svg" alt="logo-profissional">
         </div>
 
-        <div class="col-md-5  offset-md-1">
+            <div class="col-md-5  offset-md-1">
             <!-- FORM Cadastro-->
             <div style="display:block;background: transparent" class="card" id="etapa1">
                 <div class="card-body">
@@ -483,7 +483,7 @@ $bancos = array(
             </div>
             <div style=" display:none;background: transparent" class="card" id="etapa2">
                 <div class="card-body">
-                    <h3 class="text-center titulo"> Cadastro <i class="fas fa-address-card"></i></h3>
+                    <h3 class="text-center titulo"> Endereço <i class="fas fa-map-marked-alt"></i></h3>
                     <form id="formEtapa2" class="formulario" data-toggle="validator"
                           enctype="multipart/form-data">
 
@@ -517,7 +517,7 @@ $bancos = array(
                         </div>
                         <div class="form-row">
                             <div class="form-group col-xl-6">
-                                <label for="CPF">Complemento:</label>
+                                <label for="CPF">Complemento/Numero:</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
@@ -603,7 +603,7 @@ $bancos = array(
             </div>
             <div style=" display:none;background: transparent" class="card" id="etapa3">
                 <div class="card-body">
-                    <h3 class="text-center titulo"> Cadastro <i class="fas fa-address-card"></i></h3>
+                    <h3 class="text-center titulo">Dados Bancários <i class="fas fa-piggy-bank"></i></h3>
                     <form id="formEtapa3" class="formulario" data-toggle="validator"
                           enctype="multipart/form-data">
 
