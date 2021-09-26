@@ -7,7 +7,6 @@ function carregarCEP() {
         async: true,
         success: function (rs) {
             rs = JSON.parse(rs);
-            console.log(rs);
             $("#Logradouro").val(rs['logradouro']);
             $("#Complemento").val(rs['complemento']);
             $("#Bairro").val(rs['bairro']);

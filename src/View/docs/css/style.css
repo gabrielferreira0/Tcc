@@ -276,3 +276,31 @@ footer {
 .texto-cinza {
     color: lightgray;
 }
+
+#loading {
+    width: 200px;
+    height: 200px;
+    border:  5px solid  #007bff;
+    border-top:  #007bff38;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: flex;
+    align-self: center;
+    align-items: flex-end;
+
+}
+
+@keyframes spin  {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bd-loading-modal-lg {
+    top: 30vh;
+}
+
+.bd-loading-modal-lg .modal-dialog .modal-content{
+    background-color: transparent;
+    border: none;
+}

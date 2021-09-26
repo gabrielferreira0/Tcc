@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons2.png" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/common3.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/common3.css" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.css" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.png" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-icons.png" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/public/css/menu/sprite-iconsOLD.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/controllerPagamento.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/controllerPedidoServico.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/modelPagamento.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MeusServicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MeusServicos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Servicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Servicos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/pedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pedidoServico.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -155,9 +164,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/app nosso/app.nosso" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/NovoLayout" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -370,6 +379,12 @@
       <workItem from="1632326630439" duration="421000" />
       <workItem from="1632330902313" duration="7658000" />
       <workItem from="1632339218965" duration="1484000" />
+      <workItem from="1632420185215" duration="8449000" />
+      <workItem from="1632486763509" duration="3863000" />
+      <workItem from="1632491812705" duration="20747000" />
+      <workItem from="1632589186771" duration="9019000" />
+      <workItem from="1632608402214" duration="3440000" />
+      <workItem from="1632672075865" duration="6746000" />
     </task>
     <servers />
   </component>
@@ -393,7 +408,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>36</line>
+          <line>35</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -403,18 +418,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>551</line>
+          <line>550</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>438</line>
+          <line>437</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
-          <line>87</line>
+          <line>86</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/View/docs/js/script.js</url>
+          <line>200</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/../CRUD-PHP/Crud/class/Deletar.php</url>
@@ -581,7 +602,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/pedidoServico.php</url>
-          <line>65</line>
+          <line>152</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -596,13 +617,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php</url>
-          <line>120</line>
+          <line>121</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php</url>
-          <line>126</line>
+          <line>129</line>
           <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php</url>
+          <line>28</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Model/modelPedidoServico.php</url>
+          <line>20</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php</url>
+          <line>40</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -23,8 +23,8 @@ include('Navbar.php');
 
     $(document).ready(function () {
         $('#cartaoNumero').mask('0000.0000.0000.0000')
-        $('#expiracao').mask('0000')
-
+        $('#cartaoData').mask('0000')
+        $('#CVV').mask('000')
 
         $('#Conteudo').on('click', '.expandir', function () {
             let classe = $(this).children().attr('class');
@@ -35,7 +35,94 @@ include('Navbar.php');
             }
         });
 
-    });
+        $('#Conteudo').on('click', '#finalizar', function () {
+
+
+            let nomeServico = $(this).attr("data-nomeServico");
+            let idServico = $(this).attr("data-idServico");
+            let cartaoNumero = $('#cartaoNumero').val().replace(/[^\d]+/g, '');
+            let cartaoNome = $('#cartaoNome').val();
+            let cartaoData = $('#cartaoData').val();
+            let CVV = $('#CVV').val();
+            let CEP = $("#CEP").val().replace(/[^\d]+/g, '')
+            let bairro = $("#Bairro").val();
+            let logradouro = $("#Logradouro").val();
+            let complemento = $("#Complemento").val();
+            let numero = $("#numero").val();
+            let cidade = $("#cidade").val();
+            let UF = $("#UF").val();
+            let data = $("#data").val();
+            let preco = $("#preco").val();
+
+            if (cartaoNumero == "" || cartaoNome == "" || cartaoData == "" || CVV == "" || cartaoNome == "") {
+                $("#alertaErro").show().fadeOut(4000);
+                return
+            }
+
+            if (CEP == "" || bairro == "" || logradouro == "" || complemento == "" || numero == "" || data == "") {
+                $("#alertaErro").show().fadeOut(4000);
+                return
+            }
+
+            let formData = new FormData();
+            formData.append('rq', 'pedido');
+            formData.append('cartaoNumero', cartaoNumero);
+            formData.append('cartaoNome', cartaoNome);
+            formData.append('cartaoData', cartaoData);
+            formData.append('CVV', CVV);
+            formData.append('CEP', CEP);
+            formData.append('bairro', bairro);
+            formData.append('logradouro', logradouro);
+            formData.append('complemento', complemento);
+            formData.append('numero', numero);
+            formData.append('cidade', cidade);
+            formData.append('UF', UF);
+            formData.append('preco', preco);
+            formData.append('nomeServico', nomeServico);
+            formData.append('idServico', idServico);
+            formData.append('data', data);
+
+            let url = '../../src/Controller/index.php';
+
+            $.ajax({
+                url: url,
+                dataType: 'text',
+                type: 'post',
+                contentType: false,
+                processData: false,
+                data: formData,
+                beforeSend: function () {
+                    $('.modal').modal('show');
+                },
+                success: function (rs) {
+                    console.log(rs);
+                    $('.modal').modal('hide');
+                    switch (rs) {
+                        case 'Error':
+                            $("#alertaErro").show().fadeOut(4000);
+                            break;
+                        case 'sucesso':
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Pedido realizado com sucesso!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            location.reload();
+                            break;
+                    }
+                },
+                error: function (e) {
+                    bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+                }
+            });
+
+        });
+
+
+    })
+    ;
 </script>
 
 
@@ -112,7 +199,7 @@ include('Navbar.php');
                 <div id="pagamento" class="collapse">
                     <div class="form-row texto-cinza">
                         <div class="form-group col-md-3">
-                            <label for="Username">numero do cartão de crédito:</label>
+                            <label for="Username">numero do cartão de crédito*:</label>
 
                             <div class="input-group input-group-sm ">
                                 <div class="input-group-prepend">
@@ -127,12 +214,13 @@ include('Navbar.php');
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="Username">Nome impresso no cartão:</label>
+                            <label for="Username">Nome impresso no cartão*:</label>
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"><i class="far fa-credit-card"></i></span>
                                 </div>
-                                <input value="" type="text" class="form-control arredondar" id="" placeholder="Nome"
+                                <input id="cartaoNome" type="text" class="form-control arredondar" id=""
+                                       placeholder="Nome"
                                        required>
                             </div>
                             <div class="error help-block with-errors"></div>
@@ -141,30 +229,33 @@ include('Navbar.php');
 
                     <div class="form-row texto-cinza">
                         <div class="form-group col-md-2">
-                            <label for="Username">Expiração:</label>
+                            <label for="Username">Expiração*:</label>
                             <div class="input-group input-group-sm ">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"><i class="fas fa-calendar-alt"></i></span>
                                 </div>
-                                <input id="expiracao" type="text" class="form-control arredondar"
+                                <input id="cartaoData" type="text" class="form-control arredondar"
                                        placeholder="data"
                                        required>
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="Username">CVV:</label>
+                            <label for="Username">CVV*:</label>
                             <div class="input-group input-group-sm ">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text arredondar"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input maxlength="3" type="password" class="form-control arredondar"
+                                <input id="CVV" maxlength="3" type="password" class="form-control arredondar"
                                        placeholder="Código"
                                        required>
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
                     </div>
+                    <?php
+                    echo "<input  type='hidden'  id='preco' value='{$servicos[0]['preco']}'>";
+                    ?>
                 </div>
 
                 <h1>Endereço / Data
@@ -178,7 +269,7 @@ include('Navbar.php');
                 <div id="endereco" class="collapse">
                     <div class="form-row texto-cinza">
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="CEP">CEP:</label>
+                            <label for="CEP">CEP*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -193,7 +284,7 @@ include('Navbar.php');
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="Bairro">Bairro:</label>
+                            <label for="Bairro">Bairro*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -206,7 +297,7 @@ include('Navbar.php');
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="Logradouro">Logradouro:</label>
+                            <label for="Logradouro">Logradouro*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -222,7 +313,7 @@ include('Navbar.php');
 
                     <div class="form-row texto-cinza">
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="Complemento">Complemento:</label>
+                            <label for="Complemento">Complemento*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -236,7 +327,7 @@ include('Navbar.php');
                             <div class="error help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-2 texto-cinza">
-                            <label for="numero">Numero:</label>
+                            <label for="numero">Numero*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -263,13 +354,13 @@ include('Navbar.php');
                     <input value='{$servicos[0]['cidade']}' 
                     type='text' class='form-control arredondar' id='cidade' required disabled>
                     <div class='input-group-append arredondar'>
-                        <span class='input-group-text'>{$servicos[0]['uf']}</span>
+                        <span id='UF' class='input-group-text'>{$servicos[0]['uf']}</span>
                     </div>
             "; ?>
                             </div>
                         </div>
                         <div class="form-group col-md-3 texto-cinza">
-                            <label for="data">Data:</label>
+                            <label for="data">Data*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -290,11 +381,27 @@ include('Navbar.php');
 
         <div class="form-group" style="display:flex;  justify-content: center;">
             <button id="" type="button" class="btn btn-danger ml-2  mb-3 mr-2">Voltar</button>
-            <button id="" type="button" class="btn btn-success ml-2 mb-3 mr-2">Finalizar Pedido</button>
+            <?php
+            echo "<button 
+        data-idServico='{$_GET['servico']}' data-nomeServico ='{$servicos[0]['catnome']}/{$servicos[0]['sernome']}'
+        id='finalizar' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Pedido</button>";
+            ?>
+        </div>
+
+        <div class="alert alert-danger testando text-center" id="alertaErro" role="alert"
+             style="display: none;">
+            <strong>Erro! </strong>Solicitação <strong> não efetuada!</strong>
         </div>
 
     </div>
 
+    <div class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id="loading"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

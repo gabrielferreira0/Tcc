@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__. "../../vendor/autoload.php";
+require __DIR__ . "../../vendor/autoload.php";
 
 if (isset($_POST["rq"])) {
     session_start();
@@ -78,12 +78,24 @@ if (isset($_POST["rq"])) {
             break;
         case 'servicos_ID':
             require_once 'controllerCategoria.php';
-             $servicoID = $_POST["servicoID"];
-             $UF = $_POST["UF"];
-             $categoriaNome = $_POST["categoriaNome"];
-
+            $servicoID = $_POST["servicoID"];
+            $UF = $_POST["UF"];
+            $categoriaNome = $_POST["categoriaNome"];
             $loadClass = new controllerCategoria();
-            echo $loadClass->tableServicos($categoriaNome,$servicoID,$UF);
+            echo $loadClass->tableServicos($categoriaNome, $servicoID, $UF);
+            break;
+        case 'pedido':
+            require_once 'controllerCartaoCredito.php';
+            require_once 'controllerPedidoServico.php';
+            $pagamento = new  controllerCartaoCredito();
+            $id_pagamento = $pagamento->pagamento();
+
+            if ($id_pagamento) {
+                $pedido = new controllerPedidoServico($id_pagamento);
+                echo $pedido->setPedido();
+            } else {
+                echo 'Error';
+            }
             break;
 
     }
