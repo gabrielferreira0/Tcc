@@ -16,8 +16,21 @@ include('../Controller/verificarLogin.php')
         $('#preco').mask("#,##0.00", {reverse: true});
 
         $('#Conteudo').on('click', '#teste', function () {
+            $("#meusServicos").hide();
             $("#formservico").show();
         });
+
+        $('#Conteudo').on('click', '#meus_Servicos', function () {
+            $("#meusServicos").show();
+            $("#formservico").hide();
+        });
+
+        $("#table-pedidos").dataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
+
     });
 
     function carregarServicos() {
@@ -99,7 +112,8 @@ include('Navbar.php');
                 <h3 class="text-center titulo"> Serviços <i class="fas fa-clipboard-list"></i></h3>
                 <ul class="nav nav-tabs card-header-tabs d-flex justify-content-center">
                     <li class="nav-item">
-                        <span class="nav-link painel" href="#" id="" tabindex="-1">Listar meus serviços</span>
+                        <span class="nav-link painel" href="#" id="meus_Servicos"
+                              tabindex="-1">Listar meus serviços</span>
                     </li>
 
                     <?php
@@ -112,6 +126,62 @@ include('Navbar.php');
 
                 </ul>
             </div>
+
+
+            <div class="table-responsive" id="meusServicos" style="display: block">
+                <table id="table-pedidos" class="table table" style=" border:1px solid white; color: white">
+                    <thead style="background: #f50a31;">
+                    <tr>
+                        <th scope="col">Nome Profissional</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Atividade</th>
+                        <th scope="col">Serviço</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Detalhes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    require_once '../Model/modelPedidoServico.php';
+                    $pedidos = new modelPedidoServico();
+                    $pedidos = $pedidos->getPedidos($_SESSION['id']);
+
+                    if ($pedidos) {
+                        foreach ($pedidos as $key => $value) {
+                            ?>
+                            <tr>
+                                <th scope="row"><?php echo $value['nome_profissional'] ?></th>
+                                <th scope="row">R$<?php echo $value['servico_preco'] ?></th>
+                                <th scope="row"><?php echo $value['nome_categoria'] ?></th>
+                                <th scope="row"><?php echo $value['nome_servico'] ?></th>
+                                <th scope="row">
+                                    <span class="<?php echo $value['pedido_status']?>"><?php echo $value['pedido_status']?></span>
+                                </th>
+                                <th>
+                                    <a href='#'>
+                                        <button
+                                                type='button' class='btn btn-success'><i class="fas fa-eye"></i>
+                                        </button>
+                                    </a>
+                                </th>
+
+                            </tr>
+
+                            <?php
+                        }
+                    } else {
+                        ?>
+
+                            <tr>
+                                <td class='text-center' colspan='6'>Nenhum serviço disponível no momento</td>
+                            </tr>
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+
 
             <div style="display: none" id="formservico" class="card-body">
                 <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">

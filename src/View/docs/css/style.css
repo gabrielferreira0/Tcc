@@ -304,3 +304,31 @@ footer {
     background-color: transparent;
     border: none;
 }
+
+.Analise {
+    background: #f8cc43;
+    color: #070817;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.Andamento {
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.Finalizado {
+    background: #28a745;
+    color: #070817;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.Cancelado {
+    background: #df285f;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+}

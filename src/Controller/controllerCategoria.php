@@ -134,7 +134,8 @@ class controllerCategoria
 
             }
 
-        } else {
+        }
+        else {
             $table .= "<tr>
                     <tr><td  class='text-center' colspan='6'>Nenhum serviço disponível no momento</td></tr>
                 </tr>";

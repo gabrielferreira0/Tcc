@@ -18,7 +18,7 @@ class controllerUsuario
 
     public function setParceiro($tipo = 3)
     {
-        $pagarme = new PagarMe\Client('ak_test_qzaATUM7qtiv49tJNvmZuOLY2tDvAS');
+        $pagarme = new PagarMe\Client('ak_test_7B84xXxvddaWErUUVeNEmIhwGocFOR');
         
         $this->username = $_POST["username"];
         $this->senha = $_POST["senha"];
@@ -58,9 +58,8 @@ class controllerUsuario
                     'document_number' => $this->CPF,
                     'legal_name' => $this->username
                 ],
-                'transfer_day' => '5',
                 'transfer_enabled' => 'true',
-                'transfer_interval' => 'weekly'
+                'transfer_interval' => 'daily'
             ]);
 
             $recipientID = $recipient->id;

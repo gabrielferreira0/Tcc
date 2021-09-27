@@ -17,7 +17,7 @@ class modelPedidoServico extends DBconexao
     private $status;
 
 
-    public function __construct($id_cliente, $servico_profissionalid, $cep_servico, $bairro_servico, $logradouro_servico, $complemento_servico
+    public function setPedido($id_cliente, $servico_profissionalid, $cep_servico, $bairro_servico, $logradouro_servico, $complemento_servico
         , $cidade_servico, $uf_servico, $data_servico, $id_pagamento, $status)
     {
         $this->id_cliente = $id_cliente;
@@ -31,10 +31,8 @@ class modelPedidoServico extends DBconexao
         $this->data_servico = $data_servico;
         $this->id_pagamento = $id_pagamento;
         $this->status = $status;
-    }
 
-    public function setPedido()
-    {
+
         $sql = "INSERT INTO  cliente_servico_profissional
     (id_cliente, servico_profissionalID, cep_servico, bairro_servico, logradouro_servico, complemento_servico, 
      cidade_servico, UF_servico, data_servico,id_pagamento, status) 
@@ -49,6 +47,31 @@ class modelPedidoServico extends DBconexao
         } else {
             return false;
         }
+
+    }
+
+
+    public function getPedidos($usuid)
+    {
+
+        $sql = "select usu.usunome nome_profissional,sp.preco servico_preco,
+       sernome as nome_servico,catnome as nome_categoria,
+       CSP.status pedido_status, CSP.id  pedido_id
+from cliente_servico_profissional CSP
+    inner join servico_profissional sp on sp.id = CSP.servico_profissionalID
+    inner join usuarios usu on usu.id = sp.usuid
+    inner join servicos ser on ser.id = sp.serid
+    inner join categorias cat on cat.id = ser.catid
+where CSP.id_cliente = {$usuid} or sp.usuid = {$usuid};";
+        $result = pg_query($this->open(), $sql);
+        $dados = pg_fetch_all($result);
+
+        if ($dados) {
+            return $dados;
+        } else {
+            return false;
+        }
+
 
     }
 

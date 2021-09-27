@@ -36,9 +36,9 @@ class controllerPedidoServico
     public function setPedido()
     {
 
-        $modelPedido = new modelPedidoServico($this->id_cliente, $this->servico_profissionalid, $this->cep_servico, $this->bairro_servico,
+        $modelPedido = new modelPedidoServico();
+        $result = $modelPedido->setPedido($this->id_cliente, $this->servico_profissionalid, $this->cep_servico, $this->bairro_servico,
             $this->logradouro_servico, $this->complemento_servico, $this->cidade_servico, $this->uf_servico, $this->data_servico, $this->id_pagamento, $this->status);
-        $result =$modelPedido->setPedido();
         if ($result) {
             return 'sucesso';
         } else {

@@ -146,9 +146,6 @@ from servico_profissional sp
     inner join endereco_profissional ep on usu.id = ep.usuid
 where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID . $UF . ";";
 
-
-        $result = pg_query($this->banco->open(), $sql);
-
         $result = pg_query($this->banco->open(), $sql);
         $dados = pg_fetch_all($result);
 

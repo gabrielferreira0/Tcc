@@ -27,7 +27,7 @@ class controllerCartaoCredito extends controllerPagamento
 
 
         try {
-            $pagarme = new PagarMe\Client('ak_test_qzaATUM7qtiv49tJNvmZuOLY2tDvAS');
+            $pagarme = new PagarMe\Client($this->key);
             $card = $pagarme->cards()->create([
                 'holder_name' => $this->holder_name,
                 'number' => $this->number,

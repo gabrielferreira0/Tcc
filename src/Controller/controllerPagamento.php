@@ -3,7 +3,7 @@
 
 class controllerPagamento
 {
-    public $key;
+    public $key = 'ak_test_7B84xXxvddaWErUUVeNEmIhwGocFOR';
     public $payment_method;
     public $amount;
     public $nome;
@@ -12,7 +12,7 @@ class controllerPagamento
 
     public function __construct()
     {
-       $this->key = 'ak_test_qzaATUM7qtiv49tJNvmZuOLY2tDvAS';
+       $this->key = 'ak_test_7B84xXxvddaWErUUVeNEmIhwGocFOR';
     }
 
 
