@@ -12,6 +12,17 @@ include('../Controller/verificarLogin.php')
 
 <script>
 
+    $(document).ready(function () {
+        $('#Conteudo').on('click', '.expandir', function () {
+            let classe = $(this).children().attr('class');
+            if (classe === 'fas fa-caret-square-down') {
+                $(this).children().removeClass().addClass('fas fa-caret-square-up')
+            } else {
+                $(this).children().removeClass().addClass('fas fa-caret-square-down')
+            }
+        });
+    })
+
 </script>
 
 
@@ -84,184 +95,192 @@ include('Navbar.php');
 
         <div class="container col-md-12 col-12 pl-5">
 
-            <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
-                <h1>Pagamento
+            <?php
+            if ($_SESSION['id'] == $pedido[0]['id_cliente']) {
+                echo "
+             <h1>Pagamento
 
-                    <a title="expandir" class="btn btn-secondary expandir" data-toggle="collapse" href="#pagamento"
-                       role="button" aria-expanded="false">
-                        <i style="cursor: pointer" class="fas fa-caret-square-down"></i>
+                    <a title='expandir' class='btn btn-secondary expandir' data-toggle='collapse' href='#pagamento'
+                       role='button' aria-expanded='false'>
+                        <i style='cursor: pointer' class='fas fa-caret-square-down'></i>
                     </a>
                 </h1>
-                <p class="small texto-cinza">informações sobre o Pagamento</p>
+                <p class='small texto-cinza'>informações sobre o Pagamento</p>
+             <div id='pagamento' class='collapse'>
+                    <div class='form-row texto-cinza'>
+                        <div class='form-group col-md-2'>
+                            <label for='Username'>Últimos dígitos cartão:</label>
 
-                <div id="pagamento" class="collapse">
-                    <div class="form-row texto-cinza">
-                        <div class="form-group col-md-2">
-                            <label for="Username">Últimos dígitos cartão:</label>
-
-                            <div class="input-group input-group-sm ">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"><i class="far fa-credit-card"></i></span>
+                            <div class='input-group input-group-sm '>
+                                <div class='input-group-prepend'>
+                                    <span class='input-group-text arredondar'><i class='far fa-credit-card'></i></span>
 
                                 </div>
-                                <?php
-                                echo "
-                            <input  class='form-control arredondar' id='Logradouro'  value='{$pagamento[0]}' disabled>"; ?>
+                            <input  class='form-control arredondar' id='Logradouro'  value='{$pagamento[0]}' disabled>
                             </div>
-
-
-                            <div class="error help-block with-errors"></div>
                         </div>
 
-                        <div class="form-group col-md-2">
-                            <label for="Username">Bandeira do cartão*:</label>
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar">
-                                        <i class="fab fa-cc-<?php echo$pagamento[1]?>"></i>
+                        <div class='form-group col-md-2'>
+                            <label for='Username'>Bandeira do cartã:</label>
+                            <div class='input-group input-group-sm'>
+                                <div class='input-group-prepend'>
+                                    <span class='input-group-text arredondar'>
+                                        <i class='fab fa-cc-{$pagamento[1]}'></i>
                                     </span>
                                 </div>
-                                <?php
-                                echo "
-                            <input  class='form-control arredondar' id='Logradouro'  value='{$pagamento[1]}' disabled>"; ?>
+                                
+                            <input  class='form-control arredondar' id='Logradouro'  value='{$pagamento[1]}' disabled>
 
                             </div>
-                            <div class="error help-block with-errors"></div>
                         </div>
+                    </div>
+                </div>                       
+             ";
+            }
+            ?>
+
+
+            <h1>Endereço / Data
+                <a class="btn btn-secondary expandir" data-toggle="collapse" href="#endereco" role="button"
+                   aria-expanded="false" aria-controls="collapseExample">
+                    <i style="cursor: pointer" class="fas fa-caret-square-down"></i>
+                </a>
+            </h1>
+            <p class="small texto-cinza">Informações do endereço e o dia para a realização do serviço</p>
+
+            <div id="endereco" class="collapse">
+                <div class="form-row texto-cinza">
+                    <div class="form-group col-md-2 texto-cinza">
+                        <label for="CEP">CEP:</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
+                            </div>
+
+                            <?php
+                            echo "
+                            <input  class='form-control arredondar' id='CEP'  value='{$pedido[0]['cep_servico']}' disabled>"; ?>
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-2 texto-cinza">
+                        <label for="Bairro">Bairro:</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
+                            </div>
+                            <?php
+                            echo "
+                            <input  class='form-control arredondar' id='Bairro'  value='{$pedido[0]['bairro_servico']}' disabled>"; ?>
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-2 texto-cinza">
+                        <label for="Logradouro">Logradouro:</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
+                            </div>
+                            <?php
+                            echo "
+                            <input  class='form-control arredondar' id='Logradouro'  value='{$pedido[0]['logradouro_servico']}' disabled>"; ?>
+
+                        </div>
+
                     </div>
                 </div>
 
-                <h1>Endereço / Data
-                    <a class="btn btn-secondary expandir" data-toggle="collapse" href="#endereco" role="button"
-                       aria-expanded="false" aria-controls="collapseExample">
-                        <i style="cursor: pointer" class="fas fa-caret-square-down"></i>
-                    </a>
-                </h1>
-                <p class="small texto-cinza">Informações do endereço e o dia para a realização do serviço</p>
+                <div class="form-row texto-cinza">
+                    <div class="form-group col-md-2 texto-cinza">
+                        <label for="Complemento">Complemento:</label>
 
-                <div id="endereco" class="collapse">
-                    <div class="form-row texto-cinza">
-                        <div class="form-group col-md-2 texto-cinza">
-                            <label for="CEP">CEP:</label>
-
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
-                                </div>
-
-                                <?php
-                                echo "
-                            <input  class='form-control arredondar' id='CEP'  value='{$pedido[0]['cep_servico']}' disabled>"; ?>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
                             </div>
-
-                        </div>
-                        <div class="form-group col-md-2 texto-cinza">
-                            <label for="Bairro">Bairro:</label>
-
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
-                                </div>
-                                <?php
-                                echo "
-                            <input  class='form-control arredondar' id='Bairro'  value='{$pedido[0]['bairro_servico']}' disabled>"; ?>
-                            </div>
-
-                            <div class="error help-block with-errors"></div>
-                        </div>
-                        <div class="form-group col-md-2 texto-cinza">
-                            <label for="Logradouro">Logradouro:</label>
-
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
-                                </div>
-                                <?php
-                                echo "
-                            <input  class='form-control arredondar' id='Logradouro'  value='{$pedido[0]['logradouro_servico']}' disabled>"; ?>
-
-                            </div>
-
-                            <div class="error help-block with-errors"></div>
-                        </div>
-                    </div>
-
-                    <div class="form-row texto-cinza">
-                        <div class="form-group col-md-2 texto-cinza">
-                            <label for="Complemento">Complemento:</label>
-
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
-                                </div>
-                                <?php
-                                echo "
+                            <?php
+                            echo "
                             <input  class='form-control arredondar' id='Logradouro'  value='{$pedido[0]['complemento_servico']}' disabled>"; ?>
-                            </div>
-
-                            <div class="error help-block with-errors"></div>
                         </div>
-                        <div class="form-group col-md-2 texto-cinza">
-                            <label for="numero">Numero:</label>
 
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
-                                </div>
-                                <?php
-                                echo "
+                    </div>
+                    <div class="form-group col-md-2 texto-cinza">
+                        <label for="numero">Numero:</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
+                            </div>
+                            <?php
+                            echo "
                             <input  class='form-control arredondar' value='{$pedido[0]['numero_servico']}' disabled>"; ?>
-                            </div>
-
-                            <div class="error help-block with-errors"></div>
                         </div>
-                        <div class="form-group col-md-2 texto-cinza">
-                            <label for="cidade">Cidade/UF</label>
 
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
-                                </div>
-                                <?php
-                                echo "
+                    </div>
+                    <div class="form-group col-md-2 texto-cinza">
+                        <label for="cidade">Cidade/UF</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"> <i class="fas fa-home"></i></span>
+                            </div>
+                            <?php
+                            echo "
                     <input value='{$pedido[0]['cidade_servico']}' 
                     type='text' class='form-control arredondar' id='cidade' required disabled>
                     <div class='input-group-append arredondar'>
                         <span id='UF' class='input-group-text'>{$pedido[0]['uf_servico']}</span>
                     </div>
             "; ?>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3 texto-cinza">
-                            <label for="data">Data:</label>
-
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text arredondar"><i class="fas fa-calendar-alt"></i></span>
-                                </div>
-                                <?php
-                                $pedido[0]['data_servico'] = strtotime($pedido[0]['data_servico']);
-                                $pedido[0]['data_servico'] = date('d/m/Y',$pedido[0]['data_servico']);
-                                echo "
-                            <input  class='form-control arredondar' value='{$pedido[0]['data_servico']}' disabled>"; ?>
-
-                            </div>
-
-                            <div class="error help-block with-errors"></div>
                         </div>
                     </div>
-                </div>
+                    <div class="form-group col-md-3 texto-cinza">
+                        <label for="data">Data:</label>
 
-            </form>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text arredondar"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
+                            <?php
+                            $pedido[0]['data_servico'] = strtotime($pedido[0]['data_servico']);
+                            $pedido[0]['data_servico'] = date('d/m/Y', $pedido[0]['data_servico']);
+                            echo "
+                            <input  class='form-control arredondar' value='{$pedido[0]['data_servico']}' disabled>"; ?>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="form-group" style="display:flex;  justify-content: center;">
-            <button id="" type="button" class="btn btn-danger ml-2  mb-3 mr-2">Cancelar Serviço</button>
             <?php
-            echo "<button 
+            if ($_SESSION['id'] == $pedido[0]['id_cliente'])
+            {
+                echo "
+            <button id='' type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Cancelar Serviço</button>
+            <button 
                 data-idPedido='{$_GET['pedido']}'
-                id='finalizar' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Avaliar Serviço
-                </button>";
+                id='' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Serviço
+            </button>
+                ";
+            }
+            elseif ($_SESSION['id'] == $pedido[0]['id_profissional'] && $pedido[0]['status_pedido'] == 'Analise')
+            {
+                echo "
+                <button id='' type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Negar Serviço</button>
+            <button 
+                data-idPedido='{$_GET['pedido']}'
+                id='' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Aceitar Serviço
+            </button>
+                
+                ";
+            }
             ?>
         </div>
 

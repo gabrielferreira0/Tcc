@@ -78,8 +78,9 @@ class modelPedidoServico extends DBconexao
 
     public function getPedido($pedidoID)
     {
-        $sql = "select  catnome, sernome,usunome, usutelefone,usuemail,usufoto,PAG.id as  pagamento_id,PAG.valor as preco,
-CSP.cep_servico,bairro_servico,logradouro_servico,complemento_servico,numero_servico,cidade_servico,UF_servico,data_servico
+        $sql = "select  catnome, sernome,usuid id_profissional,usunome,CSP.id_cliente, usutelefone,usuemail,usufoto,
+       PAG.id as  pagamento_id,PAG.valor as preco,CSP.cep_servico,bairro_servico,logradouro_servico,complemento_servico,
+       numero_servico,cidade_servico,UF_servico,data_servico,CSP.status as status_pedido
 from cliente_servico_profissional CSP
     inner join servico_profissional SP on SP.ID = CSP.servico_profissionalID
     inner join  servicos SER on SER.ID = SP.serid
