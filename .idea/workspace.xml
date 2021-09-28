@@ -6,8 +6,7 @@
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/detalhesPedido.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/detalhesPedido.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,11 +378,15 @@
       <workItem from="1632672075865" duration="6746000" />
       <workItem from="1632746202370" duration="19382000" />
       <workItem from="1632832305524" duration="14028000" />
+      <workItem from="1632850045657" duration="2077000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
