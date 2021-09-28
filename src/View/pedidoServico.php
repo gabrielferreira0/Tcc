@@ -381,12 +381,12 @@ include('Navbar.php');
 
         <div class="form-group" style="display:flex;  justify-content: center;"><a href="../index.php">
                 <button id="" type="button" class="btn btn-danger ml-2  mb-3 mr-2">Voltar</button>
-
             </a>
             <?php
             echo "<button 
-        data-idServico='{$_GET['servico']}' data-nomeServico ='{$servicos[0]['catnome']}/{$servicos[0]['sernome']}'
-        id='finalizar' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Pedido</button>";
+                data-idServico='{$_GET['servico']}' data-nomeServico ='{$servicos[0]['catnome']}/{$servicos[0]['sernome']}'
+                id='finalizar' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Pedido
+                </button>";
             ?>
         </div>
 

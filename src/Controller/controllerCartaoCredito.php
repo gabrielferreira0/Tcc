@@ -14,16 +14,17 @@ class controllerCartaoCredito extends controllerPagamento
 
     public function __construct()
     {
+    }
+
+    public function pagamento()
+    {
+
         $this->payment_method = 'credit_card';
         $this->holder_name = $_POST["cartaoNome"];
         $this->number = $_POST["cartaoNumero"];
         $this->expiration_date = $_POST["cartaoData"];
         $this->cvv = $_POST["CVV"];
         $this->amount = $_POST["preco"];
-    }
-
-    public function pagamento()
-    {
 
 
         try {
@@ -110,4 +111,25 @@ class controllerCartaoCredito extends controllerPagamento
         }
 
     }
+
+    public function getPagamento($idPagamento)
+    {
+        require __DIR__ . "../../vendor/autoload.php";
+        try {
+            $pagarme = new PagarMe\Client($this->key);
+            $transactions = $pagarme->transactions()->get([
+                'id' => $idPagamento
+            ]);
+
+            $result[0] = $transactions->card_last_digits;
+            $result[1] = $transactions->card_brand;
+            return $result;
+
+        } catch (Exception $e) {
+            echo "ERROR:" . $e;
+        }
+
+
+    }
+
 }

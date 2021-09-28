@@ -93,7 +93,7 @@ ALTER TABLE  servico_profissional add column preco double precision;
 
 ALTER TABLE conta_profissional ADD COLUMN recipient_ID varchar;
 ALTER TABLE conta_profissional ADD COLUMN bank_account_id int;
-
+ALTER TABLE cliente_servico_profissional ADD COLUMN numero_servico int;
 INSERT INTO tipoUsuario (perfil) VALUES ('Admin');
 INSERT INTO tipoUsuario (perfil) VALUES ('Cliente');
 INSERT INTO tipoUsuario (perfil) VALUES ('Profissional');

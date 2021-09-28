@@ -332,3 +332,11 @@ footer {
     border-radius: 5px;
     padding: 3px;
 }
+.fa-cc-mastercard {
+    color: #e6001b;
+    background: #ee9a1b;
+}
+.fa-cc-visa {
+    color: #191e6d;
+    background: white;
+}

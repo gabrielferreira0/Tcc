@@ -82,6 +82,7 @@ include('Navbar.php');
 <div class="container-fluid ">
     <div class="d-flex justify-content-center geral">
         <div class="card cardFormulario">
+
             <div class="card-header">
                 <h3 class="text-center titulo"> Painel <i class="fas fa-cogs"></i></h3>
                 <ul class="nav nav-tabs card-header-tabs d-flex justify-content-center">

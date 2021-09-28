@@ -10,6 +10,7 @@ class controllerPedidoServico
     private $bairro_servico;
     private $logradouro_servico;
     private $complemento_servico;
+    private $numero_servico;
     private $cidade_servico;
     private $uf_servico;
     private $data_servico;
@@ -26,6 +27,7 @@ class controllerPedidoServico
         $this->bairro_servico = $_POST["bairro"];
         $this->logradouro_servico = $_POST["logradouro"];
         $this->complemento_servico = $_POST["complemento"];
+        $this->numero_servico = $_POST["numero"];
         $this->cidade_servico = $_POST["cidade"];
         $this->uf_servico = $_POST["UF"];
         $this->data_servico = $_POST["data"];
@@ -38,7 +40,7 @@ class controllerPedidoServico
 
         $modelPedido = new modelPedidoServico();
         $result = $modelPedido->setPedido($this->id_cliente, $this->servico_profissionalid, $this->cep_servico, $this->bairro_servico,
-            $this->logradouro_servico, $this->complemento_servico, $this->cidade_servico, $this->uf_servico, $this->data_servico, $this->id_pagamento, $this->status);
+            $this->logradouro_servico, $this->complemento_servico,$this->numero_servico, $this->cidade_servico, $this->uf_servico, $this->data_servico, $this->id_pagamento, $this->status);
         if ($result) {
             return 'sucesso';
         } else {

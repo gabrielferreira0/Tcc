@@ -127,7 +127,6 @@ include('Navbar.php');
                 </ul>
             </div>
 
-
             <div class="table-responsive" id="meusServicos" style="display: block">
                 <table id="table-pedidos" class="table table" style=" border:1px solid white; color: white">
                     <thead style="background: #f50a31;">
@@ -158,7 +157,7 @@ include('Navbar.php');
                                     <span class="<?php echo $value['pedido_status']?>"><?php echo $value['pedido_status']?></span>
                                 </th>
                                 <th>
-                                    <a href='#'>
+                                    <a href='../View/detalhesPedido.php?pedido=<?php echo $value['pedido_id'] ?>'>
                                         <button
                                                 type='button' class='btn btn-success'><i class="fas fa-eye"></i>
                                         </button>
@@ -181,7 +180,6 @@ include('Navbar.php');
                     </tbody>
                 </table>
             </div>
-
 
             <div style="display: none" id="formservico" class="card-body">
                 <form id="formulario" class="formulario" data-toggle="validator" enctype="multipart/form-data">
