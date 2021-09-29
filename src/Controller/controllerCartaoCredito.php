@@ -132,4 +132,18 @@ class controllerCartaoCredito extends controllerPagamento
 
     }
 
+
+    public  function estorno($pagamento_id){
+        $pagarme = new PagarMe\Client($this->key);
+        $refundedTransaction = $pagarme->transactions()->refund([
+            'id' => $pagamento_id,
+        ]);
+
+       if ($refundedTransaction->status == 'authorized'){
+           return 'sucesso';
+       }
+       else {
+           return 'erro';
+       }
+    }
 }

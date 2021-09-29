@@ -97,6 +97,17 @@ if (isset($_POST["rq"])) {
                 echo 'Error';
             }
             break;
+        case 'cancelarPedido':
+            require_once '../Model/modelPedidoServico.php';
+            require_once 'controllerCartaoCredito.php';
+            $pedido = new modelPedidoServico();
+            $pedido->cancelarPedido($_POST["pedido_id"]);
+            $pagamento = new controllerCartaoCredito();
+            echo $pagamento->estorno($_POST["pagamento_id"]);
+        case 'aceitarPedido':
+            require_once '../Model/modelPedidoServico.php';
+            $pedido = new modelPedidoServico();
+            echo $pedido->aceitarPedido($_POST["pedido_id"]);
 
     }
 }

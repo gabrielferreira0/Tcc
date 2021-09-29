@@ -21,7 +21,103 @@ include('../Controller/verificarLogin.php')
                 $(this).children().removeClass().addClass('fas fa-caret-square-down')
             }
         });
+
+        $('#Conteudo').on('click', '#cancelarPedido', function () {
+            let pedido_id = $(this).attr('data-idpedido');
+            let pagamento_id = $(this).attr('data-idpagamento');
+
+
+            let formData = new FormData();
+            formData.append('rq', 'cancelarPedido');
+            formData.append('pedido_id', pedido_id);
+            formData.append('pagamento_id', pagamento_id);
+
+            let url = '../../src/Controller/index.php';
+
+            $.ajax({
+                url: url,
+                dataType: 'text',
+                type: 'post',
+                contentType: false,
+                processData: false,
+                data: formData,
+                beforeSend: function () {
+                    $('.modal').modal('show');
+                },
+                success: function (rs) {
+                    console.log(rs);
+                    $('.modal').modal('hide');
+                    switch (rs) {
+                        case 'sucesso':
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Pedido cancelado com sucesso!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            location.reload();
+                            break;
+                        default:
+                            $("#alertaErro").show().fadeOut(4000);
+                            break;
+                    }
+                },
+                error: function (e) {
+                    bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+                }
+            });
+
+            });
+
+        $('#Conteudo').on('click', '#aceitarPedido', function () {
+            let pedido_id = $(this).attr('data-idpedido');
+
+
+            let formData = new FormData();
+            formData.append('rq', 'aceitarPedido');
+            formData.append('pedido_id', pedido_id);
+
+            let url = '../../src/Controller/index.php';
+
+            $.ajax({
+                url: url,
+                dataType: 'text',
+                type: 'post',
+                contentType: false,
+                processData: false,
+                data: formData,
+                beforeSend: function () {
+                    $('.modal').modal('show');
+                },
+                success: function (rs) {
+                    console.log(rs);
+                    $('.modal').modal('hide');
+                    switch (rs) {
+                        case 'sucesso':
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Pedido aceito com sucesso!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            location.reload();
+                            break;
+                        default:
+                            $("#alertaErro").show().fadeOut(4000);
+                            break;
+                    }
+                },
+                error: function (e) {
+                    bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+                }
+            });
+
+            });
     })
+
+
 
 </script>
 
@@ -48,7 +144,6 @@ include('Navbar.php');
         $pagamento = new controllerCartaoCredito();
         $pagamento = $pagamento->getPagamento($pedido[0]['pagamento_id']);
         ?>
-
         <div style="margin: 0" class="container row">
             <div class="col-md-8 col-12 pl-5 pr-5 infoProfissional">
 
@@ -57,7 +152,8 @@ include('Navbar.php');
                         <h4>Preço:<span style='font-weight:600;color: #28a745'>R$ {$pedido[0]['preco']} <i class='fas fa-money-bill-wave'></i></h4></span>
                         <span>Nome: {$pedido[0]['usunome']} </span> <br>
                         <span>Telefone: {$pedido[0]['usutelefone']}</span> <br>
-                        <span>Email: {$pedido[0]['usuemail']}</span>"; ?>
+                        <span>Email: {$pedido[0]['usuemail']}</span> <br>
+                        <span class='{$pedido[0]['status_pedido']}'>Status: {$pedido[0]['status_pedido']}</span>"; ?>
             </div>
             <?php
             if ($pedido[0]['usufoto'] != 'false') {
@@ -96,7 +192,7 @@ include('Navbar.php');
         <div class="container col-md-12 col-12 pl-5">
 
             <?php
-            if ($_SESSION['id'] == $pedido[0]['id_cliente']) {
+            if ($_SESSION['id'] == $pedido[0]['id_cliente'] || $_SESSION['Tipo']=='1') {
                 echo "
              <h1>Pagamento
 
@@ -260,10 +356,13 @@ include('Navbar.php');
 
         <div class="form-group" style="display:flex;  justify-content: center;">
             <?php
-            if ($_SESSION['id'] == $pedido[0]['id_cliente'])
+            if ($_SESSION['id'] == $pedido[0]['id_cliente'] && $pedido[0]['status_pedido']
+                    && $pedido[0]['status_pedido'] != 'Cancelado'  && $pedido[0]['status_pedido'] != 'Finalizado')
             {
                 echo "
-            <button id='' type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Cancelar Serviço</button>
+            <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'  
+            type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Cancelar Serviço</button>
+            
             <button 
                 data-idPedido='{$_GET['pedido']}'
                 id='' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Serviço
@@ -273,22 +372,40 @@ include('Navbar.php');
             elseif ($_SESSION['id'] == $pedido[0]['id_profissional'] && $pedido[0]['status_pedido'] == 'Analise')
             {
                 echo "
-                <button id='' type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Negar Serviço</button>
+                <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'  
+                type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Negar Serviço
+                </button>
+            
             <button 
                 data-idPedido='{$_GET['pedido']}'
-                id='' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Aceitar Serviço
+                id='aceitarPedido' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Aceitar Serviço
             </button>
                 
                 ";
             }
+            elseif ($pedido[0]['status_pedido'] == 'Finalizado'){
+                echo '
+                <div class="alert alert-success" role="alert">
+                  Pedido Finalizado!
+                </div>';
+            }
+            elseif ($pedido[0]['status_pedido'] == 'Cancelado'){
+                echo '
+                <div class="alert alert-danger" role="alert">
+                  Pedido Cancelado!
+                </div>';
+            }
+            elseif ($pedido[0]['status_pedido'] == 'Andamento'){
+                echo " <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'
+            type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Cancelar Serviço
+            </button>";
+            }
             ?>
         </div>
-
         <div class="alert alert-danger testando text-center" id="alertaErro" role="alert"
              style="display: none;">
             <strong>Erro! </strong>Solicitação <strong> não efetuada!</strong>
         </div>
-
     </div>
 
     <div class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">

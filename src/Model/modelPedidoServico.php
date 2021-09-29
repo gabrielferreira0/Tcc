@@ -19,7 +19,7 @@ class modelPedidoServico extends DBconexao
 
 
     public function setPedido($id_cliente, $servico_profissionalid, $cep_servico, $bairro_servico, $logradouro_servico, $complemento_servico
-       ,$numero_servico , $cidade_servico, $uf_servico, $data_servico, $id_pagamento, $status)
+        , $numero_servico, $cidade_servico, $uf_servico, $data_servico, $id_pagamento, $status)
     {
         $this->id_cliente = $id_cliente;
         $this->servico_profissionalid = $servico_profissionalid;
@@ -97,6 +97,25 @@ where csp.id = {$pedidoID} and USU.usutipo = 3";
             return $dados;
         } else {
             return 'Não foi possivel realizar a consulta';
+        }
+    }
+
+    public function cancelarPedido($pedido_ID)
+    {
+        $sql = "update cliente_servico_profissional set status = 'Cancelado' where id = {$pedido_ID};";
+        $result = pg_query($this->open(), $sql);
+        return $result;
+    }
+
+    public function aceitarPedido($pedido_ID)
+    {
+        $sql = "update cliente_servico_profissional set status = 'Andamento' where id = {$pedido_ID};";
+        $result = pg_query($this->open(), $sql);
+
+        if ($result) {
+            return 'sucesso';
+        } else {
+            return 'erro';
         }
     }
 

@@ -307,30 +307,36 @@ footer {
 
 .Analise {
     background: #f8cc43;
-    color: #070817;
+    color: #070817!important;
     border-radius: 5px;
     padding: 3px;
+    font-weight: 600!important;
 }
 
 .Andamento {
     background: #007bff;
-    color: white;
+    color: #070817!important;
     border-radius: 5px;
     padding: 3px;
+    font-weight: 600!important;
+
 }
 
 .Finalizado {
     background: #28a745;
-    color: #070817;
+    color: #070817!important;
     border-radius: 5px;
     padding: 3px;
+    font-weight: 600!important;
+
 }
 
 .Cancelado {
     background: #df285f;
-    color: white;
+    color: #070817!important;
     border-radius: 5px;
     padding: 3px;
+    font-weight: 600!important;
 }
 .fa-cc-mastercard {
     color: #e6001b;

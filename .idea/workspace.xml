@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/detalhesPedido.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/detalhesPedido.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,7 +382,10 @@
       <workItem from="1632672075865" duration="6746000" />
       <workItem from="1632746202370" duration="19382000" />
       <workItem from="1632832305524" duration="14028000" />
-      <workItem from="1632850045657" duration="2077000" />
+      <workItem from="1632850045657" duration="9024000" />
+      <workItem from="1632917651199" duration="1682000" />
+      <workItem from="1632919469476" duration="8666000" />
+      <workItem from="1632928274147" duration="7527000" />
     </task>
     <servers />
   </component>
@@ -507,12 +514,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php</url>
-          <line>18</line>
+          <line>114</line>
           <properties>
             <option name="className" value="\controllerCartaoCredito" />
-            <option name="methodName" value="pagamento" />
+            <option name="methodName" value="getPagamento" />
           </properties>
-          <option name="timeStamp" value="73" />
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app.noso/app.nosso/resources/views/layouts/app.blade.php</url>
@@ -631,12 +638,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php</url>
-          <line>121</line>
+          <line>143</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/home.blade.php</url>
-          <line>129</line>
+          <line>145</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -651,13 +658,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>42</line>
+          <line>138</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>186</line>
+          <line>282</line>
           <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/index.php</url>
+          <line>86</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
+          <line>370</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
+          <line>357</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
