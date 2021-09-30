@@ -133,17 +133,45 @@ class controllerCartaoCredito extends controllerPagamento
     }
 
 
-    public  function estorno($pagamento_id){
+    public function estorno($pagamento_id)
+    {
         $pagarme = new PagarMe\Client($this->key);
         $refundedTransaction = $pagarme->transactions()->refund([
             'id' => $pagamento_id,
         ]);
 
-       if ($refundedTransaction->status == 'authorized'){
-           return 'sucesso';
-       }
-       else {
-           return 'erro';
-       }
+        if ($refundedTransaction->status == 'authorized') {
+            return 'sucesso';
+        } else {
+            return 'erro';
+        }
+    }
+
+    public function capturar($recipient_id_profissional,$pagamento_id)
+    {
+        $recipient_id_profissional = trim($recipient_id_profissional);
+
+        $pagarme = new PagarMe\Client($this->key);
+        $capturedTransaction = $pagarme->transactions()->capture([
+            'id' => $pagamento_id,
+            'split_rules' => [
+                [
+                    'percentage' => '10',
+                    'recipient_id' => 're_cku2qgdez003q0p9tp3ypdvlz',
+                    'charge_processing_fee' => 'true',
+                    'liable' => true
+                ],
+                [
+                    'percentage' => '90',
+                    'recipient_id' => $recipient_id_profissional,
+                    'liable' => true
+                ]
+            ]
+        ]);
+        if ($capturedTransaction->status =='authorized') {
+            return 'sucesso';
+        } else {
+            return 'erro';
+        }
     }
 }

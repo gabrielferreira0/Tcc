@@ -119,4 +119,34 @@ where csp.id = {$pedidoID} and USU.usutipo = 3";
         }
     }
 
+    public function finalizarPedido($pedido_ID)
+    {
+        $sql = "update cliente_servico_profissional set status = 'Finalizado' where id = {$pedido_ID};";
+        $result = pg_query($this->open(), $sql);
+
+        if ($result) {
+            return 'sucesso';
+        } else {
+            return 'erro';
+        }
+    }
+
+    public function buscarProfissionalPedido($pedido_ID)
+    {
+        $sql = "select recipient_ID,bank_account_id,CSP.id_pagamento
+from cliente_servico_profissional  CSP
+  inner join  servico_profissional sp on CSP.servico_profissionalID = sp.id
+  inner join conta_profissional conta on conta.usuid = SP.usuid
+where CSP.id={$pedido_ID};";
+
+        $result = pg_query($this->open(), $sql);
+        $dados = pg_fetch_array($result, 0, PGSQL_NUM);;
+
+        if ($dados) {
+            return $dados;
+        } else {
+            return false;
+        }
+    }
+
 }

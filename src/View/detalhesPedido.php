@@ -22,6 +22,21 @@ include('../Controller/verificarLogin.php')
             }
         });
 
+        $('#Conteudo').on('click', '.estrela', function () {
+            $(this).attr('id','avaliacao_servico');
+            var onStar = parseInt($(this).attr('data-value'), 10); // The star currently selected
+            var stars = $(this).parent().children('.estrela'); // lista das estrelas
+
+            for (i = 0; i < stars.length; i++) {
+                $(stars[i]).removeClass('star-active');
+            }
+            for (i = 0; i < onStar; i++) {
+                $(stars[i]).addClass('star-active');
+            }
+        });
+
+
+
         $('#Conteudo').on('click', '#cancelarPedido', function () {
             let pedido_id = $(this).attr('data-idpedido');
             let pagamento_id = $(this).attr('data-idpagamento');
@@ -68,7 +83,7 @@ include('../Controller/verificarLogin.php')
                 }
             });
 
-            });
+        });
 
         $('#Conteudo').on('click', '#aceitarPedido', function () {
             let pedido_id = $(this).attr('data-idpedido');
@@ -114,9 +129,60 @@ include('../Controller/verificarLogin.php')
                 }
             });
 
-            });
-    })
+        });
 
+
+        $('#Conteudo').on('click', '#finalizarPedido', function () {
+
+            let pedido_id = $(this).attr('data-idpedido');
+
+            let avaliacao_servico = $('#avaliacao_servico').attr('data-value');
+
+            alert(avaliacao_servico)
+            alert(pedido_id)
+            return
+            let formData = new FormData();
+            formData.append('rq', 'finalizarPedido');
+            formData.append('pedido_id', pedido_id);
+
+            let url = '../../src/Controller/index.php';
+
+            $.ajax({
+                url: url,
+                dataType: 'text',
+                type: 'post',
+                contentType: false,
+                processData: false,
+                data: formData,
+                beforeSend: function () {
+                    $('.modal').modal('show');
+                },
+                success: function (rs) {
+                    console.log(rs)
+                    $('.modal').modal('hide');
+                    switch (rs) {
+                        case 'sucesso':
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Pedido realizado com sucesso!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            location.reload();
+                            break;
+                        default:
+                            $("#alertaErro").show().fadeOut(4000);
+                            break;
+                    }
+                },
+                error: function (e) {
+                    bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
+                }
+            });
+
+        });
+    })
 
 
 </script>
@@ -192,7 +258,7 @@ include('Navbar.php');
         <div class="container col-md-12 col-12 pl-5">
 
             <?php
-            if ($_SESSION['id'] == $pedido[0]['id_cliente'] || $_SESSION['Tipo']=='1') {
+            if ($_SESSION['id'] == $pedido[0]['id_cliente'] || $_SESSION['Tipo'] == '1') {
                 echo "
              <h1>Pagamento
 
@@ -217,7 +283,7 @@ include('Navbar.php');
                         </div>
 
                         <div class='form-group col-md-2'>
-                            <label for='Username'>Bandeira do cartã:</label>
+                            <label for='Username'>Bandeira do cartão:</label>
                             <div class='input-group input-group-sm'>
                                 <div class='input-group-prepend'>
                                     <span class='input-group-text arredondar'>
@@ -356,21 +422,19 @@ include('Navbar.php');
 
         <div class="form-group" style="display:flex;  justify-content: center;">
             <?php
-            if ($_SESSION['id'] == $pedido[0]['id_cliente'] && $pedido[0]['status_pedido']
-                    && $pedido[0]['status_pedido'] != 'Cancelado'  && $pedido[0]['status_pedido'] != 'Finalizado')
-            {
+            if ($_SESSION['id'] == $pedido[0]['id_cliente'] && $pedido[0]['status_pedido'] != 'Cancelado'
+                && $pedido[0]['status_pedido'] != 'Finalizado') {
                 echo "
             <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'  
             type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Cancelar Serviço</button>
             
-            <button 
-                data-idPedido='{$_GET['pedido']}'
-                id='' type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Serviço
+            <button  data-toggle='modal' data-target='#modalAvaliacao' 
+                type='button' class='btn btn-success ml-2 mb-3 mr-2'>Finalizar Serviço
             </button>
+            
+          
                 ";
-            }
-            elseif ($_SESSION['id'] == $pedido[0]['id_profissional'] && $pedido[0]['status_pedido'] == 'Analise')
-            {
+            } elseif ($_SESSION['id'] == $pedido[0]['id_profissional'] && $pedido[0]['status_pedido'] == 'Analise') {
                 echo "
                 <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'  
                 type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Negar Serviço
@@ -382,21 +446,19 @@ include('Navbar.php');
             </button>
                 
                 ";
-            }
-            elseif ($pedido[0]['status_pedido'] == 'Finalizado'){
+            } elseif ($pedido[0]['status_pedido'] == 'Finalizado') {
                 echo '
                 <div class="alert alert-success" role="alert">
                   Pedido Finalizado!
                 </div>';
-            }
-            elseif ($pedido[0]['status_pedido'] == 'Cancelado'){
+            } elseif ($pedido[0]['status_pedido'] == 'Cancelado') {
                 echo '
                 <div class="alert alert-danger" role="alert">
                   Pedido Cancelado!
                 </div>';
-            }
-            elseif ($pedido[0]['status_pedido'] == 'Andamento'){
-                echo " <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'
+            } elseif ($pedido[0]['status_pedido'] == 'Andamento' && $_SESSION['id'] == $pedido[0]['id_cliente']
+                || $pedido[0]['status_pedido'] == 'Andamento' && $_SESSION['id'] == $pedido[0]['id_profissional']) {
+                echo "<button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'
             type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Cancelar Serviço
             </button>";
             }
@@ -420,5 +482,12 @@ include('Navbar.php');
 <?php
 include('Footer.php');
 ?>
+
+<!-- MODAL-->
+
+<?php
+include('modalAvaliacao.php');
+?>
+<!-- FIM MODAL-->
 
 </body>

@@ -104,10 +104,21 @@ if (isset($_POST["rq"])) {
             $pedido->cancelarPedido($_POST["pedido_id"]);
             $pagamento = new controllerCartaoCredito();
             echo $pagamento->estorno($_POST["pagamento_id"]);
+            break;
         case 'aceitarPedido':
             require_once '../Model/modelPedidoServico.php';
             $pedido = new modelPedidoServico();
             echo $pedido->aceitarPedido($_POST["pedido_id"]);
+            break;
+        case 'finalizarPedido':
+            require_once '../Model/modelPedidoServico.php';
+            require_once 'controllerCartaoCredito.php';
+            $pedido = new modelPedidoServico();
+            $pedido->finalizarPedido($_POST["pedido_id"]);
+            $profissional_banco = $pedido->buscarProfissionalPedido($_POST["pedido_id"]);
+            $pagamento = new controllerCartaoCredito();
+            echo $pagamento->capturar($profissional_banco[0], $profissional_banco[2]);
+            break;
 
     }
 }
