@@ -23,7 +23,7 @@ include('Navbar.php');
 
         $('#Conteudo').on('click', '#adicionarservicos', function () {
             let inputServices = '\<div class="services d-flex justify-content-center ">\
-            <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-8"\
+            <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-7"\
                  title="Categoria">\
                 <div class=" d-flex justify-content-center input-group ">\
                     <div class="input-group-prepend">\
@@ -38,8 +38,12 @@ include('Navbar.php');
             $("#container-services").append(inputServices);
         });
 
-
         $("#table-Users").dataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
+        $("#table-pedidos").dataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
             }
@@ -97,6 +101,9 @@ include('Navbar.php');
                     <li class="nav-item">
                         <span class="nav-link painel" href="#" id="listarUsers" tabindex="-1"> Listar usuários</span>
                     </li>
+                    <li class="nav-item">
+                        <span class="nav-link painel" href="#" id="listarServicos" tabindex="-1"> Listar Serviços</span>
+                    </li>
                 </ul>
             </div>
 
@@ -105,7 +112,7 @@ include('Navbar.php');
 
 
                     <div class="d-flex justify-content-center">
-                        <div class="d-flex align-items-center d-flex justify-content-center col-12 col-md-8"
+                        <div class="d-flex align-items-center d-flex justify-content-center col-12 col-md-7"
                              title="Categoria">
                             <div class=" d-flex justify-content-center input-group ">
                                 <div class="input-group-prepend">
@@ -128,7 +135,7 @@ include('Navbar.php');
 
                     <div id="container-services">
                         <div class="services d-flex justify-content-center ">
-                            <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-8"
+                            <div class="d-flex align-items-center d-flex justify-content-center  col-12 col-md-7"
                                  title="Categoria">
                                 <div class=" d-flex justify-content-center input-group ">
                                     <div class="input-group-prepend">
@@ -295,6 +302,63 @@ include('Navbar.php');
 
                         </tr>
 
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="table-responsive" id="listaServicos" style="display: none">
+                <table id="table-pedidos" class="table table" style=" border:1px solid white; color: white">
+                    <thead style="background: #f50a31;">
+                    <tr>
+                        <th scope="col">Nome Profissional</th>
+                        <th scope="col">ID Pagamento</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Atividade</th>
+                        <th scope="col">Serviço</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Detalhes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    require_once '../Model/modelPedidoServico.php';
+                    $pedidos = new modelPedidoServico();
+                    $pedidos = $pedidos->getPedidos();
+
+                    if ($pedidos) {
+                        foreach ($pedidos as $key => $value) {
+                            ?>
+                            <tr>
+                                <th scope="row"><?php echo $value['nome_profissional'] ?></th>
+                                <th scope="row"><?php echo $value['pagamento_id'] ?></th>
+                                <th scope="row">R$<?php echo $value['servico_preco'] ?></th>
+                                <th scope="row"><?php echo $value['nome_categoria'] ?></th>
+                                <th scope="row"><?php echo $value['nome_servico'] ?></th>
+                                <th scope="row">
+                                    <span class="<?php echo $value['pedido_status']?>"><?php echo $value['pedido_status']?></span>
+                                </th>
+                                <th>
+                                    <a href='../View/detalhesPedido.php?pedido=<?php echo $value['pedido_id'] ?>'>
+                                        <button
+                                                type='button' class='btn btn-success'><i class="fas fa-eye"></i>
+                                        </button>
+                                    </a>
+                                </th>
+
+                            </tr>
+
+                            <?php
+                        }
+                    } else {
+                        ?>
+
+                        <tr>
+                            <td class='text-center' colspan='6'>Nenhum serviço disponível no momento</td>
+                        </tr>
                         <?php
                     }
                     ?>

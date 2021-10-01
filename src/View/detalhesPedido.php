@@ -23,7 +23,7 @@ include('../Controller/verificarLogin.php')
         });
 
         $('#Conteudo').on('click', '.estrela', function () {
-            $(this).attr('id','avaliacao_servico');
+            $(this).attr('id', 'avaliacao_servico');
             var onStar = parseInt($(this).attr('data-value'), 10); // The star currently selected
             var stars = $(this).parent().children('.estrela'); // lista das estrelas
 
@@ -34,7 +34,6 @@ include('../Controller/verificarLogin.php')
                 $(stars[i]).addClass('star-active');
             }
         });
-
 
 
         $('#Conteudo').on('click', '#cancelarPedido', function () {
@@ -103,11 +102,11 @@ include('../Controller/verificarLogin.php')
                 processData: false,
                 data: formData,
                 beforeSend: function () {
-                    $('.modal').modal('show');
+                    $('#modal_loading').modal('show');
                 },
                 success: function (rs) {
                     console.log(rs);
-                    $('.modal').modal('hide');
+                    $('#modal_loading').modal('hide');
                     switch (rs) {
                         case 'sucesso':
                             Swal.fire({
@@ -138,12 +137,17 @@ include('../Controller/verificarLogin.php')
 
             let avaliacao_servico = $('#avaliacao_servico').attr('data-value');
 
-            alert(avaliacao_servico)
-            alert(pedido_id)
-            return
+
+            if (!avaliacao_servico) {
+                $("#erroReview").show().fadeOut(5000);
+                return
+            }
+
+
             let formData = new FormData();
             formData.append('rq', 'finalizarPedido');
             formData.append('pedido_id', pedido_id);
+            formData.append('avaliacao_servico', avaliacao_servico);
 
             let url = '../../src/Controller/index.php';
 
@@ -468,9 +472,14 @@ include('Navbar.php');
              style="display: none;">
             <strong>Erro! </strong>Solicitação <strong> não efetuada!</strong>
         </div>
+        <div class="alert alert-danger testando text-center" id="erroReview" role="alert"
+             style="display: none;">
+            <strong>Erro! </strong>Por favor avalie o serviço.<strong> Essa ação nos ajudará a melhorar a plataforma melhor
+                para você!</strong>
+        </div>
     </div>
 
-    <div class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div  id="modal_loading" class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div id="loading"></div>

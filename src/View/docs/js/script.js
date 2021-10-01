@@ -365,6 +365,7 @@ $(document).ready(function () {
         $("#formCategoria").hide();
         $("#listaUsers").hide();
         $("#cardCardRecuperar").hide();
+        $("#listaServicos").hide();
     });
 
     $('#Conteudo').on('click', '#listarUsers', function () {
@@ -372,6 +373,16 @@ $(document).ready(function () {
         $("#formCategoria").hide();
         $("#listaUsers").show();
         $("#cardCardRecuperar").hide();
+        $("#listaServicos").hide();
+    });
+
+    $('#Conteudo').on('click', '#listarServicos', function () {
+        $("#listaCat").hide();
+        $("#formCategoria").hide();
+        $("#listaUsers").hide();
+        $("#cardCardRecuperar").hide();
+        $("#listaServicos").show();
+
     });
 
     $('#Conteudo').on('click', '#Categoria', function () {
@@ -379,6 +390,7 @@ $(document).ready(function () {
         $("#listaCat").hide();
         $("#listaUsers").hide();
         $("#cardCardRecuperar").hide();
+        $("#listaServicos").hide();
 
     });
 

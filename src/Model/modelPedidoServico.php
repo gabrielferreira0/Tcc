@@ -52,10 +52,15 @@ class modelPedidoServico extends DBconexao
     }
 
 
-    public function getPedidos($usuid)
+    public function getPedidos($usuid = null)
     {
+
+        if ($usuid) {
+            $usuid = "where CSP.id_cliente = $usuid or sp.usuid = $usuid";
+        }
+
         $sql = "
-    select usu.usunome nome_profissional,pag.valor servico_preco,
+    select usu.usunome nome_profissional,pag.valor servico_preco,pag.id pagamento_id,
        sernome as nome_servico,catnome as nome_categoria,
        CSP.status pedido_status, CSP.id  pedido_id
     from cliente_servico_profissional CSP
@@ -63,8 +68,11 @@ class modelPedidoServico extends DBconexao
         inner join usuarios usu on usu.id = sp.usuid
         inner join servicos ser on ser.id = sp.serid
         inner join categorias cat on cat.id = ser.catid
-        inner join pagamento_servico pag on pag.id = CSP.id_pagamento
-    where CSP.id_cliente = {$usuid} or sp.usuid = {$usuid};";
+        inner join pagamento_servico pag on pag.id = CSP.id_pagamento "
+            . $usuid . ";";
+
+
+
         $result = pg_query($this->open(), $sql);
         $dados = pg_fetch_all($result);
 
@@ -119,9 +127,9 @@ where csp.id = {$pedidoID} and USU.usutipo = 3";
         }
     }
 
-    public function finalizarPedido($pedido_ID)
+    public function finalizarPedido($pedido_ID, $avaliacao_servico)
     {
-        $sql = "update cliente_servico_profissional set status = 'Finalizado' where id = {$pedido_ID};";
+        $sql = "update cliente_servico_profissional set status = 'Finalizado',avaliacao_servico = {$avaliacao_servico} where id = {$pedido_ID};";
         $result = pg_query($this->open(), $sql);
 
         if ($result) {

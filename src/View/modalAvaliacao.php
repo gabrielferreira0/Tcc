@@ -5,7 +5,7 @@
         <div style="background: #202020" class="modal-content">
 
             <div class="modal-header  d-flex justify-content-center">
-                <h2 class="modal-title " id="exampleModalLabel">Avaliação</h2>
+                <h2  style="color:lightgray" class="modal-title">Avaliação</h2>
             </div>
             <div class="modal-body">
 
@@ -16,29 +16,14 @@
                 <div class="d-flex justify-content-center">
 
                     <div class="form-check">
-                        <span data-value="1" class="estrela"><i id="estrela1" class="fas fa-star "></i></span>
-                        <span data-value="2" class="estrela"><i id="estrela2" class="fas fa-star "></i></span>
-                        <span data-value="3" class="estrela"><i id="estrela3" class="fas fa-star "></i></span>
-                        <span data-value="4" class="estrela"><i id="estrela4" class="fas fa-star "></i></span>
-                        <span data-value="5" class="estrela"><i id="estrela5" class="fas fa-star "></i></span>
+                        <span title="Pessímo" data-value="1" class="estrela"><i id="estrela1" class="fas fa-star "></i></span>
+                        <span title="Ruim" data-value="2" class="estrela"><i id="estrela2" class="fas fa-star "></i></span>
+                        <span title="Regular" data-value="3" class="estrela"><i id="estrela3" class="fas fa-star "></i></span>
+                        <span title="Bom" data-value="4" class="estrela"><i id="estrela4" class="fas fa-star "></i></span>
+                        <span title="Otímo" data-valuefalha="5" class="estrela"><i id="estrela5" class="fas fa-star "></i></span>
                     </div>
-
                 </div>
-
-
-                <div class="alert alert-success text-center" id="sucesso" role="alert"
-                     style="display: none;">
-                    <strong>Avaliação realizada com sucesso!</strong>
-                </div>
-
-                <div class="alert alert-danger text-center" id="catFalha" role="alert"
-                     style="display: none;">
-                    <strong>Erro!</strong>
-                </div>
-
             </div>
-
-
 
             <div class='modal-footer'>
                 <?php

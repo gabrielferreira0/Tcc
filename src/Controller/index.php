@@ -114,7 +114,7 @@ if (isset($_POST["rq"])) {
             require_once '../Model/modelPedidoServico.php';
             require_once 'controllerCartaoCredito.php';
             $pedido = new modelPedidoServico();
-            $pedido->finalizarPedido($_POST["pedido_id"]);
+            $pedido->finalizarPedido($_POST["pedido_id"], $_POST["avaliacao_servico"]);
             $profissional_banco = $pedido->buscarProfissionalPedido($_POST["pedido_id"]);
             $pagamento = new controllerCartaoCredito();
             echo $pagamento->capturar($profissional_banco[0], $profissional_banco[2]);
