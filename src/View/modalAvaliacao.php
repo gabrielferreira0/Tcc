@@ -16,11 +16,11 @@
                 <div class="d-flex justify-content-center">
 
                     <div class="form-check">
-                        <span title="Pessímo" data-value="1" class="estrela"><i id="estrela1" class="fas fa-star "></i></span>
-                        <span title="Ruim" data-value="2" class="estrela"><i id="estrela2" class="fas fa-star "></i></span>
-                        <span title="Regular" data-value="3" class="estrela"><i id="estrela3" class="fas fa-star "></i></span>
-                        <span title="Bom" data-value="4" class="estrela"><i id="estrela4" class="fas fa-star "></i></span>
-                        <span title="Otímo" data-valuefalha="5" class="estrela"><i id="estrela5" class="fas fa-star "></i></span>
+                        <span title="Pessímo" data-value="1" class="estrela"><i class="fas fa-star "></i></span>
+                        <span title="Ruim" data-value="2" class="estrela"><i class="fas fa-star "></i></span>
+                        <span title="Regular" data-value="3" class="estrela"><i class="fas fa-star "></i></span>
+                        <span title="Bom" data-value="4" class="estrela"><i class="fas fa-star "></i></span>
+                        <span title="Otímo" data-value="5" class="estrela"><i class="fas fa-star "></i></span>
                     </div>
                 </div>
             </div>

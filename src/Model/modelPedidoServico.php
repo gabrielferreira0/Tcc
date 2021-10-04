@@ -69,7 +69,7 @@ class modelPedidoServico extends DBconexao
         inner join servicos ser on ser.id = sp.serid
         inner join categorias cat on cat.id = ser.catid
         inner join pagamento_servico pag on pag.id = CSP.id_pagamento "
-            . $usuid . ";";
+    . $usuid . ";";
 
 
 

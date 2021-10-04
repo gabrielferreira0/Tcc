@@ -138,6 +138,7 @@ include('../Controller/verificarLogin.php')
             let avaliacao_servico = $('#avaliacao_servico').attr('data-value');
 
 
+
             if (!avaliacao_servico) {
                 $("#erroReview").show().fadeOut(5000);
                 return

@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/VeicularMoises/VeicularTotal.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/app/Http/Controllers/VeicularMoises/VeicularTotal.php" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/veicularmoises/veiculartotal/pdf.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/resources/views/veicularmoises/veiculartotal/pdf.blade.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" beforeDir="false" afterPath="$USER_HOME$/Desktop/app nosso/app.nosso/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controllerCartaoCredito.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/modelPedidoServico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Painel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/detalhesPedido.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/detalhesPedido.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/modalAvaliacao.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/modalAvaliacao.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -392,7 +387,8 @@
       <workItem from="1632939482695" duration="7808000" />
       <workItem from="1633004703775" duration="23840000" />
       <workItem from="1633091654818" duration="2331000" />
-      <workItem from="1633094430184" duration="6286000" />
+      <workItem from="1633094430184" duration="17669000" />
+      <workItem from="1633349593710" duration="616000" />
     </task>
     <servers />
   </component>
@@ -674,12 +670,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>208</line>
+          <line>209</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>352</line>
+          <line>353</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -689,37 +685,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>440</line>
+          <line>441</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>427</line>
+          <line>428</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>457</line>
+          <line>458</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>452</line>
+          <line>453</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>428</line>
+          <line>429</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>429</line>
+          <line>430</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>463</line>
+          <line>464</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>

@@ -121,6 +121,7 @@ class controllerCartaoCredito extends controllerPagamento
                 'id' => $idPagamento
             ]);
 
+
             $result[0] = $transactions->card_last_digits;
             $result[1] = $transactions->card_brand;
             return $result;
