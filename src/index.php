@@ -72,7 +72,12 @@ session_start();
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="View/Painel.php"><i class="fas fa-cogs"></i> Painel</a>
-                       </li>';
+                       </li>
+                       
+                       <li class="nav-item">
+                        <a class="nav-link arredondar" href="View/dashBoard.php"><i class="fas fa-chart-line"></i> Dashboard</a>
+                       </li>
+                       ';
             }
             ?>
         </ul>
@@ -152,17 +157,18 @@ session_start();
                 class="text-center">Escolha seu tipo de cadastro
                 <i class="fas fa-hand-point-down"></i></h3>
 
-            <button  id="registrarCliente" style="margin-bottom: 1rem" type="button" class="Entrar btn btn btn arredondar">Cliente
+            <button id="registrarCliente" style="margin-bottom: 1rem" type="button"
+                    class="Entrar btn btn btn arredondar">Cliente
                 <i class="fas fa-user"></i>
             </button>
 
-            <button onclick="redirecionadarParceiro()" style="background:#007bff;margin-bottom: 1rem" type="button" class="Entrar btn btn btn arredondar">Parceiro
+            <button onclick="redirecionadarParceiro()" style="background:#007bff;margin-bottom: 1rem" type="button"
+                    class="Entrar btn btn btn arredondar">Parceiro
                 <i class="fas fa-handshake"></i>
             </button>
 
         </div>
         <!--  escolha tipo cadastro-->
-
 
 
         <!-- FORM Cadastro-->

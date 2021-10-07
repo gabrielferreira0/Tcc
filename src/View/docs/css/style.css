@@ -181,10 +181,14 @@ body {
     /* margin-bottom: 15%; */
 }
 
-.card-columns {
-
-
+.cardDashBoard {
+    color: white;
+    background: #0c0c0c;
+    transition: all ease 0.2s;
+    border: solid 2px black;
 }
+
+
 
 .cardFormularioSrv {
     color: white;

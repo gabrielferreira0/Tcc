@@ -28,7 +28,12 @@
             if (isset($_SESSION['CPF']) && $_SESSION['Tipo'] == '1') {
                 echo '<li class="nav-item">
                         <a class="nav-link arredondar" href="Painel.php"><i class="fas fa-cogs"></i> Painel</a>
-                       </li>';
+                       </li>
+                       
+                        <li class="nav-item">
+                        <a class="nav-link arredondar" href="dashBoard.php"><i class="fas fa-chart-line"></i> Dashboard</a>
+                       </li>
+                       ';
             }
             ?>
         </ul>
