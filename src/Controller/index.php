@@ -119,6 +119,12 @@ if (isset($_POST["rq"])) {
             $pagamento = new controllerCartaoCredito();
             echo $pagamento->capturar($profissional_banco[0], $profissional_banco[2]);
             break;
+        case 'dashBoard':
+            $dashBoard = [];
+            require_once 'controllerPagamento.php';
+            $pagamento = new controllerPagamento();
+            $dashBoard = $pagamento->montar_dashboard();
+            var_dump($dashBoard);
 
     }
 }

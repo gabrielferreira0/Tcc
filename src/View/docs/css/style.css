@@ -183,6 +183,7 @@ body {
 
 .cardDashBoard {
     color: white;
+    border-radius: 1.3rem;
     background: #0c0c0c;
     transition: all ease 0.2s;
     border: solid 2px black;

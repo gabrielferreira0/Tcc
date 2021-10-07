@@ -115,7 +115,10 @@ include('Navbar.php');
                             <div class="row">
                                 <div class="col mr-2">
                                     <h6 class="font-weight-bold">Volume transacionado</h6>
-                                    <div class="font-weight-bol text-success font-weight-bold">R$3.130,00</div>
+                                    <div class="font-weight-bol text-success font-weight-bold">R$3.130,00
+
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                    </div>
 
                                 </div>
                                 <div class="col-auto">
@@ -131,7 +134,9 @@ include('Navbar.php');
                             <div class="row mb-3">
                                 <div class="col mr-2">
                                     <h6 class="font-weight-bold">Ticket médio</h6>
-                                    <div class="font-weight-bol text-success font-weight-bold">R$223,57</div>
+                                    <div class="font-weight-bol text-success font-weight-bold">R$223,57
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                    </div>
 
                                 </div>
                                 <div class="col-auto">
@@ -146,7 +151,6 @@ include('Navbar.php');
             </div>
 
         </div>
-
 
         <div class="col-md-3 offset-md-0 col-10 offset-1 mb-3">
             <div class="card cardDashBoard">
@@ -183,7 +187,7 @@ include('Navbar.php');
 
         </div>
 
-        <div class="col-md-9 offset-md-0 col-10 offset-1">
+        <div class="col-md-6 offset-md-0 col-10 offset-1">
             <div class="card cardDashBoard">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header">
@@ -197,7 +201,6 @@ include('Navbar.php');
                 </div>
             </div>
         </div>
-        
 
     </div>
 </div>
@@ -208,8 +211,7 @@ include('Footer.php');
 ?>
 
 <script src="docs/plugins/chart.js/Chart.bundle.min.js"></script>
-<script src="docs/js/chart-pie-demo.js"></script>
-<script src="docs/js/chart-area-demo.js"></script>
+<script src="docs/js/chart.js"></script>
 
 
 </body>
