@@ -186,6 +186,7 @@ body {
     background: #0c0c0c;
     transition: all ease 0.2s;
     border: solid 2px black;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.75)!important;
 }
 
 

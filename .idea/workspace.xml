@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View/dashBoard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/docs/js/chart-area-demo.js" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/APP Nosso/app.nosso/public/css/login/main.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/APP Nosso/app.nosso/public/css/login/main.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/APP Nosso/app.nosso/resources/views/acesso/login.blade.php" beforeDir="false" afterPath="$USER_HOME$/Desktop/APP Nosso/app.nosso/resources/views/acesso/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Servicos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Servicos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/dashBoard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/dashBoard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,10 +156,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Teste - Graficos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/View/docs/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Tcc\src\View\docs\css" />
+      <recent name="C:\xampp\htdocs\Tcc\src\View\docs\js" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -393,6 +397,7 @@
       <workItem from="1633368842443" duration="2119000" />
       <workItem from="1633480545586" duration="1332000" />
       <workItem from="1633560644097" duration="13746000" />
+      <workItem from="1633618729578" duration="4325000" />
     </task>
     <servers />
   </component>
