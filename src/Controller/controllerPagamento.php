@@ -43,6 +43,8 @@ class controllerPagamento
             $volume_transicionado += $transacoes->amount / 100;
         }
 
+        return $volume_transicionado;
+
     }
 
     public function saldoConta()
@@ -51,7 +53,9 @@ class controllerPagamento
         $recipientBalance = $pagarme->recipients()->getBalance([
             'recipient_id' => $this->recipient_id,
         ]);
-        $saldo = $recipientBalance->waiting_funds->amount / 100;
+
+        $saldo = number_format($recipientBalance->waiting_funds->amount / 100, 2, '.', '');
+
         return $saldo;
     }
 
