@@ -33,7 +33,7 @@ include('Navbar.php');
                             <div class="row ">
                                 <div class="col mr-2">
                                     <h6 class="font-weight-bold mb-1">Saldo Conta WeDo:</h6>
-                                    <div class="font-weight-bol text-success font-weight-bold ">R$40,000</div>
+                                    <div id="saldo" class="text-success font-weight-bold"></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-hand-holding-usd fa-3x text-gray-300 "></i>
@@ -69,9 +69,9 @@ include('Navbar.php');
                             <div class="row mb-1">
                                 <div class="col mr-2">
                                     <h6 class="font-weight-bold">Total de transações:</h6>
-                                    <span class="font-weight-bol texto-cinza font-weight-bold">999
+                                    <span id="totalTransacoes"
+                                          class="font-weight-bol texto-cinza font-weight-bold"></span>
                                     <i class="fas fa-exchange-alt"></i>
-                                </span>
 
                                 </div>
                                 <div class="col-auto">
@@ -93,15 +93,18 @@ include('Navbar.php');
                             <div class="row ">
                                 <div class="col">
                                     <h6 class="font-weight-bold mb-1">Bandeiras mais utilizadas:</h6>
-                                    <span class="small texto-cinza font-weight-bold">
-                                        <img style="width: 2.5rem" src="../imagens/svg/visa-logo.svg"
-                                             alt="logo MasterCard">   Visa 62.5%
-                                    </span>
+
+                                    <img style="width: 2.5rem" src="../imagens/svg/visa-logo.svg"
+                                         alt="logo visa">
+                                    <span class="small texto-cinza font-weight-bold">Visa</span>
+                                    <span id="visa" class="small texto-cinza font-weight-bold"></span>
                                     <br>
-                                    <span class="small texto-cinza font-weight-bold">
-                                        <img style="width: 2.5rem" src="../imagens/svg/mastercard-seeklogo.com.svg"
-                                             alt="logo MasterCard"> Mastercard 37.5%
-                                    </span>
+
+                                    <img style="width: 2.5rem" src="../imagens/svg/mastercard-seeklogo.com.svg"
+                                         alt="logo MasterCard">
+                                    <span class="small texto-cinza font-weight-bold">Mastercard</span>
+                                    <span id="mastercard" class="small texto-cinza font-weight-bold"></span>
+
                                 </div>
                             </div>
                         </div>
@@ -115,11 +118,8 @@ include('Navbar.php');
                             <div class="row">
                                 <div class="col mr-2">
                                     <h6 class="font-weight-bold">Volume transacionado</h6>
-                                    <div class="font-weight-bol text-success font-weight-bold">R$3.130,00
-
-                                        <i class="fas fa-file-invoice-dollar"></i>
-                                    </div>
-
+                                    <span id="volume_transacionado" class="text-success font-weight-bold"></span>
+                                    <i class="fas fa-file-invoice-dollar text-success"></i>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-dollar-sign fa-3x"></i>
@@ -128,16 +128,14 @@ include('Navbar.php');
                         </div>
                     </div>
                 </div>
-                <div  class="col-md-11 col-12 ">
+                <div class="col-md-11 col-12 ">
                     <div class="card cardDashBoard">
                         <div class="card-body">
                             <div class="row mb-3">
                                 <div class="col mr-2">
                                     <h6 class="font-weight-bold">Ticket médio</h6>
-                                    <div class="font-weight-bol text-success font-weight-bold">R$223,57
-                                        <i class="fas fa-file-invoice-dollar"></i>
-                                    </div>
-
+                                    <span id="ticket_medio" class="text-success font-weight-bold"></span>
+                                    <i class="fas fa-file-invoice-dollar text-success"></i>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-coins fa-3x"></i>
@@ -165,22 +163,19 @@ include('Navbar.php');
 
                     <div class="text-center small">
 
-                        <span>
-                              <i class="fas fa-circle text-success"></i> Paga 7
-                            </span>
+                        <i class="fas fa-circle text-success"></i>
+                        <span id="pagas"></span>
 
-                        <span>
-                              <i style="color: #6045af" class="fas fa-circle"></i> Estornada 3
-                            </span>
+                        <i style="color: #6045af" class="fas fa-circle"></i>
+                        <span id="estornadas"></span>
 
                         <br>
-                        <span>
-                              <i class="fas fa-circle text-warning"></i> Autorizada 2
-                            </span>
+                        <i class="fas fa-circle text-warning"></i>
+                        <span id="autorizadas"></span>
 
-                        <span>
-                              <i class="fas fa-circle text-danger"></i> Recusada 1
-                            </span>
+                        <i class="fas fa-circle text-danger"></i>
+                        <span id="recusadas"></span>
+
                     </div>
                 </div>
             </div>

@@ -21,14 +21,33 @@ class controllerPagamento
     public function montar_dashboard()
     {
         $dashBoard['saldo'] = $this->saldoConta();
-        $dashBoard['totalTransacoes'] = $this->totalTransacoes();
+        $transacoes = $this->total_status_transacoes();
+        $dashBoard['totalTransacoes'] = $transacoes['totalTransacoes'];
         $dashBoard['bandeiras'] = $this->cartaoBandeiras();
-        $dashBoard['Volume_transacionado'] = $this->Volume_transacionado();
+        $dashBoard['volume_transacionado'] = $this->Volume_transacionado();
+        $dashBoard['ticket_medio'] = $this->ticket_medio($dashBoard['totalTransacoes']);
+        $dashBoard['statusTransacoes'] = $transacoes['statusTransacoes'];
 
-        return $dashBoard;
-
+        return json_encode($dashBoard);
     }
 
+
+    public function ticket_medio($totalTransacoes)
+    {
+        $pagarme = new PagarMe\Client($this->key);
+        $transactions = $pagarme->transactions()->getList([
+            'count' => '1000',
+            'status' => 'paid'
+        ]);
+
+        $volume_transicionado = 0;
+        foreach ($transactions as $transacoes) {
+            $volume_transicionado += $transacoes->amount / 100;
+        }
+
+        return number_format($volume_transicionado / $totalTransacoes, 2, ',', '.');
+
+    }
 
     public function Volume_transacionado()
     {
@@ -43,7 +62,7 @@ class controllerPagamento
             $volume_transicionado += $transacoes->amount / 100;
         }
 
-        return $volume_transicionado;
+        return number_format($volume_transicionado, 2, ',', '.');
 
     }
 
@@ -54,20 +73,52 @@ class controllerPagamento
             'recipient_id' => $this->recipient_id,
         ]);
 
-        $saldo = number_format($recipientBalance->waiting_funds->amount / 100, 2, '.', '');
+        $saldo = number_format($recipientBalance->waiting_funds->amount / 100, 2, ',', '.');
 
         return $saldo;
     }
 
 
-    public function totalTransacoes()
+    public function total_status_transacoes()
     {
+        $pagas = 0;
+        $autorizadas = 0;
+        $estornadas = 0;
+        $recusadas = 0;
+        $resultado = [];
+
         $pagarme = new PagarMe\Client($this->key);
         $transactions = $pagarme->transactions()->getList([
             'count' => '1000'
         ]);
         $totalTransacoes = count($transactions);
-        return $totalTransacoes;
+
+        foreach ($transactions as $transacoes) {
+            switch ($transacoes->status) {
+                case "paid":
+                    $pagas++;
+                    break;
+                case "authorized":
+                    $autorizadas++;
+                    break;
+                case "refused":
+                    $recusadas++;
+                    break;
+                case "refunded":
+                    $estornadas++;
+                    break;
+            }
+        }
+
+        $statusTransacoes['pagas'] = $pagas;
+        $statusTransacoes['autorizadas'] = $autorizadas;
+        $statusTransacoes['estornadas'] = $estornadas;
+        $statusTransacoes['recusadas'] = $recusadas;
+
+        $resultado['totalTransacoes'] = $totalTransacoes;
+        $resultado['statusTransacoes'] = $statusTransacoes;
+
+        return $resultado;
     }
 
     public function cartaoBandeiras()

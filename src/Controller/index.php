@@ -123,8 +123,7 @@ if (isset($_POST["rq"])) {
             $dashBoard = [];
             require_once 'controllerPagamento.php';
             $pagamento = new controllerPagamento();
-            $dashBoard = $pagamento->montar_dashboard();
-            var_dump($dashBoard);
-
+            echo $dashBoard = $pagamento->montar_dashboard();
+            break;
     }
 }

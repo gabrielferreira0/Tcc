@@ -56,7 +56,7 @@ include('../Controller/verificarLogin.php')
                 processData: false,
                 data: formData,
                 beforeSend: function () {
-                    $('.modal').modal('show');
+                    $('#modal_loading').modal('show');
                 },
                 success: function (rs) {
                     console.log(rs);
