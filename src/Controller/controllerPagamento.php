@@ -9,12 +9,13 @@ class controllerPagamento
     public $nome;
     public $cpf;
     public $recipient_id;
-
+    private $pagarme;
 
     public function __construct()
     {
         $this->key = 'ak_test_7B84xXxvddaWErUUVeNEmIhwGocFOR';
         $this->recipient_id = 're_cku2qgdez003q0p9tp3ypdvlz';
+        $this->pagarme = new PagarMe\Client($this->key);;
     }
 
 
@@ -34,8 +35,7 @@ class controllerPagamento
 
     public function ticket_medio($totalTransacoes)
     {
-        $pagarme = new PagarMe\Client($this->key);
-        $transactions = $pagarme->transactions()->getList([
+        $transactions = $this->pagarme->transactions()->getList([
             'count' => '1000',
             'status' => 'paid'
         ]);
@@ -51,8 +51,7 @@ class controllerPagamento
 
     public function Volume_transacionado()
     {
-        $pagarme = new PagarMe\Client($this->key);
-        $transactions = $pagarme->transactions()->getList([
+        $transactions = $this->pagarme->transactions()->getList([
             'count' => '1000',
             'status' => 'paid'
         ]);
@@ -68,8 +67,7 @@ class controllerPagamento
 
     public function saldoConta()
     {
-        $pagarme = new PagarMe\Client($this->key);
-        $recipientBalance = $pagarme->recipients()->getBalance([
+        $recipientBalance = $this->pagarme->recipients()->getBalance([
             'recipient_id' => $this->recipient_id,
         ]);
 
@@ -87,8 +85,7 @@ class controllerPagamento
         $recusadas = 0;
         $resultado = [];
 
-        $pagarme = new PagarMe\Client($this->key);
-        $transactions = $pagarme->transactions()->getList([
+        $transactions = $this->pagarme->transactions()->getList([
             'count' => '1000'
         ]);
         $totalTransacoes = count($transactions);
@@ -123,8 +120,7 @@ class controllerPagamento
 
     public function cartaoBandeiras()
     {
-        $pagarme = new PagarMe\Client($this->key);
-        $transactions = $pagarme->transactions()->getList([
+        $transactions = $this->pagarme->transactions()->getList([
             'count' => '1000'
         ]);
         $totalTransacoes = count($transactions);

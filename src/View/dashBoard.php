@@ -198,6 +198,16 @@ include('Navbar.php');
         </div>
 
     </div>
+
+    <div  id="modal_loading" class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id="loading"></div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 

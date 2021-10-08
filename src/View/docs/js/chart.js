@@ -169,10 +169,12 @@ $(document).ready(function () {
         async: true,
         data: {
             rq: 'dashBoard',
+        },beforeSend: function () {
+            $('#modal_loading').modal('show');
         },
         success: function (rs) {
+            $('#modal_loading').modal('hide');
             rs = JSON.parse(rs);
-
             $('#saldo').html('R$' + rs.saldo);
             $('#totalTransacoes').html(rs.totalTransacoes);
             $('#visa').html(rs.bandeiras.visa + "%");
