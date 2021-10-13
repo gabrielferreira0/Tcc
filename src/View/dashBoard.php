@@ -197,9 +197,26 @@ include('Navbar.php');
             </div>
         </div>
 
+
+        <!-- Bar Chart -->
+        <div class="col-md-6 offset-md-0 col-10 offset-1">
+
+            <div class="card cardDashBoard">
+                <div class="card-header ">
+                    <h6 class="font-weight-bold text-center">Tipos de serviços mais solicitados</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-bar">
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div  id="modal_loading" class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div id="modal_loading" class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false"
+         tabindex="-1">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div id="loading"></div>

@@ -28,6 +28,7 @@ class controllerPagamento
         $dashBoard['volume_transacionado'] = $this->Volume_transacionado();
         $dashBoard['ticket_medio'] = $this->ticket_medio($dashBoard['totalTransacoes']);
         $dashBoard['statusTransacoes'] = $transacoes['statusTransacoes'];
+        $dashBoard['dataTransacoes'] = $this->data_transacoes();
 
         return json_encode($dashBoard);
     }
@@ -142,4 +143,19 @@ class controllerPagamento
         return $bandeiras;
 
     }
+
+
+    public function data_transacoes()
+    {
+        $transactions = $this->pagarme->transactions()->getList([
+            'count' => '1000'
+        ]);
+
+        foreach ($transactions as $transacao) {
+            $quantidade[] = date('M', strtotime($transacao->date_created));
+        }
+         return array_count_values($quantidade);
+
+    }
+
 }
