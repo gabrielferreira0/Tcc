@@ -390,7 +390,7 @@ session_start();
                 foreach ($categorias as $key => $value) {
                     ?>
                     <a href="./View/Servicos.php?categoria=<?php echo $value["catnome"] ?>">
-                        <div class="card col-md-10   cardFormularioSrv" data-catID="<?php echo $value["id"] ?>"
+                        <div class="card col-md-10 offset-md-1  cardFormularioSrv" data-catID="<?php echo $value["id"] ?>"
                              data-toggle="modal" data-target="#modalServicos">
                             <img class="card-img-top" src="imagens/categoria/<?php echo $value['catfoto'] ?>"
                                  alt="Card image cap">
