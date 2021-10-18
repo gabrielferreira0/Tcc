@@ -12,6 +12,8 @@ class controllerUsuario
     private $foto;
     private $CPF;
     private $status;
+    private $sexo;
+    private $nascimento;
     private $tipo;
     private $dataCadastro;
 
@@ -111,6 +113,8 @@ class controllerUsuario
         $this->status = 'True';
         $this->dataCadastro = date('Ymd');
 
+        $this->sexo = $_POST['sexo'];
+        $this->nascimento= $_POST['nascimento'];
 
         if ($_POST["fotoStatus"] == 'false') {
             $nome_imagem = 'false';
@@ -124,9 +128,11 @@ class controllerUsuario
             $caminho_imagem = '../imagens/usuarios/' . $nome_imagem;
         }
 
-        if ($this->username == '' || $this->senha == '' || $this->email == '' || $this->telefone == '') {
+        if ($this->username == '' || $this->senha == '' || $this->email == '' || $this->telefone == ''
+            || $this->CPF == '' || $this->sexo == '' || $this->nascimento == '') {
             return 'null';
         } else {
+
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {

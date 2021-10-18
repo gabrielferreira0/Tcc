@@ -129,7 +129,6 @@ $(document).ready(function () {
 
     $('#Conteudo').on('click', '#registrarCliente', function () {
 
-        console.log('entrou');
         $("#cardLogin").hide();
         $("#sobre").hide();
         $("#suporte").hide();
@@ -162,9 +161,6 @@ $(document).ready(function () {
 
 
     $('#Conteudo').on('click', '#cadastrar', function () {
-        // let nascimento = $("#dt-nascimento").val();
-        //let cidade = $("#Cidade").val();
-        //let UF = $("#UF option:selected").val();
         let username = $("#Username").val();
         let senha = $("#Senha").val();
         let email = $("#Email").val();
@@ -173,6 +169,9 @@ $(document).ready(function () {
         let fotoStatus;
         let CPF = $("#CPF").val().replace(/[^\d]+/g, '')
         let telefone = $("#Telefone").val().replace('-', '')
+
+        let nascimento = $("#nascimento").val();
+        let sexo = $("#sexo").val();
 
         if (!foto) {
             fotoStatus = 'false'
@@ -187,6 +186,8 @@ $(document).ready(function () {
         formData.append('foto', foto);
         formData.append('fotoStatus', fotoStatus);
         formData.append('telefone', telefone);
+        formData.append('nascimento', nascimento);
+        formData.append('sexo', sexo);
         formData.append('rq', 'cadastrar');
 
         let url = '../src/Controller/index.php';

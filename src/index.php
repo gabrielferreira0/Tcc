@@ -255,6 +255,46 @@ session_start();
                             <div class="error help-block with-errors"></div>
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nascimento">Nascimento:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    </span>
+                                </div>
+                                <input type="date" class="form-control arredondar" id="nascimento" placeholder="Data de nascimento"
+                                       required="">
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="sexo">Sexo:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar">
+                                        <i class="fas fa-venus-mars"></i>
+                                    </span>
+                                </div>
+                                <select   class="form-control arredondar"
+                                          placeholder="sexo"  id="sexo" required>
+                                    <option value="">--Selecione--</option>
+                                    <option value="masculino">--Masculino--</option>
+                                    <option value="feminino">--Feminino--</option>
+                                    <option value="outro">--Outro--</option>
+                                </select>
+
+
+
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
+
+                    </div>
+
+
                     <div class="form-group" style="display: flex; justify-content:flex-end;">
                         <button id="cadastrar" type="button" class="btn btn-success">Cadastrar</button>
                     </div>
