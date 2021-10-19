@@ -285,15 +285,10 @@ session_start();
                                     <option value="feminino">--Feminino--</option>
                                     <option value="outro">--Outro--</option>
                                 </select>
-
-
-
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
-
                     </div>
-
 
                     <div class="form-group" style="display: flex; justify-content:flex-end;">
                         <button id="cadastrar" type="button" class="btn btn-success">Cadastrar</button>

@@ -21,7 +21,7 @@ class controllerUsuario
     public function setParceiro($tipo = 3)
     {
         $pagarme = new PagarMe\Client('ak_test_7B84xXxvddaWErUUVeNEmIhwGocFOR');
-        
+
         $this->username = $_POST["username"];
         $this->senha = $_POST["senha"];
         $this->senha = md5($this->senha);;
@@ -136,7 +136,9 @@ class controllerUsuario
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
-                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
+                $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone,
+                $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro,$this->sexo,$this->nascimento);
+
                 if ($result) {
                     if ($_POST["fotoStatus"] == 'true') {
                         move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);

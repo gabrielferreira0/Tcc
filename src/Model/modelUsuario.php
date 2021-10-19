@@ -13,6 +13,8 @@ class modelUsuario extends DBconexao
     private $CPF;
     private $status;
     private $tipo;
+    private $sexo;
+    private $nascimento;
     private $dataCadastro;
     private $banco;
 
@@ -33,7 +35,7 @@ class modelUsuario extends DBconexao
         end ) as usustatus2
         from usuarios ORDER BY usunome;";
 //        $result = pg_query($this->banco->open(), $sql);
-        $result = pg_query( $this->open(),$sql);
+        $result = pg_query($this->open(), $sql);
         $dados = pg_fetch_all($result);
         return $dados;
 
@@ -89,7 +91,7 @@ class modelUsuario extends DBconexao
     }
 
 
-    public function inserirUser($nome, $senha, $email, $telefone, $foto, $CPF, $status, $tipo, $dataCadastro)
+    public function inserirUser($nome, $senha, $email, $telefone, $foto, $CPF, $status, $tipo, $dataCadastro, $sexo, $nascimento)
     {
 
         $this->username = $nome;
@@ -101,7 +103,11 @@ class modelUsuario extends DBconexao
         $this->status = $status;
         $this->tipo = $tipo;
         $this->dataCadastro = $dataCadastro;
-        $sql = "insert into usuarios(usudatacadastro,usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus,usutipo) values ('$this->dataCadastro','$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status,$this->tipo) RETURNING id;";
+        $this->sexo = $sexo;
+        $this->nascimento = $nascimento;
+
+        $sql = "insert into usuarios(usudatacadastro,usunome,ususenha,usuemail,usucpf,usutelefone,usufoto,usustatus,usutipo,ususexo,usunascimento) 
+                    values ('$this->dataCadastro','$this->username','$this->senha','$this->email','$this->CPF','$this->telefone','$this->foto',$this->status,$this->tipo,'$this->sexo','$this->nascimento') RETURNING id;";
         $result = pg_query($this->banco->open(), $sql);
         $id[0] = pg_fetch_row($result);
 
@@ -110,13 +116,15 @@ class modelUsuario extends DBconexao
     }
 
 
-    public function setEndereco($id,$CEP,$cidade,$UF,$logradouro,$complemento,$bairro){
+    public function setEndereco($id, $CEP, $cidade, $UF, $logradouro, $complemento, $bairro)
+    {
         $sql = "insert into endereco_profissional(usuid,cep,cidade,uf,logradouro,complemento,bairro) values ($id,'$CEP','$cidade','$UF','$logradouro','$complemento','$bairro');";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
     }
 
-    public function setDadosBancarios($id,$banco,$agencia,$conta,$recipientID,$bank_account_id){
+    public function setDadosBancarios($id, $banco, $agencia, $conta, $recipientID, $bank_account_id)
+    {
         $sql = "insert into conta_profissional(usuid,banco,agencia,conta,recipient_id,bank_account_id) values ($id,'$banco','$agencia','$conta','$recipientID',$bank_account_id);";
         $result = pg_query($this->banco->open(), $sql);
         return $result;

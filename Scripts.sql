@@ -98,6 +98,8 @@ INSERT INTO tipoUsuario (perfil) VALUES ('Admin');
 INSERT INTO tipoUsuario (perfil) VALUES ('Cliente');
 INSERT INTO tipoUsuario (perfil) VALUES ('Profissional');
 
+ALTER TABLE usuarios ADD COLUMN ususexo varchar;
+ALTER TABLE usuarios ADD COLUMN usunascimento date;
 
 
 
