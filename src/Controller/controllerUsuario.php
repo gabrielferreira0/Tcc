@@ -32,6 +32,9 @@ class controllerUsuario
         $this->status = 'True';
         $this->dataCadastro = date('Ymd');
 
+        $this->sexo = $_POST["sexo"];
+        $this->nascimento = $_POST["nascimento"];
+
         $CEP = $_POST["CEP"];
         $UF = $_POST["UF"];
         $cidade = $_POST["cidade"];
@@ -43,7 +46,7 @@ class controllerUsuario
         $agencia = $_POST["agencia"];
         $conta = $_POST["conta"];
 
-        $auxiliar = explode ("-",$conta);
+        $auxiliar = explode("-", $conta);
         $conta_dv = $auxiliar[1];
         $contaAPI = $auxiliar[0];
 
@@ -82,19 +85,22 @@ class controllerUsuario
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
-                $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro);
+                
+                $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,
+                    $this->CPF, $this->status, $this->tipo, $this->dataCadastro, $this->sexo, $this->nascimento);
+
                 $id = intval($id[0]);
                 if ($id) {
                     if ($_POST["fotoStatus"] == 'true') {
                         move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
                     }
-                    $modelUsuario->setEndereco($id,$CEP,$cidade,$UF,$logradouro,$complemento,$bairro);
-                    $modelUsuario->setDadosBancarios($id,$banco,$agencia,$conta,$recipientID,$bank_account_id);
+                    $modelUsuario->setEndereco($id, $CEP, $cidade, $UF, $logradouro, $complemento, $bairro);
+                    $modelUsuario->setDadosBancarios($id, $banco, $agencia, $conta, $recipientID, $bank_account_id);
                     echo 'sucesso';
                 }
             }
         } catch (Exception $e) {
-            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+            echo 'Exceção capturada: ', $e->getMessage(), "\n";
         }
 
     }
@@ -114,7 +120,7 @@ class controllerUsuario
         $this->dataCadastro = date('Ymd');
 
         $this->sexo = $_POST['sexo'];
-        $this->nascimento= $_POST['nascimento'];
+        $this->nascimento = $_POST['nascimento'];
 
         if ($_POST["fotoStatus"] == 'false') {
             $nome_imagem = 'false';
@@ -137,7 +143,7 @@ class controllerUsuario
 
             if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
                 $result = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone,
-                $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro,$this->sexo,$this->nascimento);
+                    $nome_imagem, $this->CPF, $this->status, $this->tipo, $this->dataCadastro, $this->sexo, $this->nascimento);
 
                 if ($result) {
                     if ($_POST["fotoStatus"] == 'true') {

@@ -23,7 +23,8 @@
     let banco;
     let agencia;
     let conta;
-
+    let nascimento;
+    let sexo;
 
     function etapa1() {
 
@@ -35,8 +36,11 @@
         CPF = $("#CPF").val().replace(/[^\d]+/g, '')
         telefone = $("#Telefone").val().replace('-', '')
 
+        nascimento = $("#nascimento").val();
+        sexo = $("#sexo").val();
 
-        if (username == "" || senha == "" || email == "" || CPF == "" || telefone == "") {
+
+        if (username == "" || senha == "" || email == "" || CPF == "" || telefone == "" || sexo == "" || nascimento == "") {
             $("#alerta6").show().fadeOut(4000);
         } else {
             $("#etapa1").hide();
@@ -103,6 +107,12 @@
             formData.append('banco', banco);
             formData.append('agencia', agencia);
             formData.append('conta', conta);
+
+            formData.append('sexo', sexo);
+            formData.append('nascimento', nascimento);
+
+
+
             formData.append('rq', 'cadastrarParceiro');
             let url = '../Controller/index.php';
             $.ajax({
@@ -378,7 +388,7 @@ $bancos = array(
             <img src="../imagens/svg/Business%20deal-pana.svg" alt="logo-profissional">
         </div>
 
-            <div class="col-md-5  offset-md-1">
+        <div class="col-md-5  offset-md-1">
             <!-- FORM Cadastro-->
             <div style="display:block;background: transparent" class="card" id="etapa1">
                 <div class="card-body">
@@ -466,8 +476,44 @@ $bancos = array(
                                 </div>
                                 <div class="error help-block with-errors"></div>
                             </div>
-                        </div>
 
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="nascimento">Nascimento:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    </span>
+                                    </div>
+                                    <input type="date" class="form-control arredondar" id="nascimento"
+                                           placeholder="Data de nascimento"
+                                           required="">
+                                </div>
+                                <div class="error help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="sexo">Sexo:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar">
+                                        <i class="fas fa-venus-mars"></i>
+                                    </span>
+                                    </div>
+                                    <select class="form-control arredondar"
+                                            placeholder="sexo" id="sexo" required>
+                                        <option value="">--Selecione--</option>
+                                        <option value="masculino">--Masculino--</option>
+                                        <option value="feminino">--Feminino--</option>
+                                        <option value="outro">--Outro--</option>
+                                    </select>
+                                </div>
+                                <div class="error help-block with-errors"></div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-12 col-md-12 -row">
@@ -656,7 +702,8 @@ $bancos = array(
                         <div class="row">
                             <div class="col-12 col-md-12 btn-row">
                                 <button onclick="voltar2()" type="button" class="btn btn-info">Voltar</button>
-                                <button type="button" onclick="cadastrarParceiro()" class="btn btn-success">Finalizar</button>
+                                <button type="button" onclick="cadastrarParceiro()" class="btn btn-success">Finalizar
+                                </button>
                             </div>
                         </div>
 
