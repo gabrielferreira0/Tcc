@@ -26,9 +26,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text arredondar"> <i class="fas fa-tools"></i></span>
                         </div>
+                        <input  type="hidden" id="idCategoria">
+
                         <input type="text" class="form-control arredondar" id="categoriaUPD"
-                               value="" maxlength="20" required="">
-                        <input type="hidden" id="idCategoria">
+                               value=""  required="">
                     </div>
 
                 </div>

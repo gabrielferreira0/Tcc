@@ -95,7 +95,6 @@ $(document).ready(function () {
                 senhaLogin: senhaLogin,
             },
             success: function (rs) {
-                console.log(rs)
 
                 switch (rs) {
                     case 'true':
@@ -248,6 +247,8 @@ $(document).ready(function () {
         let fotoStatus;
         let fotoAtual = $('#fotoAtual').val();
         let senhaStatus;
+        let nascimento = $('#nascimento').val();
+
         let url = '../../src/Controller/index.php';
 
 
@@ -275,6 +276,7 @@ $(document).ready(function () {
         formData.append('fotoAtual', fotoAtual);
         formData.append('senhaStatus', senhaStatus);
         formData.append('telefone', telefone);
+        formData.append('nascimento', nascimento);
         formData.append('rq', 'update');
 
         $.ajax({

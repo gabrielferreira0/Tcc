@@ -38,7 +38,6 @@ include ('Navbar.php');
                         }
                         ?>
 
-
                         </div>
                     <div style="display: none">
                         <input type="file" multiple id="addFotoGaleria" accept="image/x-png,image/gif,image/jpeg">
@@ -101,6 +100,29 @@ include ('Navbar.php');
                                 </div>
                                 <input   value="<?php echo $_SESSION['Telefone']; ?>" type="text" class="form-control arredondar phone-mask" id="Telefone"
                                          placeholder="(DD) 0000-0000" required>
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-xl-6">
+                            <label for="sexo">Sexo:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"> <i class="fas fa-venus-mars"></i></span>
+                                </div>
+                                <input  value="<?php echo $_SESSION['sexo']; ?>" type="text" class="form-control arredondar" id="sexo" disabled>
+                            </div>
+                            <div class="error help-block with-errors"></div>
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label for="nascimento">Nascimento:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text arredondar"> <i class="fas fa-birthday-cake"></i></span>
+                                </div>
+                                <input value="<?php echo $_SESSION['nascimento']; ?>" type="date" class="form-control arredondar phone-mask" id="nascimento"
+                                         required>
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>

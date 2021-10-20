@@ -74,22 +74,26 @@ class modelUsuario extends DBconexao
         }
     }
 
-    public function updatecomSenha($id, $nome, $senha, $telefone, $foto)
+    public function updatecomSenha($id, $nome, $senha, $telefone, $foto, $nascimento)
     {
 
-        $sql = "UPDATE usuarios SET usunome = '{$nome}',ususenha = '{$senha}',usutelefone = '{$telefone}',usufoto = '{$foto}' WHERE id = {$id}; ";
+        $sql = "UPDATE usuarios SET usunome = '{$nome}',ususenha = '{$senha}',usutelefone = '{$telefone}',
+                 usufoto = '{$foto}',usunascimento = '{$nascimento}'
+                 WHERE id = {$id}; ";
         $result = pg_query($this->banco->open(), $sql);
         return $result;
     }
 
 
-    public function updateSemSenha($id, $nome, $telefone, $foto)
+    public function updateSemSenha($id, $nome, $telefone, $foto, $nascimento)
     {
-        $sql = "UPDATE usuarios SET usunome = '{$nome}',usutelefone = '{$telefone}',usufoto = '{$foto}' WHERE id = {$id}; ";
+        $sql = "UPDATE usuarios SET usunome = '{$nome}',usutelefone = '{$telefone}',usufoto = '{$foto}',
+                    usunascimento = '{$nascimento}'
+                WHERE id = {$id}; ";
+
         $result = pg_query($this->banco->open(), $sql);
         return $result;
     }
-
 
     public function inserirUser($nome, $senha, $email, $telefone, $foto, $CPF, $status, $tipo, $dataCadastro, $sexo, $nascimento)
     {

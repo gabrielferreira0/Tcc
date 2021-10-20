@@ -141,7 +141,7 @@
 </div>
 <!-- FIM navbar-->
 
-<div  style="margin:0" class=" row container text-center col-md-12 pesquisar_servico">
+<div style="margin:0" class=" row container text-center col-md-12 pesquisar_servico">
 
     <div class="col-md-3 arredondar">
         <?php
@@ -235,10 +235,7 @@
                         type="button" class="btn pesquisarTable arredondar">Pesquisar
                     <i class="fas fa-search"></i>
                 </button>
-
-
             </div>
-
         </form>
     </div>
 

@@ -161,7 +161,7 @@ class controllerUsuario
         $id = $_SESSION['id'];
         $this->username = $_POST["username"];
         $this->telefone = $_POST["telefone"];
-
+        $this->nascimento = $_POST["nascimento"];
 
         if ($_POST["senhaStatus"] == 'true') {
             $this->senha = $_POST["senha"];
@@ -191,9 +191,9 @@ class controllerUsuario
         } else {
             $modelUsuario = new modelUsuario();
             if ($_POST["senhaStatus"] == 'true') {
-                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone, $nome_imagem);
+                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone, $nome_imagem , $this->nascimento);
             } elseif ($_POST["senhaStatus"] == 'false') {
-                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone, $nome_imagem);
+                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone, $nome_imagem,$this->nascimento);
             }
 
             if ($result) {
@@ -201,6 +201,7 @@ class controllerUsuario
                 $_SESSION['Password'] = $this->senha;
                 $_SESSION['Telefone'] = $this->telefone;
                 $_SESSION['Foto'] = $nome_imagem;
+                $_SESSION['nascimento'] = $this->nascimento;
 
                 if ($_POST["fotoStatusupd"] == 'true') {
                     move_uploaded_file($this->foto['tmp_name'], $caminho_imagem);
@@ -251,6 +252,7 @@ class controllerUsuario
         $senhaLogin = md5($senhaLogin);
         $resultado = $modelUsuario->login($CPFlogin, $senhaLogin);
 
+
         if (pg_num_rows($resultado[0]) > 0) {
             $_SESSION['id'] = $resultado[1][0];
             $_SESSION['User'] = $resultado[1][1];
@@ -260,6 +262,8 @@ class controllerUsuario
             $_SESSION['Telefone'] = $resultado[1][5];
             $_SESSION['Foto'] = $resultado[1][6];
             $_SESSION['Tipo'] = $resultado[1][8];
+            $_SESSION['sexo'] = $resultado[1][11];
+            $_SESSION['nascimento'] = $resultado[1][12];
 
             echo 'true';
         } else {
