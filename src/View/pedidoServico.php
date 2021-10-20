@@ -156,7 +156,7 @@ include('Navbar.php');
                 <div class="col-12 col-md-2 ">
                 
                 <div class="col-md-12 d-flex justify-content-center mb-2">
-                    <i style="color: #fac303" class="fas fa-star">4.0</i>
+                    <i style="color: #fac303" class="fas fa-star"> 5.0</i>
                 </div>
 
                 <div class="col-md-12 d-flex justify-content-center">

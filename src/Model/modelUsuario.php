@@ -136,10 +136,11 @@ class modelUsuario extends DBconexao
         try {
             $sql = "select * from usuarios where usucpf = '{$CPFlogin}'and ususenha ='{$senhaLogin}' and usustatus = 'true' and usublock = false ;";
 
-            $rs = pg_query($this->banco->open(), $sql);
-            $dados = pg_fetch_array($rs, 0, PGSQL_NUM);
+            $rs = pg_query($this->open(), $sql);
+            $dados = pg_fetch_row($rs, 0, PGSQL_NUM);
             $resultado[] = $rs;
             $resultado[] = $dados;
+
             return $resultado;
         } catch (Exception $e) {
             echo 'Exceção capturada teste: ', $e->getMessage(), "\n";

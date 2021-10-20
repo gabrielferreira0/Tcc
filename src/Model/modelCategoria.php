@@ -137,7 +137,7 @@ class modelCategoria extends DBconexao
 
         $sql = "select usu.usunome as nome_Profissional,usu.id as id_Profissional,
        catid as id_Categoria,sp.serid as id_Servico , sp.id as servico_profissional_ID,
-       sp.preco,'4.0' as nota,ser.sernome,
+       sp.preco,'5.0' as nota,ser.sernome,
         ep.cidade as cidade, ep.uf as UFs
 from servico_profissional sp
     inner join usuarios usu on sp.usuid = usu.id

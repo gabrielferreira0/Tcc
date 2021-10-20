@@ -20,7 +20,7 @@ function carregarCEP() {
 }
 
 
-function redirecionadarParceiro(){
+function redirecionadarParceiro() {
     window.location.href = "View/parceiroForm.php";
 }
 
@@ -95,6 +95,7 @@ $(document).ready(function () {
                 senhaLogin: senhaLogin,
             },
             success: function (rs) {
+                console.log(rs)
 
                 switch (rs) {
                     case 'true':
@@ -123,8 +124,8 @@ $(document).ready(function () {
         $("#cardServicos").hide();
         $("#carousel").hide();
         $("#cardCardRecuperar").hide();
-         $("#cardCadastro").hide();
-         $("#cardEscolha").show();
+        $("#cardCadastro").hide();
+        $("#cardEscolha").show();
     });
 
     $('#Conteudo').on('click', '#registrarCliente', function () {
@@ -136,9 +137,8 @@ $(document).ready(function () {
         $("#carousel").hide();
         $("#cardCardRecuperar").hide();
         $("#cardEscolha").hide();
-         $("#cardCadastro").show();
+        $("#cardCadastro").show();
     });
-
 
 
     $('#Conteudo').on('click', '#sobreteste', function () {

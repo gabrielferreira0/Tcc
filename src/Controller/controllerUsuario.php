@@ -85,7 +85,7 @@ class controllerUsuario
             $modelUsuario = new modelUsuario();
 
             if ($modelUsuario->verificarUser($this->CPF, $this->email) && $this->validarCPF($this->CPF)) {
-                
+
                 $id = $modelUsuario->inserirUser($this->username, $this->senha, $this->email, $this->telefone, $nome_imagem,
                     $this->CPF, $this->status, $this->tipo, $this->dataCadastro, $this->sexo, $this->nascimento);
 
@@ -260,7 +260,7 @@ class controllerUsuario
             $_SESSION['Telefone'] = $resultado[1][5];
             $_SESSION['Foto'] = $resultado[1][6];
             $_SESSION['Tipo'] = $resultado[1][8];
-            //header('location:../Perfil.php');
+
             echo 'true';
         } else {
             echo 'false';
