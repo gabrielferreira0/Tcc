@@ -39,8 +39,8 @@
                     <input  type="text" multiple id="imagemCatAtual">
                 </div>
 
-                <div id="galeraUPDCat" onclick="updImagemCat()" style=" cursor:pointer;margin-top: 1rem;"
-                     class="d-flex align-items-center justify-content-center col-md-8 offset-md-2 galeria">
+                <div id="galeraUPDCat" onclick="updImagemCat()" style="cursor:pointer;margin-top: 1rem;"
+                     class="d-flex align-items-center justify-content-center col-md-8 offset-md-2 galeriaUPD">
                     <img  title="Clique para alterar" id="imageCatUPD" class="card-img-top" src=""
                 </div>
 

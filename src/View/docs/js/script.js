@@ -619,7 +619,7 @@ $(function () {
     $('#updImagemCat').on('change', function () {
         //$('#galeraUPDCat').children().css("display",'none');
         $('#galeraUPDCat').children().remove();
-        visualizacaoImagensCat(this, 'div.galeria');
+        visualizacaoImagensCat(this, 'div.galeriaUPD');
     });
 
 
