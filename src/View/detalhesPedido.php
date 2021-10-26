@@ -170,7 +170,7 @@ include('../Controller/verificarLogin.php')
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Pedido realizado com sucesso!',
+                                title: 'Pedido finalizado com sucesso!',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

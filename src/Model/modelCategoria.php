@@ -135,16 +135,39 @@ class modelCategoria extends DBconexao
             $UF = " and ep.uf = '$UF'";
         }
 
-        $sql = "select usu.usunome as nome_Profissional,usu.id as id_Profissional,
-       catid as id_Categoria,sp.serid as id_Servico , sp.id as servico_profissional_ID,
-       sp.preco,'5.0' as nota,ser.sernome,
-        ep.cidade as cidade, ep.uf as UFs
+//        $sql = "select usu.usunome as nome_Profissional,usu.id as id_Profissional,
+//       catid as id_Categoria,sp.serid as id_Servico , sp.id as servico_profissional_ID,
+//       sp.preco,'5.0' as nota,ser.sernome,
+//        ep.cidade as cidade, ep.uf as UFs
+//from servico_profissional sp
+//    inner join usuarios usu on sp.usuid = usu.id
+//    inner join servicos ser on sp.serid = ser.id
+//    inner join categorias cat on cat.id = ser.catid
+//    inner join endereco_profissional ep on usu.id = ep.usuid
+//where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID . $UF . ";";
+
+
+        $sql = "select distinct
+       usu.usunome as nome_Profissional,usu.id as id_Profissional, catid as id_Categoria,sp.serid as id_Servico ,
+       sp.id as servico_profissional_ID, sp.preco,ser.sernome, ep.cidade as cidade, ep.uf as UFs,
+                case
+        when trunc(avg(avaliacao_servico),1) is null then 0
+        else trunc(avg(avaliacao_servico),1)
+                end as nota
 from servico_profissional sp
     inner join usuarios usu on sp.usuid = usu.id
     inner join servicos ser on sp.serid = ser.id
     inner join categorias cat on cat.id = ser.catid
     inner join endereco_profissional ep on usu.id = ep.usuid
-where cat.catnome ilike '%$categoria%' and sp.status = true" . $servicoID . $UF . ";";
+    left join
+	(select *
+		from cliente_servico_profissional CSP
+		where CSP.status = 'Finalizado') as CSP
+	on CSP.servico_profissionalid = sp.id
+where cat.catnome ilike '%$categoria%' and sp.status = true " . $servicoID . $UF . "
+group by usu.usunome, usu.id, catid, sp.serid, sp.id, sp.preco, ser.sernome, ep.cidade, ep.uf;
+";
+
 
         $result = pg_query($this->banco->open(), $sql);
         $dados = pg_fetch_all($result);

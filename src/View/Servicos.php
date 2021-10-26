@@ -1,5 +1,5 @@
 <head>
-    <title>Cadastro parceiro</title>
+    <title>Serviços</title>
     <?php
     session_start();
     include('Head.php');
