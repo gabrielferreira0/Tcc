@@ -27,88 +27,101 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Bar Chart Example
-var ctx = document.getElementById("myBarChart");
-var myBarChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["Diarista", "Eletricista", "Encanador", "Montador,", "Pedreiro", "Pintor"],
-        datasets: [{
-            label: "Quantidade: ",
-            backgroundColor: "#4e73df",
-            hoverBackgroundColor: "#2e59d9",
-            borderColor: "#4e73df",
-            data: [10, 15, 12, 17, 19, 20],
-        }],
-    },
-    options: {
-        maintainAspectRatio: false,
-        layout: {
-            padding: {
-                left: 10,
-                right: 25,
-                top: 25,
-                bottom: 0
-            }
-        },
-        scales: {
-            xAxes: [{
-                time: {
-                    unit: 'month'
-                },
-                gridLines: {
-                    display: false,
-                    drawBorder: false
-                },
-                ticks: {
-                    maxTicksLimit: 6
-                },
-                maxBarThickness: 25,
-            }],
-            yAxes: [{
-                ticks: {
-                    min: 0,
-                    max: 20,
-                    maxTicksLimit: 5,
-                    padding: 10,
-                    // Include a dollar sign in the ticks
-                    callback: function (value, index, values) {
-                        return number_format(value);
-                    }
-                },
-                gridLines: {
-                    color: "rgb(234, 236, 244)",
-                    zeroLineColor: "rgb(234, 236, 244)",
-                    drawBorder: false,
-                    borderDash: [2],
-                    zeroLineBorderDash: [2]
-                }
-            }],
-        },
-        legend: {
-            display: false
-        },
-        tooltips: {
-            titleMarginBottom: 10,
-            titleFontColor: '#6e707e',
-            titleFontSize: 14,
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: '#dddfeb',
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10,
-            callbacks: {
-                label: function (tooltipItem, chart) {
-                    var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                    return datasetLabel + number_format(tooltipItem.yLabel);
-                }
-            }
-        },
-    }
-});
 
+
+function grafico_categorias(barra, data) {
+
+
+    let nomeCategoria = [];
+    let quantidadePorCategoria = [];
+
+    data.forEach(function (categorias) {
+        nomeCategoria.push(categorias.categoria)
+        quantidadePorCategoria.push(categorias.quantidade)
+    })
+
+    var myBarChart = new Chart(barra, {
+        type: 'bar',
+        data: {
+            labels: nomeCategoria,
+            datasets: [{
+                label: "Quantidade: ",
+                backgroundColor: "#4e73df",
+                hoverBackgroundColor: "#2e59d9",
+                borderColor: "#4e73df",
+                data: quantidadePorCategoria,
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 25,
+                    bottom: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    time: {
+                        unit: 'month'
+                    },
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 6
+                    },
+                    maxBarThickness: 25,
+                }],
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 20,
+                        maxTicksLimit: 5,
+                        padding: 10,
+                        // Include a dollar sign in the ticks
+                        callback: function (value, index, values) {
+                            return number_format(value);
+                        }
+                    },
+                    gridLines: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                }],
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                titleMarginBottom: 10,
+                titleFontColor: '#6e707e',
+                titleFontSize: 14,
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+                callbacks: {
+                    label: function (tooltipItem, chart) {
+                        var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                        return datasetLabel + number_format(tooltipItem.yLabel);
+                    }
+                }
+            },
+        }
+    });
+
+}
 
 // Area Chart Example
 
@@ -242,6 +255,7 @@ $(document).ready(function () {
 
     let pizza = $("#myPieChart");
     let area = $("#myAreaChart");
+    let barra = $("#myBarChart");
 
     let url = '../../src/Controller/index.php';
     $.ajax({
@@ -255,23 +269,28 @@ $(document).ready(function () {
             $('#modal_loading').modal('show');
         },
         success: function (rs) {
-            $('#modal_loading').modal('hide');
             rs = JSON.parse(rs);
+            $('#modal_loading').modal('hide');
 
-            $('#saldo').html('R$' + rs.saldo);
-            $('#totalTransacoes').html(rs.totalTransacoes);
-            $('#visa').html(rs.bandeiras.visa + "%");
-            $('#mastercard').html(rs.bandeiras.mastercard + "%");
-            $('#volume_transacionado').html('R$' + rs.volume_transacionado);
-            $('#ticket_medio').html('R$' + rs.ticket_medio);
-            grafico_transacoes_status(pizza, rs.statusTransacoes.pagas, rs.statusTransacoes.autorizadas,
-                rs.statusTransacoes.estornadas, rs.statusTransacoes.recusadas);
+            $('#saldo').html('R$' + rs['pagamento'].saldo);
+            $('#totalTransacoes').html(rs['pagamento'].totalTransacoes);
+            $('#visa').html(rs['pagamento'].bandeiras.visa + "%");
+            $('#mastercard').html(rs['pagamento'].bandeiras.mastercard + "%");
+            $('#volume_transacionado').html('R$' + rs['pagamento'].volume_transacionado);
+            $('#ticket_medio').html('R$' + rs['pagamento'].ticket_medio);
 
-            $('#pagas').html(' Pagas ' + rs.statusTransacoes.pagas)
-            $('#estornadas').html(' Estornadas ' + rs.statusTransacoes.estornadas)
-            $('#autorizadas').html(' Autorizadas ' + rs.statusTransacoes.autorizadas)
-            $('#recusadas').html(' Recusadas ' + rs.statusTransacoes.recusadas)
-            grafico_area_overview(area, rs.dataTransacoes);
+            grafico_transacoes_status(pizza,
+                rs['pagamento'].statusTransacoes.pagas,
+                rs['pagamento'].statusTransacoes.autorizadas,
+                rs['pagamento'].statusTransacoes.estornadas,
+                rs['pagamento'].statusTransacoes.recusadas);
+
+            $('#pagas').html(' Pagas ' + rs['pagamento'].statusTransacoes.pagas)
+            $('#estornadas').html(' Estornadas ' + rs['pagamento'].statusTransacoes.estornadas)
+            $('#autorizadas').html(' Autorizadas ' + rs['pagamento'].statusTransacoes.autorizadas)
+            $('#recusadas').html(' Recusadas ' + rs['pagamento'].statusTransacoes.recusadas)
+            grafico_area_overview(area, rs['pagamento'].dataTransacoes);
+            grafico_categorias(barra, rs['categorias'])
         },
         error: function (e) {
             bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");

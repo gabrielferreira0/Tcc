@@ -122,9 +122,6 @@ class modelCategoria extends DBconexao
         }
     }
 
-
-
-
     public function tableServicos($categoria, $servicoID = null, $UF = null)
     {
 
@@ -189,7 +186,8 @@ group by usu.usunome, usu.id, catid, sp.serid, sp.id, sp.preco, ser.sernome, ep.
         return $result;
     }
 
-    public function getServico_profissional($id) {
+    public function getServico_profissional($id)
+    {
 
         $sql = "select catnome,sernome,usunome,usutelefone,usuemail,sp.preco,usu.usufoto,ende.cidade,ende.UF
         from servico_profissional  sp
@@ -198,7 +196,7 @@ group by usu.usunome, usu.id, catid, sp.serid, sp.id, sp.preco, ser.sernome, ep.
         inner join servicos ser on ser.id = sp.serid
         inner join categorias cat on cat.id = ser.catid
     where sp.id = {$id};";
-        $result = pg_query($this->open(),$sql);
+        $result = pg_query($this->open(), $sql);
 
         $dados = pg_fetch_all($result);
 
@@ -210,5 +208,19 @@ group by usu.usunome, usu.id, catid, sp.serid, sp.id, sp.preco, ser.sernome, ep.
 
     }
 
+    public function graficoBarraCategorias()
+    {
+        $sql = "select distinct cat.catnome as categoria,count(servico_profissionalid) as quantidade
+            from cliente_servico_profissional CSP
+                inner join servico_profissional SP on SP.ID =  CSP.servico_profissionalid
+                inner join servicos SER on SER.id =sp.serid
+                right join  categorias CAT on CAT.id = SER.catid
+            where cat.catstatus = 'True'
+            group by  catnome;";
+
+        $result = pg_query($this->open(), $sql);
+        return $dados = pg_fetch_all($result);
+
+    }
 
 }

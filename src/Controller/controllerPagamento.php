@@ -21,6 +21,9 @@ class controllerPagamento
 
     public function montar_dashboard()
     {
+
+
+
         $dashBoard['saldo'] = $this->saldoConta();
         $transacoes = $this->total_status_transacoes();
         $dashBoard['totalTransacoes'] = $transacoes['totalTransacoes'];
@@ -30,7 +33,7 @@ class controllerPagamento
         $dashBoard['statusTransacoes'] = $transacoes['statusTransacoes'];
         $dashBoard['dataTransacoes'] = $this->data_transacoes();
 
-        return json_encode($dashBoard);
+        return $dashBoard;
     }
 
 

@@ -134,8 +134,7 @@ class controllerCategoria
 
             }
 
-        }
-        else {
+        } else {
             $table .= "<tr>
                     <tr><td  class='text-center' colspan='6'>Nenhum serviço disponível no momento</td></tr>
                 </tr>";
@@ -165,6 +164,13 @@ class controllerCategoria
 
         $modelCategoria = new modelCategoria();
         return json_encode($modelCategoria->servico_profissional($usuid, $idServico, $precoServico));
+    }
+
+    public function graficoBarraCategorias()
+    {
+        $modelCategoria = new modelCategoria();
+        $barChartCategorias = $modelCategoria->graficoBarraCategorias();
+        return $barChartCategorias;
     }
 
 }

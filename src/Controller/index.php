@@ -122,8 +122,14 @@ if (isset($_POST["rq"])) {
         case 'dashBoard':
             $dashBoard = [];
             require_once 'controllerPagamento.php';
+            require_once 'controllerCategoria.php';
+            $categoria = new controllerCategoria();
             $pagamento = new controllerPagamento();
-            echo $dashBoard = $pagamento->montar_dashboard();
+
+            $dashBoard['categorias'] = $categoria->graficoBarraCategorias();
+            $dashBoard['pagamento'] = $pagamento->montar_dashboard();
+
+            echo json_encode($dashBoard);
             break;
     }
 }
