@@ -11,7 +11,8 @@
                 </span>
                 <h4 class="my-3 bordar">Missão</h4>
             </div>
-            <p>Proporcionar um ambiente onde as pessoas encontrarão os melhores profissionais de serviços de
+            <p style="text-align: justify;">Proporcionar um ambiente onde as pessoas encontrarão os melhores
+                profissionais de serviços de
                 pequenos reparos com base nas recomendações de seus clientes, permitindo que os melhores
                 profissionais mantenham a continuidade de seus trabalhos.</p>
         </div>
@@ -23,7 +24,8 @@
                 </span>
                 <h4 class="my-3 bordar">Visão</h4>
             </div>
-            <p>Ser referência no mercado de pequenos reparos para quem busca ou presta esse serviço.</p>
+            <p style="text-align:justify ">Ser referência no mercado de pequenos reparos para quem busca ou presta esse
+                serviço.</p>
         </div>
         <div class="col-md-4">
             <div class="container">
@@ -33,7 +35,8 @@
                 </span>
                 <h4 class="my-3 bordar">Valores</h4>
             </div>
-            <p>Nossos valores são transparência, confiança, responsabilidade nos serviços oferecidos para os
+            <p style="text-align: justify;">Nossos valores são transparência, confiança, responsabilidade nos serviços
+                oferecidos para os
                 clientes e profissionais.</p>
         </div>
     </div>
