@@ -1,8 +1,8 @@
 <div class="container sobreNos  col-11">
-    <div class="text-center">
+    <div class="text-center col-md-4  offset-md-4 mb-3" style="background:#007bff; border-radius: 10px">
         <h1 class="text-center"> Sobre nós</h1>
     </div>
-    <div class="row text-center">
+    <div class="row text-center p-3">
         <div class="col-md-4">
             <div class="container">
                 <span class="fa-stack fa-4x">
