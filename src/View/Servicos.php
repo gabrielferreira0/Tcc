@@ -107,7 +107,7 @@
                        </li>
                        
                         <li class="nav-item">
-                        <a class="nav-link arredondar" href="View/dashBoard.php"><i class="fas fa-chart-line"></i> Dashboard</a>
+                        <a class="nav-link arredondar" href="DashBoard.php"><i class="fas fa-chart-line"></i> Dashboard</a>
                        </li>
                        
                        ';
