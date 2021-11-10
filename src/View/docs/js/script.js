@@ -171,6 +171,21 @@ $(document).ready(function () {
 
         let nascimento = $("#nascimento").val();
         let sexo = $("#sexo").val();
+        let dataAtual = new Date();
+
+        let data = nascimento.split("-"); // quebra a data em array
+        data = data[0] + "-" + data[1] + "-" + data[2];
+        data = new Date(data);
+
+
+        if (data >= dataAtual) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Data invalida, tente novamente!'
+            })
+            return;
+        }
 
         if (!foto) {
             fotoStatus = 'false'
