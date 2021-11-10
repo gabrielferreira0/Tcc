@@ -152,34 +152,34 @@ include('Navbar.php');
             </div>
             <?php
             if ($servicos[0]['usufoto'] != 'false') {
-                echo '
-                <div class="col-12 col-md-2 ">
+                echo "
+                <div class='col-12 col-md-2'>
                 
-                <div class="col-md-12 d-flex justify-content-center mb-2">
-                    <i style="color: #fac303" class="fas fa-star"> 5.0</i>
+                <div class='col-md-12 d-flex justify-content-center mb-2'>
+                    <i style='color: #fac303' class='fas fa-star'> {$servicos[0]['nota']}</i>
                 </div>
 
-                <div class="col-md-12 d-flex justify-content-center">
-                    <img alt ="avatar-profissional" style="cursor:default;" class ="miniatura" src="../imagens/usuarios/' . $servicos[0]['usufoto'] . '">
+                <div class='col-md-12 d-flex justify-content-center'>
+                    <img alt ='avatar-profissional' style='cursor:default;' class ='miniatura' src='../imagens/usuarios/{$servicos[0]['usufoto']}'>
                 </div>
-                 </div>';
+                 </div>";
             } else {
-                echo '<div class="col-md-2 col-sm-offset-1">
-                <div class="col-md-12 mb-3">
+                echo "<div class='col-md-2 col-sm-offset-1'>
+                <div class='col-md-12 mb-3'>
                 
-                <div style="cursor: default;"
-                         class="d-flex align-items-center d-flex justify-content-center">
-                       <i style="color: #fac303" class="fas fa-star">4.0</i>
+                <div style='cursor: default;'
+                         class='d-flex align-items-center d-flex justify-content-center'>
+                       <i style='color: #fac303' class='fas fa-star'> {$servicos[0]['nota']}</i>
                     </div>
                 </div>
 
-                <div class="col-md-12">
-                    <div style="cursor: default;"
-                         class=" d-flex justify-content-center ">
-                        <h1  style="font-size: 4rem" class="fas fa-user"></h1>
+                <div class='col-md-12'>
+                    <div style='cursor: default;'
+                         class=' d-flex justify-content-center '>
+                        <h1  style='font-size: 4rem' class='fas fa-user'></h1>
                     </div>
                 </div>
-            </div>';
+            </div>";
             }
             ?>
         </div>
