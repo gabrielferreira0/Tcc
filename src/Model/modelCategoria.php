@@ -188,16 +188,6 @@ group by usu.usunome, usu.id, catid, sp.serid, sp.id, sp.preco, ser.sernome, ep.
 
     public function getServico_profissional($id)
     {
-
-//        $sql = "select catnome,sernome,usunome,usutelefone,usuemail,sp.preco,usu.usufoto,ende.cidade,ende.UF
-//        from servico_profissional  sp
-//        inner join usuarios usu on usu.id = sp.usuid
-//        inner join endereco_profissional ende on usu.id = ende.usuid
-//        inner join servicos ser on ser.id = sp.serid
-//        inner join categorias cat on cat.id = ser.catid
-//    where sp.id = {$id};";
-
-
         $sql = "
                 select catnome,sernome,usunome,usutelefone,usuemail,sp.preco,usu.usufoto,ende.cidade,ende.UF,
                 case

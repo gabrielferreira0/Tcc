@@ -138,7 +138,6 @@ include('../Controller/verificarLogin.php')
             let avaliacao_servico = $('#avaliacao_servico').attr('data-value');
 
 
-
             if (!avaliacao_servico) {
                 $("#erroReview").show().fadeOut(5000);
                 return
@@ -214,6 +213,11 @@ include('Navbar.php');
         $pedido = $pedido->getPedido($_GET['pedido']);
         $pagamento = new controllerCartaoCredito();
         $pagamento = $pagamento->getPagamento($pedido[0]['pagamento_id']);
+
+        if ($pedido[0]['nota'] == '0.0') {
+            $pedido[0]['nota'] = 'Não avaliado';
+        }
+
         ?>
         <div style="margin: 0" class="container row">
             <div class="col-md-8 col-12 pl-5 pr-5 infoProfissional">
@@ -224,17 +228,18 @@ include('Navbar.php');
                         <span>Nome: {$pedido[0]['usunome']} </span> <br>
                         <span>Telefone: {$pedido[0]['usutelefone']}</span> <br>
                         <span>Email: {$pedido[0]['usuemail']}</span> <br>
-                        <span class='{$pedido[0]['status_pedido']}'>Status: {$pedido[0]['status_pedido']}</span>"; ?>
+                        <span class='{$pedido[0]['status_pedido']}'>Status: {$pedido[0]['status_pedido']}</span> <br>
+                        <span>Nota do serviço:
+                        {$pedido[0]['nota']} <i style='color: #fac303' class='fas fa-star'></i>
+                        </span>
+
+                        "; ?>
             </div>
             <?php
             if ($pedido[0]['usufoto'] != 'false') {
                 echo '
                 <div class="col-12 col-md-2 ">
-                
-                <div class="col-md-12 d-flex justify-content-center mb-2">
-                    <i style="color: #fac303" class="fas fa-star">4.0</i>
-                </div>
-
+            
                 <div class="col-md-12 d-flex justify-content-center">
                     <img alt ="avatar-profissional" style="cursor:default;" class ="miniatura" src="../imagens/usuarios/' . $pedido[0]['usufoto'] . '">
                 </div>
@@ -245,7 +250,6 @@ include('Navbar.php');
                 
                 <div style="cursor: default;"
                          class="d-flex align-items-center d-flex justify-content-center">
-                       <i style="color: #fac303" class="fas fa-star">4.0</i>
                     </div>
                 </div>
 
@@ -475,12 +479,14 @@ include('Navbar.php');
         </div>
         <div class="alert alert-danger testando text-center" id="erroReview" role="alert"
              style="display: none;">
-            <strong>Erro! </strong>Por favor avalie o serviço.<strong> Essa ação nos ajudará a melhorar a plataforma melhor
+            <strong>Erro! </strong>Por favor avalie o serviço.<strong> Essa ação nos ajudará a melhorar a plataforma
+                melhor
                 para você!</strong>
         </div>
     </div>
 
-    <div  id="modal_loading" class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div id="modal_loading" class="modal fade bd-loading-modal-lg" data-backdrop="static" data-keyboard="false"
+         tabindex="-1">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div id="loading"></div>

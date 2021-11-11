@@ -19,7 +19,7 @@ class modelPedidoServico extends DBconexao
 
 
     public function setPedido($id_cliente, $servico_profissionalid, $cep_servico, $bairro_servico, $logradouro_servico, $complemento_servico
-        , $numero_servico, $cidade_servico, $uf_servico, $data_servico, $id_pagamento, $status)
+        ,                     $numero_servico, $cidade_servico, $uf_servico, $data_servico, $id_pagamento, $status)
     {
         $this->id_cliente = $id_cliente;
         $this->servico_profissionalid = $servico_profissionalid;
@@ -69,8 +69,7 @@ class modelPedidoServico extends DBconexao
         inner join servicos ser on ser.id = sp.serid
         inner join categorias cat on cat.id = ser.catid
         inner join pagamento_servico pag on pag.id = CSP.id_pagamento "
-    . $usuid . ";";
-
+            . $usuid . ";";
 
 
         $result = pg_query($this->open(), $sql);
@@ -88,14 +87,21 @@ class modelPedidoServico extends DBconexao
     {
         $sql = "select  catnome, sernome,usuid id_profissional,usunome,CSP.id_cliente, usutelefone,usuemail,usufoto,
        PAG.id as  pagamento_id,PAG.valor as preco,CSP.cep_servico,bairro_servico,logradouro_servico,complemento_servico,
-       numero_servico,cidade_servico,UF_servico,data_servico,CSP.status as status_pedido
+       numero_servico,cidade_servico,UF_servico,data_servico,CSP.status as status_pedido,
+    case
+        when trunc(avg(avaliacao_servico),1) is null then 0
+        else trunc(avg(avaliacao_servico),1)
+    end as nota
 from cliente_servico_profissional CSP
     inner join servico_profissional SP on SP.ID = CSP.servico_profissionalID
     inner join  servicos SER on SER.ID = SP.serid
     inner join categorias CAT on CAT.ID = SER.catid
     inner join usuarios USU on USU.ID = SP.usuid
     inner join pagamento_servico PAG on PAG.id = CSP.id_pagamento
-where csp.id = {$pedidoID} and USU.usutipo = 3";
+where csp.id = {$pedidoID} and USU.usutipo = 3
+group by catnome, sernome, usuid, usunome, CSP.id_cliente, usutelefone, usuemail, usufoto, PAG.id, PAG.valor,
+         CSP.cep_servico, bairro_servico, logradouro_servico, complemento_servico, numero_servico, cidade_servico,
+         UF_servico, data_servico, CSP.status";
 
 
         $result = pg_query($this->open(), $sql);
