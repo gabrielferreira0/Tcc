@@ -146,6 +146,7 @@ body {
 .menu a:hover {
     background-color: #007bff;
     color: #000;
+
 }
 
 
@@ -162,6 +163,7 @@ body {
     border-radius: 15px;
     margin: 8px;
     transition: all ease 0.2s;
+
 }
 
 .pesquisarTable:hover {
@@ -199,11 +201,12 @@ body {
     border: solid 2px black;
     margin-top: 2rem;
     cursor: pointer;
-    transition: all ease 0.2s;
+    transition: all ease 0.3s;
 }
 
 .cardFormularioSrv:hover {
     background: #f50a31;
+    transform:scale(1.05);
 }
 
 .carousel-item .img-fluid {

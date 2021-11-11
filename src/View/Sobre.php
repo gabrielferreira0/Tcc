@@ -1,6 +1,6 @@
 <div class="container sobreNos  col-11">
-    <div class="text-center col-md-4  offset-md-4 mb-3" style="background:#007bff; border-radius: 10px">
-        <h1 class="text-center"> Sobre nós</h1>
+    <div class="text-center col-md-2 offset-md-5 mb-3" style="background:#007bff; border-radius: 10px">
+        <h1 class="text-center"> Sobre</h1>
     </div>
     <div class="row text-center p-3">
         <div class="col-md-4">

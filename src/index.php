@@ -212,7 +212,7 @@ session_start();
                                     <span class="input-group-text arredondar"> <i class="fas fa-lock"></i></span>
                                 </div>
                                 <input type="password" class="form-control arredondar" id="Senha" placeholder="Senha"
-                                       maxlength="20" required="">
+                                       maxlength="20" minlength="6" required="">
                             </div>
                             <div class="error help-block with-errors"></div>
                         </div>
@@ -264,7 +264,8 @@ session_start();
                                     <i class="fas fa-birthday-cake"></i>
                                     </span>
                                 </div>
-                                <input type="date" class="form-control arredondar" id="nascimento" placeholder="Data de nascimento"
+                                <input type="date" class="form-control arredondar" id="nascimento"
+                                       placeholder="Data de nascimento"
                                        required="">
                             </div>
                             <div class="error help-block with-errors"></div>
@@ -278,8 +279,8 @@ session_start();
                                         <i class="fas fa-venus-mars"></i>
                                     </span>
                                 </div>
-                                <select   class="form-control arredondar"
-                                          placeholder="sexo"  id="sexo" required>
+                                <select class="form-control arredondar"
+                                        placeholder="sexo" id="sexo" required>
                                     <option value="">--Selecione--</option>
                                     <option value="masculino">--Masculino--</option>
                                     <option value="feminino">--Feminino--</option>
@@ -425,7 +426,8 @@ session_start();
                 foreach ($categorias as $key => $value) {
                     ?>
                     <a href="./View/Servicos.php?categoria=<?php echo $value["catnome"] ?>">
-                        <div class="card col-md-10 offset-md-1  cardFormularioSrv" data-catID="<?php echo $value["id"] ?>"
+                        <div class="card col-md-10 offset-md-1  cardFormularioSrv"
+                             data-catID="<?php echo $value["id"] ?>"
                              data-toggle="modal" data-target="#modalServicos">
                             <img class="card-img-top" src="imagens/categoria/<?php echo $value['catfoto'] ?>"
                                  alt="Card image cap">
