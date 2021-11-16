@@ -50,6 +50,18 @@ class controllerUsuario
         $conta_dv = $auxiliar[1];
         $contaAPI = $auxiliar[0];
 
+        $auxiliar = explode("-", $agencia);
+
+        $agencia = $auxiliar[0];
+
+
+        if (isset($auxiliar[1])) {
+            $agencia_dv = $auxiliar[1];
+        } else {
+            $agencia_dv = '0';
+        }
+
+
         try {
             $recipient = $pagarme->recipients()->create([
                 'anticipatable_volume_percentage' => '100',
@@ -57,6 +69,7 @@ class controllerUsuario
                 'bank_account' => [
                     'bank_code' => $banco,
                     'agencia' => $agencia,
+                    'agencia_dv' => $agencia_dv,
                     'conta' => $contaAPI,
                     'type' => 'conta_corrente',
                     'conta_dv' => $conta_dv,
@@ -191,9 +204,9 @@ class controllerUsuario
         } else {
             $modelUsuario = new modelUsuario();
             if ($_POST["senhaStatus"] == 'true') {
-                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone, $nome_imagem , $this->nascimento);
+                $result = $modelUsuario->updatecomSenha($id, $this->username, $this->senha, $this->telefone, $nome_imagem, $this->nascimento);
             } elseif ($_POST["senhaStatus"] == 'false') {
-                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone, $nome_imagem,$this->nascimento);
+                $result = $modelUsuario->updateSemSenha($id, $this->username, $this->telefone, $nome_imagem, $this->nascimento);
             }
 
             if ($result) {
