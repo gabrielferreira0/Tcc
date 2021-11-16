@@ -18,7 +18,7 @@ class controllerCartaoCredito extends controllerPagamento
 
     public function pagamento()
     {
-
+        $_POST["cartaoData"] = str_replace('/', '', $_POST["cartaoData"]);
         $this->payment_method = 'credit_card';
         $this->holder_name = $_POST["cartaoNome"];
         $this->number = $_POST["cartaoNumero"];
@@ -148,7 +148,7 @@ class controllerCartaoCredito extends controllerPagamento
         }
     }
 
-    public function capturar($recipient_id_profissional,$pagamento_id)
+    public function capturar($recipient_id_profissional, $pagamento_id)
     {
         $recipient_id_profissional = trim($recipient_id_profissional);
 
@@ -169,7 +169,7 @@ class controllerCartaoCredito extends controllerPagamento
                 ]
             ]
         ]);
-        if ($capturedTransaction->status =='authorized') {
+        if ($capturedTransaction->status == 'authorized') {
             return 'sucesso';
         } else {
             return 'erro';

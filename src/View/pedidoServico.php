@@ -25,6 +25,7 @@ include('Navbar.php');
         $('#cartaoNumero').mask('0000.0000.0000.0000')
         $('#cartaoData').mask('0000')
         $('#CVV').mask('000')
+        $('#cartaoData').mask('00/00')
 
         $('#Conteudo').on('click', '.expandir', function () {
             let classe = $(this).children().attr('class');
