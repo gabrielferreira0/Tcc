@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/docs/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/docs/js/script.js" afterDir="false" />
-    </list>
+    <list default="true" id="e723adc3-c7b2-4412-a161-0275a1ec3c06" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -402,6 +399,8 @@
       <workItem from="1634213716332" duration="546000" />
       <workItem from="1634214631440" duration="20000" />
       <workItem from="1636504430836" duration="61000" />
+      <workItem from="1637114598264" duration="632000" />
+      <workItem from="1637144606976" duration="3325000" />
     </task>
     <servers />
   </component>
@@ -521,7 +520,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/src/Controller/controllerUsuario.php</url>
-          <line>158</line>
+          <line>174</line>
           <properties>
             <option name="className" value="\controllerUsuario" />
             <option name="methodName" value="update" />
@@ -648,7 +647,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/pedidoServico.php</url>
-          <line>152</line>
+          <line>153</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -683,12 +682,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>209</line>
+          <line>208</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>353</line>
+          <line>357</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -698,37 +697,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>441</line>
+          <line>445</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>428</line>
+          <line>432</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>458</line>
+          <line>462</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>453</line>
+          <line>457</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>429</line>
+          <line>433</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>430</line>
+          <line>434</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/View/detalhesPedido.php</url>
-          <line>464</line>
+          <line>468</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>

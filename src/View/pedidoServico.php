@@ -361,7 +361,7 @@ include('Navbar.php');
                             </div>
                         </div>
                         <div class="form-group col-md-3 texto-cinza">
-                            <label for="data">Data*:</label>
+                            <label for="data">Data prestação do serviço*:</label>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">

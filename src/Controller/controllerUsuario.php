@@ -61,6 +61,9 @@ class controllerUsuario
             $agencia_dv = '0';
         }
 
+        if (!$this->validarCPF($this->CPF)){
+            return;
+        };
 
         try {
             $recipient = $pagarme->recipients()->create([
@@ -231,6 +234,8 @@ class controllerUsuario
 
     public function validarCPF($CPF)
     {
+
+
         $validacao = preg_replace('/[^0-9]/is', '', $CPF);
         // pega somente a numeração
         if (strlen($validacao) != 11) {

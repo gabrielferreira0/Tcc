@@ -412,14 +412,14 @@ $bancos = array(
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="Senha">Usuario*:</label>
+                                <label for="Senha">Nome completo*:</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text arredondar"> <i class="fas fa-user"></i></span>
                                     </div>
                                     <input type="text" class="form-control arredondar" id="Username"
                                            placeholder="Usuario"
-                                           maxlength="20" required>
+                                           maxlength="50" required>
                                 </div>
                                 <div class="error help-block with-errors"></div>
                             </div>
@@ -431,8 +431,8 @@ $bancos = array(
                                         <span class="input-group-text arredondar"> <i class="fas fa-lock"></i></span>
                                     </div>
                                     <input type="password" class="form-control arredondar" id="Senha"
-                                           placeholder="Senha"
-                                           maxlength="20" required>
+                                           placeholder="mín 6 máx 20 caracters"
+                                           maxlength="20" minlength="6" required>
                                 </div>
                                 <div class="error help-block with-errors"></div>
                             </div>

@@ -85,7 +85,16 @@ include('../Controller/verificarLogin.php')
                 processData: false,
                 data: formData,
                 success: function (rs) {
-                    $("#Sucesso").show().fadeOut(4000);
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Serviço Cadastrado com sucesso!',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    })
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1500);
                 },
                 error: function (e) {
                     bootbox.alert("<h2>Erro :(</h2><br/>Não foi possivel realizar essa operação.</br>");
