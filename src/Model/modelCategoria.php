@@ -161,10 +161,9 @@ from servico_profissional sp
 		from cliente_servico_profissional CSP
 		where CSP.status = 'Finalizado') as CSP
 	on CSP.servico_profissionalid = sp.id
-where cat.catnome ilike '%$categoria%' and sp.status = true " . $servicoID . $UF . "
+where usu.usublock = false and usu.usustatus ='true'  and cat.catnome ilike '%$categoria%' and sp.status = true " . $servicoID . $UF . "
 group by usu.usunome, usu.id, catid, sp.serid, sp.id, sp.preco, ser.sernome, ep.cidade, ep.uf;
 ";
-
 
         $result = pg_query($this->banco->open(), $sql);
         $dados = pg_fetch_all($result);
