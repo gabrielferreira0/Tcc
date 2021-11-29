@@ -446,7 +446,7 @@ include('Navbar.php');
             } elseif ($_SESSION['id'] == $pedido[0]['id_profissional'] && $pedido[0]['status_pedido'] == 'Analise') {
                 echo "
                 <button id='cancelarPedido' data-idPedido='{$_GET['pedido']}' data-idPagamento='{$pedido[0]['pagamento_id']}'  
-                type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Negar Serviço
+                type='button' class='btn btn-danger ml-2  mb-3 mr-2'>Recusar Serviço
                 </button>
             
             <button 

@@ -35,7 +35,7 @@ include('Navbar.php');
                 $(this).children().removeClass().addClass('fas fa-caret-square-down')
             }
         });
-
+z
         $('#Conteudo').on('click', '#finalizar', function () {
 
 
@@ -200,7 +200,7 @@ include('Navbar.php');
                 <div id="pagamento" class="collapse">
                     <div class="form-row texto-cinza">
                         <div class="form-group col-md-3">
-                            <label for="Username">numero do cartão de crédito*:</label>
+                            <label for="Username">Numero do cartão de crédito*:</label>
 
                             <div class="input-group input-group-sm ">
                                 <div class="input-group-prepend">
