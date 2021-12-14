@@ -35,7 +35,7 @@ include('Navbar.php');
                 $(this).children().removeClass().addClass('fas fa-caret-square-down')
             }
         });
-z
+
         $('#Conteudo').on('click', '#finalizar', function () {
 
 
